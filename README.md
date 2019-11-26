@@ -1,6 +1,10 @@
 
 <br/>
 
+![image](Screenshot/ico_app_theme.png)
+
+<br/>
+
 ##### EJoy工具库
 
 <br/>
@@ -14,10 +18,8 @@
 * Dialog
 
 
-<br/>
 
 
-![image](Screenshot/ico_app_theme.png)
 
 
 
