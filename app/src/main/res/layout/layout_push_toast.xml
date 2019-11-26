@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_push_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:background="@drawable/bg9"
+    android:paddingHorizontal="@dimen/dp_20"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="标题"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_14" />
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_808080"
+        android:textSize="@dimen/text_size_13"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="你打开拉萨大手大脚设计大赛觉得
+ 解放军上的飞机凤凰大厦的回复楼上的房间书法家积分数量的房间里伺机待发乐山大佛 发士大夫精神
+进度是雷锋精神的链接发顺丰"/>
+
+</LinearLayout>

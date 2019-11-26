@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="IThemeNoActionBar">
+    </style>
+
+    <style name="IThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--模糊筛选弹窗-->
+    <!--<style name="AlertDialog" parent="@android:style/Theme.Holo.Light.NoActionBar.TranslucentDecor">-->
+    <style name="SearchableDialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+        <!-- 这里设置背景为透明，为了隐藏边框 -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 这里是修改顶部标题背景颜色，具体颜色自己定，可以是图片 -->
+        <item name="android:topDark">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorAlertDialogListItem">@color/black</item>
+        <item name="android:checkboxStyle">@color/black</item>
+        <item name="android:checkBoxPreferenceStyle">@color/black</item>
+        <!-- 这里是修改内容区域背景颜色 -->
+        <item name="android:centerDark">@color/white</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    </style>
+
+
+    <!-- 自定义仿IOS的AlertDialog的样式 -->
+    <style name="IIosAlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--加载进度-->
+    <style name="ILoadingDialogs" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+    <style name="ILoadingProgress" parent="@style/ILoadingDialogs">
+        <item name="android:windowBackground">@drawable/shape_progress_loading</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CHToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+</resources>

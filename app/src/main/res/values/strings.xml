@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">E享</string>
+    <string name="permission_tip_phone_sdcard">开启手机存储权限，便于为您支持本地图片选择，打卡网络异常情况离线打卡，数字对讲，下载等 </string>
+    <string name="permission_tip_location">开启定位权限，便于为您提供数字对讲，位置注册信息提交等操作 </string>
+    <string name="permission_tip_phone_state">开启手机状态权限，便于为您提供网络变化，存储，数据库更新变化，电量变化等监听，以便更好调整作业环境。</string>
+    <string name="permission_tip_other">其他如网路权限,电话权限等配合系统功能，便于更好体验。</string>
+    <string name="permission_tip_camera">开启相机权限，便于您使用等功能时进行拍照上传等。</string>
+    <string name="permission_tip_text">感谢您使用，为了给您提供更好的体验，建议您授予开启以下权限等，本系统不会对您的隐私造成任何影响，请放心使用</string>
+    <string name="home_search">搜索帮助库/自定义控件</string>
+</resources>
