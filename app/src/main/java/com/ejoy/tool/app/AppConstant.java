@@ -2,9 +2,6 @@ package com.ejoy.tool.app;
 import android.widget.LinearLayout;
 
 import com.ejoy.tool.common.api.HostType;
-import com.ejoy.tool.floattab.View.HorizontalListView;
-import com.ejoy.tool.floattab.View.SuspendListView;
-import com.ejoy.tool.floattab.View.SuspendScrollView;
 
 /**
  * CN:      AppConstant
@@ -45,13 +42,10 @@ public class AppConstant {
     //FloatTab
     public static int CONTEXT_HEADER = 0;
     public static LinearLayout MY_HEAD_LAYOUT = null;
-    public static HorizontalListView MY_INDICATOR = null;
-    public static SuspendListView FIRST_LISTVIEW = null;
     public static int MY_INDICATORTOP = 0;
     public static int offsetHeight = 0;
     public static int ScrollY = 0;
     public static boolean RET;
-    public static SuspendScrollView MY_SCROLLVIEW = null;
     public static int DisplayWidth = 0;
 
 

@@ -18,11 +18,13 @@ package com.ejoy.tool.ui.activity;
 //      ┗┻┛　┗┻┛
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.common.helper.InfoDialog.IDialog;
+import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
@@ -61,6 +63,9 @@ public class IScrollViewActivity extends BaseActivity {
     protected void initView(View mRootView) {
         mActivity = IScrollViewActivity.this;
         iDialog = new IDialog(mActivity).builder();
+        //当自定义状态栏背景和标题栏的时候，加上这两句代码，避免重叠问题
+        StatusBarTool.setRootViewFitsSystemWindows(this,true);
+        StatusBarTool.setStatusBarColor(this,Color.parseColor("#3493d4"));
     }
 
     @Override
@@ -68,14 +73,6 @@ public class IScrollViewActivity extends BaseActivity {
         return null;
     }
 
-   /* @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iscrollview);
-        ButterKnife.bind(this);
-        mActivity = IScrollViewActivity.this;
-        iDialog = new IDialog(mActivity).builder();
-    }*/
 
     private void showScrollViewDialog(boolean isLong) {
         iDialog.setGone().setTitle("IScrollView")
@@ -103,4 +100,10 @@ public class IScrollViewActivity extends BaseActivity {
                 break;
         }
     }
+
+    @Override
+    protected void initStatusbar() {
+        super.initStatusbar();
+    }
+
 }

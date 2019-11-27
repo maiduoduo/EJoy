@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_banner_b"/>
+
+
+    <com.iduo.filterlib.FilterTabView
+        android:id="@+id/ftb_filter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tool_bar"
+        android:background="@color/white"
+        app:btn_solid_select_color="@color/color_e3ecf6"
+        app:btn_solid_unselect_color="@color/color_e3ecf6"
+        app:btn_corner_radius="24dp"
+        app:btn_text_select_color="@color/color_orange_red"
+        app:btn_text_unselect_color="@color/color_222222"
+        app:tab_text_style="1"
+        app:column_num="3"
+        app:color_main="#60dd6c"/>
+
+    <LinearLayout
+        android:id="@+id/llWebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:layout_marginVertical="@dimen/dp_10"
+        android:orientation="vertical">
+        <com.ejoy.tool.ui.base.base_webview.BaseWebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

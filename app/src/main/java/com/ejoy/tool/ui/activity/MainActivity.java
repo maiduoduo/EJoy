@@ -1,15 +1,31 @@
 package com.ejoy.tool.ui.activity;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
 import com.ejoy.tool.common.bean.MainItemBean;
+import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.scaffold.view.decorator.GridItemDecoration;
-import com.ejoy.tool.ui.activity.tab.HomeActivity;
+import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
 import com.ejoy.tool.ui.data.resource.ApiResource;
@@ -19,6 +35,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * CN:      MainActivity
@@ -31,6 +49,18 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     @BindView(R.id.mRecyclerView)
     PowerfulRecyclerView mRecyclerView;
+    @BindView(R.id.head_layout)
+    LinearLayout headLayout;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.app_bar_layout)
+    AppBarLayout appBarLayout;
+    @BindView(R.id.root_layout)
+    CoordinatorLayout rootLayout;
+    @BindView(R.id.collapsing_toolbar_layout)
+    CollapsingToolbarLayout mCollapsingToolbarLayout;
+    @BindView(R.id.head_iv)
+    ImageView mHeaderIv;
 
     private String localImgUrl = "";
     private CHMainAdpter mCHMainAdpter;
@@ -45,8 +75,44 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     protected void initView(View mRootView) {
         if (mData == null) mData = new ArrayList<>();
         else mData.clear();
+        initTopHeader();
         initRecyclerView();
         addData();
+    }
+
+    @Override
+    protected boolean isSetStatusBarBg() {
+        return false;
+    }
+
+
+    private void initTopHeader() {
+
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        //使用CollapsingToolbarLayout必须把title设置到CollapsingToolbarLayout上，设置到Toolbar上则不会显示
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (verticalOffset <= -headLayout.getHeight() / 2) {
+                    mCollapsingToolbarLayout.setTitle("E·享");
+                } else {
+                    mCollapsingToolbarLayout.setTitle(" ");
+                }
+            }
+        });
+
+        loadBlurAndSetStatusBar();
+
+        Glide.with(this).load(R.mipmap.img_f).
+                bitmapTransform(new CropCircleTransformation(this))
+                .into(mHeaderIv);
     }
 
 
@@ -99,19 +165,78 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 startActivity(new Intent(this, IScrollViewActivity.class));
                 break;
             case 3://FloatDragButton
-                startActivity(new Intent(this, HomeActivity.class));
+//                startActivity(new Intent(this, HomeActivity.class));
+                break;
+            case 6://Popupwindow
+                startActivity(new Intent(this, IPopupwindowFilterActivity.class));
                 break;
         }
     }
 
-   /* @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+    /**
+     * 设置毛玻璃效果和沉浸状态栏
+     */
+    private void loadBlurAndSetStatusBar() {
+        //用来设置整体下移，状态栏沉浸
+//        StatusBarTool.setRootViewFitsSystemWindows(this, false);
+////        StatusBarUtil.setTranslucent(MainActivity.this, 0);
+//        StatusBarTool.setTranslucentStatus(MainActivity.this);//透明状态栏
+        //黑色字体
+        StatusBarTool.setStatusBarDarkTheme(MainActivity.this, false);
+        //黑色字体
+//        StatusBarTool.setStatusBarDarkTheme(MainActivity.this, true);
+        //设置白色字体，其他背景
+//        StatusBarTool.setStatusBarColor(MainActivity.this, Color.parseColor("#58C087"));//设置背景颜色
+        Glide.with(this).load(R.mipmap.image_top_main_bg)
+                .centerCrop()
+                .bitmapTransform(new BlurTransformation(this, 5))
+                .into(new SimpleTarget<GlideDrawable>() {
+                    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+                    @Override
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        headLayout.setBackground(resource);
+//                        rootLayout.setBackground(resource);
+                    }
+                });
+
+        Glide.with(this).load(R.mipmap.image_top_main_bg).bitmapTransform(new BlurTransformation(this, 10))
+                .into(new SimpleTarget<GlideDrawable>() {
+                    @Override
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super
+                            GlideDrawable> glideAnimation) {
+                        mCollapsingToolbarLayout.setContentScrim(resource);
+                    }
+                });
+
+    }
 
 
-    }*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        String msg = "";
+        switch (item.getItemId()) {
+            case R.id.webview:
+                msg += "博客跳转";
+                break;
+            case R.id.weibo:
+                msg += "微博跳转";
+                break;
+            case R.id.action_settings:
+                msg += "设置";
+                break;
+        }
+        if (!msg.equals("")) {
+            Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
    /* @OnClick({

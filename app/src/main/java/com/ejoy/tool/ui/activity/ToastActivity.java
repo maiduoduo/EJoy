@@ -74,13 +74,11 @@ public class ToastActivity extends BaseActivity {
         return null;
     }
 
-   /* @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_itoast);
-        ButterKnife.bind(this);
-        iToast = new IToast().builder();
-    }*/
+
+    @Override
+    protected void initStatusbar() {
+        super.initStatusbar();
+    }
 
 
     @OnClick({

@@ -22,7 +22,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -38,13 +37,14 @@ import android.widget.Toast;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.EventBusUtil;
-import com.ejoy.tool.scaffold.utils.GlideUtil;
+//import com.ejoy.tool.scaffold.utils.GlideUtil;
 import com.ejoy.tool.scaffold.utils.IToast;
 import com.ejoy.tool.scaffold.utils.IToastImageType;
+import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.IProgressDialog;
+import com.ejoy.tool.ui.activity.MainActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -84,22 +84,19 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     protected boolean isRegisterEventBus() {
         return false;
     }
+    protected boolean isSetStatusBarBg() {
+        return true;
+    }
 
 
 
 
 
     private Unbinder unbinder;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //系统版本大于19
-            setTranslucentStatus(true);
-        }
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.drawable.shape_statusbar);
+        initStatusbar();
         View mRootView = getView(getContentViewId());
         _mActivity = this;
         setContentView(mRootView);
@@ -113,19 +110,57 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             EventBusUtil.register(this);
         }
         initView(mRootView);
-        //去除灰色遮罩
-        //Android5.0以上
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
-        }else if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT){//Android4.4以上,5.0以下
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+    }
+
+    protected void initStatusbar() {
+        //沉浸式代码配置
+        //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
+        StatusBarTool.setRootViewFitsSystemWindows(this, true);
+        //设置状态栏透明
+        StatusBarTool.setTranslucentStatus(this);
+        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
+        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
+        if (!StatusBarTool.setStatusBarDarkTheme(this, true)) {
+            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
+            //这样半透明+白=灰, 状态栏的文字能看得清
+//            StatusBarTool.setStatusBarColor(this, 0x55000000);
+            StatusBarTool.setStatusBarColor(this, 0x00000000);
         }
 
+
+        //用来设置整体下移，状态栏沉浸
+        StatusBarTool.setRootViewFitsSystemWindows(this, false);
+//        StatusBarUtil.setTranslucent(MainActivity.this, 0);
+        StatusBarTool.setTranslucentStatus(this);//透明状态栏
+        //黑色字体
+//        StatusBarTool.setStatusBarDarkTheme(this, false);
+        //黑色字体
+//        StatusBarTool.setStatusBarDarkTheme(MainActivity.this, true);
+        //设置白色字体，其他背景
+//        StatusBarTool.setStatusBarColor(this, Color.parseColor("#58C087"));//设置背景颜色
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //系统版本大于19
+//            setTranslucentStatus(true);
+//        }
+//        if (isSetStatusBarBg()) {
+//            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+//            tintManager.setStatusBarTintEnabled(true);
+//            tintManager.setStatusBarTintResource(R.drawable.shape_statusbar);
+//
+//            //去除灰色遮罩
+//            //Android5.0以上
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                Window window = getWindow();
+//                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+//                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//                window.setStatusBarColor(Color.TRANSPARENT);
+//            }else if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT){//Android4.4以上,5.0以下
+//                getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            }
+//        }
     }
 
 
@@ -249,7 +284,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
     protected void loadImage(String url, ImageView imageView) {
-        GlideUtil.load(this, url, imageView);
+//        GlideUtil.load(this, url, imageView);
     }
 
     public void showLog(String str) {

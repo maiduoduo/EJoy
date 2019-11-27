@@ -44,7 +44,7 @@ public class LogUtils {
      * 日志输出时的TAG
      */
 
-    private static String mTag = "CH";
+    private static String mTag = "CHLOG";
 
     /**
      * 是否允许输出log

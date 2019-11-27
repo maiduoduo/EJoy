@@ -119,31 +119,31 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void initActionBarView() {
-        if (hasActionBar()) {
-            View actionBarView = View.inflate(this,
-                    R.layout.custom_actionbar_layout, null);
-            mActionBarTitleText = (TextView) actionBarView
-                    .findViewById(R.id.custom_actionbar_title);
-            mActionBarSubTitleText = (TextView) actionBarView
-                    .findViewById(R.id.custom_actionbar_subtitle);
-            navSymbol = (TextView) actionBarView.findViewById(R.id.nav_symbol);
-            mTitleIconImg = (ImageView) actionBarView
-                    .findViewById(R.id.custom_actionbar_icon);
-            mAllView.addView(actionBarView);
-            btnBack = (ImageButton) actionBarView
-                    .findViewById(R.id.custom_actionbar_back_btn);
-            mActionBarRightBtn = actionBarView
-                    .findViewById(R.id.custom_actionbar_right_btn);
-            mActionBarRightBtn.setVisibility(View.INVISIBLE);
-            btnBack.setVisibility(isBtnBackVisible() ? View.VISIBLE
-                    : View.INVISIBLE);
-            btnBack.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
+//        if (hasActionBar()) {
+//            View actionBarView = View.inflate(this,
+//                    R.layout.custom_actionbar_layout, null);
+//            mActionBarTitleText = (TextView) actionBarView
+//                    .findViewById(R.id.custom_actionbar_title);
+//            mActionBarSubTitleText = (TextView) actionBarView
+//                    .findViewById(R.id.custom_actionbar_subtitle);
+//            navSymbol = (TextView) actionBarView.findViewById(R.id.nav_symbol);
+//            mTitleIconImg = (ImageView) actionBarView
+//                    .findViewById(R.id.custom_actionbar_icon);
+//            mAllView.addView(actionBarView);
+//            btnBack = (ImageButton) actionBarView
+//                    .findViewById(R.id.custom_actionbar_back_btn);
+//            mActionBarRightBtn = actionBarView
+//                    .findViewById(R.id.custom_actionbar_right_btn);
+//            mActionBarRightBtn.setVisibility(View.INVISIBLE);
+//            btnBack.setVisibility(isBtnBackVisible() ? View.VISIBLE
+//                    : View.INVISIBLE);
+//            btnBack.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    finish();
+//                }
+//            });
+//        }
     }
 
     public void init() {

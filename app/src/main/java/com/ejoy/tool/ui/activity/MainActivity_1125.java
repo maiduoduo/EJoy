@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.view.ExpandImageView;
-import com.ejoy.tool.ui.activity.tab.HomeActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
@@ -119,7 +118,6 @@ public class MainActivity_1125 extends BaseActivity {
                 startActivity(new Intent(this, IScrollViewActivity.class));
                 break;
             case R.id.cvFloatTab://Toast
-                startActivity(new Intent(this, HomeActivity.class));
                 break;
         }
     }

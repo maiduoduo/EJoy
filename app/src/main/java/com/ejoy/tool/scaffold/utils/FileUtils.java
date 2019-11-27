@@ -2,7 +2,6 @@ package com.ejoy.tool.scaffold.utils;
 
 import android.os.Environment;
 
-import com.ejoy.tool.floattab.tools.UiUtils;
 
 import java.io.File;
 
@@ -36,7 +35,7 @@ public class FileUtils {
 			path.append(cache);// /mnt/sdcard/GooglePlay/cache
 			
 		}else{
-			File filesDir = UiUtils.getContext().getCacheDir();    //  cache  getFileDir file
+			File filesDir = Utils.getContext().getCacheDir();    //  cache  getFileDir file
 			path.append(filesDir.getAbsolutePath());// /data/data/com.itheima.googleplay/cache
 			path.append(File.separator);///data/data/com.itheima.googleplay/cache/
 			path.append(cache);///data/data/com.itheima.googleplay/cache/cache

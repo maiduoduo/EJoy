@@ -414,7 +414,7 @@ public class IToast {
     private Method mShow;
     private Method mHide;
     private Field mViewFeild;
-    private long durationTime = 1*1000;
+    private long durationTime = 3*1000;
     private Activity mWActivity;
     public void showWXFloatToast(Activity activity,String title, String content, Map<String,String> params) {
         mWActivity = activity;
@@ -433,7 +433,7 @@ public class IToast {
         tvTitle.setText(title);
         tvContent.setText(content);
         mWXToast.setView(mView);
-        mWXToast.setDuration(Toast.LENGTH_SHORT);
+        mWXToast.setDuration(Toast.LENGTH_LONG);
         mWXToast.setGravity(Gravity.TOP, 0, 70);
         reflectEnableClick();
         reflectToast();

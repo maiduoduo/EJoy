@@ -17,7 +17,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.ejoy.tool.app.App;
-import com.ejoy.tool.floattab.tools.LogUtils;
 import com.ejoy.tool.ui.activity.tab.BaseActivity;
 
 import java.lang.reflect.Field;
@@ -432,7 +431,7 @@ public final class Utils {
         }
         int totalHeight = 0;
         for (int i = 0; i < listAdapter.getCount(); i++) {
-            com.ejoy.tool.floattab.tools.LogUtils.w("listAdapter.getCount="+listAdapter.getCount());
+            LogUtils.w("listAdapter.getCount="+listAdapter.getCount());
             View listItem = listAdapter.getView(i, null, listView);
             LogUtils.w("listItem="+i);
             listItem.measure(0, 0);
