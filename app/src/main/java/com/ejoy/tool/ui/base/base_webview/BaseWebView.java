@@ -98,7 +98,7 @@ public class BaseWebView extends WebView {
         webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
         //在MIUI系统自带的浏览器的设置功能中，提供了“网页文字大小”的功能。想实现这种功能很简单，
         // 只要我们修改 setTextZoom 的百分比值就实现了。100就是正常大小，90就是小，80就是超小，110就是大，120就是超大。
-        webSettings.setTextZoom(120); // 通过百分比来设置文字的大小，默认值是100。
+        webSettings.setTextZoom(100); // 通过百分比来设置文字的大小，默认值是100。
 //        webSettings.setTextSize(5);
 //        webSettings.setTextSize(WebSettings.TextSize.LARGEST);
     }
