@@ -2,11 +2,15 @@ package com.ejoy.tool.ui.activity;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,14 +26,19 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
 import com.ejoy.tool.common.bean.MainItemBean;
+import com.ejoy.tool.common.helper.dialog.ExitDialog;
+import com.ejoy.tool.scaffold.utils.FileUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.scaffold.view.decorator.GridItemDecoration;
+import com.ejoy.tool.ui.activity.bezer.BezierActivity;
+import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
 import com.ejoy.tool.ui.data.resource.ApiResource;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
+import com.maple.msdialog.ActionSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +46,17 @@ import java.util.List;
 import butterknife.BindView;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
+/*
+*
+*
+,------.     ,--.
+|  .---'     |  | ,---.,--. ,--.
+|  `--, ,--. |  || .-. |\  '  /
+|  `---.|  '-'  /' '-' ' \   '
+`------' `-----'  `---'.-'  /
+                       `---'
+*/
 
 /**
  * CN:      MainActivity
@@ -65,6 +85,8 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     private String localImgUrl = "";
     private CHMainAdpter mCHMainAdpter;
     private List<MainItemBean> mData;
+    private BottomSheetDialog bottomSheetDialog;
+    private ExitDialog mExitDialog;
 
     @Override
     protected int getContentViewId() {
@@ -78,6 +100,16 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         initTopHeader();
         initRecyclerView();
         addData();
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void addListener() {
+
     }
 
     @Override
@@ -113,6 +145,11 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         Glide.with(this).load(R.mipmap.img_f).
                 bitmapTransform(new CropCircleTransformation(this))
                 .into(mHeaderIv);
+//        Glide.with(this).load(R.mipmap.img_f)
+//                .crossFade()
+//                .into(mHeaderIv);
+
+
     }
 
 
@@ -165,13 +202,64 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 startActivity(new Intent(this, IScrollViewActivity.class));
                 break;
             case 3://FloatDragButton
-//                startActivity(new Intent(this, HomeActivity.class));
+                startActivity(new Intent(this, BezierActivity.class));
                 break;
             case 6://Popupwindow
                 startActivity(new Intent(this, IPopupwindowFilterActivity.class));
                 break;
+            case 7://ArcLayout
+                startActivity(new Intent(this, IArcLayoutActivity.class));
+                break;
+            case 9://图片处理
+                showBotttomDialog();
+                break;
+            default:
+                break;
         }
     }
+
+    private void showBotttomDialog() {
+        new ActionSheetDialog(_mActivity)
+                .setCancelable(false)
+                .setCanceledOnTouchOutside(false)
+                .addSheetItem("单张图片压缩", Color.parseColor("#037BFF"),
+                        new ActionSheetDialog.OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                iToast.showIImgToast("单张图片压缩");
+                            }
+                        })
+                .addSheetItem("批量图片压缩", Color.parseColor("#037BFF"),
+                        new ActionSheetDialog.OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                startActivity(new Intent(MainActivity.this, IBitmapMultiChoiceActivity.class));
+                            }
+                        })
+                .show();
+    }
+
+   /* private void showBottomSheet() {
+        bottomSheetDialog = new BottomSheetDialog(this);
+        //创建recyclerView
+        View view = getLayoutInflater().inflate(R.layout.layout_parent_problem_local, null);
+        PowerfulRecyclerView recyclerView = (PowerfulRecyclerView) view.findViewById(R.id.mRecyclerView);
+        ImageView ivOffClose = view.findViewById(R.id.ivOffClose);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        ProblemReportLocalDataListAdapter recyclerAdapter = new ProblemReportLocalDataListAdapter(R.layout.item_problem_offline,problemReportCacheBeans,this);
+        recyclerView.setAdapter(recyclerAdapter);
+
+        ivOffClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bottomSheetDialog != null && bottomSheetDialog.isShowing()){
+                    bottomSheetDialog.dismiss();
+                }
+            }
+        });
+    }*/
 
 
     /**
@@ -259,4 +347,24 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     }*/
 
 
+    @Override
+    public void onBackPressed() {
+        if (mExitDialog == null) { mExitDialog = new ExitDialog(this); }
+        if (!mExitDialog.isShowing()) mExitDialog.show();
+        mExitDialog.setOnExitDialogClickListener(new ExitDialog.OnExitDialogClickListener() {
+            @Override
+            public void onConfirmListener(boolean isChecked) {
+                if (isChecked) {
+                    FileUtils.deleteAllFile(FileUtils.getFileDirectorHead(MainActivity.this.getApplicationContext()));
+                }
+                MainActivity.super.onBackPressed();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mExitDialog != null && !mExitDialog.isShowing()) mExitDialog.cancel();
+        super.onDestroy();
+    }
 }

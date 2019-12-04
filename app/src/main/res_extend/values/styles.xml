@@ -21,26 +21,37 @@
         <item name="android:background">#d9d9d9</item>
     </style>
 
-    <!--<style name="StyledIndicators" parent="MyAppTheme">-->
-    <!--<item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>-->
-    <!--</style>-->
+   <!--PhotoDialog-->
+    <style name="PhotoDialogItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/selector_photo_item</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorFF333333</item>
+    </style>
 
-    <!--<style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">-->
-    <!--<item name="android:background">@drawable/tab_indicator</item>-->
-    <!--<item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>-->
-    <!--<item name="android:textSize">14sp</item>-->
-    <!--<item name="android:dividerPadding">8dp</item>-->
-    <!--<item name="android:showDividers">middle</item>-->
-    <!--<item name="android:paddingLeft">10dp</item>-->
-    <!--<item name="android:paddingRight">10dp</item>-->
-    <!--<item name="android:fadingEdge">horizontal</item>-->
-    <!--<item name="android:fadingEdgeLength">8dp</item>-->
-    <!--</style>-->
+    <style name="PhotoDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@color/color00000000</item>
 
-    <!--<style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">-->
-    <!--<item name="android:typeface">monospace</item>-->
-    <!--<item name="android:textColor">@drawable/selector_tabtext</item>-->
-    <!--</style>-->
+    </style>
+
+    <style name="DialogAnimation" parent="android:Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_out</item>
+    </style>
+    <!--↑PhotoDialog↑-->
+
+
+
+    <!--自定义圆角ImageView-->
+    <declare-styleable name="Custom_Round_Image_View">
+        <attr name="radius" format="dimension" />
+        <attr name="left_top_radius" format="dimension" />
+        <attr name="right_top_radius" format="dimension" />
+        <attr name="right_bottom_radius" format="dimension" />
+        <attr name="left_bottom_radius" format="dimension" />
+    </declare-styleable>
 
 
 </resources>

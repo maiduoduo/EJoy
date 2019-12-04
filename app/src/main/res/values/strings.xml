@@ -7,4 +7,18 @@
     <string name="permission_tip_camera">开启相机权限，便于您使用等功能时进行拍照上传等。</string>
     <string name="permission_tip_text">感谢您使用，为了给您提供更好的体验，建议您授予开启以下权限等，本系统不会对您的隐私造成任何影响，请放心使用</string>
     <string name="home_search">搜索帮助库/自定义控件</string>
+
+    <string name="arclayout_description">After the formation of the Galactic Empire, the Rebel Alliance recruits Jyn Erso (Felicity Jones) to work with a team including Cassian Andor (Diego Luna) to steal the design schematics of the Empire\'s new superweapon, the Death Star.\n\n银河帝国形成后，叛军联盟招募Jyn Erso（费利西蒂·琼斯饰）与包括卡西安·安道尔（Diego Luna饰）在内的团队合作，窃取帝国新超级武器“死亡之星”的设计原理图。</string>
+    <string name="arclayout_development">In February 2013, The Walt Disney Company CEO Bob Iger confirmed the development of two stand-alone films, each individually written by Lawrence Kasdan and Simon Kinberg. On February 6, Entertainment Weekly reported that Lucasfilm is working on two films featuring Han Solo and Boba Fett. Disney CFO Jay Rasulo has described the stand-alone films as origin stories. Kathleen Kennedy explained that the stand-alone films will not crossover with the films of the sequel trilogy…\n\n2013年2月，华特迪士尼公司首席执行官鲍勃伊格（Bob Iger）证实了两部独立电影的开发，分别由劳伦斯卡丹（Lawrence Kasdan）和西蒙金伯格（Simon Kinberg）执笔。2月6日，《娱乐周刊》报道说，卢卡斯电影公司正在制作两部以汉·索洛和波巴·费特为主角的电影。迪士尼首席财务官杰伊·拉苏洛（Jay Rasulo）将这些独立电影描述为原创故事。凯瑟琳·肯尼迪解释说，独立电影不会与续集三部曲的电影交叉…</string>
+    <string name="arclayout_ct_en">Superbody is a B-level science fiction film, both in budget and aesthetic sense. There is a long-standing myth that the development efficiency of human brain potential is only 10%. What kind of situation would it be if human brain potential is used to 100%? This is the starting point of the concept of superbod\n\n
+影片认为，随着人对大脑的利用率逐步提高，人可以获得更多的能力，比如掌握之前没有学过的知识，随心所欲地控制自己的身体，读懂旁人的内心，甚至操控磁场等等。从纯粹科学的角度，这些理论存在明显的荒谬之处，尤其是到最后100%的开发率实现后，露西的肉身消失，变得无所不在（I’m everywhere），这和神有什么区别？\n\n\n</string>
+    <string name="arclayout_ct_development">     Richard Dawkins believes that:\n
+"The core element of all life is not fire, not warm breath, not" spark of life ", but information, words and instructions....\n\nRichard Dawkins认为:\n“所有生命的核心要素不是火，不是温暖的吐息，不是什么‘生命的火花’，而是信息、词语、指令。</string>
+    <string name="camera">相机</string>
+    <string name="album">相册</string>
+    <string name="exit_app_content">是否退出E·享?</string>
+    <string name="string_delete_compress_caches">删除压缩文件</string>
+
+    <string name="preview">preview_image</string>
+
 </resources>

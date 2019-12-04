@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/arclayout" />
             <option value="$PROJECT_DIR$/filterlib_popupwindow" />
+            <option value="$PROJECT_DIR$/iiosdialog" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

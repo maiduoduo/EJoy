@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimaryDark">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:onClick="ArcBannerBack"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ico_back_white_90px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="ArcBanner"/>
+    </RelativeLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--正常banner-->
+            <TextView
+                android:id="@+id/tipNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray3"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:text="Normal Banner"
+                android:textColor="@color/gray2"
+                android:textStyle="italic" />
+
+            <RelativeLayout
+                android:id="@+id/rlNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tipNormal">
+
+                <FrameLayout
+                    android:id="@+id/flb_banner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:background="#00000000">
+
+                    <com.imaiduoduo.arclayout.lib.ArcLayout
+                        android:id="@+id/ArcLayoutNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:elevation="1dip"
+                        app:arc_cropDirection="cropInside"
+                        app:arc_height="0dp"
+                        app:arc_position="bottom">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/mBannerNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:banner_default_image="@drawable/img_default_placeload"
+                            app:image_scale_type="fit_xy"
+                            app:indicator_drawable_selected="@drawable/news_banner_heart_red_enabled"
+                            app:indicator_drawable_unselected="@drawable/news_banner_heart_white_enabled"
+                            app:indicator_height="5dp"
+                            app:indicator_margin="5dp"
+                            app:indicator_width="5dp" />
+
+                        <!-- <com.flaviofaria.kenburnsview.KenBurnsView
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:scaleType="centerCrop"
+                             android:src="@drawable/arclayout_rogue" />
+
+                         <FrameLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent">
+
+                             <ImageView
+                                 android:layout_width="250dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_gravity="center_horizontal|bottom"
+                                 android:layout_marginBottom="30dp"
+                                 android:adjustViewBounds="true"
+                                 android:src="@drawable/arclayout_rogue_logo" />
+
+                         </FrameLayout>-->
+
+                    </com.imaiduoduo.arclayout.lib.ArcLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/llIndicatorNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/flb_banner1"
+                    android:layout_marginTop="-10dp"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/flb_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/flb_banner1"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arclayout_ic_add"
+                    app:backgroundTint="@color/R1"
+                    app:elevation="15dp"
+                    app:fabSize="normal" />
+            </RelativeLayout>
+
+            <!--内凹banner-->
+            <TextView
+                android:id="@+id/tipInside"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray3"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/rlNormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:text="内凹banner"
+                android:textColor="@color/gray2"
+                android:textStyle="italic" />
+
+            <RelativeLayout
+                android:id="@+id/rlInside"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tipInside">
+
+                <FrameLayout
+                    android:id="@+id/fl_bannerInside"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="#00000000">
+
+                    <com.imaiduoduo.arclayout.lib.ArcLayout
+                        android:id="@+id/ArcLayoutInside"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:elevation="1dip"
+                        app:arc_cropDirection="cropInside"
+                        app:arc_height="20dp"
+                        app:arc_position="bottom">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/mBannerInside"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:banner_default_image="@drawable/img_default_placeload"
+                            app:image_scale_type="fit_xy"
+                            app:indicator_height="5dp"
+                            app:indicator_margin="5dp"
+                            app:indicator_width="5dp" />
+
+                    </com.imaiduoduo.arclayout.lib.ArcLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/llIndicatorInside"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fl_bannerInside"
+                    android:layout_marginTop="-15dp"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+            </RelativeLayout>
+
+            <!--外凸banner-->
+            <TextView
+                android:id="@+id/tipOutside"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray3"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:layout_below="@+id/rlInside"
+                android:text="外凸banner"
+                android:textColor="@color/gray2"
+                android:textStyle="italic" />
+
+            <RelativeLayout
+                android:id="@+id/rlOutside"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tipOutside">
+
+                <FrameLayout
+                    android:id="@+id/fl_bannerOutside"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="#00000000">
+
+                    <com.imaiduoduo.arclayout.lib.ArcLayout
+                        android:id="@+id/ArcLayoutOutside"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:elevation="1dip"
+                        app:arc_cropDirection="cropOutside"
+                        app:arc_height="15dp"
+                        app:arc_position="bottom">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/mBannerOutside"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:banner_default_image="@drawable/img_default_placeload"
+                            app:image_scale_type="fit_xy"
+                            app:indicator_height="5dp"
+                            app:indicator_margin="5dp"
+                            app:indicator_width="5dp" />
+                    </com.imaiduoduo.arclayout.lib.ArcLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/llIndicatorOutside"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fl_bannerOutside"
+                    android:layout_marginTop="-10dp"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/textTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray3"
+                android:layout_marginTop="70dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:layout_below="@+id/rlOutside"
+                android:text="↓   文档说明   ↓"
+                android:textColor="@color/gray2"
+                android:textStyle="italic" />
+
+
+            <com.ejoy.tool.ui.base.base_webview.BaseWebView
+                android:id="@+id/webview"
+                android:layout_below="@+id/textTip"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <!--文本-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlOutside"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Story"
+                    android:textColor="#3A3A3A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/arclayout_description"
+                    android:textColor="#979696"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Development"
+                    android:textColor="#3A3A3A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/arclayout_development"
+                    android:textColor="#979696"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

@@ -218,7 +218,7 @@ public class IDialog {
         if (!showPosBtn && !showNegBtn) {
             btn_pos.setText("");
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.selector_dialog_ios_right);
+            btn_pos.setBackgroundResource(R.drawable.selector_dialog_iios_right);
             btn_pos.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -229,20 +229,20 @@ public class IDialog {
 
         if (showPosBtn && showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.selector_dialog_ios_right);
+            btn_pos.setBackgroundResource(R.drawable.selector_dialog_iios_right);
             btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.selector_dialog_ios_left);
+            btn_neg.setBackgroundResource(R.drawable.selector_dialog_iios_left);
             img_line.setVisibility(View.VISIBLE);
         }
 
         if (showPosBtn && !showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.selector_dialog_ios_right);
+            btn_pos.setBackgroundResource(R.drawable.selector_dialog_iios_right);
         }
 
         if (!showPosBtn && showNegBtn) {
             btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.selector_dialog_ios_left);
+            btn_neg.setBackgroundResource(R.drawable.selector_dialog_iios_left);
         }
     }
 

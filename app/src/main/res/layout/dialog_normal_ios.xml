@@ -61,7 +61,8 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_dialog_ios_left"
+            android:background="@drawable/selector_dialog_iios_left"
+            android:text=""
             android:gravity="center"
             android:textColor="@color/action_sheet_blue"
             android:textSize="16sp" />
@@ -78,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_dialog_ios_right"
+            android:background="@drawable/selector_dialog_iios_right"
             android:gravity="center"
             android:textColor="@color/action_sheet_blue"
             android:textSize="16sp" />

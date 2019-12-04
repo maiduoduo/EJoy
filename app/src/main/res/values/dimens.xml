@@ -16,4 +16,7 @@
     <dimen name="dp_8">8dp</dimen>
     <dimen name="common_vew_column_padding">1dp</dimen>
     <dimen name="common_vew_raw_padding">1dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
 </resources>

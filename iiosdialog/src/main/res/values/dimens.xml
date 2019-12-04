@@ -1,0 +1,7 @@
+<resources>
+
+    <dimen name="shape_radius">8dp</dimen>
+    <dimen name="shape_width">1px</dimen>
+    <dimen name="dialog_radius">15dp</dimen>
+
+</resources>

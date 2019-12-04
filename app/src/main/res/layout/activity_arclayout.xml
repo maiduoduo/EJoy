@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/rldiagonalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="#FFFFFFFF">
+
+            <com.imaiduoduo.arclayout.lib.ArcLayout
+                android:id="@+id/ArcLayoutInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:elevation="10dip"
+                app:arc_cropDirection="cropInside"
+                app:arc_height="20dp"
+                app:arc_position="bottom">
+
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arc_a" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginBottom="30dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/arclayout_rogue_logo" />
+
+                </FrameLayout>
+
+            </com.imaiduoduo.arclayout.lib.ArcLayout>
+
+        </FrameLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/flb_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rldiagonalLayout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="-20dp"
+            android:src="@drawable/arclayout_ic_add"
+            app:backgroundTint="#ce6688"
+            app:elevation="15dp"
+            app:fabSize="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flb_banner"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:background="#00000000"
+            android:text=" 点击 + 查看banner样式 "
+            android:textColor="#ff0000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rldiagonalLayout"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Story"
+                android:textColor="#3A3A3A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/arclayout_ct_en"
+                android:textColor="#979696"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Development"
+                android:textColor="#3A3A3A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/arclayout_ct_development"
+                android:textColor="#979696"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

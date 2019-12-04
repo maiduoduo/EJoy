@@ -60,9 +60,9 @@ public class IToast {
     /** 之前显示的内容 */
     private static String oldMsg;
     /** Toast对象 */
-    private static Toast mToast = null ;
-    private static Toast mWXToast = null ;
-    private static Toast mNormalToast = null ;
+    private Toast mToast = null ;
+    private Toast mWXToast = null ;
+    private Toast mNormalToast = null ;
     /** 第一次时间 */
     private static long oneTime = 0 ;
     /** 第二次时间 */
@@ -139,7 +139,7 @@ public class IToast {
      *   根据显示时间不重复创建实例
      * @param message
      */
-    public static void showNoRepeatToast(String message){
+    public void showNoRepeatToast(String message){
         if(mNormalToast == null){
             mNormalToast = Toast.makeText(mContext, message, Toast.LENGTH_SHORT);
             mNormalToast.show() ;
@@ -169,7 +169,7 @@ public class IToast {
      * @param text 提示内容
      * @return
      */
-    public static void showIImgToast(String text) {
+    public void showIImgToast(String text) {
         showIImgToast(text, TOAST_DURATION_SHORT);
     }
 
@@ -182,7 +182,7 @@ public class IToast {
      * @param duration 显示时长，对应 Toast.LEHGTH_SHORT和Toast.LENGTH_LONG
      * @return
      */
-    public static void showIImgToast(String text, int duration) {
+    public void showIImgToast(String text, int duration) {
         showIImgToast(text, duration, IToastImageType.DEFAULT);
     }
 
@@ -195,7 +195,7 @@ public class IToast {
      * @param type 图片显示类型{@link IToastImageType}
      * @return
      */
-    public static void showIImgToast(String text,IToastImageType type) {
+    public void showIImgToast(String text,IToastImageType type) {
         int imageViewResID = IToastImageType.getCommonImageResID(type);
         showIImgToast(text, TOAST_DURATION_SHORT, imageViewResID);
     }
@@ -208,7 +208,7 @@ public class IToast {
      * @param type 图片显示类型{@link IToastImageType}
      * @return
      */
-    public static void showIImgToast(String text, int duration, IToastImageType type) {
+    public void showIImgToast(String text, int duration, IToastImageType type) {
         int imageViewResID = IToastImageType.getCommonImageResID(type);
         showIImgToast(text, duration, imageViewResID);
     }
@@ -222,7 +222,7 @@ public class IToast {
      * @param imageViewResID 图片资源ID
      * @return
      */
-    public static void showIImgToast(String text, int duration, @DrawableRes int imageViewResID) {
+    public void showIImgToast(String text, int duration, @DrawableRes int imageViewResID) {
         ObjectUtil.requireNonNull(App.getAppContext(),"context is null");
         if (text == null) {
             text = "提示信息为空";
@@ -251,7 +251,7 @@ public class IToast {
      * 简洁自定义Toast
      * @param text 提示文字
      */
-    public static void showISimpleToast(String text) {
+    public void showISimpleToast(String text) {
         showISimpleToast(text,TOAST_DURATION_SHORT);
     }
 
@@ -260,7 +260,7 @@ public class IToast {
      * @param text 提示文字
      * @param duration 指定时长
      */
-    public static void showISimpleToast(String text,int duration) {
+    public void showISimpleToast(String text,int duration) {
         showISimpleToast(text,duration,IToastImageType.DEFAULT);
     }
 
@@ -270,7 +270,7 @@ public class IToast {
      * @param duration 指定时长
      * @param type 图片显示类型{@link IToastImageType}
      */
-    public static void showISimpleToast(String text,int duration,IToastImageType type) {
+    public void showISimpleToast(String text,int duration,IToastImageType type) {
         int imageViewResID = IToastImageType.getCommonImageResID(type);
         showISimpleToast(text,duration,imageViewResID);
     }
@@ -282,10 +282,10 @@ public class IToast {
      * @param imageViewResID 指定图标
      *
      */
-    public static void showISimpleToast(String text,int duration,@DrawableRes int imageViewResID,int gravity) {
+    public void showISimpleToast(String text,int duration,@DrawableRes int imageViewResID,int gravity) {
         showISimpleToast(text,duration,imageViewResID,TOAST_SIMPLE_TEXT_ICO,gravity);
     }
-    public static void showISimpleToast(String text,int duration,@DrawableRes int imageViewResID) {
+    public void showISimpleToast(String text,int duration,@DrawableRes int imageViewResID) {
         showISimpleToast(text,duration,imageViewResID,TOAST_SIMPLE_TEXT_ICO,TOAST_Gravity_CENTER);
     }
 
@@ -299,12 +299,12 @@ public class IToast {
      *                     public static final String TOAST_SIMPLE_ICO_ONLY = "3";
      *
      */
-    public static void showISimpleToast(String text,int duration,String showTextIco,int gravity) {
+    public void showISimpleToast(String text,int duration,String showTextIco,int gravity) {
         int imageViewResID = IToastImageType.getCommonImageResID(IToastImageType.DEFAULT);
         showISimpleToast(text,duration,imageViewResID,showTextIco,gravity);
     }
 
-    public static void showISimpleToast(String text,int duration,String showTextIco) {
+    public void showISimpleToast(String text,int duration,String showTextIco) {
         int imageViewResID = IToastImageType.getCommonImageResID(IToastImageType.DEFAULT);
         showISimpleToast(text,duration,imageViewResID,showTextIco,TOAST_Gravity_CENTER);
     }
@@ -318,7 +318,7 @@ public class IToast {
      * @param imageViewResID
      * @param showTextIco
      */
-    public static void showISimpleImgResToast(String text,@DrawableRes int imageViewResID,String showTextIco) {
+    public void showISimpleImgResToast(String text,@DrawableRes int imageViewResID,String showTextIco) {
         showISimpleToast(text,TOAST_DURATION_SHORT,imageViewResID,showTextIco,TOAST_Gravity_CENTER);
     }
 
@@ -329,7 +329,7 @@ public class IToast {
      * @param text
      * @param imageViewResID 指定显示图标
      */
-    public static void showISimpleImgResToast(String text,@DrawableRes int imageViewResID) {
+    public void showISimpleImgResToast(String text,@DrawableRes int imageViewResID) {
         showISimpleToast(text,TOAST_DURATION_SHORT,imageViewResID,TOAST_SIMPLE_TEXT_ICO,TOAST_Gravity_CENTER);
     }
 
@@ -348,7 +348,7 @@ public class IToast {
      *                    2：文本（无图标）
      * @return
      */
-    public static void showISimpleToast(String text, int duration, @DrawableRes int imageViewResID,String showTextIco,int Gravity) {
+    public void showISimpleToast(String text, int duration, @DrawableRes int imageViewResID,String showTextIco,int Gravity) {
         ObjectUtil.requireNonNull(App.getAppContext(),"context is null");
         if (text == null) {
             text = "提示信息为空";

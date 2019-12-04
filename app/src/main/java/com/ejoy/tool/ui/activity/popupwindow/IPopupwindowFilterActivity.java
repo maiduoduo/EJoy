@@ -70,11 +70,21 @@ public class IPopupwindowFilterActivity extends BaseActivity implements OnSelect
         //用来设置整体下移，状态栏沉浸
         StatusBarTool.setRootViewFitsSystemWindows(this, false);
         //黑色字体
-        StatusBarTool.setStatusBarDarkTheme(this, true);
+        StatusBarTool.setStatusBarDarkTheme(this, false);
 //        StatusBarTool.setStatusBarColor(this, Color.parseColor("#58C087"));//设置背景颜色
         loadFilter();
         loadListener();
         loadWebView();
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void addListener() {
+
     }
 
     private void loadWebView() {

@@ -43,6 +43,8 @@ public class ApiResource {
     public static String NFCCodeOfMain = "";
     public static String URL_COMMITCACHEPATROL;
     public static String URL_UpdateVersionURL;
+    public static String IMAGE_PATH_KEY = "image_path";
+    public static String CLICK_IMAGE_POSITION_KEY = "click_image_position_key";
 
     public static String[] title = { ApiResource.HOT, ApiResource.XING_GAN};
 
@@ -249,7 +251,11 @@ public class ApiResource {
         dataList.add(new MainItemBean("版本更新", R.mipmap.ico_grid_update));
         dataList.add(new MainItemBean("详情页", R.mipmap.ico_grid_detail));
         dataList.add(new MainItemBean("Popupwindow筛选", R.mipmap.ico_grid_detail));
-        dataList.add(new MainItemBean("详情页", R.mipmap.ico_grid_detail));
+        dataList.add(new MainItemBean("ArcLayout", R.mipmap.ico_grid_arc));
+        dataList.add(new MainItemBean("设备信息", R.mipmap.ico_grid_device));
+        //9
+        dataList.add(new MainItemBean("图片处理", R.mipmap.ico_grid_imagecompress));
+        dataList.add(new MainItemBean("BottomSheet", R.mipmap.ico_grid_bottomsheet));
 
 
         return dataList;

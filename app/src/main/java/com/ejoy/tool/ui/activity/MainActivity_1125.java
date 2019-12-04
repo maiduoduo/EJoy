@@ -91,6 +91,16 @@ public class MainActivity_1125 extends BaseActivity {
     }
 
     @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void addListener() {
+
+    }
+
+    @Override
     public BasePresenter getPresenter() {
         return null;
     }

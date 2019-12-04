@@ -48,6 +48,16 @@ public class MainActivity_1126 extends BaseActivity implements BaseQuickAdapter.
         addData();
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void addListener() {
+
+    }
+
 
     @Override
     public BasePresenter getPresenter() {

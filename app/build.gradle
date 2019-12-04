@@ -20,7 +20,6 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
             //res.srcDirs += ['res_other']
             res.srcDirs = [
                     //默认只有这一个路径
@@ -29,7 +28,14 @@ android {
                     'src/main/res_extend'
             ]
 
+            jniLibs.srcDirs = ['libs']
         }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -40,10 +46,11 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["espresso-core"]
     implementation rootProject.ext.dependencies["appcompat-v7"]
     implementation rootProject.ext.dependencies["constraint-layout"]
-    implementation rootProject.ext.dependencies["design"]
+    //    implementation rootProject.ext.dependencies["design"]
+    implementation 'com.android.support:design:27.1.0'
     implementation rootProject.ext.dependencies["butterknife_8_11"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler_8_11"]
-    implementation 'com.android.support:cardview-v7:27.0.0'
+    implementation 'com.android.support:cardview-v7:27.1.0'
     implementation rootProject.ext.dependencies["systembartint"]
     //Glide/Fresco
     //    implementation rootProject.ext.dependencies["glide_361"]
@@ -60,7 +67,18 @@ dependencies {
     implementation project(':filterlib_popupwindow')
     implementation rootProject.ext.dependencies["Jolyglot-gson"]
     //webview
-    implementation 'com.just.agentweb:agentweb:4.1.2' // (必选)
-//    implementation 'com.just.agentweb:filechooser:4.1.2'// (可选)
-//    implementation 'com.download.library:Downloader:4.1.2'// (可选)
+    //    implementation 'com.just.agentweb:agentweb:4.1.2'
+    // (必选)
+    //    implementation 'com.just.agentweb:filechooser:4.1.2'// (可选)
+    //    implementation 'com.download.library:Downloader:4.1.2'// (可选)
+    implementation project(':arclayout')
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
+    //知乎图片框架
+    implementation 'com.zhihu.android:matisse:0.5.2-beta2'
+    //PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    implementation project(':iiosdialog')
 }

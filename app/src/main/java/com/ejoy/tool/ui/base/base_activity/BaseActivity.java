@@ -20,12 +20,10 @@ package com.ejoy.tool.ui.base.base_activity;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -37,12 +35,11 @@ import android.widget.Toast;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.EventBusUtil;
-//import com.ejoy.tool.scaffold.utils.GlideUtil;
 import com.ejoy.tool.scaffold.utils.IToast;
 import com.ejoy.tool.scaffold.utils.IToastImageType;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.IProgressDialog;
-import com.ejoy.tool.ui.activity.MainActivity;
+import com.ejoy.tool.ui.ICameraActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
@@ -55,9 +52,8 @@ import butterknife.Unbinder;
  * Date:   2019/11/14
  * Des:    Activity父类
  */
-public abstract class BaseActivity extends AppCompatActivity implements BaseView {
-
-    protected final String TAG = this.getClass().getSimpleName();
+public abstract class BaseActivity extends ICameraActivity implements BaseView {
+    public static final String _TAG = BaseActivity.class.getSimpleName();
     public  Activity _mActivity;
     public IToast iToast;
 
@@ -65,6 +61,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     protected abstract int getContentViewId();
 
     protected abstract void initView(View mRootView);
+    protected abstract void initData();
+    protected abstract void addListener();
 
     /**
      * 获取Presenter实例，子类实现
@@ -110,6 +108,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             EventBusUtil.register(this);
         }
         initView(mRootView);
+        initData();
+        addListener();
 
     }
 
@@ -288,7 +288,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     }
 
     public void showLog(String str) {
-        Log.e(TAG, str);
+        Log.e(_TAG, str);
     }
 
     @Override

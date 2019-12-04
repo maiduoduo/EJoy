@@ -1,0 +1,316 @@
+<!DOCTYPE html><html><head><title>ArcLayout</title><meta charset='utf-8'><link href='https://cdn.maxiang.io/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="arclayout">ArcLayout</h1>
+
+
+
+<p></p>
+
+<p><br><br></p>
+
+<p><a href="https://github.com/maiduoduo/IArcLayout/blob/master/screenshot/arclayout-optimize.gif" target="_blank"></a></p>
+
+<p><br></p>
+
+<p><strong>基于material design用弧形布局探索View设计的新风格和方法</strong></p>
+
+<blockquote>
+  <p>支持对View进行弧度处理，支持嵌入、单View</p>
+  
+  <p>支持设置弧度值，值越大弧度越大</p>
+  
+  <p>支持设置弧度的方向，内凹，外凸</p>
+  
+  <p>支持广告banner的弧度设置，自定义指示器的样式。</p>
+  
+  <p>其他等请查看演示Demo</p>
+</blockquote>
+
+<p><br><br> <br>
+<br><br></p>
+
+<p><br><br></p>
+
+
+
+<h4 id="使用">使用</h4>
+
+<hr>
+
+<blockquote>
+  <p>想要改变弧度的方向，内凹还是外凸，还是正常矩形都依赖app:arc_cropDirection参数</p>
+  
+  <ul><li><p>内凹：app:arc_cropDirection=”cropInside”</p></li>
+  <li><p>外凸：app:arc_cropDirection=”cropOutside”</p></li>
+  <li><p>正常：只需app:arc_height参数值设为0dp,即：<strong>app:arc_height=”0dp”</strong>,和app:arc_cropDirection参数无关</p></li>
+  </ul>
+</blockquote>
+
+<p><br><br></p>
+
+
+
+<h5 id="1内凹类型"><mark>1.内凹类型</mark></h5>
+
+<blockquote>
+  <p>在ArcLayout内可以包含其他View，不止Banner</p>
+  
+  <ul><li><p>内凹：app:arc_cropDirection=”cropInside”</p></li>
+  </ul>
+</blockquote>
+
+
+
+<pre class="prettyprint with-line-number hljs-dark"><code class="language-xml hljs"><div class="hljs-line"><span class="hljs-comment line-number">1.</span> <span class="hljs-tag">&lt;<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span><span class="hljs-tag">                    <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/ArcLayoutInside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">3.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">4.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">5.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentStart</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">6.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentLeft</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">7.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentTop</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">8.</span><span class="hljs-tag">                    <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">"1dip"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">9.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_cropDirection</span>=<span class="hljs-string">"cropInside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">10.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_height</span>=<span class="hljs-string">"20dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">11.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_position</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">12.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">13.</span>                    <span class="hljs-tag">&lt;<span class="hljs-name">com.youth.banner.Banner</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">14.</span><span class="hljs-tag">                        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/mBannerInside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">15.</span><span class="hljs-tag">                        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">16.</span><span class="hljs-tag">                        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">17.</span><span class="hljs-tag">                        <span class="hljs-attr">app:banner_default_image</span>=<span class="hljs-string">"@drawable/default_img_guji"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">18.</span><span class="hljs-tag">                        <span class="hljs-attr">app:image_scale_type</span>=<span class="hljs-string">"fit_xy"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">19.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_height</span>=<span class="hljs-string">"5dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">20.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_margin</span>=<span class="hljs-string">"5dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">21.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_width</span>=<span class="hljs-string">"5dp"</span> /&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">22.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">23.</span>                <span class="hljs-tag">&lt;/<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span>&gt;</span>
+</div></code></pre>
+
+<p><br></p>
+
+
+
+<p></p>
+
+<p><br><br></p>
+
+
+
+<h5 id="外凸类型"><mark>外凸类型</mark></h5>
+
+<blockquote>
+  <p>在ArcLayout内可以包含其他View，不止Banner</p>
+  
+  <ul><li><p>外凸：app:arc_cropDirection=”cropOutside”</p></li>
+  </ul>
+</blockquote>
+
+
+
+<pre class="prettyprint with-line-number hljs-dark"><code class="language-xml hljs"><div class="hljs-line"><span class="hljs-comment line-number">1.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span> <span class="hljs-tag">&lt;<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">3.</span><span class="hljs-tag">                    <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/ArcLayoutOutside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">4.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">5.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">6.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentStart</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">7.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentLeft</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">8.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentTop</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">9.</span><span class="hljs-tag">                    <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">"1dip"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">10.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_cropDirection</span>=<span class="hljs-string">"cropOutside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">11.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_height</span>=<span class="hljs-string">"15dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">12.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_position</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">13.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">14.</span>                    <span class="hljs-tag">&lt;<span class="hljs-name">com.youth.banner.Banner</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">15.</span><span class="hljs-tag">                        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/mBannerOutside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">16.</span><span class="hljs-tag">                        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">17.</span><span class="hljs-tag">                        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">18.</span><span class="hljs-tag">                        <span class="hljs-attr">app:banner_default_image</span>=<span class="hljs-string">"@drawable/default_img_guji"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">19.</span><span class="hljs-tag">                        <span class="hljs-attr">app:image_scale_type</span>=<span class="hljs-string">"fit_xy"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">20.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_height</span>=<span class="hljs-string">"5dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">21.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_margin</span>=<span class="hljs-string">"5dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">22.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_width</span>=<span class="hljs-string">"5dp"</span> /&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">23.</span>                <span class="hljs-tag">&lt;/<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">24.</span><wbr>
+</div></code></pre>
+
+<p><br></p>
+
+
+
+<p></p>
+
+<p><br><br></p>
+
+
+
+<h5 id="矩形正常类型"><mark>矩形（正常）类型</mark></h5>
+
+<blockquote>
+  <p>在ArcLayout内可以包含其他View，不止Banner</p>
+  
+  <ul><li><p>矩形：<strong>app:arc_height=”0dp”</strong></p></li>
+  </ul>
+</blockquote>
+
+
+
+<pre class="prettyprint with-line-number hljs-dark"><code class="language-xml hljs"><div class="hljs-line"><span class="hljs-comment line-number">1.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span> <span class="hljs-tag">&lt;<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">3.</span><span class="hljs-tag">                    <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/ArcLayoutNormal"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">4.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">5.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">6.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentStart</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">7.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentLeft</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">8.</span><span class="hljs-tag">                    <span class="hljs-attr">android:layout_alignParentTop</span>=<span class="hljs-string">"true"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">9.</span><span class="hljs-tag">                    <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">"1dip"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">10.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_cropDirection</span>=<span class="hljs-string">"cropInside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">11.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_height</span>=<span class="hljs-string">"0dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">12.</span><span class="hljs-tag">                    <span class="hljs-attr">app:arc_position</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">13.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">14.</span>                    <span class="hljs-tag">&lt;<span class="hljs-name">com.youth.banner.Banner</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">15.</span><span class="hljs-tag">                        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/mBannerNormal"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">16.</span><span class="hljs-tag">                        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">17.</span><span class="hljs-tag">                        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">18.</span><span class="hljs-tag">                        <span class="hljs-attr">app:banner_default_image</span>=<span class="hljs-string">"@drawable/default_img_guji"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">19.</span><span class="hljs-tag">                        <span class="hljs-attr">app:image_scale_type</span>=<span class="hljs-string">"fit_xy"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">20.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_drawable_selected</span>=<span class="hljs-string">"@drawable/news_banner_heart_red_enabled"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">21.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_drawable_unselected</span>=<span class="hljs-string">"@drawable/news_banner_heart_white_enabled"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">22.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_height</span>=<span class="hljs-string">"5dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">23.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_margin</span>=<span class="hljs-string">"5dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">24.</span><span class="hljs-tag">                        <span class="hljs-attr">app:indicator_width</span>=<span class="hljs-string">"5dp"</span> /&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">25.</span><span class="hljs-tag">&lt;/<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">26.</span><wbr>
+</div></code></pre>
+
+<p><br></p>
+
+
+
+<p></p>
+
+<p><br><br></p>
+
+
+
+<h4 id="例子">例子</h4>
+
+<hr>
+
+
+
+<h5 id="外切弧">外切弧</h5>
+
+
+
+<pre class="prettyprint with-line-number hljs-dark"><code class="language-xml hljs"><div class="hljs-line"><span class="hljs-comment line-number">1.</span><span class="hljs-tag">&lt;<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span><span class="hljs-tag">          <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">3.</span><span class="hljs-tag">          <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"200dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">4.</span><span class="hljs-tag">          <span class="hljs-attr">app:arc_cropDirection</span>=<span class="hljs-string">"cropOutside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">5.</span><span class="hljs-tag">          <span class="hljs-attr">app:arc_height</span>=<span class="hljs-string">"90dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">6.</span><span class="hljs-tag">          <span class="hljs-attr">app:arc_padding</span>=<span class="hljs-string">"30dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">7.</span><span class="hljs-tag">          <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">"5dp"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">8.</span>          <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">9.</span><span class="hljs-tag">                <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">10.</span><span class="hljs-tag">                <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">11.</span><span class="hljs-tag">                <span class="hljs-attr">android:scaleType</span>=<span class="hljs-string">"centerCrop"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">12.</span><span class="hljs-tag">                <span class="hljs-attr">android:src</span>=<span class="hljs-string">"@drawable/road"</span> /&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">13.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">14.</span> <span class="hljs-tag">&lt;/<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span>&gt;</span>
+</div></code></pre>
+
+<p><br><br></p>
+
+
+
+<h5 id="内切弧">内切弧</h5>
+
+
+
+<pre class="prettyprint with-line-number hljs-dark"><code class="language-xml hljs"><div class="hljs-line"><span class="hljs-comment line-number">1.</span><span class="hljs-tag">&lt;<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span><span class="hljs-tag">          <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">3.</span><span class="hljs-tag">          <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"200dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">4.</span><span class="hljs-tag">          <span class="hljs-attr">app:arc_cropDirection</span>=<span class="hljs-string">"cropInside"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">5.</span><span class="hljs-tag">          <span class="hljs-attr">app:arc_height</span>=<span class="hljs-string">"90dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">6.</span><span class="hljs-tag">          <span class="hljs-attr">app:arc_padding</span>=<span class="hljs-string">"30dp"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">7.</span><span class="hljs-tag">          <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">"5dp"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">8.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">9.</span>          <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">10.</span><span class="hljs-tag">                <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">11.</span><span class="hljs-tag">                <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">12.</span><span class="hljs-tag">                <span class="hljs-attr">android:scaleType</span>=<span class="hljs-string">"centerCrop"</span></span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">13.</span><span class="hljs-tag">                <span class="hljs-attr">android:src</span>=<span class="hljs-string">"@drawable/road"</span> /&gt;</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">14.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">15.</span> <span class="hljs-tag">&lt;/<span class="hljs-name">com.imaiduoduo.arclayout.lib.ArcLayout</span>&gt;</span>
+</div></code></pre>
+
+<p><br><br></p>
+
+<p><br><br></p>
+
+
+
+<h3 id="download">Download</h3>
+
+<hr>
+
+<p>try this demo apk <a href="https://www.lanzous.com/i7sfqgh" target="_blank"></a></p>
+
+<p><br><br></p>
+
+
+
+<h3 id="inspirations">Inspirations</h3>
+
+<hr>
+
+<p>The new Star Wars movie is coming soon, so I decided to design this cinema app screen with one of the Rogue One posters. <br>
+Also, I tried something new: notice, that the white rectangle on the bottom is bended, which makes the design a bit more lively. The app bar has a reduced opacity and the image behind it is blurred to get a unique look. <br>
+I’d appreciate any feedback.</p>
+
+<p>新的超体2即将上映，所以我决定设计这个电影应用程序屏幕与超体一海报。 <br>
+另外，我尝试了一些新的东西：注意，底部的白色矩形是弯曲的，这使得设计更加生动。应用程序条的不透明度降低，其后面的图像模糊，以获得独特的外观。 <br>
+如有任何反馈，我将不胜感激。</p>
+
+<p><a href="https://github.com/maiduoduo/IArcLayout/blob/master/screenshot/preview.png" target="_blank"></a></p>
+
+<p><br><br></p>
+
+
+
+<h3 id="about-me">ABOUT ME</h3>
+
+<hr>
+
+<p><strong><code>maiduoduo</code></strong></p>
+
+<p>邮箱： <a href="http://maiduoduo0@163.com" target="_blank">maiduoduo0@163.com</a></p>
+
+<p>博客主页：   <a href="https://blog.csdn.net/Maiduoudo" target="_blank">https://blog.csdn.net/Maiduoudo</a></p>
+
+<p>Github主页：   <a href="https://github.com/maiduoduo/" target="_blank">https://github.com/maiduoduo/</a></p>
+
+<p><br><br></p>
+
+<p>License</p>
+
+<hr>
+
+<pre class="prettyprint with-line-number hljs-dark"><code class="hljs sql"><div class="hljs-line"><span class="hljs-comment line-number">1.</span>Licensed under the Apache License, Version 2.0 (the "License");
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span>you may not <span class="hljs-keyword">use</span> this <span class="hljs-keyword">file</span> <span class="hljs-keyword">except</span> <span class="hljs-keyword">in</span> compliance <span class="hljs-keyword">with</span> the License.
+</div><div class="hljs-line"><span class="hljs-comment line-number">3.</span>You may obtain a copy <span class="hljs-keyword">of</span> the License <span class="hljs-keyword">at</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">4.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">5.</span>   <span class="hljs-keyword">http</span>://www.apache.org/licenses/LICENSE<span class="hljs-number">-2.0</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">6.</span><wbr>
+</div><div class="hljs-line"><span class="hljs-comment line-number">7.</span>Unless <span class="hljs-keyword">required</span> <span class="hljs-keyword">by</span> applicable law <span class="hljs-keyword">or</span> agreed <span class="hljs-keyword">to</span> <span class="hljs-keyword">in</span> writing, software
+</div><div class="hljs-line"><span class="hljs-comment line-number">8.</span><span class="hljs-keyword">distributed</span> <span class="hljs-keyword">under</span> the License <span class="hljs-keyword">is</span> <span class="hljs-keyword">distributed</span> <span class="hljs-keyword">on</span> an <span class="hljs-string">"AS IS"</span> BASIS,
+</div><div class="hljs-line"><span class="hljs-comment line-number">9.</span><span class="hljs-keyword">WITHOUT</span> WARRANTIES <span class="hljs-keyword">OR</span> CONDITIONS <span class="hljs-keyword">OF</span> <span class="hljs-keyword">ANY</span> KIND, either express <span class="hljs-keyword">or</span> implied.
+</div><div class="hljs-line"><span class="hljs-comment line-number">10.</span>See the License <span class="hljs-keyword">for</span> the specific <span class="hljs-keyword">language</span> governing permissions <span class="hljs-keyword">and</span>
+</div><div class="hljs-line"><span class="hljs-comment line-number">11.</span>limitations <span class="hljs-keyword">under</span> the License.
+</div></code></pre></div></body></html>
