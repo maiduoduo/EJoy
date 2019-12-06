@@ -50,6 +50,8 @@
         <activity android:name=".ui.activity.BannerActivity"/>
         <activity android:name=".ui.activity.compress.IBitmapMultiChoiceActivity"/>
         <activity android:name=".ui.activity.compress.PreviewImageActivity"/>
+        <activity android:name=".ui.activity.compress.IBitmapSingChoiceActivity"/>
+        <activity android:name=".ui.activity.compress.IBitmapSystemSingleCompressActivity"/>
 
 
         <provider

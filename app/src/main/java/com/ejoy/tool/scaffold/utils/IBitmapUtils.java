@@ -27,6 +27,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.ByteArrayInputStream;
@@ -36,6 +37,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 import static android.content.ContentValues.TAG;
 
@@ -122,31 +124,43 @@ public class IBitmapUtils {
 
         //原文件
         File oldFile = new File(filePath);
-        //压缩文件路径 照片路径/
-        String targetPath = oldFile.getPath();
-        int quality = 50;//压缩比例0-100
-        Bitmap bm = getSmallBitmap(filePath);//获取一定尺寸的图片
-        int degree = getRotateAngle(filePath);//获取相片拍摄角度
 
-        if (degree != 0) {//旋转照片角度，防止头像横着显示
-            bm = setRotateAngle(degree, bm);
-        }
-        File outputFile = new File(targetPath);
-        try {
-            if (!outputFile.exists()) {
-                outputFile.getParentFile().mkdirs();
-                //outputFile.createNewFile();
-            } else {
-                outputFile.delete();
+        //限制压缩内存大小的临界值
+        String readableFileSizeWithoutB = FileUtils.getReadableFileSizeWithoutB(oldFile.length());
+        //比对:选择的图片是否大于300KB
+//        if (300.0 < Float.parseFloat(readableFileSizeWithoutB.trim())) {
+            //压缩文件路径 照片路径/
+            String targetPath = oldFile.getPath();
+            int quality = 60;//压缩比例0-100
+            Bitmap bm = getSmallBitmap(filePath);//获取一定尺寸的图片
+            int degree = getRotateAngle(filePath);//获取相片拍摄角度
+
+            if (degree != 0) {//旋转照片角度，防止头像横着显示
+                bm = setRotateAngle(degree, bm);
             }
-            FileOutputStream out = new FileOutputStream(outputFile);
-            bm.compress(Bitmap.CompressFormat.JPEG, quality, out);
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return filePath;
-        }
-        return outputFile.getPath();
+
+            // 保存:设置压缩后图片临时保存的路径
+//        File outputFile = new File(targetPath);
+            File outputFile = new File(Environment.getExternalStorageDirectory(), UUID.randomUUID() + oldFile.getName());
+            try {
+                if (!outputFile.exists()) {
+                    outputFile.getParentFile().mkdirs();
+                    //outputFile.createNewFile();
+                } else {
+                    outputFile.delete();
+                }
+                FileOutputStream out = new FileOutputStream(outputFile);
+                bm.compress(Bitmap.CompressFormat.JPEG, quality, out);
+                out.close();
+                Log.e("Activity", "图片存到本地的名字:" + outputFile.getName());
+            } catch (Exception e) {
+                e.printStackTrace();
+                return filePath;
+            }
+            return outputFile.getPath();
+//        }else {
+//            return filePath;
+//        }
     }
 
     /**

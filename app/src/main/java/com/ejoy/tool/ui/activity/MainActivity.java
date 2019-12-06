@@ -33,6 +33,8 @@ import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.scaffold.view.decorator.GridItemDecoration;
 import com.ejoy.tool.ui.activity.bezer.BezierActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
+import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
+import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
@@ -226,7 +228,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                         new ActionSheetDialog.OnSheetItemClickListener() {
                             @Override
                             public void onClick(int which) {
-                                iToast.showIImgToast("单张图片压缩");
+                                startActivity(new Intent(MainActivity.this, IBitmapSingChoiceActivity.class));
                             }
                         })
                 .addSheetItem("批量图片压缩", Color.parseColor("#037BFF"),
@@ -234,6 +236,13 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                             @Override
                             public void onClick(int which) {
                                 startActivity(new Intent(MainActivity.this, IBitmapMultiChoiceActivity.class));
+                            }
+                        })
+                .addSheetItem("系统API图片压缩", Color.parseColor("#037BFF"),
+                        new ActionSheetDialog.OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                startActivity(new Intent(MainActivity.this, IBitmapSystemSingleCompressActivity.class));
                             }
                         })
                 .show();

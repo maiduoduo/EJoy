@@ -459,8 +459,9 @@
     <color name="BR1">#ff2d1500</color>
     <color name="Black">#ff15161a</color>
     <color name="Black_shadow">#7715161a</color>
-    <color name="Blue">#ff3388ff</color>
+    <color name="Blue_2">#ff3388ff</color>
     <color name="Blue1">#ff529aff</color>
+    <color name="Blue">#0000ff</color>
     <color name="GR1">#ff0a9c6a</color>
     <color name="GR2">#ffaada7e</color>
     <color name="GR3">#ff88b460</color>
