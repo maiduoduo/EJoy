@@ -248,7 +248,7 @@ public class IIosDialogActivity extends BaseActivity {
 
     public void asSimplelessInput(View view) {
         new AlertEditDialog(_mActivity)
-                .setMessage("给自己起一个好听的名字吧")
+                .setMessage("起一个好听的名字吧")
                 .setRightButton("确定", new AlertEditDialog.EditTextCallListener() {
                             @Override
                             public void callBack(String str) {
