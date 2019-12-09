@@ -76,7 +76,6 @@
 ![image](Screenshot/iosdialog/img_iosdialog_b.jpg)
 ![image](Screenshot/iosdialog/img_iosdialog_c.jpg)
 ![image](Screenshot/iosdialog/img_iosdialog_d.jpg)
-![image](Screenshot/iosdialog/img_iosdialog_e.jpg)
 
 
 > 图片压缩：单张压缩/批量压缩/原生压缩
@@ -84,10 +83,13 @@
 
 * **运行效果**
 
+![image](Screenshot/iosdialog/img_iosdialog_e.jpg)
 ![image](Screenshot/compress/img_single_comress.jpg)
 ![image](Screenshot/compress/img_compress_before.jpg)
 ![image](Screenshot/compress/img_compress_ing.jpg)
 ![image](Screenshot/compress/img_compress_after.jpg)
+![image](Screenshot/compress/img_system_a.jpg)
+![image](Screenshot/compress/img_single_a.jpg)
 
 
 
