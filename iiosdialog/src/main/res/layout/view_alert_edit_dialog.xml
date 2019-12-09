@@ -13,7 +13,6 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:gravity="center"
-        android:text="@string/alert"
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -27,7 +26,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:gravity="center"
-        android:text="body text"
+        android:text=""
         android:textSize="16sp" />
 
     <EditText
@@ -62,7 +61,7 @@
             android:gravity="center"
             android:text="@string/cancel"
             android:textAllCaps="false"
-            android:textColor="@color/def_title_color"
+            android:textColor="@color/action_sheet_blue"
             android:textSize="16sp" />
 
         <ImageView
@@ -80,7 +79,7 @@
             android:gravity="center"
             android:text="@string/ok"
             android:textAllCaps="false"
-            android:textColor="@color/def_title_color"
+            android:textColor="@color/action_sheet_blue"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>

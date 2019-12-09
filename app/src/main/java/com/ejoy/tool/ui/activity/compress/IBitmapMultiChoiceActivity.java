@@ -17,6 +17,7 @@ package com.ejoy.tool.ui.activity.compress;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,6 +25,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.SharedElementCallback;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -62,22 +64,29 @@ import butterknife.BindView;
  */
 public class IBitmapMultiChoiceActivity extends BaseActivity {
 
-    @BindView(R.id.ry_original) RecyclerView mRlOriginal;
-    @BindView(R.id.ry_compress) RecyclerView mRlCompress;
-    @BindView(R.id.btn_compress) Button mBtnCompress;
-    @BindView(R.id.originalImgText) TextView originalImgText;
-    @BindView(R.id.compressImgText) TextView compressImgText;
+    @BindView(R.id.ry_original)
+    RecyclerView mRlOriginal;
+    @BindView(R.id.ry_compress)
+    RecyclerView mRlCompress;
+    @BindView(R.id.btn_compress)
+    Button mBtnCompress;
+    @BindView(R.id.originalImgText)
+    TextView originalImgText;
+    @BindView(R.id.compressImgText)
+    TextView compressImgText;
 
 
     private List<ImageFileBean> mOriginalPictureList;
     private PictureAdapter mOriginalAdapter;
     private List<ImageFileBean> mCompressPictureList;
     private PictureAdapter mCompressAdapter;
-    List<String> mPreviewOriginalData;
+    private List<String> mPreviewOriginalData;
     private int mPreviewStatus;//0、代表原图预览；1、代表也缩图预览
     private List<String> mPreviewCompressData;
+    private Activity _context;
     private StringBuilder oldImgBuilder;
     private StringBuilder newImgBuilder;
+
 
     @Override
     protected int getContentViewId() {
@@ -86,40 +95,36 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
 
     @Override
     protected void initView(View mRootView) {
-        StatusBarTool.setRootViewFitsSystemWindows(this,true);
-        StatusBarTool.setStatusBarColor(this,Color.parseColor("#FFCF47"));
+        StatusBarTool.setRootViewFitsSystemWindows(_mActivity, true);
+        StatusBarTool.setStatusBarColor(_mActivity, Color.parseColor("#FFCF47"));
+        _context = IBitmapMultiChoiceActivity.this;
         oldImgBuilder = new StringBuilder();
         newImgBuilder = new StringBuilder();
         mRlOriginal.setLayoutManager(new GridLayoutManager(this, 3));
         mRlCompress.setLayoutManager(new GridLayoutManager(this, 3));
-        try {
-            ActivityCompat.setExitSharedElementCallback(this, new SharedElementCallback() {
-                @Override
-                public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
-                    super.onMapSharedElements(names, sharedElements);
-                    showLog(PairHelp.PREVIEW_POSITION + "");
-                    switch (mPreviewStatus) {
-                        case 0:
-                            sharedElements.put(PairHelp.transitionName(), mRlOriginal.findViewHolderForAdapterPosition(PairHelp.PREVIEW_POSITION).itemView);
-                            break;
-                        case 1:
-                            sharedElements.put(PairHelp.transitionName(), mRlCompress.findViewHolderForAdapterPosition(PairHelp.PREVIEW_POSITION).itemView);
-                            break;
-                    }
+        ActivityCompat.setExitSharedElementCallback(this, new SharedElementCallback() {
+            @Override
+            public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
+                super.onMapSharedElements(names, sharedElements);
+                showLog(PairHelp.PREVIEW_POSITION + "");
+                switch (mPreviewStatus) {
+                    case 0:
+                        sharedElements.put(PairHelp.transitionName(), mRlOriginal.findViewHolderForAdapterPosition(PairHelp.PREVIEW_POSITION).itemView);
+                        break;
+                    case 1:
+                        sharedElements.put(PairHelp.transitionName(), mRlCompress.findViewHolderForAdapterPosition(PairHelp.PREVIEW_POSITION).itemView);
+                        break;
                 }
-            });
-        }catch (Exception e){
-            e.printStackTrace();
-        }
 
 
+            }
+        });
     }
 
     @Override
     protected void initData() {
         mPreviewOriginalData = new ArrayList<>();
         mPreviewCompressData = new ArrayList<>();
-
         mOriginalPictureList = new ArrayList<>();
         mOriginalPictureList.add(new ImageFileBean());
 
@@ -137,9 +142,14 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
             @Override
             public void onAddItemClick(View view, int position) {
                 if (!CompressImageTask.get().isCompressImage()) {
-                    IBitmapMultiChoiceActivity.this.notifyOriginalAndCompressData();
-                    clearCompressInfo();
-                    openPhoto(false);
+//                    if (mOriginalPictureList.size() >= 9){
+//                        mOriginalPictureList.clear();
+                        clearTextInfo();
+                        notifyOriginalAndCompressData();
+                        openPhoto(false);
+//                    }else {
+//                        openPhoto(false);
+//                    }
                 } else {
                     iToast.showIImgToast("正在压缩！请等待！");
                 }
@@ -170,11 +180,11 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (mOriginalPictureList.size() == 1) {
-                    iToast.showIImgToast("请先选择照片");
+                    iToast.showIImgToast("请先选择照片！");
                     return;
                 }
                 if (CompressImageTask.get().isCompressImage()) {
-                    iToast.showIImgToast("正在压缩,请等待！");
+                    iToast.showIImgToast("正在压缩！请等待_A！");
                     return;
                 }
                 List<ImageConfig> data = new ArrayList<>();
@@ -185,8 +195,8 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
                     }
                 }
                 final ViewGroup viewGroup = (ViewGroup) getWindow().getDecorView();
-                final View inflate = LayoutInflater.from(IBitmapMultiChoiceActivity.this).inflate(R.layout.item_loading_view, viewGroup, false);
-                CompressImageTask.get().compressImages(IBitmapMultiChoiceActivity.this,data, new CompressImageTask.OnImagesResult() {
+                final View inflate = LayoutInflater.from(_mActivity).inflate(R.layout.item_loading_view, viewGroup, false);
+                CompressImageTask.get().compressImages(_mActivity, data, new CompressImageTask.OnImagesResult() {
                     @Override
                     public void startCompress() {
                         viewGroup.addView(inflate);
@@ -209,25 +219,22 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
                                 mCompressPictureList.add(imageFileBean);
                                 mPreviewCompressData.add(file.getAbsolutePath());
 
-                                int i = fileList.indexOf(file)+1;
-                                newImgBuilder.append(i+".详情："
-                                        +"\nSize:  "+imageFileBean.imageSize
-                                        +"\nFileName:  "+imageFileBean.imageFile.getName()
-                                        +"\nPath:  "+file.getAbsolutePath()
-                                        +"\n\n"
-                                );
+                                int i = fileList.indexOf(file);
+                                newImgBuilder.append(i + ".压缩后详情："
+                                        + "\nSize:  " + imageFileBean.imageSize
+                                        + "\nFileName:  " + imageFileBean.imageFile.getName()
+                                        + "\nPath:  " + imageFileBean.imageFile.getAbsolutePath()
+                                        + "\n\n");
                             }
                             mCompressAdapter.notifyDataSetChanged();
                             compressImgText.setText(newImgBuilder.toString());
-                            showLog("NewCompress:-------------->\n"+newImgBuilder.toString());
+                            showLog("newImg:-------------->\n" + newImgBuilder.toString());
+                            showLog("mCompressPictureList:-------------->\n" + new Gson().toJson(mCompressPictureList));
+
                         }
-                        showLog("[压缩后]fileList:-----\n"+new Gson().toJson(fileList));
-                        showLog("[压缩后]mCompressPictureList:-----\n"+new Gson().toJson(mCompressPictureList));
                         if (viewGroup.indexOfChild(inflate) != -1) {
                             viewGroup.removeView(inflate);
                         }
-                        iToast.showIImgToast("压缩成功");
-
                     }
 
                     @Override
@@ -241,19 +248,19 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
         });
     }
 
-    private void clearCompressInfo() {
+    private void clearTextInfo() {
         originalImgText.setText("");
         compressImgText.setText("");
     }
-
 
     @Override
     public BasePresenter getPresenter() {
         return null;
     }
 
+
     private void toPreviewActivity(View view, int position, List<String> list) {
-        Intent intent = new Intent(this, PreviewImageActivity.class);
+        Intent intent = new Intent(_mActivity, PreviewImageActivity.class);
         intent.putStringArrayListExtra(ApiResource.IMAGE_PATH_KEY, (ArrayList<String>) list);
         intent.putExtra(ApiResource.CLICK_IMAGE_POSITION_KEY, position);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -267,6 +274,42 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void imageFileResult(ImageFileBean bean) {
+        super.imageFileResult(bean);
+        if (mOriginalPictureList.size() > 0) {
+            mOriginalPictureList.add(mOriginalPictureList.size() - 1, bean);
+            mOriginalAdapter.notifyDataSetChanged();
+        }
+        mPreviewOriginalData.add(mPreviewOriginalData.size(), bean.imageFile.getAbsolutePath());
+
+    }
+
+    @Override
+    protected void imageFilesResult(List<ImageFileBean> data) {
+        super.imageFilesResult(data);
+        mOriginalPictureList.addAll(0,data);
+//        if (mOriginalPictureList.size() == 1){
+//        }else {
+//            mOriginalPictureList.addAll(mOriginalPictureList.size() -1,data);
+//        }
+        mOriginalAdapter.notifyDataSetChanged();
+        mPreviewOriginalData.clear();
+        oldImgBuilder.setLength(0);
+        for (ImageFileBean imageFileBean : data) {
+            mPreviewOriginalData.add(imageFileBean.imageFile.getAbsolutePath());
+            int i = data.indexOf(imageFileBean);
+            oldImgBuilder.append(i + ".压缩前详情："
+                    + "\nSize:  " + imageFileBean.imageSize
+                    + "\nFileName:  " + imageFileBean.imageFile.getName()
+                    + "\nPath:  " + imageFileBean.imageFile.getAbsolutePath()
+                    + "\n\n");
+        }
+        originalImgText.setText(oldImgBuilder.toString());
+        showLog("OldChoose:-------------->\n" + oldImgBuilder.toString());
+        showLog("mOriginalPictureList:-------------->\n" + new Gson().toJson(mOriginalPictureList));
+
+    }
 
     public void notifyOriginalAndCompressData() {
         if (mOriginalPictureList.size() > 1) {
@@ -282,41 +325,6 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
             mCompressPictureList.clear();
             mCompressAdapter.notifyDataSetChanged();
         }
-    }
-
-
-    @Override
-    protected void imageFileResult(ImageFileBean bean) {
-        super.imageFileResult(bean);
-        if (mOriginalPictureList.size() > 0) {
-            mOriginalPictureList.add(mOriginalPictureList.size() - 1, bean);
-            mOriginalAdapter.notifyDataSetChanged();
-        }
-        mPreviewOriginalData.add(mPreviewOriginalData.size(), bean.imageFile.getAbsolutePath());
-        oldImgBuilder.setLength(0);
-    }
-
-
-    @Override
-    protected void imageFilesResult(List<ImageFileBean> data) {
-        super.imageFilesResult(data);
-        mOriginalPictureList.addAll(0, data);
-        mOriginalAdapter.notifyDataSetChanged();
-        mPreviewOriginalData.clear();
-        oldImgBuilder.setLength(0);
-        for (ImageFileBean imageFileBean : data) {
-            mPreviewOriginalData.add(imageFileBean.imageFile.getAbsolutePath());
-
-            int i = data.indexOf(imageFileBean) + 1;
-            oldImgBuilder.append(i+".详情："
-                    +"\nSize:  "+ imageFileBean.imageSize
-                    +"\nFileName:  "+imageFileBean.imageFile.getName()
-                    +"\nPath:  "+imageFileBean.imageFile.getAbsolutePath()
-                    +"\n\n"
-            );
-        }
-        originalImgText.setText(oldImgBuilder.toString());
-        showLog("OldChoose:-------------->\n"+oldImgBuilder.toString());
     }
 
     @Override

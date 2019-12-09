@@ -10,7 +10,7 @@
                 android:topRightRadius="@dimen/shape_radius"/>
             <stroke
                 android:width="@dimen/shape_width"
-                android:color="@color/act_line"/>
+                android:color="@color/line_default_color"/>
         </shape>
     </item>
 
@@ -23,7 +23,7 @@
                 android:topRightRadius="@dimen/shape_radius"/>
             <stroke
                 android:width="@dimen/shape_width"
-                android:color="@color/act_line"/>
+                android:color="@color/line_default_color"/>
         </shape>
     </item>
 </selector>

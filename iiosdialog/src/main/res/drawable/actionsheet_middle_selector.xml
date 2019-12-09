@@ -7,7 +7,7 @@
             <corners android:radius="0dp" />
             <stroke
                 android:width="@dimen/shape_width"
-                android:color="@color/act_line" />
+                android:color="@color/line_default_color" />
         </shape>
     </item>
 
@@ -17,7 +17,7 @@
             <corners android:radius="0dp" />
             <stroke
                 android:width="@dimen/shape_width"
-                android:color="@color/act_line" />
+                android:color="@color/line_default_color" />
         </shape>
     </item>
 </selector>

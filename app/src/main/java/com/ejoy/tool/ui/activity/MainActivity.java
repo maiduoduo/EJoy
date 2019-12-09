@@ -35,6 +35,7 @@ import com.ejoy.tool.ui.activity.bezer.BezierActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
+import com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
@@ -199,6 +200,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 startActivity(new Intent(this, ToastActivity.class));
                 break;
             case 1://仿IOS Dialog
+                startActivity(new Intent(this, IIosDialogActivity.class));
                 break;
             case 2://ScrollView
                 startActivity(new Intent(this, IScrollViewActivity.class));

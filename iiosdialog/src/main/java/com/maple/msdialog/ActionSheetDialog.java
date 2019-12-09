@@ -92,7 +92,7 @@ public class ActionSheetDialog extends BaseDialog {
     }
 
     public ActionSheetDialog setCancelText(String cancelText) {
-        int color = ContextCompat.getColor(mContext, R.color.def_title_color);
+        int color = ContextCompat.getColor(mContext, R.color.action_sheet_blue);
         return setCancelText(cancelText, color, 18, false);
     }
 

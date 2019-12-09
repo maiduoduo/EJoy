@@ -103,7 +103,7 @@ public class AlertEditDialog extends BaseDialog {
     }
 
     public AlertEditDialog setRightButton(String text, final EditTextCallListener listener) {
-        int color = ContextCompat.getColor(mContext, R.color.def_title_color);
+        int color = ContextCompat.getColor(mContext, R.color.action_sheet_blue);
         return setRightButton(text, color, 16, false, listener);
     }
 
@@ -133,7 +133,7 @@ public class AlertEditDialog extends BaseDialog {
     }
 
     public AlertEditDialog setLeftButton(String text, final OnClickListener listener) {
-        int color = ContextCompat.getColor(mContext, R.color.def_title_color);
+        int color = ContextCompat.getColor(mContext, R.color.action_sheet_blue);
         return setLeftButton(text, color, 16, false, listener);
     }
 

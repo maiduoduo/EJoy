@@ -4,10 +4,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
-import android.support.annotation.RequiresPermission;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 
 import com.ejoy.tool.common.bean.ImageFileBean;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 /**
  * CN:      ICameraActivity
  * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
@@ -41,10 +43,9 @@ public abstract class ICameraActivity extends PermissionActivity {
     private static final int PICK_IMAGE_REQUEST_CODE = 100;
     private static final int OPEN_CAMERA_REQUEST_CODE = 101;
     private File mCameraFile;
-    private IToast iToast;
-    private void openCamera() {
-        if (iToast == null) iToast = new IToast().builder();
+    public static final int maxSelectable = 9;
 
+    private void openCamera() {
         requestPermission(new OnPermissionsResult() {
             @Override
             public void onAllow(List<String> allowPermissions) {
@@ -53,7 +54,7 @@ public abstract class ICameraActivity extends PermissionActivity {
 
             @Override
             public void onNoAllow(List<String> noAllowPermissions) {
-                iToast.showIImgToast("相机为必须权限！");
+                Toast.makeText(ICameraActivity.this,"相机为必须权限!",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -69,7 +70,6 @@ public abstract class ICameraActivity extends PermissionActivity {
     }
 
     private void onCamera() {
-        if (iToast == null) iToast = new IToast().builder();
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         cameraIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         cameraIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
@@ -77,23 +77,45 @@ public abstract class ICameraActivity extends PermissionActivity {
             mCameraFile = FileUtils.resultImageFile();
             Uri cameraUri = FileUtils.fileToUri(this, mCameraFile, cameraIntent);
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraUri);
-            startActivityForResult(cameraIntent, ICameraActivity.OPEN_CAMERA_REQUEST_CODE);
+            startActivityForResult(cameraIntent, OPEN_CAMERA_REQUEST_CODE);
         }
     }
 
     private void openAlbum() {
-        if (iToast == null) iToast = new IToast().builder();
-        PerStorageGet(0);
+        requestPermission(new OnPermissionsResult() {
+            @Override
+            public void onAllow(List<String> allowPermissions) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, PICK_IMAGE_REQUEST_CODE);
+            }
+
+            @Override
+            public void onNoAllow(List<String> noAllowPermissions) {
+                Toast.makeText(ICameraActivity.this,"存储为必须权限!",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onForbid(List<String> noForbidPermissions) {
+                showForbidPermissionDialog("存储权限");
+            }
+
+            @Override
+            public void onLowVersion() {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, ICameraActivity.PICK_IMAGE_REQUEST_CODE);
+            }
+        },Manifest.permission.READ_EXTERNAL_STORAGE);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtils.e("onResume--");
+        Log.e("onResume--", "onResume");
     }
 
     protected void openPhoto(final boolean isSingChoice) {
-        if (iToast == null) iToast = new IToast().builder();
         if (mPhotoDialog == null) {
             mPhotoDialog = new PhotoDialog(this);
         }
@@ -125,33 +147,22 @@ public abstract class ICameraActivity extends PermissionActivity {
     }
 
     protected void openZhiHuAlbum() {
-        PerStorageGet(1);
-    }
-
-
-    private void PerStorageGet(final int i){
         requestPermission(new OnPermissionsResult() {
             @Override
             public void onAllow(List<String> allowPermissions) {
-                if (0 == i){//普通
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.setType("image/*");
-                    startActivityForResult(intent, ICameraActivity.PICK_IMAGE_REQUEST_CODE);
-                }else  if (1 == i){//ZHIHU相册
-                    Matisse.from(ICameraActivity.this)
-                            .choose(MimeType.ofImage())
-                            .countable(true)
-                            .maxSelectable(9)
-                            .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                            .thumbnailScale(0.85f)
-                            .imageEngine(new GlideEngine())
-                            .forResult(REQUEST_CODE_CHOOSE);
-                }
+                Matisse.from(ICameraActivity.this)
+                        .choose(MimeType.ofImage())
+                        .countable(true)
+                        .maxSelectable(maxSelectable)
+                        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                        .thumbnailScale(0.85f)
+                        .imageEngine(new GlideEngine())
+                        .forResult(REQUEST_CODE_CHOOSE);
             }
 
             @Override
             public void onNoAllow(List<String> noAllowPermissions) {
-                iToast.showIImgToast("存储为必须权限！");
+                Toast.makeText(ICameraActivity.this,"存储为必须权限!",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -161,11 +172,17 @@ public abstract class ICameraActivity extends PermissionActivity {
 
             @Override
             public void onLowVersion() {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent, ICameraActivity.PICK_IMAGE_REQUEST_CODE);
+                Matisse.from(ICameraActivity.this)
+                        .choose(MimeType.ofImage())
+                        .countable(true)
+                        .maxSelectable(maxSelectable)
+                        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                        .thumbnailScale(0.85f)
+                        .imageEngine(new GlideEngine())
+                        .forResult(REQUEST_CODE_CHOOSE);
             }
         },Manifest.permission.READ_EXTERNAL_STORAGE);
+
     }
 
     @Override
@@ -174,9 +191,9 @@ public abstract class ICameraActivity extends PermissionActivity {
 
         switch (resultCode) {
             case RESULT_OK:
-                if (requestCode == ICameraActivity.PICK_IMAGE_REQUEST_CODE) {
+                if (requestCode == PICK_IMAGE_REQUEST_CODE) {
                     if (data == null) {
-                        iToast.showIImgToast("获取图片异常!", IToastImageType.ERROR);
+                        Toast.makeText(this,"获取图片异常!",Toast.LENGTH_SHORT).show();
                         return;
                     }
                     try {
@@ -189,7 +206,7 @@ public abstract class ICameraActivity extends PermissionActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (requestCode == ICameraActivity.OPEN_CAMERA_REQUEST_CODE) {
+                } else if (requestCode == OPEN_CAMERA_REQUEST_CODE) {
                     if (FileUtils.isImageFile(mCameraFile)) {
                         FileUtils.scanImage(this, mCameraFile);
                         ImageFileBean bean = new ImageFileBean();
