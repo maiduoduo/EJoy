@@ -33,12 +33,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.EventBusUtil;
 import com.ejoy.tool.scaffold.utils.IToast;
 import com.ejoy.tool.scaffold.utils.IToastImageType;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
-import com.ejoy.tool.scaffold.view.IProgressDialog;
+import com.ejoy.tool.scaffold.view.loading.IProgressDialog;
 import com.ejoy.tool.ui.ICameraActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;

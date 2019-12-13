@@ -144,9 +144,9 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
                 if (!CompressImageTask.get().isCompressImage()) {
 //                    if (mOriginalPictureList.size() >= 9){
 //                        mOriginalPictureList.clear();
-                        clearTextInfo();
-                        notifyOriginalAndCompressData();
-                        openPhoto(false);
+                    clearTextInfo();
+                    notifyOriginalAndCompressData();
+                    openPhoto(false);
 //                    }else {
 //                        openPhoto(false);
 //                    }
@@ -288,7 +288,7 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
     @Override
     protected void imageFilesResult(List<ImageFileBean> data) {
         super.imageFilesResult(data);
-        mOriginalPictureList.addAll(0,data);
+        mOriginalPictureList.addAll(0, data);
 //        if (mOriginalPictureList.size() == 1){
 //        }else {
 //            mOriginalPictureList.addAll(mOriginalPictureList.size() -1,data);
@@ -335,5 +335,26 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
 
     public void multiBack(View view) {
         finish();
+
+    }
+
+    private List<String> newList = new ArrayList<>();
+    public String listToString(List<String> list) {
+        String s = new Gson().toJson(newList);
+
+        if (list == null) {
+            return null;
+        }
+        StringBuilder result = new StringBuilder();
+        boolean first = true; //第一个前面不拼接","  
+        for (String string : list) {
+            if (first) {
+                first = false;
+            } else {
+                result.append(",");
+                result.append(string);
+            }
+        }
+        return result.toString();
     }
 }

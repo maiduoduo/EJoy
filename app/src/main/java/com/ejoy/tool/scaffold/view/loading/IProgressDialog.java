@@ -1,4 +1,4 @@
-package com.ejoy.tool.scaffold.view;
+package com.ejoy.tool.scaffold.view.loading;
 
 import android.app.ProgressDialog;
 import android.content.Context;
