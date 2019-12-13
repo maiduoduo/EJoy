@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/arclayout" />
             <option value="$PROJECT_DIR$/filterlib_popupwindow" />
             <option value="$PROJECT_DIR$/iiosdialog" />
+            <option value="$PROJECT_DIR$/imaidd_datetime" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

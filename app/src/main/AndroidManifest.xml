@@ -52,7 +52,9 @@
         <activity android:name=".ui.activity.compress.PreviewImageActivity"/>
         <activity android:name=".ui.activity.compress.IBitmapSingChoiceActivity"/>
         <activity android:name=".ui.activity.compress.IBitmapSystemSingleCompressActivity"/>
-        <activity android:name="com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity"/>
+        <activity android:name=".ui.activity.iosdialog.IIosDialogActivity"/>
+        <activity android:name=".ui.activity.loading.ILoadingActivity"/>
+        <activity android:name=".ui.activity.time.ITimeDateActivity"/>
 
 
         <!--FileProvider共享文件-->

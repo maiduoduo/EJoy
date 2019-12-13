@@ -36,7 +36,9 @@ import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity;
+import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
+import com.ejoy.tool.ui.activity.time.ITimeDateActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
 import com.ejoy.tool.ui.data.resource.ApiResource;
@@ -202,20 +204,32 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
             case 1://仿IOS Dialog
                 startActivity(new Intent(this, IIosDialogActivity.class));
                 break;
-            case 2://ScrollView
+            case 2://Loading
+                startActivity(new Intent(this, ILoadingActivity.class));
+                break;
+            case 3://ScrollView
                 startActivity(new Intent(this, IScrollViewActivity.class));
                 break;
-            case 3://FloatDragButton
+            case 4://FloatDragButton
                 startActivity(new Intent(this, BezierActivity.class));
                 break;
-            case 6://Popupwindow
+            case 6://
+                break;
+            case 7://Popupwindow
                 startActivity(new Intent(this, IPopupwindowFilterActivity.class));
                 break;
-            case 7://ArcLayout
+            case 8://ArcLayout
                 startActivity(new Intent(this, IArcLayoutActivity.class));
                 break;
-            case 9://图片处理
+            case 9://设备信息
+                break;
+            case 10://图片处理
                 showBotttomDialog();
+                break;
+            case 11://BottomSheet
+                break;
+            case 12://时间
+                startActivity(new Intent(this, ITimeDateActivity.class));
                 break;
             default:
                 break;
@@ -360,7 +374,9 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     @Override
     public void onBackPressed() {
-        if (mExitDialog == null) { mExitDialog = new ExitDialog(this); }
+        if (mExitDialog == null) {
+            mExitDialog = new ExitDialog(this);
+        }
         if (!mExitDialog.isShowing()) mExitDialog.show();
         mExitDialog.setOnExitDialogClickListener(new ExitDialog.OnExitDialogClickListener() {
             @Override

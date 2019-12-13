@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LGray3"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:background="@color/Y3">
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:onClick="iosBack"
+            android:gravity="center"
+            android:src="@drawable/ico_back_white_90px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="时间"/>
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:scrollbars="none"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日期选择"
+                android:onClick="dateSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="时间选择"
+                android:onClick="timeSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日期时间选择"
+                android:onClick="dateTimeSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_10"
+                android:gravity="left"
+                android:text="时间轴"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

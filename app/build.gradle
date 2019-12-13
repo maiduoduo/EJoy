@@ -37,6 +37,11 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -74,4 +79,5 @@ dependencies {
     implementation project(':iiosdialog')
     //知乎图片框架
     implementation 'com.zhihu.android:matisse:0.5.2-beta2'
+    implementation project(':imaidd_datetime')
 }

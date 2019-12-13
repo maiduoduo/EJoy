@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#fff</color>
+    <color name="blue_date_picker">#3E82FB</color>
+    <color name="grey_date_picker">#F5F9FC</color>
+    <color name="bg_date_picker_today">#AAC8FF</color>
+</resources>

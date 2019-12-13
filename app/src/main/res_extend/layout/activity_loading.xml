@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LGray3"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:background="@color/app_color_theme_9">
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:onClick="iosBack"
+            android:gravity="center"
+            android:src="@drawable/ico_back_white_90px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="加载框"/>
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:scrollbars="none"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="loadingStart"
+                android:text="Loading"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:background="@drawable/shape_button_4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:gravity="left"
+                android:text="* Action Sheet Dialog"
+                android:textColor="@color/Gray3A"
+                android:textSize="12sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:gravity="left"
+                android:text="* Alert Dialog"
+                android:textColor="@color/Gray3A"
+                android:textSize="12sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:gravity="left"
+                android:textColor="@color/Gray3A"
+                android:text="* Alert Edit Dialog"
+                android:textSize="12sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:textColor="@color/Gray3A"
+                android:text="* Scroll Picker Dialog"
+                android:textSize="12sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:textColor="@color/Gray3A"
+                android:text="* Content long/short"
+                android:textSize="12sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
