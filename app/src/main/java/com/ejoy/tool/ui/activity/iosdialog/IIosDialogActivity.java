@@ -1,6 +1,8 @@
 package com.ejoy.tool.ui.activity.iosdialog;
 
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.NumberPicker;
@@ -38,6 +40,11 @@ public class IIosDialogActivity extends BaseActivity {
                     "自定义一个View继承ScrollView并重写其onMeasure方法，在此方法中设置控件最大高度不能超过屏幕高度的一半。\n\n",
             "当ScrollView中显示内容量小的时候自适应高度不滚动，当ScrollView中显示内容量大的时候需要将其高度设置为屏幕高度的一半且可以滚动查看\n"
     };
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

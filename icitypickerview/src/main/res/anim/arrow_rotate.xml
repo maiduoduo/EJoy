@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <rotate
+        android:duration="200"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatMode="reverse"
+        android:toDegrees="180" />
+    <!--duration 动画的持续时间-->
+    <!--fromDegrees 起始角度，0代表当前位置-->
+    <!--pivotX 旋转中心的x坐标，50%代表当前控件的水平中心-->
+    <!--pivotY 旋转中心的y坐标，50%代表当前控件的垂直中心-->
+    <!--repeatMode 重复模式，reverse代表与原动画反向-->
+    <!--toDegrees 结束角度-->
+</set>

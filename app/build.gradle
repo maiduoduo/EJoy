@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'com.jakewharton.butterknife'
+//greendao
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -42,6 +43,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    greendao {
+        //数据库的schema版本，也可以理解为数据库版本号
+        schemaVersion 1
+        //greendao输出dao的数据库操作实体类文件夹（相对路径 包名+自定义路径名称，包将创建于包名的直接路径下）
+        //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径。
+        daoPackage 'com.ejoy.tool.greendao.gen'
+        //设置DaoMaster、DaoSession、Dao目录
+        targetGenDir 'src/main/java'
+        //应存储生成的单元测试的基本目录。默认为 src / androidTest / java。
+//        targetGenDirTests 'src/main/java'
+    }
 }
 
 dependencies {
@@ -60,9 +73,9 @@ dependencies {
     //Glide/Fresco
     //    implementation rootProject.ext.dependencies["glide_361"]
     implementation rootProject.ext.dependencies["fresco"]
-    implementation files('libs/nineoldandroids-2.4.0.jar')
-    implementation files('libs/universal-image-loader-1.9.4.jar')
-    implementation files('libs/universal-image-loader-1.9.4-sources.jar')
+//    implementation files('libs/nineoldandroids-2.4.0.jar')
+//    implementation files('libs/universal-image-loader-1.9.4.jar')
+//    implementation files('libs/universal-image-loader-1.9.4-sources.jar')
     //EventBus
     implementation rootProject.ext.dependencies["eventbus"]
     //BaseRecyclerViewAdapterHelper
@@ -80,4 +93,18 @@ dependencies {
     //知乎图片框架
     implementation 'com.zhihu.android:matisse:0.5.2-beta2'
     implementation project(':imaidd_datetime')
+    implementation project(':icitypickerview')
+    //http://www.open-open.com/jsoup/
+    implementation rootProject.ext.dependencies["jsoup"]
+
+    //数据库操作
+    api rootProject.ext.dependencies["greendao"]
+    //用来升级greendao数据库的辅助类
+    api rootProject.ext.dependencies["greendao-generator"]
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    api 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+
+
+
+
 }

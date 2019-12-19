@@ -1,6 +1,8 @@
 package com.ejoy.tool.ui.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 
@@ -34,6 +36,11 @@ public class MainActivity_1126 extends BaseActivity implements BaseQuickAdapter.
     private String localImgUrl = "";
     private CHMainAdpter mCHMainAdpter;
     private List<MainItemBean> mData;
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

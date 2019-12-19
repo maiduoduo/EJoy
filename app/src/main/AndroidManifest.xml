@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ejoy.tool">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -31,7 +32,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_app_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="name,theme,label,icon,allowBackup">
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +56,11 @@
         <activity android:name=".ui.activity.compress.IBitmapSystemSingleCompressActivity"/>
         <activity android:name=".ui.activity.iosdialog.IIosDialogActivity"/>
         <activity android:name=".ui.activity.loading.ILoadingActivity"/>
-        <activity android:name=".ui.activity.time.ITimeDateActivity"/>
+        <activity android:name=".ui.activity.picker.ITimeDateOrActivity"/>
+        <activity android:name=".ui.activity.picker.ICitySelectActivity"/>
+        <activity android:name=".ui.activity.picker.ICitypickerListActivity"/>
+        <activity android:name=".ui.activity.picker.ICitypickerWheelActivity"/>
+        <activity android:name=".ui.activity.picker.ICitypickerThreeListActivity"/>
 
 
         <!--FileProvider共享文件-->

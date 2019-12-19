@@ -1,6 +1,8 @@
 package com.ejoy.tool.ui.activity.loading;
 
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.NumberPicker;
@@ -24,6 +26,11 @@ import com.maple.msdialog.AlertNumberPickerDialog;
  */
 public class ILoadingActivity extends BaseActivity {
     private LoadingDialog mLoadingDialog;
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

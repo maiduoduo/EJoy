@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+    <TextView
+        android:id="@+id/cp_gird_qx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_button"
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:gravity="center"
+        android:text="栖霞区"
+        android:textSize="13sp"
+        android:textColor="@color/black_77"/>
+</FrameLayout>

@@ -54,6 +54,23 @@ public class ApiResource {
         URL_UpdateVersionURL = AppConstant.Baseurl+"conmmonData/version";
     }
 
+    //======================省市区============================================
+    public static final String DB_NAME_V2 = "china_cities_v2.db";
+    public static final String DB_NAME_V3 = "china_cities_v3.db";
+    public static final String DB_NAME_ZONE = "zone.db";
+    public static final String DB_NAME = "cities";
+
+    public static final String TABLE_NAME = "cities";
+    public static final String COLUMN_C_NAME = "c_name";
+    public static final String COLUMN_C_PROVINCE = "c_province";
+    public static final String COLUMN_C_PINYIN = "c_pinyin";
+    public static final String COLUMN_C_CODE = "c_code";
+    public static final String COLUMN_C_TIP = "c_tip";
+    public static final String LATEST_DB_NAME ="china_cities_v2.db" ;
+    //========================================================================
+
+
+
     /**
      * 获取对应的host
      *

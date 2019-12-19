@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_gray3"
+    android:orientation="vertical">
+
+    <include layout="@layout/cp_search_view" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="10dp"
+        android:background="@color/white2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_77"
+            android:layout_centerVertical="true"
+            android:textSize="13sp"
+            android:text="当前：南京全城"/>
+        <LinearLayout
+            android:id="@+id/toggleQX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvQX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_33"
+                android:textSize="13sp"
+                android:text="切换区县"/>
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="wrap_content" />
+            <!--<ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ico_down"/>-->
+
+            <ImageView
+                android:id="@+id/ivToggleArraw"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/tvQX"
+                android:background="@mipmap/icon_arrow_down"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- app:el_duration="300"
+        app:el_expanded="false"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+        <com.ejoy.tool.scaffold.view.widget.ExpandLayout
+            android:id="@+id/expandLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="15dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewExpand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:paddingRight="20dp"></android.support.v7.widget.RecyclerView>
+        </com.ejoy.tool.scaffold.view.widget.ExpandLayout>
+        <TextView
+            android:id="@+id/tvLineQX"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black_11"
+            android:layout_below="@+id/expandLayout"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cp_city_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvLineQX"
+            android:background="@color/light_gray3"/>
+
+        <TextView
+            android:id="@+id/cp_overlay"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:textColor="@color/Orange2"
+            android:background="@color/black_33"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/cp_index_bar_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/white2"/>
+            <!--右侧字母导航-->
+            <com.ejoy.tool.scaffold.view.widget.SideIndexBar
+                android:id="@+id/cp_side_index_bar"
+                android:layout_weight="1"
+                android:layout_width="@dimen/cp_index_bar_width"
+                android:background="@color/white2"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/white2"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/cp_empty_view"/>
+    </RelativeLayout>
+</LinearLayout>

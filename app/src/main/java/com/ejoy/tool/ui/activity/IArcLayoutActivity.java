@@ -1,6 +1,8 @@
 package com.ejoy.tool.ui.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 
@@ -33,6 +35,11 @@ import com.ejoy.tool.ui.mvp.base.BasePresenter;
  * Des:    弧形定制布局
  */
 public class IArcLayoutActivity extends BaseActivity {
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
+
     @Override
     protected int getContentViewId() {
         return R.layout.activity_arclayout;

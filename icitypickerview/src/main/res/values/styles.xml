@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="CPAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Orange2</item>
+        <item name="colorPrimaryDark">@color/Orange2</item>
+        <item name="colorAccent">@color/Orange2</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+
+    <style name="tab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/color_text_02</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+
+
+
+
+</resources>

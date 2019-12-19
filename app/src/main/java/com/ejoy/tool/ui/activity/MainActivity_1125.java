@@ -2,6 +2,8 @@ package com.ejoy.tool.ui.activity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -62,6 +64,11 @@ public class MainActivity_1125 extends BaseActivity {
     ExpandImageView ThumbImgC;
 
     private String localImgUrl = "";
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

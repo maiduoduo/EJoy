@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <!--沉浸式状态栏-->
@@ -110,5 +110,10 @@
         <item name="android:backgroundDimEnabled">true</item> <!--模糊-->
         <item name="android:backgroundDimAmount">0.4</item>  <!--背景透明度-->
     </style>
+
+
+
+
+
 
 </resources>

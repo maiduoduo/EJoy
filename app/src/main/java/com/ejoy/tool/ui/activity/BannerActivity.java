@@ -20,6 +20,7 @@ package com.ejoy.tool.ui.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
@@ -89,6 +90,11 @@ public class BannerActivity extends BaseActivity implements OnBannerListener {
     private int mCurrentOutsideItem = 0;
 
 //    private LinearLayout llIndicatorInside;
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

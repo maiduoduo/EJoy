@@ -35,7 +35,7 @@ import java.util.List;
 //      ┗┻┛　┗┻┛
 
 /**
- * CN:      BaseApplication
+ * CN:      BaseCPApplication
  * Author： JSYL-DINGCL (1144286501@qq.com)
  * Date:   2019/10/14
  * Des:    Application基类进行dex分包

@@ -24,7 +24,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:text="时间"/>
+            android:text="选择器"/>
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -74,6 +74,16 @@
                 android:paddingVertical="@dimen/dp_10"
                 android:gravity="left"
                 android:text="时间轴"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_10"
+                android:gravity="left"
+                android:text="城市选择"
+                android:onClick="cityPicker"
                 android:textColor="@color/Gray2"
                 android:textSize="17sp" />
             <include layout="@layout/layout_line_horizontal_1dp"/>

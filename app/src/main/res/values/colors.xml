@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!--<color name="colorPrimary">#008577</color>-->
     <!--<color name="colorPrimaryDark">#00574B</color>-->
     <!--<color name="colorAccent">#D81B60</color>-->
@@ -32,6 +32,8 @@
     <color name="app_color_theme_3">#FFCF47</color> <!-- Sunflower -->
     <color name="app_color_theme_4">#9FD661</color> <!-- Grass -->
     <color name="app_color_theme_5">#3FD0AD</color> <!-- Mint -->
+    <color name="app_color_theme_5_1">#6bbea9</color> <!-- Mint -->
+    <color name="app_color_theme_5_2">#024031</color> <!-- Mint -->
     <color name="app_color_theme_6">#2BBDF3</color> <!-- Aqua -->
     <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
     <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
@@ -484,6 +486,7 @@
     <color name="Orange1">#ffffaf47</color>
     <color name="Purple">#ff8a32fc</color>
     <color name="Purple1">#ffa460fc</color>
+    <color name="Purple2">#11a460fc</color>
     <color name="R1">#ffe6393f</color>
     <color name="R2">#ffff816d</color>
     <color name="R3">#fff46a4d</color>
@@ -638,6 +641,7 @@
     <color name="y7">#ffebc51f</color>
     <color name="y8">#ff7f4700</color>
     <color name="y9">#ffcca300</color>
+    <color name="y12">#f4ce51</color>
     <color name="Mask2">#66000000</color>
     <color name="Mask3">#cc000000</color>
     <color name="Black_Alpha10">#e515161a</color>
@@ -875,4 +879,35 @@
     <color name="color00000000">#00000000</color>
     <color name="colorFFEFEFEF">#FFEFEFEF</color>
     <color name="color80000000">#80000000</color>
+    <color name="color_green" tools:ignore="MissingDefaultResource">#80000000</color>
+
+
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="liji_c_blue">#26A5FF</color>
+    <color name="liji_material_blue_500">#03a9f4</color>
+    <color name="liji_material_blue_700">#0288d1</color>
+    <color name="liji_material_red_500">#e51c23</color>
+    <color name="liji_material_red_700">#d01716</color>
+
+
+    <color name="cp_color_gray_light">#cdcdcd</color>
+    <color name="cp_color_gray">#999999</color>
+    <color name="cp_color_gray_deep">#666666</color>
+    <color name="cp_color_gray_dark">#333333</color>
+    <color name="cp_color_section_bg">#EDEDED</color>
+    <color name="cp_color_grid_item_bg">#f5f5f5</color>
+
+    <color name="LGray6">#e7e8e9</color>
+    <color name="Orange2">#f4ce51</color>
+    <color name="Red2">#cf624d</color>
+    <color name="white2">#77ffffff</color>
+    <color name="black_05">#efeded</color>
+    <color name="black_11">#dad7d7</color>
+    <color name="black_55">#3d3939</color>
+    <color name="black_55_77">#773d3939</color>
+    <color name="black_66_77">#77333131</color>
+    <color name="black_77">#292929</color>
+    <color name="light_gray3">#faf7f7</color>
+    <color name="color_red">#FD2E4A</color>
+
 </resources>
