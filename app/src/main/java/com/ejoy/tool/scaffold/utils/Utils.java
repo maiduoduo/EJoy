@@ -6,7 +6,6 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.app.Application.ActivityLifecycleCallbacks;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -17,7 +16,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.ejoy.tool.app.App;
-import com.ejoy.tool.ui.activity.tab.BaseActivity;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -409,19 +407,6 @@ public final class Utils {
      */
     public static void cancel(Runnable auToRunTask) {
         App.getHandler().removeCallbacks(auToRunTask);
-    }
-    /**
-     * 可以打开activity
-     * @param intent
-     */
-    public static void startActivity(Intent intent) {
-        // 如果不在activity里去打开activity  需要指定任务栈  需要设置标签
-        if(BaseActivity.activity==null){
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            getContext().startActivity(intent);
-        }else{
-            BaseActivity.activity.startActivity(intent);
-        }
     }
     public static void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter listAdapter = listView.getAdapter();

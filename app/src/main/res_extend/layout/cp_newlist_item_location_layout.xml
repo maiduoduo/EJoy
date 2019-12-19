@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/cp_list_item_location_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_item"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:clickable="true"
+        android:focusable="true">
+        <LinearLayout
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/ivLocate"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/ico_locate"/>
+            <TextView
+                android:id="@+id/cp_list_item_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/cp_grid_item_padding"
+                android:paddingBottom="@dimen/cp_grid_item_padding"
+                android:layout_marginLeft="5dp"
+                android:text="dfsfsdfs"
+                android:textSize="15sp"
+                android:textColor="@color/black_77"/>
+        </LinearLayout>
+    </FrameLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+</LinearLayout>

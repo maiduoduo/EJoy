@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cp_grid_item_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="?attr/cpListItemHeight"
+    android:background="@drawable/shape_item"
+    android:foreground="?attr/selectableItemBackground">-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cp_grid_item_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <TextView
+        android:id="@+id/cp_gird_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_item"
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="13sp"
+        android:textColor="@color/black_77"/>
+    <TextView
+        android:id="@+id/tvhotTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_hot_tip"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:layout_gravity="right"
+        android:textSize="9sp"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="2dp"
+        android:text=""/>
+</FrameLayout>

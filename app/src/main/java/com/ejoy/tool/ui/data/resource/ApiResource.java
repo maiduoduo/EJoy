@@ -54,6 +54,23 @@ public class ApiResource {
         URL_UpdateVersionURL = AppConstant.Baseurl+"conmmonData/version";
     }
 
+    //======================省市区============================================
+    public static final String DB_NAME_V2 = "china_cities_v2.db";
+    public static final String DB_NAME_V3 = "china_cities_v3.db";
+    public static final String DB_NAME_ZONE = "zone.db";
+    public static final String DB_NAME = "cities";
+
+    public static final String TABLE_NAME = "cities";
+    public static final String COLUMN_C_NAME = "c_name";
+    public static final String COLUMN_C_PROVINCE = "c_province";
+    public static final String COLUMN_C_PINYIN = "c_pinyin";
+    public static final String COLUMN_C_CODE = "c_code";
+    public static final String COLUMN_C_TIP = "c_tip";
+    public static final String LATEST_DB_NAME ="china_cities_v2.db" ;
+    //========================================================================
+
+
+
     /**
      * 获取对应的host
      *
@@ -246,16 +263,18 @@ public class ApiResource {
 
         dataList.add(new MainItemBean("Toast", R.mipmap.ico_grid_toast));
         dataList.add(new MainItemBean("仿IOS Dialog", R.mipmap.ico_grid_ios_dialog));
-        dataList.add(new MainItemBean("ScrollView", R.mipmap.ico_grid_load_dialog));
+        dataList.add(new MainItemBean("Loading Dialog", R.mipmap.ico_grid_load_dialog));
+        dataList.add(new MainItemBean("ScrollView", R.mipmap.ico_grid_detail));
         dataList.add(new MainItemBean("FloatDragButton", R.mipmap.ico_grid_floatdrag_button));
         dataList.add(new MainItemBean("版本更新", R.mipmap.ico_grid_update));
         dataList.add(new MainItemBean("详情页", R.mipmap.ico_grid_detail));
-        dataList.add(new MainItemBean("Popupwindow筛选", R.mipmap.ico_grid_detail));
+        dataList.add(new MainItemBean("Popupwindow筛选", R.mipmap.ico_grid_popupwindow));
         dataList.add(new MainItemBean("ArcLayout", R.mipmap.ico_grid_arc));
         dataList.add(new MainItemBean("设备信息", R.mipmap.ico_grid_device));
-        //9
+        //10
         dataList.add(new MainItemBean("图片处理", R.mipmap.ico_grid_imagecompress));
-        dataList.add(new MainItemBean("BottomSheet", R.mipmap.ico_grid_bottomsheet));
+        dataList.add(new MainItemBean("BottomSheet", R.mipmap.ico_grid_bottom_sheet));
+        dataList.add(new MainItemBean("日期等选择器", R.mipmap.ico_grid_datetime));
 
 
         return dataList;

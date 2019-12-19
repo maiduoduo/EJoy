@@ -38,8 +38,8 @@ import com.ejoy.tool.scaffold.utils.EventBusUtil;
 import com.ejoy.tool.scaffold.utils.IToast;
 import com.ejoy.tool.scaffold.utils.IToastImageType;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
-import com.ejoy.tool.scaffold.view.IProgressDialog;
-import com.ejoy.tool.ui.ICameraActivity;
+import com.ejoy.tool.scaffold.view.loading.IProgressDialog;
+import com.ejoy.tool.ui.activity.ICameraActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
@@ -56,10 +56,11 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public static final String _TAG = BaseActivity.class.getSimpleName();
     public  Activity _mActivity;
     public IToast iToast;
+    public String defalutYellow = "#f4ce51";
+    public String defalutGreen = "#3FD0AD";
 
-
+    protected abstract void initRestore(@Nullable Bundle savedInstanceState);
     protected abstract int getContentViewId();
-
     protected abstract void initView(View mRootView);
     protected abstract void initData();
     protected abstract void addListener();
@@ -95,6 +96,7 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initStatusbar();
+        initRestore(savedInstanceState);
         View mRootView = getView(getContentViewId());
         _mActivity = this;
         setContentView(mRootView);
@@ -289,6 +291,12 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     public void showLog(String str) {
         Log.e(_TAG, str);
+    }
+
+    public void showActivity(Activity aty, Class clazz) {
+        Intent i = new Intent(aty, clazz);
+        aty.startActivity(i);
+        aty.overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
     }
 
     @Override

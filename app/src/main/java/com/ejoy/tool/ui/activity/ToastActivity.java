@@ -17,6 +17,8 @@ package com.ejoy.tool.ui.activity;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -58,6 +60,11 @@ public class ToastActivity extends BaseActivity {
                     "可自定义显示时间；可以设置点击事件,自定义悬浮弹窗；点击其他地方该布局不受影响；\n" +
                     "可自定义显示时间；可以设置点击事件；";
     private String floatTitle = "仿微信悬浮通知栏/悬浮通知";
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

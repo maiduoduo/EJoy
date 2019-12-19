@@ -38,11 +38,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="loadingStart"
+                android:text="Loading"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:background="@drawable/shape_button_4"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:gravity="left"
                 android:text="* Action Sheet Dialog"
                 android:textColor="@color/Gray3A"
@@ -115,7 +126,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="@dimen/dp_10"
                 android:gravity="left"
-                android:text="Alert Dialog"
+                android:text="* Alert Dialog"
                 android:textColor="@color/Gray3A"
                 android:textSize="12sp" />
             <include layout="@layout/layout_line_horizontal_1dp"/>
@@ -254,7 +265,7 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
                 android:textColor="@color/Gray3A"
-                android:text="Scroll Picker Dialog"
+                android:text="* Scroll Picker Dialog"
                 android:textSize="12sp" />
             <include layout="@layout/layout_line_horizontal_1dp"/>
             <LinearLayout
@@ -323,7 +334,7 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
                 android:textColor="@color/Gray3A"
-                android:text="Content long/short"
+                android:text="* Content long/short"
                 android:textSize="12sp" />
             <include layout="@layout/layout_line_horizontal_1dp"/>
             <LinearLayout

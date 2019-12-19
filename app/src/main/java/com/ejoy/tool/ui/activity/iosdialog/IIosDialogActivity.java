@@ -1,6 +1,8 @@
 package com.ejoy.tool.ui.activity.iosdialog;
 
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.NumberPicker;
@@ -8,6 +10,7 @@ import android.widget.NumberPicker;
 import com.ejoy.tool.R;
 import com.ejoy.tool.common.helper.InfoDialog.IDialog;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
+import com.ejoy.tool.scaffold.view.loading.LoadingDialog;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.maple.msdialog.ActionSheetDialog;
@@ -25,6 +28,7 @@ public class IIosDialogActivity extends BaseActivity {
     public static final String DEF_BLUE = "#037BFF";
     public static final String DEF_RED = "#C1C1C1";
     private IDialog iDialog;
+    private LoadingDialog mLoadingDialog;
     private String[] mMsgArray = new String[]{
             "E·享新版本对系统做了大量优化及增加新功能，请及时更新，避免版本差异造成数据、功能不同步。\n\n" +
                     "当ScrollView中显示内容量小的时候自适应高度不滚动，当ScrollView中显示内容量大的时候需要将其高度设置为屏幕高度的一半且可以滚动查看，\n" +
@@ -36,6 +40,11 @@ public class IIosDialogActivity extends BaseActivity {
                     "自定义一个View继承ScrollView并重写其onMeasure方法，在此方法中设置控件最大高度不能超过屏幕高度的一半。\n\n",
             "当ScrollView中显示内容量小的时候自适应高度不滚动，当ScrollView中显示内容量大的时候需要将其高度设置为屏幕高度的一半且可以滚动查看\n"
     };
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {
@@ -339,6 +348,14 @@ public class IIosDialogActivity extends BaseActivity {
                     public void onClick(View v) {
                     }
                 }).show();
+    }
+
+
+    public void loadingStart(View view) {
+        if (mLoadingDialog == null) {
+            mLoadingDialog = new LoadingDialog(this);
+        }
+        mLoadingDialog.show();
     }
 
 }

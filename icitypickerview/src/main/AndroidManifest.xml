@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.imaidd.citypicker.style.citypickerview">
+
+    <application
+        android:supportsRtl="true"
+        android:theme="@style/CPAppTheme">
+        <activity
+            android:name="com.imaidd.citypicker.style.citylist.CityListSelectActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateUnchanged">
+        </activity>
+        <activity
+            android:name="com.imaidd.citypicker.style.citythreelist.ProvinceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateUnchanged">
+        </activity>
+        <activity
+            android:name="com.imaidd.citypicker.style.citythreelist.CityActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateUnchanged">
+        </activity>
+        <activity
+            android:name="com.imaidd.citypicker.style.citythreelist.AreaActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateUnchanged">
+        </activity>
+    </application>
+
+</manifest>

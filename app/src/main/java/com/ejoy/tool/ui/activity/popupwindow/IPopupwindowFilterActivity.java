@@ -20,6 +20,8 @@ package com.ejoy.tool.ui.activity.popupwindow;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +60,11 @@ import butterknife.OnClick;
 public class IPopupwindowFilterActivity extends BaseActivity implements OnSelectResultListener {
     @BindView(R.id.webview) BaseWebView mWebview;
     @BindView(R.id.ftb_filter) FilterTabView ftb_filter;
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

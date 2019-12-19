@@ -1,6 +1,8 @@
 package com.ejoy.tool.ui.activity.compress;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
@@ -43,6 +45,11 @@ public class PreviewImageActivity extends BaseActivity {
 //          window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        }
 //    }
+
+    @Override
+    protected void initRestore(@Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     protected int getContentViewId() {

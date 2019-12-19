@@ -33,7 +33,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.ejoy.tool.scaffold.utils.LogUtils;
-import com.ejoy.tool.scaffold.view.IProgressDialog;
+import com.ejoy.tool.scaffold.view.loading.IProgressDialog;
 
 
 import static android.view.KeyEvent.KEYCODE_BACK;

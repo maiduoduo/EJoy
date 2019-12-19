@@ -116,7 +116,7 @@ ext {
             "videocache"                        : "com.danikula:videocache:2.7.0",
             "multidex"                          : "com.android.support:multidex:1.0.3",
             //greendao依赖
-            "greendao"                          : "org.greenrobot:greendao:3.2.0",
+            "greendao"                          : "org.greenrobot:greendao:3.2.2",
             //用来升级greendao数据库的辅助类
             "greendao-generator"                : "org.greenrobot:greendao-generator:3.1.0",
             //用来升级greendao数据库的辅助类
@@ -137,7 +137,8 @@ ext {
             "photoview_124"                     : "com.github.chrisbanes.photoview:library:1.2.4",
             "PhotoPicker"                       : "me.iwf.photopicker:PhotoPicker:0.9.5@aar",
             //图片移动视觉效果
-            "kenburnsview"                      : "com.flaviofaria:kenburnsview:1.0.7"
+            "kenburnsview"                      : "com.flaviofaria:kenburnsview:1.0.7",
+            "jsoup"                             : "org.jsoup:jsoup:1.11.2"
 
 
 

@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LGray3"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/Y3"
+        android:paddingHorizontal="@dimen/dp_10">
+
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:onClick="ivBack"
+            android:src="@drawable/ico_back_white_90px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="城市选择器"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="citySelectList"
+                android:paddingVertical="@dimen/dp_10">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/material_red_A200"
+                    android:paddingHorizontal="@dimen/dp_5"
+                    android:paddingVertical="@dimen/dp_2"
+                    android:background="@drawable/shape_item"
+                    android:textStyle="italic"
+                    android:textSize="11sp"
+                    android:text="仿美团最新版"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="城市列表"
+                    android:textColor="@color/Gray2"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <include layout="@layout/layout_line_horizontal_1dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="FIosSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="仿IOS滚轮"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+
+            <include layout="@layout/layout_line_horizontal_1dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ThreeLevelSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="三级列表"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+
+            <include layout="@layout/layout_line_horizontal_1dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:onClick="onJDAddressSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="仿京东地址选择器"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+
+            <include layout="@layout/layout_line_horizontal_1dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:onClick="customRes"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="自定义数据源"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+
+            <include layout="@layout/layout_line_horizontal_1dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:textSize="8sp"
+                android:textColor="@color/light_gray"
+                android:text="参考自：https://github.com/crazyandcoder/citypicker"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="8sp"
+                android:textColor="@color/light_gray"
+                android:text="侵权联删！"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

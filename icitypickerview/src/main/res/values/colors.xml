@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff40c2fc</color>
+    <color name="colorPrimaryDark">#ff08a7ee</color>
+    <color name="colorAccent">#ff75d1fa</color>
+    <color name="activity_bg">#ffe7e7e7</color>
+    <color name="color_text_01">#ffc5c9ce</color>
+    <color name="color_text_03">#ffb1b7be</color>
+    <color name="split_line_color">#ffc9d1d9</color>
+    <color name="split_line_bootom_color">#ffa8adb3</color>
+    <color name="input_stock">#ffbdc7d8</color>
+    <color name="color_text_02">#ff181c20</color>
+    <color name="location_circle_bg">#320483b9</color>
+    <color name="indicator_color">#fffff18f</color>
+    <color name="tabs_click">#ff8a153e</color>
+    <color name="bank_bg01">#ff002142</color>
+    <color name="bank_bg02">#ffe2607b</color>
+    <color name="bank_FF6C6C6C">#FF6C6C6C</color>
+    <color name="text_color_02">#FF6C6C6C</color>
+    <color name="sort_catagory">#FFE0E0E0</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="liji_c_blue">#26A5FF</color>
+    <color name="liji_material_blue_500">#03a9f4</color>
+    <color name="liji_material_blue_700">#0288d1</color>
+    <color name="liji_material_red_500">#e51c23</color>
+    <color name="liji_material_red_700">#d01716</color>
+
+
+    <color name="cp_color_gray_light">#cdcdcd</color>
+    <color name="cp_color_gray">#999999</color>
+    <color name="cp_color_gray_deep">#666666</color>
+    <color name="cp_color_gray_dark">#333333</color>
+    <color name="cp_color_section_bg">#EDEDED</color>
+    <color name="cp_color_grid_item_bg">#f5f5f5</color>
+
+    <color name="LGray1">#ffedeef0</color>
+    <color name="LGray2">#fff0f1f2</color>
+    <color name="LGray3">#fff2f3f5</color>
+    <color name="LGray4">#fff5f6f7</color>
+    <color name="LGray5">#40f5f6f7</color>
+    <color name="LGray6">#e7e8e9</color>
+    <color name="Mask1">#99000000</color>
+    <color name="Orange">#ffff950a</color>
+    <color name="Orange1">#ffffaf47</color>
+    <color name="Orange2">#f4ce51</color>
+    <color name="Purple">#ff8a32fc</color>
+    <color name="Purple1">#ffa460fc</color>
+    <color name="R1">#ffe6393f</color>
+    <color name="R2">#ffff816d</color>
+    <color name="R3">#fff46a4d</color>
+    <color name="R4">#fff04a18</color>
+    <color name="R5">#ffff8282</color>
+    <color name="R6">#ffffe7e4</color>
+    <color name="Red">#fffa5332</color>
+    <color name="Red2">#cf624d</color>
+    <color name="Red1">#fffa795f</color>
+    <color name="white2">#77ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black_05">#efeded</color>
+    <color name="black_11">#dad7d7</color>
+    <color name="black_33">#7c7b7b</color>
+    <color name="black_55">#3d3939</color>
+    <color name="black_55_77">#773d3939</color>
+    <color name="black_66">#333131</color>
+    <color name="black_66_77">#77333131</color>
+    <color name="black_77">#292929</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="light_gray">#808080</color>
+    <color name="light_gray1">#F3F3F3</color>
+    <color name="light_gray2">#10808080</color>
+    <color name="light_gray3">#faf7f7</color>
+
+    <color name="color_red">#FD2E4A</color>
+    <color name="color_green">#13D1BE</color>
+</resources>

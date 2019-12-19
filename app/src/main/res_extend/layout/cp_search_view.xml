@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/cp_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:background="#f4ce51"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:layout_gravity="center_vertical"
+        tools:showIn="@layout/cp_dialog_city_picker">
+        <ImageView
+            android:id="@+id/cp_cancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ico_cancel"/>
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/cp_search_box"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/shape_city_search"
+            android:hint="@string/cp_search_hint_text"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:paddingVertical="7dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:drawableLeft="@mipmap/ico_sea01"
+            android:drawablePadding="5dp"
+            android:textColorHint="@color/black_33"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/cp_clear_all"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ico_sea01"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>
