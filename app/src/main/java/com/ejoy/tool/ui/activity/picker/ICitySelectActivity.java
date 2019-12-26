@@ -95,6 +95,7 @@ public class ICitySelectActivity extends BaseActivity {
      * @param view
      */
     public void onJDAddressSelect(View view) {
+        ActivityUtils.getInstance().showActivity(_mActivity, ICitypickerJDActivity.class);
     }
 
     /**
@@ -102,5 +103,6 @@ public class ICitySelectActivity extends BaseActivity {
      * @param view
      */
     public void customRes(View view) {
+        iToast.showISimpleToast("参考【城市列表】设置自己自定义的数据");
     }
 }

@@ -22,7 +22,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/banner_3_g"/>
+                    android:src="@mipmap/banner_4_d"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -150,6 +150,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
         android:paddingHorizontal="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_25"
         android:background="@color/transparent"
         android:layout_alignParentTop="true">
         <ImageView

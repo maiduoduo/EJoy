@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvNormalTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/dp_10"
+    android:lines="1"
+    android:ellipsize="end"
+    android:background="@color/white"
+    android:textColor="@color/black"
+    android:paddingVertical="@dimen/dp_10"
+    android:textSize="15sp"
+    android:text="好尴尬,按下音箱而已…"/>

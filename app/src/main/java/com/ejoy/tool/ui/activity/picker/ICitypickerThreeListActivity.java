@@ -12,11 +12,11 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.imaidd.citypicker.style.citythreelist.ICityBean;
-import com.imaidd.citypicker.style.citythreelist.ProvinceActivity;
+
 import butterknife.BindView;
 
 /**
- * CN:      ITimeDateOrActivity
+ * CN:      ICitypickerThreeListActivity
  * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
  * Date:   2019/12/13
  * Des:    城市三级选择器
@@ -62,22 +62,26 @@ public class ICitypickerThreeListActivity extends BaseActivity {
         return null;
     }
     public void list() {
-        Intent intent = new Intent(_mActivity, ProvinceActivity.class);
-        startActivityForResult(intent, ProvinceActivity.RESULT_DATA);
+        Intent intent = new Intent(_mActivity, IThreeProvinceActivity.class);
+        startActivityForResult(intent, IThreeProvinceActivity.RESULT_DATA);
     }
     
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == ProvinceActivity.RESULT_DATA) {
+        if (requestCode == IThreeProvinceActivity.RESULT_DATA) {
             if (resultCode == RESULT_OK) {
                 if (data == null) { return;}
                 ICityBean area = data.getParcelableExtra("area");
                 ICityBean city = data.getParcelableExtra("city");
                 ICityBean province = data.getParcelableExtra("province");
-                mResultTv.setText("所选省市区城市： " + province.getName() + " " + province.getId() + "\n" + city.getName()
+                mResultTv.setText("所选省市区城市： \n\n" + province.getName() + " " + province.getId() + "\n" + city.getName()
                         + " " + city.getId() + "\n" + area.getName() + " " + area.getId() + "\n");
             }
         }
+    }
+
+    public void ivback(View view) {
+        finish();
     }
 }

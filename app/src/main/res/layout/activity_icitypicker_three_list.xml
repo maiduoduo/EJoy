@@ -9,10 +9,11 @@
         android:id="@+id/headview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_10"
         android:background="@color/app_color_theme_5">
         <ImageView
-            android:layout_width="@dimen/dp_30"
-            android:layout_height="@dimen/dp_30"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
             android:onClick="ivback"
             android:src="@drawable/ico_back_white_90px"/>
@@ -31,6 +32,7 @@
         android:layout_below="@+id/headview"
         android:paddingVertical="@dimen/dp_20"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/list_tv"
             android:layout_width="match_parent"
@@ -38,12 +40,12 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:background="@drawable/shape_button_13"
             android:layout_marginBottom="@dimen/dp_50"
+            android:background="@drawable/shape_button_13"
             android:gravity="center"
             android:text="获取三级城市列表"
             android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
         <TextView
             android:id="@+id/result_tv"
             android:layout_width="match_parent"

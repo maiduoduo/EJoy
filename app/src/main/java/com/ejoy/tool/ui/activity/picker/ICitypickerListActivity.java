@@ -31,13 +31,15 @@ import java.util.List;
 
 import butterknife.BindView;
 
-
+/**
+ * CN:      ICitypickerListActivity
+ * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
+ * Date:   2019/12/15
+ * Des:    仿美团城市列表选择
+ */
 public class ICitypickerListActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
 
-
-    @BindView(R.id.result_tv)
-    TextView mResultTv;
-
+    @BindView(R.id.result_tv) TextView mResultTv;
     private static final String KEY = "current_theme";
     @BindView(R.id.cb_hot)
     CheckBox hotCB;
@@ -72,10 +74,10 @@ public class ICitypickerListActivity extends BaseActivity implements CompoundBut
     protected void initView(View mRootView) {
         StatusBarTool.setTranslucentStatus(this);//透明状态栏
         //用来设置整体下移，状态栏沉浸
-        StatusBarTool.setRootViewFitsSystemWindows(this, true);
+//        StatusBarTool.setRootViewFitsSystemWindows(this, false);
         //黑色字体
-        StatusBarTool.setStatusBarDarkTheme(this, false);
-        StatusBarTool.setStatusBarColor(this,Color.parseColor("#f4ce51"));
+//        StatusBarTool.setStatusBarDarkTheme(this, false);
+//        StatusBarTool.setStatusBarColor(this,Color.parseColor("#f4ce51"));
 
         if (theme == R.style.DefaultCityPickerTheme){
             themeBtn.setText("默认主题");

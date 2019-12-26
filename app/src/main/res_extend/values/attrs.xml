@@ -149,7 +149,7 @@
 
         <!--
              A drawable to use as the background.  This can be either a reference
-             to a full drawable resource (such as a PNG image, 9-patch,
+             to a full drawable resource (such as a PNG smart_image, 9-patch,
              XML state list description, etc), or a solid color such as "#ff000000"
             (black).
         -->

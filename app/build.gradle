@@ -73,9 +73,9 @@ dependencies {
     //Glide/Fresco
     //    implementation rootProject.ext.dependencies["glide_361"]
     implementation rootProject.ext.dependencies["fresco"]
-//    implementation files('libs/nineoldandroids-2.4.0.jar')
-//    implementation files('libs/universal-image-loader-1.9.4.jar')
-//    implementation files('libs/universal-image-loader-1.9.4-sources.jar')
+    //    implementation files('libs/nineoldandroids-2.4.0.jar')
+    //    implementation files('libs/universal-smart_image-loader-1.9.4.jar')
+    //    implementation files('libs/universal-smart_image-loader-1.9.4-sources.jar')
     //EventBus
     implementation rootProject.ext.dependencies["eventbus"]
     //BaseRecyclerViewAdapterHelper
@@ -96,15 +96,10 @@ dependencies {
     implementation project(':icitypickerview')
     //http://www.open-open.com/jsoup/
     implementation rootProject.ext.dependencies["jsoup"]
-
     //数据库操作
-    api rootProject.ext.dependencies["greendao"]
+    implementation rootProject.ext.dependencies["greendao"]
     //用来升级greendao数据库的辅助类
-    api rootProject.ext.dependencies["greendao-generator"]
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    api 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
-
-
-
-
+    implementation rootProject.ext.dependencies["greendao-generator"]
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation rootProject.ext.dependencies["SmartRefreshLayout_104"]
 }

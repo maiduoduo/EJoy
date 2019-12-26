@@ -1,7 +1,6 @@
 package com.ejoy.tool.ui.activity;
 
 import android.annotation.TargetApi;
-import android.app.Application;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -27,14 +26,11 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
-import com.ejoy.tool.app.App;
 import com.ejoy.tool.common.bean.MainItemBean;
 import com.ejoy.tool.common.db.CitysBean;
 import com.ejoy.tool.common.db.engine.CitiesDaoHelper;
 import com.ejoy.tool.common.helper.dialog.ExitDialog;
-import com.ejoy.tool.greendao.gen.CitysBeanDao;
-import com.ejoy.tool.greendao.gen.DaoSession;
-import com.ejoy.tool.greendao.gen.TownDao;
+import com.ejoy.tool.scaffold.utils.ActivityUtils;
 import com.ejoy.tool.scaffold.utils.FileUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
@@ -43,10 +39,12 @@ import com.ejoy.tool.ui.activity.bezer.BezierActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
+import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
 import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
+import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
 import com.ejoy.tool.ui.data.resource.ApiResource;
@@ -141,9 +139,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 //        CitysBeanDao citysBeanDao = daoSession.getCitysBeanDao();
 //        List<CitysBean> citysBeans = citysBeanDao.loadAll();
         List<CitysBean> citysBeans = CitiesDaoHelper.queryAll();
-        Log.e(_TAG, "onCreate-----citysBeans-------->: \n"+new Gson().toJson(citysBeans));
-
-
+        Log.e(_TAG, "onCreate-----citysBeans-------->: \n" + new Gson().toJson(citysBeans));
 
 
     }
@@ -258,6 +254,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 startActivity(new Intent(this, IArcLayoutActivity.class));
                 break;
             case 9://设备信息
+                ActivityUtils.getInstance().showActivity(this, DeviceToolActviity.class);
                 break;
             case 10://图片处理
                 showBotttomDialog();
@@ -266,6 +263,9 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 break;
             case 12://时间
                 startActivity(new Intent(this, ITimeDateOrActivity.class));
+                break;
+            case 13://下拉刷新
+                startActivity(new Intent(this, IRefreshActivity.class));
                 break;
             default:
                 break;

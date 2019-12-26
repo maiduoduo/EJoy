@@ -241,13 +241,13 @@ public class IBitmapUtils {
     }
 
     /**
-     * Get bitmap from specified image path
+     * Get bitmap from specified smart_image path
      *
      * @param imgPath
      * @return
      */
     public Bitmap getBitmap(String imgPath) {
-        // Get bitmap through image path
+        // Get bitmap through smart_image path
         BitmapFactory.Options newOpts = new BitmapFactory.Options();
         newOpts.inJustDecodeBounds = false;
         newOpts.inPurgeable = true;
@@ -259,7 +259,7 @@ public class IBitmapUtils {
     }
 
     /**
-     * Store bitmap into specified image path
+     * Store bitmap into specified smart_image path
      *
      * @param bitmap
      * @param outPath
@@ -271,10 +271,10 @@ public class IBitmapUtils {
     }
 
     /**
-     * Compress image by pixel, this will modify image width/height.
+     * Compress smart_image by pixel, this will modify smart_image width/height.
      * Used to get thumbnail
      *
-     * @param imgPath image path
+     * @param imgPath smart_image path
      * @param pixelW target pixel of width
      * @param pixelH target pixel of height
      * @return
@@ -310,7 +310,7 @@ public class IBitmapUtils {
     }
 
     /**
-     * Compress image by size, this will modify image width/height.
+     * Compress smart_image by size, this will modify smart_image width/height.
      * Used to get thumbnail
      *
      * @param image
@@ -354,7 +354,7 @@ public class IBitmapUtils {
     }
 
     /**
-     * Compress by quality,  and generate image to the path specified
+     * Compress by quality,  and generate smart_image to the path specified
      *
      * @param image
      * @param outPath
@@ -376,7 +376,7 @@ public class IBitmapUtils {
             image.compress(Bitmap.CompressFormat.JPEG, options, os);
         }
 
-        // Generate compressed image file
+        // Generate compressed smart_image file
         FileOutputStream fos = new FileOutputStream(outPath);
         fos.write(os.toByteArray());
         fos.flush();
@@ -384,7 +384,7 @@ public class IBitmapUtils {
     }
 
     /**
-     * Compress by quality,  and generate image to the path specified
+     * Compress by quality,  and generate smart_image to the path specified
      *
      * @param imgPath
      * @param outPath

@@ -6,7 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+                     tools:ignore="ProtectedPermissions"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -14,16 +15,15 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
     <!-- 在SDCard中创建与删除文件权限 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+                     tools:ignore="ProtectedPermissions"/>
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 往SDCard读数据权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
-
-
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".app.App"
@@ -33,6 +33,7 @@
         android:roundIcon="@mipmap/ic_app_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
         tools:replace="name,theme,label,icon,allowBackup">
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
@@ -61,6 +62,15 @@
         <activity android:name=".ui.activity.picker.ICitypickerListActivity"/>
         <activity android:name=".ui.activity.picker.ICitypickerWheelActivity"/>
         <activity android:name=".ui.activity.picker.ICitypickerThreeListActivity"/>
+        <activity android:name=".ui.activity.picker.IThreeProvinceActivity"/>
+        <activity android:name=".ui.activity.picker.IThreeCityActivity"/>
+        <activity android:name=".ui.activity.picker.IThreeAreaActivity"/>
+        <activity android:name=".ui.activity.picker.ICitypickerJDActivity"/>
+        <activity android:name=".ui.activity.device.DeviceToolActviity"/>
+        <activity android:name=".ui.activity.refresh.IRefreshActivity"/>
+        <activity android:name=".ui.activity.refresh.IRefreshSmartActivty"/>
+        <activity android:name=".ui.activity.refresh.IRefreshVideoActivty"
+            android:hardwareAccelerated="false"/>
 
 
         <!--FileProvider共享文件-->

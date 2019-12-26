@@ -17,12 +17,6 @@ package com.ejoy.tool.scaffold.view.decorator;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
-/**
- * CN:      GridItemDecoration
- * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
- * Date:   2019/11/26
- * Des:    TODO:
- */
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -42,7 +36,10 @@ import android.util.TypedValue;
 import android.view.View;
 
 /**
- * 描述:  自定义网格ItemDecoration
+ * CN:      GridItemDecoration
+ * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
+ * Date:   2019/11/26
+ * Des:    TODO:自定义网格ItemDecoration
  */
 public class GridItemDecoration extends RecyclerView.ItemDecoration {
 
