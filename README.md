@@ -94,9 +94,97 @@
 <br/>
 
 
+##### 待做日志
 
+> 组件化
 
 ##### 更新日志
+
+> 2019.12.26
+
+* 下拉刷新
+
+    + 基于SmartRefreshLayout实现自由定制头部：见项目IRefreshSmartActivty.java文件
+    + 自定义视频下拉刷新示范：见项目IRefreshVideoActivty.java文件
+
+* RecyclerView列表加载动画
+
+<br/>
+
+> 代码实现 详见IRefreshSmartActivty.java文件
+
+<br/>
+
+```java
+    LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.animation_item));
+    //也可以通过此方法获得
+    //LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(this, R.anim.animation_recyclerview);
+    controller.setOrder(LayoutAnimationController.ORDER_NORMAL);
+    controller.setDelay(0.2f);//前面还没结束，后面已经开始，实现连续
+    mRecyclerView.setLayoutAnimation(controller);
+    mRecyclerView.startLayoutAnimation();//貌似不加这句动画也会自动实现
+```
+
+<br/>
+
+> animation_recyclerview.xml
+
+```java
+    <?xml version="1.0" encoding="utf-8"?>
+    <layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+        android:animation="@anim/animation_item"
+        android:animationOrder="reverse"
+        android:delay="0.2"
+        android:interpolator="@android:anim/decelerate_interpolator"/>
+```
+
+<br/>
+
+> animation_item.xml
+
+```java
+    <set xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="400">
+        <translate
+            android:fromYDelta="-20%"
+            android:interpolator="@android:anim/decelerate_interpolator"
+            android:toYDelta="0" />
+        <alpha
+            android:fromAlpha="0"
+            android:interpolator="@android:anim/decelerate_interpolator"
+            android:toAlpha="1" />
+        <scale
+            android:fromXScale="105%"
+            android:fromYScale="105%"
+            android:interpolator="@android:anim/decelerate_interpolator"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toXScale="100%"
+            android:toYScale="100%" />
+    </set>
+
+```
+
+
+
+
+
+> 2019.12.20
+
+* 新增自定义view组件库(imeiview-lib)
+
+ > 集中存放自定义控件
+ > 避免资源杂乱
+
+* 新增资源文件组件库(iresku-lib)
+
+ > 可以避免资源重复
+ > 可以避免资源冲突
+ > 可以避免资源杂乱
+ > 组件化管理
+
+* 信封样式的分割线
+
 
 > 2019.12.19
 

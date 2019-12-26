@@ -67,12 +67,6 @@
     <color name="black_66_77">#77333131</color>
     <color name="black_77">#292929</color>
     <color name="transparent">#00000000</color>
+    <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
 
-    <color name="light_gray">#808080</color>
-    <color name="light_gray1">#F3F3F3</color>
-    <color name="light_gray2">#10808080</color>
-    <color name="light_gray3">#faf7f7</color>
-
-    <color name="color_red">#FD2E4A</color>
-    <color name="color_green">#13D1BE</color>
 </resources>

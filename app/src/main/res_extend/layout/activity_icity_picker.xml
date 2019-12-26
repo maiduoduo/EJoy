@@ -48,17 +48,19 @@
                 android:layout_height="wrap_content"
                 android:onClick="citySelectList"
                 android:paddingVertical="@dimen/dp_10">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:textColor="@color/material_red_A200"
+                    android:background="@drawable/shape_item"
                     android:paddingHorizontal="@dimen/dp_5"
                     android:paddingVertical="@dimen/dp_2"
-                    android:background="@drawable/shape_item"
-                    android:textStyle="italic"
+                    android:text="仿美团最新版"
+                    android:textColor="@color/material_red_A200"
                     android:textSize="11sp"
-                    android:text="仿美团最新版"/>
+                    android:textStyle="italic" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,31 +106,50 @@
 
             <include layout="@layout/layout_line_horizontal_1dp" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
                 android:onClick="customRes"
-                android:paddingVertical="@dimen/dp_10"
-                android:text="自定义数据源"
-                android:textColor="@color/Gray2"
-                android:textSize="17sp" />
+                android:paddingVertical="@dimen/dp_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="自定义数据源"
+                    android:textColor="@color/Gray3"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingVertical="@dimen/dp_2"
+                    android:text="参考【城市列表】设置自己自定义的数据"
+                    android:textColor="@color/material_blue_200"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
 
             <include layout="@layout/layout_line_horizontal_1dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
-                android:textSize="8sp"
+                android:text="参考自：https://github.com/crazyandcoder/citypicker"
                 android:textColor="@color/light_gray"
-                android:text="参考自：https://github.com/crazyandcoder/citypicker"/>
+                android:textSize="8sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textSize="8sp"
+                android:text="侵权联删！"
                 android:textColor="@color/light_gray"
-                android:text="侵权联删！"/>
+                android:textSize="8sp" />
         </LinearLayout>
 
     </ScrollView>

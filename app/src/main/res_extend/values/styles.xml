@@ -131,7 +131,15 @@
     </style>
     <style name="linearlayout_text_style">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textColor">@color/black_33</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="linearlayout_text_style1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_30</item>
         <item name="android:layout_weight">2</item>
         <item name="android:gravity">left|center</item>
         <item name="android:textColor">@color/black_33</item>

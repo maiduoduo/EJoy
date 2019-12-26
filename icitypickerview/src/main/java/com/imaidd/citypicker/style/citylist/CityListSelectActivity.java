@@ -31,59 +31,39 @@ import java.util.List;
 public class CityListSelectActivity extends AppCompatActivity {
 
     CleanableEditView mCityTextSearch;
-
     TextView mCurrentCityTag;
-
     TextView mCurrentCity;
-
     TextView mLocalCityTag;
-
     TextView mLocalCity;
-
     ListView sortListView;
-
     TextView mDialog;
-
     SideBar mSidrbar;
-
     ImageView imgBack;
-
     public SortAdapter adapter;
 
     /**
      * 汉字转换成拼音的类
      */
     private CharacterParser characterParser;
-
     private List<SortModel> sourceDateList;
 
     /**
      * 根据拼音来排列ListView里面的数据类
      */
     private PinyinComparator pinyinComparator;
-
     private List<CityInfoBean> cityListInfo = new ArrayList<>();
-
     private CityInfoBean cityInfoBean = new CityInfoBean();
-
     //startActivityForResult flag
     public static final int CITY_SELECT_RESULT_FRAG = 0x0000032;
-
     public static List<CityInfoBean> sCityInfoBeanList = new ArrayList<>();
-
     public PinYinUtils mPinYinUtils = new PinYinUtils();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_list_select);
-
         initView();
-
         initList();
-
         setCityData(CityListLoader.getInstance().getCityListData());
-
     }
 
     private void initView() {

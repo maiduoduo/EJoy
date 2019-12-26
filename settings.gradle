@@ -1,1 +1,1 @@
-include ':app', ':filterlib_popupwindow', ':arclayout', ':iiosdialog', ':imaidd_datetime', ':icitypickerview'
+include ':app', ':filterlib_popupwindow', ':arclayout', ':iiosdialog', ':imaidd_datetime', ':icitypickerview', ':iresku'

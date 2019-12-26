@@ -903,8 +903,11 @@
     <color name="white2">#77ffffff</color>
     <color name="black_05">#efeded</color>
     <color name="black_11">#dad7d7</color>
+    <color name="black_11_33">#33dad7d7</color>
     <color name="black_55">#3d3939</color>
+    <color name="black_55_33">#333d3939</color>
     <color name="black_55_77">#773d3939</color>
+    <color name="black_55_88">#883d3939</color>
     <color name="black_66_77">#77333131</color>
     <color name="black_77">#292929</color>
     <color name="light_gray3">#faf7f7</color>

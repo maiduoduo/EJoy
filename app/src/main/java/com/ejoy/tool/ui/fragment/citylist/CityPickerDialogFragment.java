@@ -169,7 +169,7 @@ public class CityPickerDialogFragment extends DialogFragment implements TextWatc
         toggleQX = mContentView.findViewById(R.id.toggleQX);
         ivToggleArraw = mContentView.findViewById(R.id.ivToggleArraw);
         //设置切换区县布局
-        //初始化工时详情
+        //初始化
         mExpandLayout.initExpand(false);
         //创建动画
         rotate = AnimationUtils.loadAnimation(mContext, R.anim.arrow_rotate);

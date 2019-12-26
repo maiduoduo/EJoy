@@ -58,6 +58,9 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public IToast iToast;
     public String defalutYellow = "#f4ce51";
     public String defalutGreen = "#3FD0AD";
+    public String defalutBlue = "#5A9AEF";
+    public String defalutStatus1 = "#aa738ffe";
+    public String defalutStatus2 = "#70c8b0";
 
     protected abstract void initRestore(@Nullable Bundle savedInstanceState);
     protected abstract int getContentViewId();
