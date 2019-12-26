@@ -351,11 +351,5 @@ public class IIosDialogActivity extends BaseActivity {
     }
 
 
-    public void loadingStart(View view) {
-        if (mLoadingDialog == null) {
-            mLoadingDialog = new LoadingDialog(this);
-        }
-        mLoadingDialog.show();
-    }
 
 }

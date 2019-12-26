@@ -1,4 +1,4 @@
-package com.iduo.filterlib;
+package com.module.ires;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.samluys.filtertab.test", appContext.getPackageName());
+        assertEquals("com.module.ires.test", appContext.getPackageName());
     }
 }

@@ -81,9 +81,12 @@ public abstract class ICameraActivity extends PermissionActivity {
         requestPermission(new OnPermissionsResult() {
             @Override
             public void onAllow(List<String> allowPermissions) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("smart_image/*");
-                startActivityForResult(intent, PICK_IMAGE_REQUEST_CODE);
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,PICK_IMAGE_REQUEST_CODE);
+
+//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//                intent.setType("smart_image/*");
+//                startActivityForResult(intent, PICK_IMAGE_REQUEST_CODE);
             }
 
             @Override
@@ -98,9 +101,11 @@ public abstract class ICameraActivity extends PermissionActivity {
 
             @Override
             public void onLowVersion() {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("smart_image/*");
-                startActivityForResult(intent, ICameraActivity.PICK_IMAGE_REQUEST_CODE);
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,PICK_IMAGE_REQUEST_CODE);
+//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//                intent.setType("smart_image/*");
+//                startActivityForResult(intent, ICameraActivity.PICK_IMAGE_REQUEST_CODE);
             }
         },Manifest.permission.READ_EXTERNAL_STORAGE);
     }

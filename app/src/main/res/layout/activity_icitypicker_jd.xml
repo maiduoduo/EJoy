@@ -73,7 +73,7 @@
                     android:maxLines="2"
                     android:ellipsize="end"
                     android:layout_gravity="center_vertical"
-                    android:text="收货地址：四川省成都市高新区天府软件园D区"/>
+                    android:text="收货地址："/>
             </LinearLayout>
             <TextView
                 android:id="@+id/result_tv"

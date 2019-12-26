@@ -1,1 +1,11 @@
-include ':app', ':filterlib_popupwindow', ':arclayout', ':iiosdialog', ':imaidd_datetime', ':icitypickerview', ':iresku'
+include ':app'
+/*通用类：view  res*/
+include 'imodules:module_iviews',
+        'imodules:module_icommon'
+/*自定义控件类库*/
+include ':imodules:module_iiosdialog',
+        ':imodules:module_idatetime',
+        ':imodules:module_icitypicker'
+/*选择类*/
+include 'imodules:module_arclayout',
+        'imodules:module_filterpopupwindow'
