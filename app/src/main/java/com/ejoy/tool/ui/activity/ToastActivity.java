@@ -67,6 +67,11 @@ public class ToastActivity extends BaseActivity {
     }
 
     @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
+
+    @Override
     protected int getContentViewId() {
         return R.layout.activity_itoast;
     }

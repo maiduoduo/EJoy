@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/ejoy_content_spacing_horizontal">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/eui_config_simple_list_icon_size_tablet_big"
+        android:layout_height="@dimen/eui_config_simple_list_icon_size_tablet_small"
+        android:layout_marginEnd="@dimen/eui_config_content_spacing_horizontal_tablet_big" />
+
+    <TextView
+        android:id="@+id/tv_group_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ejoy_content_spacing_horizontal"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="@color/ejoy_config_color_title_text"
+        android:textSize="@dimen/eui_config_size_content_text"
+        tools:text="标题" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="?attr/colorAccent"
+        app:srcCompat="@drawable/eui_ic_expand_arrow_down" />
+
+</LinearLayout>

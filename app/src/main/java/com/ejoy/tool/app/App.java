@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import static com.ejoy.tool.ui.data.resource.ApiResource.DB_NAME_V2;
+import static com.ejoy.tool.ui.data.resource.GlobalDataProvider.DB_NAME_V2;
 
 
 /**

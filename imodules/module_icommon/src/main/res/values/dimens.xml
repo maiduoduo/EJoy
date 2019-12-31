@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_spacing">6dp</dimen>
+    <dimen name="bottom_sheet_header_height">64dp</dimen>
+
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dialog_radius">15dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="margin_large">30dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="common_vew_column_padding">1dp</dimen>
+    <dimen name="common_vew_raw_padding">1dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+    <dimen name="sp_25">25sp</dimen>
+    <dimen name="dp_35">35dp</dimen>
+
+
+
+    <!--全局样式-->
+    <!--字体大小-->
+    <dimen name="ejoy_config_size_title_text">15sp</dimen>
+    <dimen name="ejoy_config_size_explain_text">14sp</dimen>
+    <!--文字字号样式-->
+    <dimen name="eui_config_size_title_text">21sp</dimen>
+    <dimen name="eui_config_size_content_text">18sp</dimen>
+    <dimen name="eui_config_size_explain_text">14sp</dimen>
+    <dimen name="eui_config_size_spinner_text">14sp</dimen>
+
+    <!--边距-->
+    <dimen name="ejoy_content_spacing_vertical">10dp</dimen>
+    <dimen name="ejoy_content_spacing_horizontal">16dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="eui_config_simple_list_icon_size_tablet_big">26dp</dimen>
+    <dimen name="eui_config_simple_list_icon_size_tablet_small">24dp</dimen>
+    <dimen name="eui_config_simple_list_icon_size_phone">22dp</dimen>
+    <dimen name="eui_config_content_spacing_horizontal_tablet_big">20dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="eui_config_content_spacing_horizontal_tablet_small">16dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="eui_config_content_spacing_horizontal_phone">12dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+
+    <dimen name="eui_config_content_spacing_vertical_tablet_big">12dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+    <dimen name="eui_config_content_spacing_vertical_tablet_small">10dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+    <dimen name="eui_config_content_spacing_vertical_phone">7.5dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+
+    <!--**********************************************
+   *                  popup                    *
+   ***********************************************-->
+    <dimen name="ejoy_popup_width_tablet_big">232dp</dimen>
+    <dimen name="ejoy_popup_width_tablet_small">174dp</dimen>
+    <dimen name="ejoy_popup_width_phone">133dp</dimen>
+    <dimen name="ejoy_popup_arrow_up_margin_top">0dp</dimen>
+    <dimen name="ejoy_popup_arrow_down_margin_bottom">0dp</dimen>
+
+    <dimen name="eui_config_simple_list_item_height_tablet_big">61dp</dimen>
+
+
+
+
+
+</resources>

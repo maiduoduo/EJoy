@@ -66,19 +66,17 @@ public class ICitypickerListActivity extends BaseActivity implements CompoundBut
     }
 
     @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
+
+    @Override
     protected int getContentViewId() {
         return R.layout.activity_icitypicker_list;
     }
 
     @Override
     protected void initView(View mRootView) {
-        StatusBarTool.setTranslucentStatus(this);//透明状态栏
-        //用来设置整体下移，状态栏沉浸
-//        StatusBarTool.setRootViewFitsSystemWindows(this, false);
-        //黑色字体
-//        StatusBarTool.setStatusBarDarkTheme(this, false);
-//        StatusBarTool.setStatusBarColor(this,Color.parseColor("#f4ce51"));
-
         if (theme == R.style.DefaultCityPickerTheme){
             themeBtn.setText("默认主题");
         }else if (theme == R.style.CPCustomTheme){

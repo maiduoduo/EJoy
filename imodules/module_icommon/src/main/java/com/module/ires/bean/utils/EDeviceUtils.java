@@ -1,4 +1,4 @@
-package com.ejoy.tool.scaffold.utils;
+package com.module.ires.bean.utils;
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
 //┃　　　　　　　┃
@@ -18,6 +18,7 @@ package com.ejoy.tool.scaffold.utils;
 //      ┗┻┛　┗┻┛
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
@@ -26,6 +27,8 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
+
+import com.module.ires.bean.common.CommonConstant;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -36,13 +39,17 @@ import java.util.Date;
 import java.util.Enumeration;
 
 /**
- * CN:      DeviceUtils
+ * CN:      EDeviceUtils
  * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
  * Date:   2019/12/23
  * Des:    TODO:手机信息 & MAC地址 & 开机时间 & ip地址 &手机的IMEI、IMSI等号码
  */
 
-public class DeviceUtils {
+public class EDeviceUtils {
+
+    private static boolean sIsTabletChecked;
+    private static int sScreenType;
+
     /**
      * MAC地址
      *
@@ -238,6 +245,49 @@ public class DeviceUtils {
         TelephonyManager mTm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String numer = mTm.getLine1Number(); // 手机号码，有的可得，有的不可得
         return numer;
+    }
+
+    //=======================屏幕尺寸===========================//
+
+    /**
+     * 检验设备屏幕的尺寸
+     * @param context
+     * @return
+     */
+    private static int checkScreenSize(Context context) {
+        int screenSize = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
+        if (screenSize >= Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            //证明是平板
+            if (screenSize >= Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+                return CommonConstant.ScreenType.BIG_TABLET;
+            } else {
+                return CommonConstant.ScreenType.SMALL_TABLET;
+            }
+        } else {
+            return CommonConstant.ScreenType.PHONE;
+        }
+    }
+
+
+    /**
+     * 判断是否平板设备
+     * @return true:平板,false:手机
+     */
+    public static int getScreenType(Context context) {
+        if (sIsTabletChecked) {
+            return sScreenType;
+        }
+        sScreenType = checkScreenSize(context);
+        sIsTabletChecked = true;
+        return sScreenType;
+    }
+
+    /**
+     * 是否是平板
+     * @return
+     */
+    public static boolean isTablet(Context context) {
+        return getScreenType(context) == CommonConstant.ScreenType.SMALL_TABLET || getScreenType(context) == CommonConstant.ScreenType.BIG_TABLET;
     }
 
 }

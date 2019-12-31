@@ -17,13 +17,18 @@ package com.ejoy.tool.ui.base.base_activity;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.Size;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -56,17 +61,22 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public static final String _TAG = BaseActivity.class.getSimpleName();
     public  Activity _mActivity;
     public IToast iToast;
+    public String baseYellow = "#FFCF47";
     public String defalutYellow = "#f4ce51";
     public String defalutGreen = "#3FD0AD";
     public String defalutBlue = "#5A9AEF";
     public String defalutStatus1 = "#aa738ffe";
     public String defalutStatus2 = "#70c8b0";
+    public String defalutStatus3 = "#1e1e1e";
+    public String defalutStatus4 = "#037BFF";
+    public String defalutStatus5 = "#ffe6393f";
 
     protected abstract void initRestore(@Nullable Bundle savedInstanceState);
     protected abstract int getContentViewId();
     protected abstract void initView(View mRootView);
     protected abstract void initData();
     protected abstract void addListener();
+
 
     /**
      * 获取Presenter实例，子类实现
@@ -86,15 +96,47 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     protected boolean isRegisterEventBus() {
         return false;
     }
-    protected boolean isSetStatusBarBg() {
-        return true;
+
+    /**
+     * 透明状态栏
+     *      TODO:(子类界面重写此方法)
+     * @return
+     */
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return false;
+    }
+
+    /**
+     * 状态栏背景颜色
+     *      1.推荐使用：字符串类型颜色：eg:"#FFCF47",{@link android.support.annotation.ColorRes}
+     *      2.不推荐使用：color.xml下颜色：R.color.LGray3   todo:---------注意:会出现混合色------
+     *
+     *      TODO:(子类界面重写此方法)
+     * @return
+     */
+    protected Object registSatusbarBgcolor() {
+        return "";
+    }
+
+    /**
+     * 状态栏字体颜色
+     *      深色/浅色切换
+     * @dark true 深色
+     * @light false 浅色
+     *        TODO:(子类界面重写此方法)
+     * @return
+     */
+    protected boolean isRegistSatusbarFontDark() {
+        return false;
     }
 
 
 
 
 
+
     private Unbinder unbinder;
+    @SuppressLint("Range")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +154,32 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         if (isRegisterEventBus()) {
             EventBusUtil.register(this);
         }
+        if (isRegistSatusbarFullScreenTransluent()){
+            StatusBarTool.setTranslucentStatus(this);//透明状态栏
+            //用来设置整体下移，状态栏沉浸
+            StatusBarTool.setRootViewFitsSystemWindows(this, false);
+        }else {
+            StatusBarTool.setRootViewFitsSystemWindows(this,true);
+        }
+        if (isRegistSatusbarFontDark()){
+            //黑色字体
+            StatusBarTool.setStatusBarDarkTheme(this, true);
+        }else{
+            //浅色字体
+            StatusBarTool.setStatusBarDarkTheme(this, false);
+        }
+        if (registSatusbarBgcolor() instanceof String ){
+            if (!TextUtils.isEmpty((String)registSatusbarBgcolor())) {
+                StatusBarTool.setStatusBarStringColor(_mActivity, (String) registSatusbarBgcolor());
+            }
+        }else if (registSatusbarBgcolor() instanceof Integer){
+            if ((Integer)registSatusbarBgcolor() > 0) {
+                StatusBarTool.setStatusBarColor(_mActivity, (Integer) registSatusbarBgcolor());
+            }
+        }
+//        if (!TextUtils.isEmpty(registSatusbarBgcolor())) {
+//            StatusBarTool.setStatusBarColor(_mActivity, Color.parseColor(registSatusbarBgcolor()));
+//        }
         initView(mRootView);
         initData();
         addListener();

@@ -43,7 +43,6 @@ public class IScrollViewActivity extends BaseActivity {
     @BindView(R.id.btnScrollViewLong) Button btnScrollViewLong;
     @BindView(R.id.btnScrollViewShort) Button btnScrollViewShort;
     private IDialog iDialog;
-    private Activity mActivity;
     private String[] mMsgArray = new String[]{
             "温馨提示\n工具箱2.0新版本对系统做了大量优化及增加新功能，请及时更新，避免版本差异造成数据、功能不同步。\n\n" +
                     "当ScrollView中显示内容量小的时候自适应高度不滚动，当ScrollView中显示内容量大的时候需要将其高度设置为屏幕高度的一半且可以滚动查看，\n" +
@@ -67,12 +66,13 @@ public class IScrollViewActivity extends BaseActivity {
     }
 
     @Override
+    protected Object registSatusbarBgcolor() {
+        return "#3493d4";
+    }
+
+    @Override
     protected void initView(View mRootView) {
-        mActivity = IScrollViewActivity.this;
-        iDialog = new IDialog(mActivity).builder();
-        //当自定义状态栏背景和标题栏的时候，加上这两句代码，避免重叠问题
-        StatusBarTool.setRootViewFitsSystemWindows(this,true);
-        StatusBarTool.setStatusBarColor(this,Color.parseColor("#3493d4"));
+        iDialog = new IDialog(_mActivity).builder();
     }
 
     @Override

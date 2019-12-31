@@ -28,12 +28,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ejoy.tool.R;
-import com.ejoy.tool.scaffold.utils.DeviceUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.VibratorUtil;
 import com.ejoy.tool.scaffold.view.widget.ExpandLayout;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
+import com.module.ires.bean.utils.EDeviceUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -79,7 +79,7 @@ public class DeviceToolActviity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String s = DeviceUtils.printSystemInfo(_mActivity);
+        String s = EDeviceUtils.printSystemInfo(_mActivity);
         phonename.setText(s);
 
     }

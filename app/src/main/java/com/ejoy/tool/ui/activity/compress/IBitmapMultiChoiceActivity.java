@@ -26,7 +26,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.SharedElementCallback;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -44,7 +43,7 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.task.CompressImageTask;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.PictureAdapter;
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.google.gson.Gson;
 
@@ -267,8 +266,8 @@ public class IBitmapMultiChoiceActivity extends BaseActivity {
 
     private void toPreviewActivity(View view, int position, List<String> list) {
         Intent intent = new Intent(_mActivity, PreviewImageActivity.class);
-        intent.putStringArrayListExtra(ApiResource.IMAGE_PATH_KEY, (ArrayList<String>) list);
-        intent.putExtra(ApiResource.CLICK_IMAGE_POSITION_KEY, position);
+        intent.putStringArrayListExtra(GlobalDataProvider.IMAGE_PATH_KEY, (ArrayList<String>) list);
+        intent.putExtra(GlobalDataProvider.CLICK_IMAGE_POSITION_KEY, position);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             PairHelp.setPreviewPosition(position);
             showLog(PairHelp.PREVIEW_POSITION + "---" + mPreviewOriginalData.size());

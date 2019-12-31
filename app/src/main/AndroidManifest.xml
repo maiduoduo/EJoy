@@ -71,6 +71,10 @@
         <activity android:name=".ui.activity.refresh.IRefreshSmartActivty"/>
         <activity android:name=".ui.activity.refresh.IRefreshVideoActivty"
             android:hardwareAccelerated="false"/>
+        <activity android:name=".ui.activity.bottomsheet.IBottomSheetActivity"/>
+        <activity android:name=".ui.activity.bottomsheet.ICustomBottomSheetActivity"
+            android:theme="@style/ICustomBSAppTheme"/>
+        <activity android:name=".ui.activity.bottomsheet.IGFBottomSheetActivity"/>
 
 
         <!--FileProvider共享文件-->

@@ -29,12 +29,15 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.ejoy.tool.R;
+import com.module.ires.bean.utils.EResUtils;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.text.ParseException;
 
 /**
  * CN:      StatusBarTool
@@ -66,6 +69,24 @@ public class StatusBarTool {
             SystemBarTintManager systemBarTintManager = new SystemBarTintManager(activity);
             systemBarTintManager.setStatusBarTintEnabled(true);//显示状态栏
             systemBarTintManager.setStatusBarTintColor(colorId);//设置状态栏颜色
+        }
+    }
+
+    /**
+     * 修改状态栏颜色，支持4.4以上版本
+     *
+     * @param colorId 颜色
+     */
+    public static void setStatusBarStringColor(Activity activity, String colorId) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = activity.getWindow();
+            window.setStatusBarColor(Color.parseColor(colorId));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //使用SystemBarTintManager,需要先将状态栏设置为透明
+            setTranslucentStatus(activity);
+            SystemBarTintManager systemBarTintManager = new SystemBarTintManager(activity);
+            systemBarTintManager.setStatusBarTintEnabled(true);//显示状态栏
+            systemBarTintManager.setStatusBarTintColor(Color.parseColor(colorId));//设置状态栏颜色
         }
     }
 

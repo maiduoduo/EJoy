@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 
 
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.fragment.citylist.model.City;
 
 import java.io.File;
@@ -19,7 +19,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.ejoy.tool.ui.data.resource.ApiResource.DB_NAME_V2;
+import static com.ejoy.tool.ui.data.resource.GlobalDataProvider.DB_NAME_V2;
 
 
 /**
@@ -50,12 +50,12 @@ public class DBUseManager {
             dbV1.delete();
         }
         //创建新版本数据库
-        File dbFile = new File(DB_PATH +  ApiResource.LATEST_DB_NAME);
+        File dbFile = new File(DB_PATH +  GlobalDataProvider.LATEST_DB_NAME);
         if (!dbFile.exists()){
             InputStream is;
             OutputStream os;
             try {
-                is = mContext.getResources().getAssets().open(ApiResource.LATEST_DB_NAME);
+                is = mContext.getResources().getAssets().open(GlobalDataProvider.LATEST_DB_NAME);
                 os = new FileOutputStream(dbFile);
                 byte[] buffer = new byte[BUFFER_SIZE];
                 int length;
@@ -72,16 +72,16 @@ public class DBUseManager {
     }
 
     public List<City> getAllCities(){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DB_PATH + ApiResource.LATEST_DB_NAME, null);
-        Cursor cursor = db.rawQuery("select * from " + ApiResource.TABLE_NAME, null);
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DB_PATH + GlobalDataProvider.LATEST_DB_NAME, null);
+        Cursor cursor = db.rawQuery("select * from " + GlobalDataProvider.TABLE_NAME, null);
         List<City> result = new ArrayList<>();
         City city;
         while (cursor.moveToNext()){
-            String name = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_NAME));
-            String province = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_PROVINCE));
-            String pinyin = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_PINYIN));
-            String code = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_CODE));
-            String tip = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_TIP));
+            String name = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_NAME));
+            String province = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_PROVINCE));
+            String pinyin = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_PINYIN));
+            String code = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_CODE));
+            String tip = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_TIP));
             city = new City(name, province, pinyin, code,tip);
             result.add(city);
         }
@@ -92,19 +92,19 @@ public class DBUseManager {
     }
 
     public List<City> searchCity(final String keyword){
-        String sql = "select * from " + ApiResource.TABLE_NAME + " where "
-                + ApiResource.COLUMN_C_NAME + " like ? " + "or "
-                +ApiResource.COLUMN_C_PINYIN + " like ? ";
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DB_PATH + ApiResource.LATEST_DB_NAME, null);
+        String sql = "select * from " + GlobalDataProvider.TABLE_NAME + " where "
+                + GlobalDataProvider.COLUMN_C_NAME + " like ? " + "or "
+                +GlobalDataProvider.COLUMN_C_PINYIN + " like ? ";
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DB_PATH + GlobalDataProvider.LATEST_DB_NAME, null);
         Cursor cursor = db.rawQuery(sql, new String[]{"%"+keyword+"%", keyword+"%"});
 
         List<City> result = new ArrayList<>();
         while (cursor.moveToNext()){
-            String name = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_NAME));
-            String province = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_PROVINCE));
-            String pinyin = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_PINYIN));
-            String code = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_CODE));
-            String tip = cursor.getString(cursor.getColumnIndex(ApiResource.COLUMN_C_TIP));
+            String name = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_NAME));
+            String province = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_PROVINCE));
+            String pinyin = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_PINYIN));
+            String code = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_CODE));
+            String tip = cursor.getString(cursor.getColumnIndex(GlobalDataProvider.COLUMN_C_TIP));
             City city = new City(name, province, pinyin, code,tip);
             result.add(city);
         }

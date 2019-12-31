@@ -52,10 +52,13 @@ public class IIosDialogActivity extends BaseActivity {
     }
 
     @Override
+    protected Object registSatusbarBgcolor() {
+        return defalutStatus5;
+    }
+
+    @Override
     protected void initView(View mRootView) {
         iDialog = new IDialog(_mActivity).builder();
-        StatusBarTool.setRootViewFitsSystemWindows(_mActivity,true);
-        StatusBarTool.setStatusBarColor(_mActivity,Color.parseColor("#ffe6393f"));
     }
 
     @Override

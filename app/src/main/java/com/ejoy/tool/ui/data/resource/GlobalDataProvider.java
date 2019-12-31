@@ -9,18 +9,48 @@ import com.ejoy.tool.app.AppConstant;
 import com.ejoy.tool.common.api.HostType;
 import com.ejoy.tool.common.bean.MainItemBean;
 import com.ejoy.tool.common.bean.PICData;
+import com.module.ires.bean.CustomBottomSheetItemBean;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * @package: ApiResource
+ * @package: GlobalDataProvider
  * @author： JSYL-DCL
- * @describe： 全局配置
- * @email： 11442865
+ * @describe： 全局配置及演示数据
  */
-public class ApiResource {
+public class GlobalDataProvider {
+
+    public static String[] titles = new String[]{
+            "伪装者:胡歌演绎'痞子特工'",
+            "无心法师:生死离别!月牙遭虐杀",
+            "花千骨:尊上沦为花千骨",
+            "综艺饭:胖轩偷看夏天洗澡掀波澜",
+            "碟中谍4:阿汤哥高塔命悬一线,超越不可能",
+    };
+
+    public static String[] urls = new String[]{//640*360 360/640=0.5625
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160323071011277.jpg",//伪装者:胡歌演绎"痞子特工"
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144158380433341332.jpg",//无心法师:生死离别!月牙遭虐杀
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160286644953923.jpg",//花千骨:尊上沦为花千骨
+            "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//综艺饭:胖轩偷看夏天洗澡掀波澜
+            "http://photocdn.sohu.com/tvmobilemvms/20150907/144159406950245847.jpg",//碟中谍4:阿汤哥高塔命悬一线,超越不可能
+    };
+
+    public static String[] dpiItems = new String[]{
+            "480 × 800",
+            "1080 × 1920",
+            "720 × 1280",
+    };
+
+    public static String[] menuItems = new String[]{
+            "（双）列表可滑动",
+            "筛选",
+            "设置"
+    };
+
+
     public static final String HOT = "热门";
     public static final String XING_GAN = "新鲜";
     public static final String MM = "mm";
@@ -46,7 +76,7 @@ public class ApiResource {
     public static String IMAGE_PATH_KEY = "image_path";
     public static String CLICK_IMAGE_POSITION_KEY = "click_image_position_key";
 
-    public static String[] title = { ApiResource.HOT, ApiResource.XING_GAN};
+    public static String[] title = { GlobalDataProvider.HOT, GlobalDataProvider.XING_GAN};
 
     static {
         URL_COMMITCACHEPATROL = AppConstant.Baseurl + "patrolAction/cacheUploadPatrolRecord";
@@ -273,12 +303,251 @@ public class ApiResource {
         dataList.add(new MainItemBean("设备信息", R.mipmap.ico_grid_b));
         //10
         dataList.add(new MainItemBean("图片处理", R.mipmap.ico_grid_c));
-        dataList.add(new MainItemBean("BottomSheet", R.mipmap.ico_grid_d));
+        dataList.add(new MainItemBean("BottomSheetDialog", R.mipmap.ico_grid_d));
         dataList.add(new MainItemBean("日期等选择器", R.mipmap.ico_grid_e));
         dataList.add(new MainItemBean("下拉刷新", R.mipmap.ico_grid_f));
+        dataList.add(new MainItemBean("通用标题栏", R.mipmap.ico_grid_f));
+        dataList.add(new MainItemBean("通用TextView", R.mipmap.ico_grid_f));
 
 
         return dataList;
+    }
+
+
+    /**
+     * Bottomsheet自定义（仿网易云弹窗）
+     * @return
+     */
+    private static List<CustomBottomSheetItemBean> bsList;
+    public static List<CustomBottomSheetItemBean> getBsData() {
+        if (bsList != null)bsList.clear();
+        else bsList = new ArrayList<>();
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_zan,"鼓励一下"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_play,"下一首播放"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_collect,"收藏到歌单"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_downloadit,"下载(vip)"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_comment,"评论(67045)"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_share,"分享"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_songger,"歌手：柏松"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_album,"专辑：听闻余生"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_ling,"设置铃声或彩铃"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_buyalbum,"购买单曲"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_video_watch,"查看视频"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_rqbyy,"人气榜应援"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_unintrest,"不感兴趣"));
+        return bsList;
+    }
+
+
+    /*private static List<ImageViewInfo> getVideos() {
+        List<ImageViewInfo> videos = new ArrayList<>();
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a.mp4",
+                "http://pic.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a.mp4",
+                "http://pic.vjshi.com/2017-05-25/b146e104069c2bd0590bb919269193c4/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://ac-QYgvX1CC.clouddn.com/36f0523ee1888a57.jpg"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-05-07/d0bbfc4ac4dd173cc93873ed4eb0be53.mp4",
+                "http://pic.vjshi.com/2017-05-07/d0bbfc4ac4dd173cc93873ed4eb0be53/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-07-18/80d08ce1a84adfbaed5c7067b73d19ed.mp4",
+                "http://pic.vjshi.com/2017-07-18/80d08ce1a84adfbaed5c7067b73d19ed/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://img0.imgtn.bdimg.com/it/u=556618733,1205300389&fm=21&gp=0.jpg"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a.mp4",
+                "http://pic.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://img0.imgtn.bdimg.com/it/u=556618733,1205300389&fm=21&gp=0.jpg"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2018-06-07/cf673556cce54ab9cf4633fd7d9d0d46.mp4",
+                "http://pic.vjshi.com/2018-06-06/caa296729c8e6e41e6aff2aadf4feff3/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://img44.photophoto.cn/20170730/0018090594006661_s.jpg"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a.mp4",
+                "http://pic.vjshi.com/2017-09-13/f55a900d89679ac1c9837d5b5aaf632a/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://ac-QYgvX1CC.clouddn.com/36f0523ee1888a57.jpg"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2018-01-27/5169bb7bdd7386ce7bd4ce1739229424.mp4",
+                "http://pic.vjshi.com/2018-01-27/5169bb7bdd7386ce7bd4ce1739229424/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://photocdn.sohu.com/20160307/mp62252655_1457334772519_2.png"));
+        videos.add(new ImageViewInfo("http://lmp4.vjshi.com/2017-09-27/9a6e69f7c257ff7b7832e8bac6fddf82.mp4",
+                "http://pic.vjshi.com/2017-09-27/9a6e69f7c257ff7b7832e8bac6fddf82/online/puzzle.jpg?x-oss-process=style/resize_w_285_crop_h_428"));
+        videos.add(new ImageViewInfo("http://photocdn.sohu.com/20160307/mp62252655_1457334772519_2.png"));
+        return videos;
+    }*/
+
+    private static List<String> getUrls() {
+        List<String> urls = new ArrayList<>();
+        urls.add("http://img4.duitang.com/uploads/item/201307/02/20130702113059_UEGL2.jpeg");
+        urls.add("http://img0.imgtn.bdimg.com/it/u=985035006,79865976&fm=21&gp=0.jpg");
+        urls.add("http://img5.imgtn.bdimg.com/it/u=1774291582,2563335167&fm=21&gp=0.jpg");
+        urls.add("http://img5.imgtn.bdimg.com/it/u=1511364704,3337189105&fm=21&gp=0.jpg");
+        urls.add("http://pic.qiantucdn.com/58pic/11/90/83/96a58PICrRx.jpg");
+        urls.add("http://pic.qiantucdn.com/58pic/13/09/97/26W58PICKNk_1024.jpg");
+        urls.add("http://img1.imgtn.bdimg.com/it/u=3272030875,860665188&fm=21&gp=0.jpg");
+        urls.add("http://img1.imgtn.bdimg.com/it/u=2237658959,3726297486&fm=21&gp=0.jpg");
+        urls.add("http://img1.imgtn.bdimg.com/it/u=3016675040,1510439865&fm=21&gp=0.jpg");
+        urls.add("http://photocdn.sohu.com/20160307/mp62252655_1457334772519_2.png");
+
+        urls.add("http://img0.imgtn.bdimg.com/it/u=556618733,1205300389&fm=21&gp=0.jpg");
+        urls.add("http://img1.imgtn.bdimg.com/it/u=3272030875,860665188&fm=21&gp=0.jpg");
+        urls.add("http://img1.imgtn.bdimg.com/it/u=2237658959,3726297486&fm=21&gp=0.jpg");
+        urls.add("http://img1.imgtn.bdimg.com/it/u=3016675040,1510439865&fm=21&gp=0.jpg");
+        urls.add("http://photocdn.sohu.com/20160307/mp62252655_1457334772519_2.png");
+        urls.add("http://d040779c2cd49.scdn.itc.cn/s_big/pic/20161213/184474627873966848.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/36f0523ee1888a57.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/07915a0154ac4a64.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/9ec4bc44bfaf07ed.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/fa85037f97e8191f.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/de13315600ba1cff.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/9ec4bc44bfaf07ed.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/fa85037f97e8191f.jpg");
+        urls.add("ttp://ac-QYgvX1CC.clouddn.com/de13315600ba1cff.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/ad99de83e1e3f7d4.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/15c5c50e941ba6b0.jpg");
+        urls.add("http://ac-QYgvX1CC.clouddn.com/eaf1c9d55c5f9afd.jpg");
+        urls.add("http://pic44.photophoto.cn/20170802/0017030376585114_b.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0847085702814554_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170802/0017030319134956_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0838084023987260_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0838084009134421_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0838084002855326_s.jpg");
+
+        urls.add("http://img44.photophoto.cn/20170731/0847085207211178_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0017030319740534_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0838084002855326_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085969586424_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0014105802293676_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0847085242661101_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0886088744582079_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170801/0017029514287804_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170730/0018090594006661_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085848134910_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085581124963_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085226124343_s.jpg");
+
+        urls.add("http://img44.photophoto.cn/20170729/0847085226124343_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085200668628_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085246003750_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085012707934_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0005018303330857_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085231427344_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085236829578_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085729490157_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0847085751995287_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085729043617_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085786392651_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085761440022_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0847085275244570_s.jpg");
+
+
+        urls.add("http://img44.photophoto.cn/20170722/0847085858434984_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085781987193_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085707961800_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085229451104_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170720/0847085716198074_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170720/0847085769259426_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085717385169_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085757949071_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085789079771_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085229451104_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085757949071_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085265005650_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170730/0008118269110532_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0008118203762697_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0008118269666722_s.jpg");
+
+        urls.add("http://img44.photophoto.cn/20170722/0847085858434984_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085781987193_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085707961800_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085229451104_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170720/0847085716198074_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170720/0847085769259426_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085717385169_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085757949071_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085789079771_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085229451104_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085757949071_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085265005650_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170730/0008118269110532_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0008118203762697_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0008118269666722_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085858434984_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085781987193_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085707961800_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085229451104_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170720/0847085716198074_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170720/0847085769259426_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085717385169_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085757949071_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085789079771_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170722/0847085229451104_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170721/0847085757949071_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085265005650_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170730/0008118269110532_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0008118203762697_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0008118269666722_s.jpg");
+
+        urls.add("http://img44.photophoto.cn/20170731/0847085207211178_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0017030319740534_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170731/0838084002855326_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170728/0847085969586424_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0014105802293676_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0847085242661101_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170727/0886088744582079_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170801/0017029514287804_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170730/0018090594006661_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085848134910_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085581124963_s.jpg");
+        urls.add("http://img44.photophoto.cn/20170729/0847085226124343_s.jpg");
+
+        return urls;
+    }
+
+
+    /*public static List<ImageViewInfo> getGifUrls() {
+        List<ImageViewInfo> userViewInfos = new ArrayList<>();
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/8Q8Vy8jh6wEYCT4bYiEAOZdmzIf7GrLQ.gif_s400x0"));
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/yCPIVl3icfbIhZ1rjKKU6Kl6lCKkC8Wq.gif_s400x0"));
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/mQK3vlOYVOIpnhNYKg6XuWqpc3yAg9hR.gif_s400x0"));
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/mESQBeZn5V8Xzke0XPsnEEXUF9MaU3sA.gif_s400x0"));
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/HFuVvydFj7dgIEcbEBMA9ccGcGOFdEsx.gif_s400x0"));
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/SH0FB6FnTNgoCsVtxcAMtSNfV7XxXmo8.gif"));
+        userViewInfos.add(new ImageViewInfo("http://img.soogif.com/KkB9WARG3PFrz9EEX4DJdiy6Vyg95fGl.gif"));
+        return userViewInfos;
+    }*/
+
+    /**
+     * 拆分集合
+     *
+     * @param <T>
+     * @param resList 要拆分的集合
+     * @param count   每个集合的元素个数
+     * @return 返回拆分后的各个集合
+     */
+    public static <T> List<List<T>> split(List<T> resList, int count) {
+        if (resList == null || count < 1) {
+            return null;
+        }
+        List<List<T>> ret = new ArrayList<>();
+        int size = resList.size();
+        if (size <= count) { //数据量不足count指定的大小
+            ret.add(resList);
+        } else {
+            int pre = size / count;
+            int last = size % count;
+            //前面pre个集合，每个大小都是count个元素
+            for (int i = 0; i < pre; i++) {
+                List<T> itemList = new ArrayList<>();
+                for (int j = 0; j < count; j++) {
+                    itemList.add(resList.get(i * count + j));
+                }
+                ret.add(itemList);
+            }
+            //last的进行处理
+            if (last > 0) {
+                List<T> itemList = new ArrayList<>();
+                for (int i = 0; i < last; i++) {
+                    itemList.add(resList.get(pre * count + i));
+                }
+                ret.add(itemList);
+            }
+        }
+        return ret;
     }
 
 

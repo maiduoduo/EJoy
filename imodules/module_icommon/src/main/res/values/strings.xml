@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">module_ires</string>
+    <string name="default_app_font_path"/>
 </resources>

@@ -141,7 +141,7 @@
             android:id="@+id/mRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_15"
             android:nestedScrollingEnabled="false"
             app:dividerColor="#d8d8d8"
             app:dividerSize="0.1dp"

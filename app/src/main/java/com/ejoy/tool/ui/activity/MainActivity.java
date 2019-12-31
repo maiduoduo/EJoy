@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.scaffold.view.decorator.GridItemDecoration;
 import com.ejoy.tool.ui.activity.bezer.BezierActivity;
+import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
@@ -47,10 +49,11 @@ import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.google.gson.Gson;
 import com.maple.msdialog.ActionSheetDialog;
+import com.module.ires.bean.utils.EDensityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,7 +104,6 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     @Override
     protected void initRestore(@Nullable Bundle savedInstanceState) {
-
     }
 
     @Override
@@ -109,6 +111,10 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         return R.layout.activity_main;
     }
 
+    @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
     @Override
     protected void initView(View mRootView) {
         if (mData == null) mData = new ArrayList<>();
@@ -120,28 +126,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     @Override
     protected void initData() {
-
-//        List<CitysBean> citysBeans = CitiesDaoHelper.queryAll();
-//        if (citysBeans != null){
-//            String s = new Gson().toJson(citysBeans);
-//            Log.e(_TAG, "-----------initData--------: "+s);
-//        }else {
-//            Log.e(_TAG, "-----------citysBeans == null--------");
-//        }
-
-
-//        DaoSession daoSession = App.getDaoSession();
-//        TownDao townDao = daoSession.getTownDao();
-//        List<Town> towns = townDao.loadAll();
-//        Log.e(_TAG, "onCreate-----TownDao-------->: \n"+new Gson().toJson(towns));
-
-//        DaoSession daoSession = App.getDaoSession();
-//        CitysBeanDao citysBeanDao = daoSession.getCitysBeanDao();
-//        List<CitysBean> citysBeans = citysBeanDao.loadAll();
         List<CitysBean> citysBeans = CitiesDaoHelper.queryAll();
-        Log.e(_TAG, "onCreate-----citysBeans-------->: \n" + new Gson().toJson(citysBeans));
-
-
     }
 
     @Override
@@ -149,14 +134,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     }
 
-    @Override
-    protected boolean isSetStatusBarBg() {
-        return false;
-    }
-
-
     private void initTopHeader() {
-
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -178,13 +156,8 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         });
 
         loadBlurAndSetStatusBar();
-
-        Glide.with(this).load(R.mipmap.img_f).
-                bitmapTransform(new CropCircleTransformation(this))
+        Glide.with(this).load(R.mipmap.img_f).bitmapTransform(new CropCircleTransformation(this))
                 .into(mHeaderIv);
-//        Glide.with(this).load(R.mipmap.img_f)
-//                .crossFade()
-//                .into(mHeaderIv);
 
 
     }
@@ -194,7 +167,6 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     public BasePresenter getPresenter() {
         return null;
     }
-
 
     private void initRecyclerView() {
         GridLayoutManager linearLayoutManager = new GridLayoutManager(_mActivity, 4);
@@ -218,10 +190,19 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         mCHMainAdpter.isFirstOnly(true);
         mCHMainAdpter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         mCHMainAdpter.setNotDoAnimationCount(10);
+        View headerView=getLayoutInflater().inflate(R.layout.layout_main_header, null);
+        headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,EDensityUtils.dp2px(_mActivity,110)));
+        mCHMainAdpter.addHeaderView(headerView);
+        headerView.findViewById(R.id.mainRvheader).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iToast.showIDefaultImgResToast("快速预览");
+            }
+        });
     }
 
     private void addData() {
-        List<MainItemBean> mainItemData = ApiResource.getMainItemData();
+        List<MainItemBean> mainItemData = GlobalDataProvider.getMainItemData();
         mData.addAll(mainItemData);
         mCHMainAdpter.setNewData(mData);
     }
@@ -260,6 +241,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 showBotttomDialog();
                 break;
             case 11://BottomSheet
+                startActivity(new Intent(this, IBottomSheetActivity.class));
                 break;
             case 12://时间
                 startActivity(new Intent(this, ITimeDateOrActivity.class));

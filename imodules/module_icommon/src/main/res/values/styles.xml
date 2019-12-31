@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="ICustomBSAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <!--去除下部的阴影线-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+       <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+           <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <!--item-->
+    <style name="ITextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="ITextStyle.Title">
+        <item name="android:textSize">@dimen/ejoy_config_size_title_text</item>
+        <item name="android:textColor">@color/ejoy_config_color_title_text</item>
+    </style>
+    <style name="ITextStyle.Title.wrap">
+        <item name="android:layout_marginBottom">@dimen/ejoy_content_spacing_horizontal</item>
+    </style>
+    <style name="ITextStyle.Explain">
+        <item name="android:textSize">@dimen/ejoy_config_size_explain_text</item>
+        <item name="android:textColor">@color/ejoy_config_color_explain_text</item>
+    </style>
+
+    <!--LinearLayout-->
+    <style name="ILinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">?attr/listPreferredItemHeight</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">@dimen/ejoy_content_spacing_horizontal</item>
+        <item name="android:paddingEnd">@dimen/ejoy_content_spacing_horizontal</item>
+    </style>
+
+    <!--BottomSheet背景-->
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!--设置背景不透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>  <!--背景透明度-->
+    </style>
+
+
+    <!--*********************************************
+    *                 PopupWindow Style             *
+    **********************************************-->
+    <style name="EUI.Animation" parent="@android:style/Animation" />
+
+    <style name="EUI.Animation.PopUpMenu" />
+
+    <style name="EUI.Animation.PopUpMenu.Center">
+        <item name="android:windowEnterAnimation">@anim/pop_grow_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/pop_shrink_from_top</item>
+    </style>
+
+    <style name="EUI.Animation.PopUpMenu.Left">
+        <item name="android:windowEnterAnimation">@anim/pop_grow_from_bottomleft_to_topright</item>
+        <item name="android:windowExitAnimation">@anim/pop_shrink_from_topright_to_bottomleft</item>
+    </style>
+
+    <style name="EUI.Animation.PopUpMenu.Right">
+        <item name="android:windowEnterAnimation">@anim/pop_grow_from_bottomright_to_topleft</item>
+        <item name="android:windowExitAnimation">@anim/pop_shrink_from_topleft_to_bottomright</item>
+    </style>
+
+    <style name="EUI.Animation.PopDownMenu" />
+
+    <style name="EUI.Animation.PopDownMenu.Center">
+        <item name="android:windowEnterAnimation">@anim/pop_grow_from_top</item>
+        <item name="android:windowExitAnimation">@anim/pop_shrink_from_bottom</item>
+    </style>
+
+    <style name="EUI.Animation.PopDownMenu.Left">
+        <item name="android:windowEnterAnimation">@anim/pop_grow_from_topleft_to_bottomright</item>
+        <item name="android:windowExitAnimation">@anim/pop_shrink_from_bottomright_to_topleft</item>
+    </style>
+
+    <style name="EUI.Animation.PopDownMenu.Right">
+        <item name="android:windowEnterAnimation">@anim/pop_grow_from_topright_to_bottomleft</item>
+        <item name="android:windowExitAnimation">@anim/pop_shrink_from_bottomleft_to_topright</item>
+    </style>
+
+
+</resources>
