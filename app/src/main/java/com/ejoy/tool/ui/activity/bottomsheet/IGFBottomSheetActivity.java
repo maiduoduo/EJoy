@@ -3,6 +3,7 @@ package com.ejoy.tool.ui.activity.bottomsheet;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CoordinatorLayout;
@@ -25,7 +26,10 @@ import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.EUISimpleAdapter;
+import com.module.iviews.popup.EUISimpleExpandableListAdapter;
+import com.module.iviews.popup.EUISimpleExpandablePopup;
 import com.module.iviews.popup.EUISimplePopup;
+import com.module.iviews.popup.ExpandableItem;
 
 import java.util.List;
 
@@ -43,7 +47,9 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
     @BindView(R.id.ivTitleMore)
     ImageView mIvTitleMore;
 
+    private EUISimplePopup mListPopup;
     private EUISimplePopup mMenuPopup;
+    private EUISimpleExpandablePopup mExpandableListPopup;
 
     @Override
     protected void initRestore(@Nullable Bundle savedInstanceState) {
@@ -62,7 +68,9 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
 
     @Override
     protected void initView(View mRootView) {
+        initListPopup();
         initMenuPopup();
+        initExpandableListPopup();
     }
 
 
@@ -92,6 +100,9 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
             R.id.llBsgrid,
             R.id.ivBsPubUrl,
             R.id.ivTitleMore,
+            R.id.bt1,
+            R.id.bt2,
+            R.id.bt3,
     })
     public void onClick(View v) {
         switch (v.getId()) {
@@ -113,7 +124,17 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
                 break;
             case R.id.ivTitleMore:
                 //popup:更多样式
-                mMenuPopup.showDown(mIvTitleMore);
+                mMenuPopup.showDown(v);
+                break;
+            case R.id.bt1:
+                mListPopup.showDown(v);
+                break;
+            case R.id.bt2:
+                mExpandableListPopup.clearExpandStatus();
+                mExpandableListPopup.showDown(v);
+                break;
+            case R.id.bt3:
+                mMenuPopup.showDown(v);
                 break;
         }
 
@@ -181,6 +202,18 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
         });
     }
 
+
+    private void initListPopup() {
+        mListPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.dpiItems)
+                .create(EDensityUtils.dp2px(_mActivity, 170), new EUISimplePopup.OnPopupItemClickListener() {
+                    @Override
+                    public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
+                        iToast.showIDefaultImgResToast(item.getTitle().toString());
+                    }
+                })
+                .setHasDivider(true);
+    }
+
     /**
      * 初始化popupwindow
      */
@@ -193,15 +226,23 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
                     }
                 });
         mMenuPopup.setPopupTopBottomMinMargin(-30);
-        mMenuPopup.setPopupLeftRightMinMargin(-15);
+        mMenuPopup.setPopupLeftRightMinMargin(-50);
+        mMenuPopup.setPositionOffsetX(-30);
         mMenuPopup.setHasDivider(true);
     }
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    private void initExpandableListPopup() {
+        mExpandableListPopup = new EUISimpleExpandablePopup(_mActivity, GlobalDataProvider.expandableItems)
+                .create(EDensityUtils.dp2px(_mActivity, 200), EDensityUtils.dp2px(_mActivity, 200))
+                .setOnExpandableItemClickListener(false, new EUISimpleExpandablePopup.OnExpandableItemClickListener() {
+                    @Override
+                    public void onExpandableItemClick(EUISimpleExpandableListAdapter adapter, ExpandableItem group, int groupPosition, int childPosition) {
+                        iToast.showIDefaultImgResToast(group.getChildItem(childPosition).getTitle()+"");
+                    }
+                });
+        mExpandableListPopup.setPopupTopBottomMinMargin(50);
+        mExpandableListPopup.setPopupLeftRightMinMargin(20);
     }
+
+
 }

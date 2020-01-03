@@ -102,5 +102,10 @@
         <item name="android:windowExitAnimation">@anim/pop_shrink_from_bottomleft_to_topright</item>
     </style>
 
+    <style name="QQPopAnim">
+        <item name="android:windowEnterAnimation">@anim/anim_qq_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_qq_pop_hide</item>
+    </style>
+
 
 </resources>

@@ -962,7 +962,19 @@
     <color name="ejoy_config_color_edittext_disable">#EDF2F7</color>
 
     <color name="eui_config_color_dark_blue_gray">#223B53</color>
-    
+
+    <!--按钮栏-白天 -->
+    <color name="rl_normal_bg">#FFFFFF</color><!--状态栏的的背景颜色-->
+    <color name="rl_highlight_bg">#f2f2f2</color><!--状态栏的的背景颜色-->
+    <color name="rl_textcolor">#111111</color>
+    <color name="topbar_leftright_text_highlight">#f68008</color><!--顶部Bar的左右字体的高亮颜色-->
+    <color name="topbar_leftright_text">#4c4c4c</color><!--顶部Bar的左右字体的颜色-->
+    <!--tabbar-add的背景样式-->
+    <color name="addLayoutBg">#f2f2f2</color>
+    <color name="windowBackground">#f2f2f2</color><!--window的背景样式-->
+    <color name="home_bottombar_font">#929292</color><!--底部bar字体颜色-->
+
+
 
 
 </resources>

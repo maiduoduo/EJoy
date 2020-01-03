@@ -1,37 +1,34 @@
-package com.ejoy.tool.ui.activity.popupwindow;
+package com.module.iviews.popup.qq.entity;
 
 import com.iduo.filterlib.base.BaseFilterBean;
 
 import java.util.List;
 
+
 /**
- * CN:      FilterEntity
+ * CN:      FilterAreaEntity
  * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
  * Date:   2019/11/27
- * Des:    单条选择Entity
+ * Des:    区域选择父Entity
  */
-public class FilterSelectedEntity extends BaseFilterBean {
+public class FilterAreaEntity extends BaseFilterBean {
 
     /**
-     * 选项ID
-     */
-    private int tid;
-    /**
-     * 选项名称
+     * 区域名称
      */
     private String name;
     /**
-     * 选择状态
+     * 区域对应的ID
+     */
+    private int area_id;
+    /**
+     * 选择状态 0 选择 1 选择
      */
     private int selected;
-
-    public int getTid() {
-        return tid;
-    }
-
-    public void setTid(int tid) {
-        this.tid = tid;
-    }
+    /**
+     * 二级分类数据
+     */
+    private List<FilterChildAreasEntity> childAreas;
 
     public String getName() {
         return name;
@@ -39,6 +36,14 @@ public class FilterSelectedEntity extends BaseFilterBean {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getArea_id() {
+        return area_id;
+    }
+
+    public void setArea_id(int area_id) {
+        this.area_id = area_id;
     }
 
     public int getSelected() {
@@ -49,6 +54,14 @@ public class FilterSelectedEntity extends BaseFilterBean {
         this.selected = selected;
     }
 
+    public List<FilterChildAreasEntity> getChildAreas() {
+        return childAreas;
+    }
+
+    public void setChildAreas(List<FilterChildAreasEntity> childAreas) {
+        this.childAreas = childAreas;
+    }
+
     @Override
     public String getItemName() {
         return name;
@@ -56,7 +69,7 @@ public class FilterSelectedEntity extends BaseFilterBean {
 
     @Override
     public int getId() {
-        return tid;
+        return area_id;
     }
 
     @Override
@@ -74,9 +87,10 @@ public class FilterSelectedEntity extends BaseFilterBean {
         return null;
     }
 
+
     @Override
     public List getChildList() {
-        return null;
+        return childAreas;
     }
 
     @Override

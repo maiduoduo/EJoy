@@ -45,6 +45,7 @@ import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
 import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
+import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
@@ -191,7 +192,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         mCHMainAdpter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         mCHMainAdpter.setNotDoAnimationCount(10);
         View headerView=getLayoutInflater().inflate(R.layout.layout_main_header, null);
-        headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,EDensityUtils.dp2px(_mActivity,110)));
+        headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,EDensityUtils.dp2px(_mActivity,100)));
         mCHMainAdpter.addHeaderView(headerView);
         headerView.findViewById(R.id.mainRvheader).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,7 +230,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
             case 6://
                 break;
             case 7://Popupwindow
-                startActivity(new Intent(this, IPopupwindowFilterActivity.class));
+                startActivity(new Intent(this, IPopupwindowActivity.class));
                 break;
             case 8://ArcLayout
                 startActivity(new Intent(this, IArcLayoutActivity.class));

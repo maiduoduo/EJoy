@@ -75,6 +75,8 @@
         <activity android:name=".ui.activity.bottomsheet.ICustomBottomSheetActivity"
             android:theme="@style/ICustomBSAppTheme"/>
         <activity android:name=".ui.activity.bottomsheet.IGFBottomSheetActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupwindowActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupWindowPopmenuActivity"/>
 
 
         <!--FileProvider共享文件-->

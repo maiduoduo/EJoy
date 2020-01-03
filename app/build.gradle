@@ -71,11 +71,10 @@ dependencies {
     //EventBus
     implementation rootProject.ext.dependencies["eventbus"]
     //BaseRecyclerViewAdapterHelper
-    implementation rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper_2930"]
-    implementation 'jp.wasabeef:glide-transformations:2.0.1'
-    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
+//    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+//    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
 //    implementation rootProject.ext.dependencies["Jolyglot-gson"]
-    implementation rootProject.ext.dependencies["PhotoView"]
+//    implementation rootProject.ext.dependencies["PhotoView"]
     implementation rootProject.ext.dependencies["rxlifecomponents"]
     implementation rootProject.ext.dependencies["kenburnsview"]
 //    implementation rootProject.ext.dependencies["constraint-layout"]
@@ -88,11 +87,10 @@ dependencies {
     implementation rootProject.ext.dependencies["greendao"]
     //用来升级greendao数据库的辅助类
     implementation rootProject.ext.dependencies["greendao-generator"]
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    implementation rootProject.ext.dependencies["SmartRefreshLayout_104"]
+//    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+//    implementation rootProject.ext.dependencies["SmartRefreshLayout_104"]
 
     //mudules
-    implementation project(':imodules:module_filterpopupwindow')
     implementation project(':imodules:module_iiosdialog')
     implementation project(':imodules:module_idatetime')
     implementation project(':imodules:module_icitypicker')

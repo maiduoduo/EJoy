@@ -5,6 +5,7 @@
     android:id="@+id/mainRvheader"
     android:layout_width="match_parent"
     android:layout_height="110dp"
+    android:layout_marginRight="-2dp"
     android:scaleType="fitXY"
     android:src="@mipmap/img_quick_bg"
     tools:ignore="MissingDefaultResource"/>

@@ -5,11 +5,15 @@ import android.net.Uri;
 
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.app.App;
 import com.ejoy.tool.app.AppConstant;
 import com.ejoy.tool.common.api.HostType;
 import com.ejoy.tool.common.bean.MainItemBean;
 import com.ejoy.tool.common.bean.PICData;
 import com.module.ires.bean.CustomBottomSheetItemBean;
+import com.module.iviews.popup.AdapterItem;
+import com.module.iviews.popup.ExpandableItem;
+import com.module.iviews.popup.weibo.PopMenuItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,6 +52,56 @@ public class GlobalDataProvider {
             "（双）列表可滑动",
             "筛选",
             "设置"
+    };
+
+    public static AdapterItem[] expandableChildItems = new AdapterItem[]{
+            new AdapterItem(App.getAppContext(),"登陆", R.mipmap.ico_dialog_d),
+            new AdapterItem(App.getAppContext(),"筛选", R.mipmap.ico_dialog_e),
+            new AdapterItem(App.getAppContext(),"设置", R.mipmap.ico_dialog_f),
+    };
+
+    public static ExpandableItem[] expandableItems = new ExpandableItem[]{
+            ExpandableItem.of(new AdapterItem(App.getAppContext(),"屏幕尺寸", R.mipmap.ico_dialog_a)).addChild(AdapterItem.arrayof(dpiItems)),
+            ExpandableItem.of(new AdapterItem(App.getAppContext(),"设备亮度", R.mipmap.ico_dialog_b)).addChild(expandableChildItems),
+            ExpandableItem.of(new AdapterItem(App.getAppContext(),"屏幕分辨率", R.mipmap.ico_dialog_c)).addChild(AdapterItem.arrayof(dpiItems))
+    };
+
+    private static List<String> result;
+    public static  List<String> qqPopItems() {
+        if (result != null)result.clear();
+        else result = new ArrayList<>();
+        result.add("创建群聊");
+        result.add("加好友/群");
+        result.add("发起群聊");
+        result.add("扫一扫");
+        result.add("收付款");
+        result.add("面对面快传");
+        result.add("帮助与反馈");
+        return result;
+    }
+
+    /**
+     * 微博弹窗实现选择
+     */
+    public static String[] wbDialogItems = new String[]{
+            "PopupWindow实现",
+            "PopMenu实现",
+            "其他等"
+    };
+
+    public static String[] wbPopItems = new String[]{
+            "文字",
+            "照片/视频",
+            "头条文章",
+            "签到",
+            "点评",
+            "更多",
+            "直播",
+            "好友圈",
+            "音乐",
+            "秒拍",
+            "商品",
+            "红包"
     };
 
 

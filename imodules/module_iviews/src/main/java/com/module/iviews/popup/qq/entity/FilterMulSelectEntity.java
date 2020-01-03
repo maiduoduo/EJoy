@@ -1,5 +1,4 @@
-package com.ejoy.tool.ui.activity.popupwindow;
-
+package com.module.iviews.popup.qq.entity;
 import com.iduo.filterlib.base.BaseFilterBean;
 
 import java.util.List;

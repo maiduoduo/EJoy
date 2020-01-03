@@ -35,8 +35,8 @@
     <dimen name="ejoy_config_size_title_text">15sp</dimen>
     <dimen name="ejoy_config_size_explain_text">14sp</dimen>
     <!--文字字号样式-->
-    <dimen name="eui_config_size_title_text">21sp</dimen>
-    <dimen name="eui_config_size_content_text">18sp</dimen>
+    <dimen name="eui_config_size_title_text">18sp</dimen>
+    <dimen name="eui_config_size_content_text">15sp</dimen>
     <dimen name="eui_config_size_explain_text">14sp</dimen>
     <dimen name="eui_config_size_spinner_text">14sp</dimen>
 
@@ -69,8 +69,10 @@
     <dimen name="ejoy_popup_width_phone">133dp</dimen>
     <dimen name="ejoy_popup_arrow_up_margin_top">0dp</dimen>
     <dimen name="ejoy_popup_arrow_down_margin_bottom">0dp</dimen>
-
     <dimen name="eui_config_simple_list_item_height_tablet_big">61dp</dimen>
+    <integer name="config_pop_duration">500</integer>
+    <dimen name="config_pop_weib_ico">60dp</dimen>
+
 
 
 

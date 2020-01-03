@@ -62,6 +62,7 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public  Activity _mActivity;
     public IToast iToast;
     public String baseYellow = "#FFCF47";
+    public String baseTransparent = "#00000000";
     public String defalutYellow = "#f4ce51";
     public String defalutGreen = "#3FD0AD";
     public String defalutBlue = "#5A9AEF";
@@ -368,6 +369,11 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         Intent i = new Intent(aty, clazz);
         aty.startActivity(i);
         aty.overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+    }
+    public void showActivity(Activity aty, Class clazz,int enterAnim, int exitAnim) {
+        Intent i = new Intent(aty, clazz);
+        aty.startActivity(i);
+        aty.overridePendingTransition(enterAnim, exitAnim);
     }
 
     @Override
