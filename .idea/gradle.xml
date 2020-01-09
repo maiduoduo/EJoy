@@ -9,12 +9,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/arclayout" />
-            <option value="$PROJECT_DIR$/filterlib_popupwindow" />
-            <option value="$PROJECT_DIR$/icitypickerview" />
-            <option value="$PROJECT_DIR$/iiosdialog" />
-            <option value="$PROJECT_DIR$/imaidd_datetime" />
-            <option value="$PROJECT_DIR$/iresku" />
+            <option value="$PROJECT_DIR$/imodules" />
+            <option value="$PROJECT_DIR$/imodules/module_arclayout" />
+            <option value="$PROJECT_DIR$/imodules/module_filterpopupwindow" />
+            <option value="$PROJECT_DIR$/imodules/module_icitypicker" />
+            <option value="$PROJECT_DIR$/imodules/module_icommon" />
+            <option value="$PROJECT_DIR$/imodules/module_idatetime" />
+            <option value="$PROJECT_DIR$/imodules/module_iiosdialog" />
+            <option value="$PROJECT_DIR$/imodules/module_iviews" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cp_grid_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/dp_8"
+    android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/ivBs"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/ico_grid_j"/>
+    <TextView
+        android:id="@+id/tvbsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="分享"/>
+</LinearLayout>

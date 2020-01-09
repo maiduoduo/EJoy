@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp">
+        <View
+            android:id="@+id/card_header_shadow_top"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:alpha="1.0"
+            android:visibility="gone"
+            android:background="@drawable/toolbar_shadow_top" />
+        <FrameLayout
+            android:id="@+id/headerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:elevation="0dp">
+        </FrameLayout>
+        <FrameLayout
+            android:background="@color/toolbarScrim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp">
+            <com.module.iviews.bottomsheet.custom.scrollview.ObservableScrollView
+                android:id="@+id/ObservableScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/toolbarScrim">
+                <com.module.iviews.bottomsheet.custom.helpers.IMaxHeightRecyclerView
+                    android:id="@+id/recyclerView"
+                    android:nestedScrollingEnabled="false"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false">
+                </com.module.iviews.bottomsheet.custom.helpers.IMaxHeightRecyclerView>
+            </com.module.iviews.bottomsheet.custom.scrollview.ObservableScrollView>
+            <View
+                android:id="@+id/card_header_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:alpha="0.0"
+                android:visibility="gone"
+                android:background="@drawable/toolbar_shadow_bottom" />
+        </FrameLayout>
+    </LinearLayout>
+</merge>

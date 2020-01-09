@@ -55,6 +55,7 @@
         <activity android:name=".ui.activity.compress.PreviewImageActivity"/>
         <activity android:name=".ui.activity.compress.IBitmapSingChoiceActivity"/>
         <activity android:name=".ui.activity.compress.IBitmapSystemSingleCompressActivity"/>
+        <activity android:name=".ui.activity.iosdialog.IDialogActivity"/>
         <activity android:name=".ui.activity.iosdialog.IIosDialogActivity"/>
         <activity android:name=".ui.activity.loading.ILoadingActivity"/>
         <activity android:name=".ui.activity.picker.ITimeDateOrActivity"/>
@@ -71,6 +72,15 @@
         <activity android:name=".ui.activity.refresh.IRefreshSmartActivty"/>
         <activity android:name=".ui.activity.refresh.IRefreshVideoActivty"
             android:hardwareAccelerated="false"/>
+        <activity android:name=".ui.activity.bottomsheet.IBottomSheetActivity"/>
+        <activity android:name=".ui.activity.bottomsheet.ICustomBottomSheetActivity"
+            android:theme="@style/ICustomBSAppTheme"/>
+        <activity android:name=".ui.activity.bottomsheet.IGFBottomSheetActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupwindowActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupWindowPopmenuActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupwindowUseActivity"/>
+        <activity android:name=".ui.activity.popupwindow.ICookieBarActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupwindowTopEditActivity"/>
 
 
         <!--FileProvider共享文件-->

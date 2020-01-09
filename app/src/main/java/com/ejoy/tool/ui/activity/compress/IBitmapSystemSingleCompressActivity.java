@@ -4,21 +4,17 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.SharedElementCallback;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.ejoy.tool.R;
-import com.ejoy.tool.common.bean.ImageConfig;
 import com.ejoy.tool.common.bean.ImageFileBean;
 import com.ejoy.tool.scaffold.utils.FileUtils;
 import com.ejoy.tool.scaffold.utils.IBitmapUtils;
@@ -26,7 +22,7 @@ import com.ejoy.tool.scaffold.utils.PairHelp;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.task.CompressImageTask;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
 import java.io.File;
@@ -35,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 /**
@@ -161,8 +156,8 @@ public class IBitmapSystemSingleCompressActivity extends BaseActivity {
     private void toPreviewActivity(View view, ImageView imageView, File imageFile) {
         if (imageView.getDrawable() != null && FileUtils.isImageFile(imageFile)) {
             Intent intent = new Intent(this, PreviewImageActivity.class);
-            intent.putStringArrayListExtra(ApiResource.IMAGE_PATH_KEY, (ArrayList<String>) mFilePathData);
-            intent.putExtra(ApiResource.CLICK_IMAGE_POSITION_KEY, mClickPosition);
+            intent.putStringArrayListExtra(GlobalDataProvider.IMAGE_PATH_KEY, (ArrayList<String>) mFilePathData);
+            intent.putExtra(GlobalDataProvider.CLICK_IMAGE_POSITION_KEY, mClickPosition);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
                 Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this

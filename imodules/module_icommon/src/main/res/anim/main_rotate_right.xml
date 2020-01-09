@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="600"
+    android:fromDegrees="-135"
+    android:toDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    />
+    <!--ps：toDegrees -fromDegrees > 0，则顺时针旋转；否则，逆时针旋转。-->
+    <!--android:fromDegrees="-135"旋转开始的角度可以为负值-->
+    <!--android:toDegrees="0"旋转结束的角度-->
+    <!--android:pivotX="50%"-->
+    <!--50%表示以当前View的左上角加上当前View宽高的50%做为初始点也就是view的中心点-->
+    <!--android:pivotY="50旋转支点的xy轴坐标-->

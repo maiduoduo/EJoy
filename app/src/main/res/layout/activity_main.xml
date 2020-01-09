@@ -84,46 +84,6 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
-        <!--<android.support.design.widget.TabLayout
-            android:id="@+id/toolbar_tab"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="bottom"
-            android:background="#ffffff"
-            android:fillViewport="false"
-            app:layout_scrollFlags="scroll"
-            app:tabIndicatorColor="#0835f8"
-            app:tabIndicatorHeight="2.0dp"
-            app:tabSelectedTextColor="#0835f8"
-            app:tabTextColor="#ced0d3">
-
-            <android.support.design.widget.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:icon="@drawable/tab_selector"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="分享"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="收藏"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="关注"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="关注者"/>
-
-
-        </android.support.design.widget.TabLayout>-->
 
     </android.support.design.widget.AppBarLayout>
 
@@ -141,7 +101,7 @@
             android:id="@+id/mRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_15"
             android:nestedScrollingEnabled="false"
             app:dividerColor="#d8d8d8"
             app:dividerSize="0.1dp"

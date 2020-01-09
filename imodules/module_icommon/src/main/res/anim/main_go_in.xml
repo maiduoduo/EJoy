@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="600">
+<alpha
+       android:fromAlpha="0"
+       android:toAlpha="1.0"/>
+
+</set>
+    <!--alpha动画-->
+    <!--android:fromAlpha: 表示透明度的起始值，这里设置为0.0，表示完全透明，取值范围0~1；-->
+    <!--android:toAlpha:表示透明度的结束值，这里设置为1.0，表示完全不透明，取值范围0~1；；-->
+    <!--android:duration 表示动画持续的时间，这里设置为600-->
+<!--动画文件-->

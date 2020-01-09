@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/bgNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_long_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
+        </LinearLayout>
+    </ScrollView>
+    <ImageView
+        android:id="@+id/ivShade"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="@color/black_88_55"
+        android:adjustViewBounds="true"/>
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/black_1e"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:src="@drawable/ico_back_white_90px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="自定义BottomSheet"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+    <!--
+        自定义按钮大小 app:fabCustomSize=“dp值”
+        自定义上层图片大小app:maxImageSize=“dp值”
+    -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end"
+        android:layout_margin="16dp"
+        android:src="@mipmap/ico_fab_add"
+        app:backgroundTint="@color/colorNormal"
+        android:background="@drawable/selector_fab"
+        app:layout_behavior="com.module.iviews.bottomsheet.custom.fab.ICustomFabBehavior"
+        app:elevation="5dp"
+        app:pressedTranslationZ="12dp"
+        app:fabCustomSize="@dimen/dp_40"
+        app:fabSize="mini"
+        app:borderWidth="0dp"
+        app:rippleColor="#e7d16b" />
+
+
+    <com.module.iviews.bottomsheet.custom.ICustomBottomSheet
+        android:id="@+id/bottomSheet"
+        style="@style/CustomBottomSheetDialogTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:cbs_behavior_hideable="false"
+        app:cbs_behavior_peekHeight="header"
+        app:cbs_behavior_snap="false"
+        app:cbs_behavior_topOffset="70dp"
+        app:cbs_header_layout="@layout/layout_custom_bottomsheet_header"
+        app:layout_behavior="com.module.iviews.bottomsheet.custom.ICustomBottomSheetBehavior" />
+
+</android.support.design.widget.CoordinatorLayout>
+

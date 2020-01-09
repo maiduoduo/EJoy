@@ -12,7 +12,7 @@ import com.ejoy.tool.scaffold.utils.PairHelp;
 import com.ejoy.tool.scaffold.view.widget.PreviewPager;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.PreviewAdapter;
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
 import java.util.List;
@@ -67,8 +67,8 @@ public class PreviewImageActivity extends BaseActivity {
     protected void initData() {
         Intent intent = getIntent();
         if (intent != null) {
-            final List<String> imagePathList = intent.getStringArrayListExtra(ApiResource.IMAGE_PATH_KEY);
-            int intExtra = intent.getIntExtra(ApiResource.CLICK_IMAGE_POSITION_KEY,0)+1;
+            final List<String> imagePathList = intent.getStringArrayListExtra(GlobalDataProvider.IMAGE_PATH_KEY);
+            int intExtra = intent.getIntExtra(GlobalDataProvider.CLICK_IMAGE_POSITION_KEY,0)+1;
             mTvCurrentPage.setText(intExtra+" ");
             mTvToatalPage.setText("/ "+imagePathList.size());
             if (imagePathList != null && imagePathList.size() > 0) {
@@ -76,7 +76,7 @@ public class PreviewImageActivity extends BaseActivity {
                     mAdapter = new PreviewAdapter(imagePathList,this);
                     mViewPager.setOffscreenPageLimit(0);
                     mViewPager.setAdapter(mAdapter);
-                    mViewPager.setCurrentItem(intent.getIntExtra(ApiResource.CLICK_IMAGE_POSITION_KEY,0),true);
+                    mViewPager.setCurrentItem(intent.getIntExtra(GlobalDataProvider.CLICK_IMAGE_POSITION_KEY,0),true);
                     mViewPager.setPageTransformer(true,new PreviewAdapter.PreviewPageTransformer());
                     mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                         @Override

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomBottomSheetBehavior">
+        <attr name="cbs_behavior_hideable" format="boolean"/>
+        <attr name="cbs_behavior_snap" format="boolean"/>
+        <attr name="cbs_behavior_topOffset" format="dimension"/>
+        <attr name="cbs_behavior_peekHeight" format="dimension">
+            <flag name="none" value="0" />
+            <flag name="auto" value="-1"/>
+            <flag name="header" value="-2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ICustomBottomSheet">
+        <attr name="cbs_header_layout" format="reference"/>
+    </declare-styleable>
+
+    <!--XUIWrapContentExpandableListView-->
+    <declare-styleable name="EUIWrapContentExpandableListView">
+        <!--设置listView的最大高度-->
+        <attr name="wcelv_max_height" format="dimension" />
+    </declare-styleable>
+
+    <!--**********************************************
+    *                common color               *
+    **********************************************-->
+    <!--应用默认的背景颜色-->
+    <attr name="eui_config_color_background" format="color" />
+    <!-- 小的分割块使用浅色的分割线-->
+    <attr name="eui_config_color_separator_light" format="color" />
+    <!-- 大的分割块使用深色的分割线[像ListView、GridView之类]-->
+    <attr name="eui_config_color_separator_dark" format="color" />
+    <!--出错文字的颜色-->
+    <attr name="eui_config_color_error_text" format="color" />
+    <!--输入文字的颜色-->
+    <attr name="eui_config_color_input_text" format="color" />
+    <!--提示文字的颜色-->
+    <attr name="eui_config_color_hint_text" format="color" />
+    <!--应用边框的颜色-->
+    <attr name="eui_config_color_stroke" format="color" />
+    <!--应用不可点击的颜色-->
+    <attr name="eui_config_color_disable" format="color" />
+    <!--应用点击后的颜色-->
+    <attr name="eui_config_color_pressed" format="color" />
+
+    <!--XUIWrapContentListView-->
+    <declare-styleable name="EUIWrapContentListView">
+        <!--设置listView的最大高度-->
+        <attr name="wclv_max_height" format="dimension" />
+    </declare-styleable>
+    <attr name="eui_config_content_spacing_vertical" format="dimension" /> <!-- margin 和 padding 等使用的内容通用垂直间距 -->
+
+
+    <declare-styleable name="ECookieBar">
+        <!--CookieBar-->
+        <attr format="color" name="cookieTitleColor"/>
+        <attr format="color" name="cookieMessageColor"/>
+        <attr format="color" name="cookieActionColor"/>
+        <attr format="color" name="cookieBackgroundColor"/>
+    </declare-styleable>
+
+    <attr format="dimension" name="eui_config_content_spacing_horizontal"/>
+</resources>

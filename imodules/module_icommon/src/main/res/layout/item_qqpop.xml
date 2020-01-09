@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--可以自由定制
+    *   比如加入图标等样式  *
+    -->
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:textSize="15sp"
+        android:textColor="@color/black_77"
+        android:gravity="center"
+        android:paddingVertical="@dimen/dp_10"
+        android:text=""/>
+
+</LinearLayout>

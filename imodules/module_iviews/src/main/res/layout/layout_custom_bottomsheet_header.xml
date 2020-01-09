@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header"
+    android:paddingTop="@dimen/dp_5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bs"
+    android:elevation="0dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/shape_rect_share_material_tab"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_10"
+        android:gravity="center_vertical">
+        <RelativeLayout
+            android:id="@+id/rlTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivAlbum"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:scaleType="centerCrop"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/tvSongname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivAlbum"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/black_77"
+
+                android:maxLength="18"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="歌曲：世间美好与你环环相扣"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ivAlbum"
+                android:layout_below="@+id/tvSongname"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="3dp"
+                android:textSize="@dimen/sp_13"
+                android:textColor="@color/black_55_88"
+                android:maxLength="18"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="柏松"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="@color/material_red_500"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@drawable/shape_tuocircle"
+                android:text="VIP首开5元"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlTop"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/black_55_55"
+            android:maxLength="18"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text="开通VIP享高品质听觉盛宴"/>
+
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/LGray3"/>
+</LinearLayout>

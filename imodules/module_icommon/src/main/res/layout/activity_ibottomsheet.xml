@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white">
+    <LinearLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@mipmap/img_constant_banner"
+                android:scaleType="fitXY"/>
+            <ImageView
+                android:id="@+id/ivTitleMore"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_25"
+                android:src="@drawable/ico_more_white_75px"/>
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="-30dp"
+            android:scaleType="fitEnd"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:src="@mipmap/img_bottomsheet_doc" />
+        <include layout="@layout/layout_line_horizontal_1dp" />
+        <ScrollView
+            android:id="@+id/bgNestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llBsList"
+                    style="@style/ILinearLayout"
+                    android:paddingVertical="@dimen/dp_8">
+
+                    <TextView
+                        android:id="@+id/tvBsList"
+                        style="@style/ITextStyle.Title"
+                        android:text="BottomSheetDialog-底部列表" />
+
+                    <TextView
+                        android:id="@+id/tvBssubList"
+                        style="@style/ITextStyle.Explain"
+                        android:layout_marginTop="4dp"
+                        android:text="支持拖拽，列表可滑动" />
+                </LinearLayout>
+
+                <include layout="@layout/layout_line_horizontal_1dp" />
+
+                <LinearLayout
+                    android:id="@+id/llBsgrid"
+                    style="@style/ILinearLayout"
+                    android:paddingVertical="@dimen/dp_8">
+
+                    <TextView
+                        android:id="@+id/tvBsGrid"
+                        style="@style/ITextStyle.Title"
+                        android:text="BottomSheetDialog-九宫格" />
+
+                    <TextView
+                        android:id="@+id/tvBssubGrid"
+                        style="@style/ITextStyle.Explain"
+                        android:layout_marginTop="4dp"
+                        android:text="支持拖拽，列表可滑动" />
+                </LinearLayout>
+                <include layout="@layout/layout_line_horizontal_1dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/ivBsPubUrl"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/dp_20"
+        android:src="@mipmap/img_bs_tip"
+        android:scaleType="fitXY"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_alignParentLeft="true"/>
+    <TextView
+        android:id="@+id/tvBsPubUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:text="官网-BottomSheetDialog "
+        android:textColor="@color/Blue_2"
+        android:textSize="10sp" />
+</RelativeLayout>
+

@@ -23,13 +23,12 @@ import com.ejoy.tool.scaffold.utils.PairHelp;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.task.CompressImageTask;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import butterknife.ButterKnife;
 
 
 /**
@@ -157,8 +156,8 @@ public class IBitmapSingChoiceActivity extends BaseActivity {
     private void toPreviewActivity(View view, ImageView imageView, File imageFile) {
         if (imageView.getDrawable() != null && FileUtils.isImageFile(imageFile)) {
             Intent intent = new Intent(this, PreviewImageActivity.class);
-            intent.putStringArrayListExtra(ApiResource.IMAGE_PATH_KEY, (ArrayList<String>) mFilePathData);
-            intent.putExtra(ApiResource.CLICK_IMAGE_POSITION_KEY, mClickPosition);
+            intent.putStringArrayListExtra(GlobalDataProvider.IMAGE_PATH_KEY, (ArrayList<String>) mFilePathData);
+            intent.putExtra(GlobalDataProvider.CLICK_IMAGE_POSITION_KEY, mClickPosition);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
                 Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(this
@@ -271,12 +270,5 @@ public class IBitmapSingChoiceActivity extends BaseActivity {
 
     public void singleBack(View view) {
         finish();
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 }

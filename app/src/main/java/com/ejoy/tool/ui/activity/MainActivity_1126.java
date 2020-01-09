@@ -13,7 +13,7 @@ import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.scaffold.view.decorator.GridItemDecoration;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
-import com.ejoy.tool.ui.data.resource.ApiResource;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 
 import java.util.ArrayList;
@@ -97,7 +97,7 @@ public class MainActivity_1126 extends BaseActivity implements BaseQuickAdapter.
     }
 
     private void addData() {
-        List<MainItemBean> mainItemData = ApiResource.getMainItemData();
+        List<MainItemBean> mainItemData = GlobalDataProvider.getMainItemData();
         mData.addAll(mainItemData);
         mCHMainAdpter.setNewData(mData);
     }

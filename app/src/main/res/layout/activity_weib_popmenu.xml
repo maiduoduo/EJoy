@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_popweib_bg"
+    tools:ignore="MissingDefaultResource">
+    <LinearLayout
+        android:id="@+id/MenuBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/whiteAlpha50"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/tabbar_home"
+            android:textColor="@color/black_33"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="微博"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/tabbar_video"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_gravity="bottom"
+            android:textColor="@color/black_33"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="视频"/>
+        <ImageView
+            android:id="@+id/ivShowPopMenu"
+            android:layout_weight="1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/eicon_add_orange_150px" />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:drawableTop="@mipmap/tabbar_message"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/black_33"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="消息"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/tabbar_profile"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/black_33"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="我的"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_compose_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/img_weib_slogan" />
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/rl_add_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/MenuBottom"
+        android:background="@color/black_11_33">
+
+        <ImageView
+            android:id="@+id/ibn_add_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/tabbar_compose_background_icon_close" />
+
+    </FrameLayout>
+</RelativeLayout>
+
+
+

@@ -6,7 +6,7 @@
     <FrameLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
+        android:layout_height="@dimen/dp_45"
         android:paddingHorizontal="@dimen/dp_10"
         android:background="@color/R1">
         <ImageView
@@ -38,21 +38,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
-            <Button
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="loadingStart"
-                android:text="Loading"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:background="@drawable/shape_button_4"/>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="@dimen/dp_10"
                 android:gravity="left"
                 android:text="* Action Sheet Dialog"

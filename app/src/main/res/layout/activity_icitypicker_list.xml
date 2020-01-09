@@ -1,78 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.v4.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black_33">
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <!--android:background="@mipmap/banner_4_b"-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_25"
+                android:background="@color/y12" />
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="45dp"
                 android:background="@color/y12"
                 android:gravity="bottom"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/banner_4_d"/>
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="ivBack"
+                    android:src="@drawable/ico_back_white_90px" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_gravity="bottom"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/dp_20"
-                    android:textSize="@dimen/sp_25"
-                    android:textStyle="bold"
-                    android:text="城市列表"/>
+                    android:text="城市列表"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
             </FrameLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dp_10">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/material_red_400"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
                     android:paddingVertical="@dimen/dp_10"
-                    android:text="选择的城市："/>
+                    android:text="选择的城市："
+                    android:textColor="@color/material_red_400"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/result_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
                     android:paddingHorizontal="@dimen/dp_20"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="@dimen/dp_10"
                     android:paddingVertical="@dimen/dp_10"
-                    android:text="杭州 : 100528"/>
+                    android:text="xxxxxxxxxxxxxx"
+                    android:textColor="@color/Gray2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_1"
-                android:layout_marginVertical="@dimen/dp_10"
-                android:background="@color/LGray1"/>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_10" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dp_10">
 
                 <CheckBox
                     android:id="@+id/cb_hot"
@@ -83,81 +81,89 @@
                     android:text="指定热门城市"
                     android:textColor="@color/union_text"
                     android:textSize="16sp" />
+
                 <CheckBox
                     android:id="@+id/cb_enable_anim"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:textColor="@color/union_text"
                     android:background="@color/white"
+                    android:checked="true"
                     android:text="启用动画效果"
-                    android:textSize="16sp"/>
+                    android:textColor="@color/union_text"
+                    android:textSize="16sp" />
+
                 <CheckBox
                     android:id="@+id/cb_anim"
                     android:layout_width="match_parent"
-                    android:textColor="@color/union_text"
                     android:layout_height="48dp"
                     android:background="@color/white"
-                    android:checked="true"
+                    android:checked="false"
                     android:text="自定义动画"
-                    android:textSize="16sp"/>
+                    android:textColor="@color/union_text"
+                    android:textSize="16sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="点击更换："/>
+                        android:text="点击更换："
+                        android:textColor="@color/Gray2" />
+
                     <Button
                         android:id="@+id/btn_style"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/dp_40"
-                        android:textSize="16sp"
-                        android:background="@drawable/shape_button_3"
+                        android:layout_height="@dimen/dp_30"
+                        android:background="@drawable/shape_button_6"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:text="默认主题"
                         android:textColor="@color/white"
-                        android:text="默认主题" />
+                        android:textSize="16sp" />
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/selectCity"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/dp_20"
                     android:layout_height="45dp"
-                    android:onClick="selectCity"
                     android:layout_centerInParent="true"
                     android:layout_marginLeft="50dp"
+                    android:layout_marginTop="@dimen/dp_20"
                     android:layout_marginRight="50dp"
                     android:background="@color/material_green_200"
                     android:gravity="center"
+                    android:onClick="selectCity"
                     android:text="获取城市列表"
                     android:textColor="@color/white"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@color/transparent"/>
-
+                android:background="@color/transparent" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        android:paddingHorizontal="@dimen/dp_10"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/dp_25"
         android:background="@color/transparent"
-        android:layout_alignParentTop="true">
+        android:paddingHorizontal="@dimen/dp_10"
+        android:visibility="gone">
+
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:onClick="ivBack"
             android:layout_centerVertical="true"
-            android:src="@drawable/ico_back_white_90px"/>
+            android:src="@drawable/ico_back_white_90px" />
     </RelativeLayout>
 </RelativeLayout>

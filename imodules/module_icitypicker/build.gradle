@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 5
+        versionName "5.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //增加lint选项，不加的话下面上传到jCenter有可能会报错
+    lintOptions {
+        abortOnError false
+    }
+
+
+
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["runner"]
+    androidTestImplementation rootProject.ext.dependencies["espresso-core"]
+    implementation files('libs/pinyin4j-2.5.0.jar')
+    implementation project(':imodules:module_icommon')
+//    implementation 'com.google.code.gson:gson:2.8.1'
+//    implementation rootProject.ext.dependencies["appcompat-v7"]
+//    implementation rootProject.ext.dependencies["recyclerview"]
+//    implementation rootProject.ext.dependencies["constraint-layout"]
+
+
+}
+
+
+
+

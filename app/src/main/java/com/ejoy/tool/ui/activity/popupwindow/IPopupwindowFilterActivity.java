@@ -19,21 +19,13 @@ package com.ejoy.tool.ui.activity.popupwindow;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
-import com.ejoy.tool.ui.activity.MainActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.base.base_webview.BaseWebView;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
@@ -43,6 +35,8 @@ import com.iduo.filterlib.FilterResultBean;
 import com.iduo.filterlib.FilterTabConfig;
 import com.iduo.filterlib.FilterTabView;
 import com.iduo.filterlib.listener.OnSelectResultListener;
+import com.module.iviews.popup.qq.entity.FilterEntity;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

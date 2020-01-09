@@ -333,6 +333,15 @@ public class IToast {
         showISimpleToast(text,TOAST_DURATION_SHORT,imageViewResID,TOAST_SIMPLE_TEXT_ICO,TOAST_Gravity_CENTER);
     }
 
+    /**
+     * 简洁默认图标Toast
+     *     默认显示类型
+     * @param text
+     */
+    public void showIDefaultImgResToast(String text) {
+        showISimpleToast(text,TOAST_DURATION_SHORT,R.drawable.itoast_done_green_target,TOAST_SIMPLE_TEXT_ICO,TOAST_Gravity_CENTER);
+    }
+
 
 
     /**

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+           android:duration="600"
+           android:fromYDelta="100%"
+           android:interpolator="@android:anim/anticipate_overshoot_interpolator"
+           android:toYDelta="0" />
+<!--从y轴的最底部开始向上平移到底部-->
+<!--平移动画-->
+    <!--android:fromXDelta：平移开始X方向坐标（数值、百分数、百分数p，且多可以为正负）-->
+    <!--android:fromYDelta：平移开始Y方向坐标（数值、百分数、百分数p，且多可以为正负）-->
+    <!--android:toXDelta：平移结束X方向坐标（数值、百分数、百分数p，且多可以为正负）-->
+    <!--android:toYDelta：平移结束Y方向坐标（数值、百分数、百分数p，且多可以为正负）-->
+
