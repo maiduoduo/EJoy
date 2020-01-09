@@ -18,96 +18,40 @@
 > 有好的建议或者指正的地方，请您不吝赐教，提请issue,谢谢。 <br/>
 > 烦请看到的各位，共同维护创作者的知识产权，不必大肆滥用别人的成果，共建一个良好生态的技术环境，在此感谢。 <br/>
 
----
-
-
-##### 💥 工具分类
-
----
+[issue](https://github.com/maiduoduo/EJoy/issues)
 
 <br/>
 
-![image](Screenshot/index_home.png)
 
-<br/>
-
-> TOAST
->
-
-* **运行效果**
-
-![image](Screenshot/toast/toast_a.png)
-![image](Screenshot/toast/toast_b.png)
-![image](Screenshot/toast/toast_c.png)
-![image](Screenshot/toast/toast_d.png)
-![image](Screenshot/toast/toast_e.png)
-![image](Screenshot/toast/toast_f.png)
-
-<br/>
-
-> Dialog
->
-
-* **运行效果**
+[![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg)](https://android-arsenal.com/api?level=9)
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
+[![Download](https://api.bintray.com/packages/contrarywind/maven/Android-PickerView/images/download.svg) ](https://www.lanzous.com/i8k5dzg)
 
 
 
-<br/>
+##### 💥 功能大纲
 
-> ScrollView(自定义，根据屏幕文字长度进行限定开始滑动起点)
->
+**Toast**
+**Dialog**
+**Loading**
+**ScrollView**
+**FloatDragButton**
+**版本更新**
+**详情页**
+**弹窗（Popupwindow、snackbar、ecookiebar、气泡消息提醒等）**
+**ArcLayout**
+**设备工具**
+**BottomsheetDialog**
+**日期、城市选择器（可以自由组合）**
+**下拉刷新定制方案**
+**通用标题栏**
+**通用TextView**
+**待做...**
 
-* **运行效果**
-
-![image](Screenshot/scroll/scroll_a.png)
-![image](Screenshot/scroll/scroll_b.png)
-
-<br/>
-
-> popupwindow(筛选菜单栏)
->
-
-* **运行效果**
-
-![image](Screenshot/popwindow/popwindow_a.png)
-![image](Screenshot/popwindow/popwindow_b.png)
-![image](Screenshot/popwindow/popwindow_c.png)
-![image](Screenshot/popwindow/popwindow_d.png)
-![image](Screenshot/popwindow/popwindow_e.png)
-![image](Screenshot/popwindow/popwindow_f.png)
-
-
-
-> 仿iosDialog
->
-
-* **运行效果**
-
-![image](Screenshot/iosdialog/img_iosdialog_a.jpg)
-![image](Screenshot/iosdialog/img_iosdialog_b.jpg)
-![image](Screenshot/iosdialog/img_iosdialog_c.jpg)
-![image](Screenshot/iosdialog/img_iosdialog_d.jpg)
-
-
-> 图片压缩：单张压缩/批量压缩/原生压缩
->
-
-* **运行效果**
-
-![image](Screenshot/iosdialog/img_iosdialog_e.jpg)
-![image](Screenshot/compress/img_single_comress.jpg)
-![image](Screenshot/compress/img_compress_before.jpg)
-![image](Screenshot/compress/img_compress_ing.jpg)
-![image](Screenshot/compress/img_compress_after.jpg)
-![image](Screenshot/compress/img_system_a.jpg)
-![image](Screenshot/compress/img_single_a.jpg)
-
-<br/>
 
 
 ##### 💥 待做日志
-
----
 
 > 组件化
 
@@ -116,191 +60,92 @@
 
 ---
 
+[更新日志详细-点击查看](https://github.com/maiduoduo/EJoy/blob/dev/README_DEVLOG.md)
+
 
 ###### 2020.01.08
-
-> BottomSheetDialog/BottomSheetDialogFragment
-
-* 自定义BottomSheetDialog（类IOS最新版本网易云音乐歌单弹窗）
-* 官方BottomSheetDialog（自定义布局）
-* Dialog实现的带有动画的底部弹窗见于Dialog
-
-
+        |
 ###### 2020.01.04
-
-> 新增弹窗集合
-
-* Popupwindow筛选菜单
-* Popupwindow仿微博弹簧弹窗
-* Popupwindow基础封装
-* 自定义依附在输入法之上的Bottom弹窗
-* 仿qq右上角弹窗
-* 多类型筛选弹框
-* 相机胶卷弹窗
-* 普通选择框（气泡背景）
-* 弹出菜单
-* 可伸缩选择框
-* ECookiebar(顶部和底部信息显示条)
-
+        |
 ###### 2019.12.26
-
-> 下拉刷新
-
-    + 基于SmartRefreshLayout实现自由定制头部：见项目IRefreshSmartActivty.java文件
-    + 自定义视频下拉刷新示范：见项目IRefreshVideoActivty.java文件
-
-> RecyclerView列表加载动画
-
-<br/>
-
-> 代码实现 详见IRefreshSmartActivty.java文件
-
-<br/>
-
-```java
-    LayoutAnimationController controller = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.animation_item));
-    //也可以通过此方法获得
-    //LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(this, R.anim.animation_recyclerview);
-    controller.setOrder(LayoutAnimationController.ORDER_NORMAL);
-    controller.setDelay(0.2f);//前面还没结束，后面已经开始，实现连续
-    mRecyclerView.setLayoutAnimation(controller);
-    mRecyclerView.startLayoutAnimation();//貌似不加这句动画也会自动实现
-```
-
-<br/>
-
-> animation_recyclerview.xml
-
-```java
-    <?xml version="1.0" encoding="utf-8"?>
-    <layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
-        android:animation="@anim/animation_item"
-        android:animationOrder="reverse"
-        android:delay="0.2"
-        android:interpolator="@android:anim/decelerate_interpolator"/>
-```
-
-<br/>
-
-> animation_item.xml
-
-```java
-    <set xmlns:android="http://schemas.android.com/apk/res/android"
-        android:duration="400">
-        <translate
-            android:fromYDelta="-20%"
-            android:interpolator="@android:anim/decelerate_interpolator"
-            android:toYDelta="0" />
-        <alpha
-            android:fromAlpha="0"
-            android:interpolator="@android:anim/decelerate_interpolator"
-            android:toAlpha="1" />
-        <scale
-            android:fromXScale="105%"
-            android:fromYScale="105%"
-            android:interpolator="@android:anim/decelerate_interpolator"
-            android:pivotX="50%"
-            android:pivotY="50%"
-            android:toXScale="100%"
-            android:toYScale="100%" />
-    </set>
-
-```
-
-
+        |
 ###### 2019.12.20
-
-> 新增自定义view组件库(imeiview-lib)
-
- * 集中存放自定义控件
- * 避免资源杂乱
-
-> 新增资源文件组件库(iresku-lib)
-
- * 可以避免资源重复
- * 可以避免资源冲突
- * 可以避免资源杂乱
- * 组件化管理
-
-> 信封样式的分割线
-
-
+        |
 ###### 2019.12.19
-
-> **城市选择器**
-
-* 城市列表（仿美团最新版城市选择）
-* 仿IOS滚轮选择
-* 三级列表选择
-
-
+        |
 ###### 2019.12.13
-
-* 日期时间选择器：支持日期选择、时间选择、日期时间选择。
-* 省市区三级联动（待）
-* 时间线（待）
-
-
+        |
 ###### 2019.12.12
-
-> 细节优化
-
+        |
 ###### 2019.12.09
-
-  * 仿iosDialog
-  * 短篇消息
-  * 列表条目
-  * 长篇幅内容
-  * 输入文本
-  * 数字、城市选择
-  * 极简布局
-
+        |
 ###### 2019.12.06
-
-> 图片压缩
- * 1.单图单压
- * 2.多图批量压缩
- * 3.系统API图片压缩
-
-
+        |
 ###### 2019.12.04
-
-* 相机，相册选择图片
-* 图片压缩
-
-
+        |
 ###### 2019.11.28
-
-* WebView封装基类，避免大量使用，重复配置，造成代码冗余。
-* 加入控件使用的详细HTML文档，webview加载展示
-
-
+        |
 ###### 2019.11.27
-
-* 沉浸式状态栏、PopupWindowFilter(筛选)、多级筛选、单级筛选等
-* 修复机型沉浸式问题
-* 修复fit
-
+        |
 ###### 2019.11.26
 
-* Toast优化
-* IscrollView沉浸式解决方案梳理
+
+
+
+##### 💥 运行效果
+
+[运行效果详情](https://github.com/maiduoduo/EJoy/blob/dev/README_RUNSHOW.md)
+
+
+<br/>
+
+> - 本库会持续更新，持续维护
+
+
+#### ABOUT ME
+
+---
+
+**`maiduoduo`**
+
+邮箱：	   [maiduoduo0@163.com](maiduoduo0@163.com) <br/>
+博客主页：   [https://blog.csdn.net/Maiduoudo](https://blog.csdn.net/Maiduoudo)  <br/>
+Github主页：[https://github.com/maiduoduo/](https://github.com/maiduoduo/)  <br/>
+
+
+<br/>
+
+#### THANKS
+
+若侵联删：	[maiduoduo0@163.com](maiduoduo0@163.com)
+
+
+#### 版权信息
+
+E·享软件遵循 MIT License 开源协议发布，并提供免费使用，请勿用于非法用途。
+版权所有Copyright © 2019 by maiduoduo (maiduoduo0@163.com)
+All rights reserved。
+
+<br/>
+
+#### License
+
+[License](https://www.apache.org/licenses/LICENSE-2.0)
+
+>
+>    Licensed under the Apache License, Version 2.0 (the "License");
+>    you may not use this file except in compliance with the License.
+>    You may obtain a copy of the License at
+>
+>       http://www.apache.org/licenses/LICENSE-2.0
+>
+>    Unless required by applicable law or agreed to in writing, software
+>    distributed under the License is distributed on an "AS IS" BASIS,
+>    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+>    See the License for the specific language governing permissions and
+>    limitations under the License.
+>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<br/><br/><br/><br/><br/>
-
-> 本库会持续更新，持续维护
