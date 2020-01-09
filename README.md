@@ -25,35 +25,36 @@
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg)](https://android-arsenal.com/api?level=9)
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
-[![Download](https://api.bintray.com/packages/contrarywind/maven/Android-PickerView/images/download.svg) ](https://www.lanzous.com/i8k5dzg)
+[![release](https://img.shields.io/badge/release-v1.2.3-blue) ](https://www.lanzous.com/i8k5dzg)
 
-<br/>
+<br/><br/><br/>
 
 ##### 💥 功能大纲
 
-**Toast**  <br/>
-**Dialog**  <br/>
-**Loading**  <br/>
-**ScrollView**  <br/>
-**FloatDragButton**  <br/>
-**版本更新**  <br/>
-**详情页**  <br/>
-**弹窗（Popupwindow、snackbar、ecookiebar、气泡消息提醒等）**  <br/>
-**ArcLayout**  <br/>
-**设备工具**  <br/>
-**BottomsheetDialog**  <br/>
-**日期、城市选择器（可以自由组合）**  <br/>
-**下拉刷新定制方案**  <br/>
-**通用标题栏**  <br/>
-**通用TextView**  <br/>
-**待做...**  <br/>
+###### Toast <br/>
+###### Dialog  <br/>
+###### Loading  <br/>
+###### ScrollView  <br/>
+###### FloatDragButton  <br/>
+###### 版本更新  <br/>
+###### 详情页  <br/>
+###### 弹窗（Popupwindow、snackbar、ecookiebar、气泡消息提醒等）  <br/>
+###### ArcLayout  <br/>
+###### 设备工具 <br/>
+###### BottomsheetDialog  <br/>
+###### 日期、城市选择器（可以自由组合）  <br/>
+###### 下拉刷新定制方案  <br/>
+###### 通用标题栏  <br/>
+###### 通用TextView  <br/>
+###### 待做...  <br/>
 
-
+<br/><br/><br/>
 
 ##### 💥 待做日志
 
 > 组件化
 
+<br/><br/>
 
 ##### 💥 更新日志
 
@@ -76,7 +77,7 @@
 ###### 2019.11.26
 
 
-
+<br/><br/>
 
 ##### 💥 运行效果
 
@@ -87,10 +88,11 @@
 
 > - 本库会持续更新，持续维护
 
+<br/><br/><br/>
 
-#### ABOUT ME
 
----
+#### 💥 ABOUT ME
+
 
 **`maiduoduo`**
 
@@ -99,22 +101,23 @@
 Github主页：[https://github.com/maiduoduo/](https://github.com/maiduoduo/)  <br/>
 
 
-<br/>
+<br/><br/>
 
-#### THANKS
+#### 💥 THANKS
 
 若侵联删：	[maiduoduo0@163.com](maiduoduo0@163.com)
 
 
-#### 版权信息
+<br/><br/>
+
+#### 💥 版权信息
 
 E·享软件遵循 MIT License 开源协议发布，并提供免费使用，请勿用于非法用途。
 版权所有Copyright © 2019 by maiduoduo (maiduoduo0@163.com)
 All rights reserved。
 
-<br/>
 
-#### License
+##### License
 
 [License](https://www.apache.org/licenses/LICENSE-2.0)
 
