@@ -32,22 +32,22 @@
 
 ##### 💥 功能大纲
 
-**Toast**
-**Dialog**
-**Loading**
-**ScrollView**
-**FloatDragButton**
-**版本更新**
-**详情页**
-**弹窗（Popupwindow、snackbar、ecookiebar、气泡消息提醒等）**
-**ArcLayout**
-**设备工具**
-**BottomsheetDialog**
-**日期、城市选择器（可以自由组合）**
-**下拉刷新定制方案**
-**通用标题栏**
-**通用TextView**
-**待做...**
+**Toast**  <br/>
+**Dialog**  <br/>
+**Loading**  <br/>
+**ScrollView**  <br/>
+**FloatDragButton**  <br/>
+**版本更新**  <br/>
+**详情页**  <br/>
+**弹窗（Popupwindow、snackbar、ecookiebar、气泡消息提醒等）**  <br/>
+**ArcLayout**  <br/>
+**设备工具**  <br/>
+**BottomsheetDialog**  <br/>
+**日期、城市选择器（可以自由组合）**  <br/>
+**下拉刷新定制方案**  <br/>
+**通用标题栏**  <br/>
+**通用TextView**  <br/>
+**待做...**  <br/>
 
 
 
@@ -58,35 +58,22 @@
 
 ##### 💥 更新日志
 
----
 
 [更新日志详细-点击查看](https://github.com/maiduoduo/EJoy/blob/dev/README_DEVLOG.md)
 
 
 ###### 2020.01.08
-        |
 ###### 2020.01.04
-        |
 ###### 2019.12.26
-        |
 ###### 2019.12.20
-        |
 ###### 2019.12.19
-        |
 ###### 2019.12.13
-        |
 ###### 2019.12.12
-        |
 ###### 2019.12.09
-        |
 ###### 2019.12.06
-        |
 ###### 2019.12.04
-        |
 ###### 2019.11.28
-        |
 ###### 2019.11.27
-        |
 ###### 2019.11.26
 
 
