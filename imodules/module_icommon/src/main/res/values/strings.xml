@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">module_ires</string>
     <string name="default_app_font_path"/>
+    <string name="top_cookie">Top Cookie</string>
+    <string name="custom_animations">Custom Animations</string>
+    <string name="bottom_cookie">Bottom Cookie</string>
+    <string name="fancy_bottom_cookie">Fancy Bottom Cookie</string>
+    <string name="custom_view_cookie">Custom View Cookie</string>
+    <string name="custom_message">Custom message</string>
+    <string name="custom_title">Custom Title</string>
+
+    <!--CookieBar-->
+    <string name="cookie_title">E·享：努力做更好的解决方案</string>
+    <string name="cookie_message">工具类！自定义控件！更好的解决场景！优美的界面交互！更多的使用功能！</string>
+    <string name="cookie_action">点击一下</string>
+    <string name="custom_anim_cookie_title">E·享：This cookie has custom in/out animations</string>
+    <string name="custom_anim_cookie_message">Did you notice it entered from the left?\nCan you guess how it will leave the screen?\nIf you guessed from the right, you\'re right!</string>
+    <string name="custom_click_result">操作成功</string>
+    <string name="action">Action</string>
 </resources>

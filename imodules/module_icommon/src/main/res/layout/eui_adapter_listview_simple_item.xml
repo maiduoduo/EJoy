@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:id="@+id/ll_content"
-        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingVertical="@dimen/dp_8">
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/eui_config_simple_list_icon_size_tablet_big"
+        android:layout_height="@dimen/eui_config_simple_list_icon_size_tablet_small"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/ico_ptitle_c" />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingVertical="@dimen/dp_8"
-        android:orientation="horizontal">
+        android:layout_marginLeft="@dimen/dp_5"
+        android:singleLine="true"
+        android:textColor="@color/black_33"
+        android:textSize="@dimen/sp_13"
+        tools:text="item" />
 
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/iv_icon"
-            android:layout_width="@dimen/eui_config_simple_list_icon_size_tablet_big"
-            android:layout_height="@dimen/eui_config_simple_list_icon_size_tablet_small"
-            android:layout_marginEnd="@dimen/eui_config_content_spacing_horizontal_phone" />
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textColor="@color/eui_config_color_dark_blue_gray"
-            android:textSize="@dimen/sp_13"
-            tools:text="设置" />
-
-    </LinearLayout>
 
 </LinearLayout>

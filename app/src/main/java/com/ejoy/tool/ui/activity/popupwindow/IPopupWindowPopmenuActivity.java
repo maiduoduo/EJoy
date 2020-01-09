@@ -141,13 +141,12 @@ public class IPopupWindowPopmenuActivity extends BaseActivity {
                     })
                     .build();
             mPopMenuNext.hide();
-//            mPopMenuNext.hide();  mPopMenuNext.hide();  mPopMenuNext.hide();  mPopMenuNext.hide();  mPopMenuNext.hide();
         }
     }
 
     @Override
     protected void onDestroy() {
-        if (mPopMenuTop.isShowing() || mPopMenuNext.isShowing()) {
+        if (mPopMenuTop != null && mPopMenuTop.isShowing() || mPopMenuNext != null && mPopMenuNext.isShowing()) {
             mPopMenuTop.hide();
             mPopMenuNext.hide();
         }

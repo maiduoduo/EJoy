@@ -805,6 +805,7 @@
     <color name="background_tab_pressed">#e5e5e5</color>
     <color name="action_sheet_blue">#037BFF</color>
     <color name="gold">#FFD700</color>
+    <color name="gold_white">#f4f2ee</color>
     <color name="goldenrod">#DAA520</color>
     <color name="black_808080">#808080</color>
 
@@ -973,6 +974,9 @@
     <color name="addLayoutBg">#f2f2f2</color>
     <color name="windowBackground">#f2f2f2</color><!--window的背景样式-->
     <color name="home_bottombar_font">#929292</color><!--底部bar字体颜色-->
+    <color name="transparent_normal">#F0FFFFFF</color>
+    <color name="transparent_selected">#E0DBDBDB</color>
+    <color name="cookie_bar_default_bg_color">#323232</color>
 
 
 

@@ -17,24 +17,41 @@ package com.ejoy.tool.ui.activity.popupwindow;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.ejoy.tool.R;
+import com.ejoy.tool.ui.activity.MainActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.module.ires.bean.utils.EDensityUtils;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.EUISimpleAdapter;
+import com.module.iviews.popup.EUISimpleExpandableListAdapter;
+import com.module.iviews.popup.EUISimpleExpandablePopup;
 import com.module.iviews.popup.EUISimplePopup;
-import com.module.iviews.popup.qq.QQPopupWindow;
+import com.module.iviews.popup.ExpandableItem;
+import com.module.iviews.popup.baseuse.IListPopupwindow;
+import com.module.iviews.popup.baseuse.IPopupwindowUse;
+import com.module.iviews.popup.bean.GalleryBean;
+import com.module.iviews.popup.menu.IScreenMenuPopWindow;
+import com.module.iviews.popup.menu.bean.FiltrateBean;
+import com.module.iviews.popup.qq.IQQPopupWindow;
 import com.module.iviews.popup.weibo.WeiboPopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import io.reactivex.annotations.Nullable;
+
+import static com.module.iviews.popup.baseuse.IPopupwindowUse.LocationType.BOTTOM_CENTER;
 
 /**
  * CN:      IPopupwindowActivity
@@ -42,11 +59,26 @@ import io.reactivex.annotations.Nullable;
  * Date:   2020/1/2
  * Des:    TODO:Popupwindow使用集合及仿Popupwindow
  */
-public class IPopupwindowActivity extends BaseActivity{
-    private QQPopupWindow mQQPopupWindow;
+public class IPopupwindowActivity extends BaseActivity implements IListPopupwindow.OnPopItemSelectedListener {
+    @BindView(R.id.qqPopupshow)
+    ImageButton mIbnqqPopupshow;
+    @BindView(R.id.multiMenuShow)
+    TextView mMultiMenuShow;
+    @BindView(R.id.title)
+    FrameLayout mTitle;
+    @BindView(R.id.Ppictitle)
+    TextView mPpictitle;
+    private IQQPopupWindow mQQPopupWindow;
     private List<String> mPopData;
-    private EUISimplePopup mListPopup;
     private WeiboPopupWindow mWeiboPopupWindow;
+
+    private EUISimplePopup mListPopup;
+    private EUISimplePopup mMenuPopup;
+    private EUISimpleExpandablePopup mExpandableListPopup;
+    private IScreenMenuPopWindow screenPopWindow;
+    //选取相册弹窗
+    private IListPopupwindow iListPopupwindow;
+    private List<GalleryBean> mGalleryList;
 
     @Override
     protected void initRestore(@Nullable Bundle savedInstanceState) {
@@ -66,10 +98,12 @@ public class IPopupwindowActivity extends BaseActivity{
     protected void initView(View mRootView) {
         initPop();
         initListPopup();
+        initMenuPopup();
+        initExpandableListPopup();
     }
 
     private void initPop() {
-        mQQPopupWindow = new QQPopupWindow(this).builder();
+        mQQPopupWindow = new IQQPopupWindow(this).builder();
     }
 
     @Override
@@ -87,53 +121,110 @@ public class IPopupwindowActivity extends BaseActivity{
         return null;
     }
 
-    /**
-     * 筛选菜单
-     * @param view
-     */
-    public void PWWbFilter(View view) {
-        showActivity(this,IPopupwindowFilterActivity.class);
+
+    @OnClick({
+            R.id.qqPopupshow,
+            R.id.qqPopupshowText,
+            R.id.tvCustomPWFilter,
+            R.id.popBaseUse,
+            R.id.tvWb,
+            R.id.Epop_normal,
+            R.id.Epop_extends,
+            R.id.Epop_menu,
+            R.id.multiMenuShow,
+            R.id.Ppictitle,
+            R.id.ECookieBar,
+            R.id.albumListPop,
+            R.id.popCustomEdit
+    })
+    public void bindViewClick(View view) {
+        switch (view.getId()) {
+            case R.id.qqPopupshow://仿QQ的右上角选项弹窗
+                showPop(view, true);
+                break;
+            case R.id.qqPopupshowText://仿QQ的右上角选项弹窗
+                showPop(mIbnqqPopupshow, false);
+                break;
+            case R.id.tvCustomPWFilter://Popupwindow筛选菜单
+                showActivity(this, IPopupwindowFilterActivity.class);
+                break;
+            case R.id.tvWb://Popupwindow仿微博弹簧弹窗
+                mListPopup.showDown(view);
+                break;
+            case R.id.multiMenuShow://多类型筛选弹框
+                showMultiMenuShow(BOTTOM_CENTER);
+                break;
+            case R.id.popBaseUse://Popupwindow基础封装
+                showActivity(_mActivity, IPopupwindowUseActivity.class);
+                break;
+            case R.id.popCustomEdit://自定义依附在输入法之上的Bottom弹窗
+                showActivity(_mActivity, IPopupwindowTopEditActivity.class);
+                break;
+            case R.id.Epop_normal://普通选择框
+                mListPopup.showDown(view);
+                break;
+            case R.id.Epop_extends://可伸缩选择框
+                mExpandableListPopup.clearExpandStatus();
+                mExpandableListPopup.showDown(view);
+                break;
+            case R.id.Epop_menu://弹出菜单
+                mMenuPopup.showDown(view);
+                break;
+            case R.id.Ppictitle://相册列表弹窗
+                showAlbumListPopup();
+                break;
+            case R.id.albumListPop://相册列表弹窗
+                showAlbumListPopup();
+                break;
+            case R.id.ECookieBar://CookieBar2
+                showActivity(_mActivity, ICookieBarActivity.class);
+                break;
+            default:
+                break;
+        }
     }
 
     /**
-     * 仿微博弹簧式样弹窗
-     * @param view
+     * 相册列表选择弹窗
      */
-    public void PWWbDialog(View view) {
-        mListPopup.showDown(view);
-    }
-    /**
-     * 仿QQ的右上角选项弹窗
-     * @param view
-     */
-    public void qqPopup(View view) {
-        showPop(view,false);
-
-    }
-
-    /**
-     * 仿QQ的右上角选项弹窗
-     * @param view
-     */
-    public void qqPopupshow(View view) {
-        showPop(view,true);
+    private void showAlbumListPopup() {
+        iListPopupwindow = new IListPopupwindow(_mActivity, mGalleryList = GlobalDataProvider.getAlbumInfo() == null ? new ArrayList<>()
+                : GlobalDataProvider.getAlbumInfo());
+        iListPopupwindow.setPictureTitleView(mPpictitle);
+        iListPopupwindow.setOnItemSelectedListener(this);
+        if (iListPopupwindow.isShowing()) {
+            iListPopupwindow.dismiss();
+        } else {
+            iListPopupwindow.showAsDropDown(mPpictitle);
+            mPpictitle.setText(mGalleryList.get(0).getTitle());
+        }
     }
 
 
-    private void showPop(View view,boolean ishsowLine) {
+    private void showPop(View topview, boolean ishsowLine) {
         //弹出选项弹窗
         mQQPopupWindow
                 //TODO:-必须在showIt()；方法之前调用，否则不生效-
                 .showLine(ishsowLine)
                 //列表数据
                 .showIt(mPopData = GlobalDataProvider.qqPopItems() == null ? new ArrayList<>() : GlobalDataProvider.qqPopItems())
-                .showAtBottom(view)
+                .showAtBottom(topview)
                 //必须加上背景透明度切换
                 .toggleBright()
-                .setIQQPopupItemListener(new QQPopupWindow.IQQPopupItemListener() {
+                .setIQQPopupItemListener(new IQQPopupWindow.IQQPopupItemListener() {
                     @Override
                     public void onPopItemClick(View view, int position) {
-//                        iToast.showISimpleToast( position+" : "+mPopData.get(position));
+                        switch (position) {
+                            case 0://气泡提示
+                                break;
+                            case 1://EasyPopup
+                                break;
+                            case 2://EUIPopup
+                                break;
+                            default:
+                                break;
+                        }
+                        iToast.showISimpleToast(position + " : " + mPopData.get(position));
                     }
                 });
     }
@@ -143,21 +234,27 @@ public class IPopupwindowActivity extends BaseActivity{
         finish();
     }
 
+    /**
+     * 普通选择框
+     */
     private void initListPopup() {
         mListPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.wbDialogItems)
                 .create(EDensityUtils.dp2px(_mActivity, 170), new EUISimplePopup.OnPopupItemClickListener() {
                     @Override
                     public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
                         iToast.showIDefaultImgResToast(item.getTitle().toString());
-                        switch (position){
+                        switch (position) {
                             case 0:
                                 View view = adapter.getView(position, null, null);
                                 showWeibPopupWindow(view);
                                 break;
                             case 1:
-                                showActivity(_mActivity,IPopupWindowPopmenuActivity.class,R.anim.push_bottom_in, R.anim.push_bottom_out);
+                                showActivity(_mActivity, IPopupWindowPopmenuActivity.class, R.anim.push_bottom_in, R.anim.push_bottom_out);
+                                break;
+                            default:
                                 break;
                         }
+                        mListPopup.dismiss();
                     }
                 })
                 .setHasDivider(true);
@@ -168,8 +265,120 @@ public class IPopupwindowActivity extends BaseActivity{
             mWeiboPopupWindow = new WeiboPopupWindow(this);
             mWeiboPopupWindow.init();
         }
-        mWeiboPopupWindow.showWindow(view,100);
+        mWeiboPopupWindow.showWindow(view, 100);
     }
 
 
+    /**
+     * 可伸缩选择框
+     */
+    private void initMenuPopup() {
+        mMenuPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.menuItems)
+                .create(new EUISimplePopup.OnPopupItemClickListener() {
+                    @Override
+                    public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
+                        iToast.showIDefaultImgResToast(item.getTitle().toString());
+                        mMenuPopup.dismiss();
+                    }
+                })
+                .setHasDivider(true);
+//        mMenuPopup.setPopupTopBottomMinMargin(-30);
+//        mMenuPopup.setPopupLeftRightMinMargin(-50);
+//        mMenuPopup.setPositionOffsetX(-30);
+    }
+
+    /**
+     * 弹出菜单
+     */
+    private void initExpandableListPopup() {
+        mExpandableListPopup = new EUISimpleExpandablePopup(_mActivity, GlobalDataProvider.expandableItems)
+                .create(EDensityUtils.dp2px(_mActivity, 200), EDensityUtils.dp2px(_mActivity, 200))
+                .setOnExpandableItemClickListener(false, new EUISimpleExpandablePopup.OnExpandableItemClickListener() {
+                    @Override
+                    public void onExpandableItemClick(EUISimpleExpandableListAdapter adapter, ExpandableItem group, int groupPosition, int childPosition) {
+                        iToast.showIDefaultImgResToast(group.getChildItem(childPosition).getTitle() + "");
+                        mExpandableListPopup.dismiss();
+                    }
+                })
+                .setHasDivider(false);
+    }
+
+
+    /**
+     * 多类型筛选选择器
+     *
+     * @param bottomCenter
+     */
+    private void showMultiMenuShow(IPopupwindowUse.LocationType bottomCenter) {
+        IPopupwindowUse popWindow = new IPopupwindowUse.PopupWindowBuilder(this)
+                .setView(R.layout.layout_pop_bottom)
+                .setFocusable(true)
+                .setOutsideTouchable(true)
+                .create();
+        popWindow.showPopupWindow(mMultiMenuShow, bottomCenter);
+        View contentView = popWindow.getContentView();
+        TextView tvSub_a = contentView.findViewById(R.id.tvSub_a);
+        TextView tvSub_b = contentView.findViewById(R.id.tvSub_b);
+        tvSub_a.setText("单选模式");
+        tvSub_b.setText("多选模式");
+        tvSub_a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMultiChoosePop(true);
+                popWindow.dissmiss();
+            }
+        });
+
+        tvSub_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMultiChoosePop(false);
+                popWindow.dissmiss();
+            }
+        });
+
+    }
+
+    /**
+     * 多类型筛选弹框
+     *
+     * @param setSingle
+     */
+    private void showMultiChoosePop(boolean setSingle) {
+        List<FiltrateBean> multiMenuData = GlobalDataProvider.getMultiMenuData();
+        screenPopWindow = new IScreenMenuPopWindow(_mActivity, multiMenuData);
+        //默认单选，因为共用的一个bean，这里调用reset重置下数据
+        if (setSingle) {
+            screenPopWindow.reset().build();
+        } else {
+            //设置多选，因为共用的一个bean，这里调用reset重置下数据
+            screenPopWindow.setSingle(false).reset().build();
+        }
+        screenPopWindow.setAnimationStyle(R.style.PopMenuAnim);
+        screenPopWindow.showAsDropDown(mTitle);
+        screenPopWindow.setOnConfirmClickListener(new IScreenMenuPopWindow.OnConfirmClickListener() {
+            @Override
+            public void onConfirmClick(List<String> sectionAList, List<String> sectionBList) {
+                if (sectionAList != null && sectionAList.size() > 0 && sectionBList != null && sectionBList.size() > 0) {
+                    StringBuilder str = new StringBuilder();
+                    for (String a : sectionAList) {
+                        str.append(a).append(" ");
+                    }
+                    for (String b : sectionBList) {
+                        str.append(b).append(" ");
+                    }
+                    iToast.showISimpleToast("" + str.toString());
+                    screenPopWindow.dismiss();
+                } else {
+                    iToast.showISimpleToast("请各选择至少一项");
+                }
+            }
+        });
+    }
+
+    @Override
+    public void popItemSelected(String title) {
+        mPpictitle.setText(title);
+        iListPopupwindow.dismiss();
+    }
 }

@@ -19,19 +19,15 @@ package com.module.iviews.popup.qq;
 
 import android.animation.Animator;
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -43,16 +39,16 @@ import com.module.iviews.R;
 import java.util.List;
 
 /**
- * CN:      QQPopupWindow
+ * CN:      IQQPopupWindow
  * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
  * Date:   2020/1/2
  * Des:    TODO:仿qq右上角弹窗
  */
-public class QQPopupWindow extends PopupWindow{
-    public static final String TAG = "QQPopupWindow";
+public class IQQPopupWindow extends PopupWindow{
+    public static final String TAG = "IQQPopupWindow";
     private Activity context;
     /** PopupWindow对象 */
-    private QQPopupWindow mPopupWindow = null ;
+    private IQQPopupWindow mPopupWindow = null ;
     private IAnimUtil animUtil;
     private float bgAlpha = 1f;
     private boolean isAddLine = false;
@@ -66,7 +62,7 @@ public class QQPopupWindow extends PopupWindow{
     private BaseQuickAdapter mPopAdapter;
     private IQQPopupItemListener iQQPopupItemListener;
 
-    public QQPopupWindow(Activity context) {
+    public IQQPopupWindow(Activity context) {
         super(context);
         this.context = context;
     }
@@ -76,11 +72,11 @@ public class QQPopupWindow extends PopupWindow{
      * 调用：第一步
      * @return
      */
-    public QQPopupWindow builder() {
+    public IQQPopupWindow builder() {
         if (mPopupWindow == null){
-            synchronized (QQPopupWindow.class){
+            synchronized (IQQPopupWindow.class){
                 if (mPopupWindow == null){
-                    mPopupWindow = new QQPopupWindow(context);
+                    mPopupWindow = new IQQPopupWindow(context);
                 }
             }
         }
@@ -93,7 +89,7 @@ public class QQPopupWindow extends PopupWindow{
      * 创建
      * @return
      */
-    public QQPopupWindow showIt(List<String> data) {
+    public IQQPopupWindow showIt(List<String> data) {
         this.mData = data;
         Log.e(TAG, "showIt-----------");
         Log.e(TAG, "showIt: "+new Gson().toJson(mData));
@@ -154,7 +150,7 @@ public class QQPopupWindow extends PopupWindow{
      * @param isAddLine
      * @return
      */
-    public QQPopupWindow showLine(boolean isAddLine){
+    public IQQPopupWindow showLine(boolean isAddLine){
         this.isAddLine = isAddLine;
         if (mRecyclerView != null) {
             if (isAddLine) mRecyclerView.addItemDecoration(new EDividerItemDecoration(context, 1, 1));
@@ -169,7 +165,7 @@ public class QQPopupWindow extends PopupWindow{
      * @param view
      * @return
      */
-    public QQPopupWindow showAtBottom(View view) {
+    public IQQPopupWindow showAtBottom(View view) {
         //弹窗位置设置
         // 相对于 + 号正下面，同时可以设置偏移量
         this.showAsDropDown(view, Math.abs((view.getWidth() - getWidth()) / 2), 0);
@@ -183,7 +179,7 @@ public class QQPopupWindow extends PopupWindow{
      *  弹窗位置与偏移
      * @return
      */
-    public QQPopupWindow toggleBright() {
+    public IQQPopupWindow toggleBright() {
         // 三个参数分别为：起始值 结束值 时长，那么整个动画回调过来的值就是从0.5f--1f的
         animUtil.setValueAnimator(START_ALPHA, END_ALPHA, DURATION);
         animUtil.addUpdateListener(new IAnimUtil.UpdateListener() {

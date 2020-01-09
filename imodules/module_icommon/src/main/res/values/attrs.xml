@@ -50,4 +50,14 @@
     </declare-styleable>
     <attr name="eui_config_content_spacing_vertical" format="dimension" /> <!-- margin 和 padding 等使用的内容通用垂直间距 -->
 
+
+    <declare-styleable name="ECookieBar">
+        <!--CookieBar-->
+        <attr format="color" name="cookieTitleColor"/>
+        <attr format="color" name="cookieMessageColor"/>
+        <attr format="color" name="cookieActionColor"/>
+        <attr format="color" name="cookieBackgroundColor"/>
+    </declare-styleable>
+
+    <attr format="dimension" name="eui_config_content_spacing_horizontal"/>
 </resources>

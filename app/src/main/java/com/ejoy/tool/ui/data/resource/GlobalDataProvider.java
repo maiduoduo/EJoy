@@ -13,6 +13,8 @@ import com.ejoy.tool.common.bean.PICData;
 import com.module.ires.bean.CustomBottomSheetItemBean;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.ExpandableItem;
+import com.module.iviews.popup.bean.GalleryBean;
+import com.module.iviews.popup.menu.bean.FiltrateBean;
 import com.module.iviews.popup.weibo.PopMenuItem;
 
 import java.util.ArrayList;
@@ -55,29 +57,25 @@ public class GlobalDataProvider {
     };
 
     public static AdapterItem[] expandableChildItems = new AdapterItem[]{
-            new AdapterItem(App.getAppContext(),"登陆", R.mipmap.ico_dialog_d),
-            new AdapterItem(App.getAppContext(),"筛选", R.mipmap.ico_dialog_e),
-            new AdapterItem(App.getAppContext(),"设置", R.mipmap.ico_dialog_f),
+            new AdapterItem(App.getAppContext(), "登陆", R.mipmap.ico_dialog_d),
+            new AdapterItem(App.getAppContext(), "筛选", R.mipmap.ico_dialog_e),
+            new AdapterItem(App.getAppContext(), "设置", R.mipmap.ico_dialog_f),
     };
 
     public static ExpandableItem[] expandableItems = new ExpandableItem[]{
-            ExpandableItem.of(new AdapterItem(App.getAppContext(),"屏幕尺寸", R.mipmap.ico_dialog_a)).addChild(AdapterItem.arrayof(dpiItems)),
-            ExpandableItem.of(new AdapterItem(App.getAppContext(),"设备亮度", R.mipmap.ico_dialog_b)).addChild(expandableChildItems),
-            ExpandableItem.of(new AdapterItem(App.getAppContext(),"屏幕分辨率", R.mipmap.ico_dialog_c)).addChild(AdapterItem.arrayof(dpiItems))
+            ExpandableItem.of(new AdapterItem(App.getAppContext(), "屏幕尺寸", R.mipmap.ico_dialog_a)).addChild(AdapterItem.arrayof(dpiItems)),
+            ExpandableItem.of(new AdapterItem(App.getAppContext(), "设备亮度", R.mipmap.ico_dialog_b)).addChild(expandableChildItems),
+            ExpandableItem.of(new AdapterItem(App.getAppContext(), "屏幕分辨率", R.mipmap.ico_dialog_c)).addChild(AdapterItem.arrayof(dpiItems))
     };
 
-    private static List<String> result;
-    public static  List<String> qqPopItems() {
-        if (result != null)result.clear();
-        else result = new ArrayList<>();
-        result.add("创建群聊");
-        result.add("加好友/群");
-        result.add("发起群聊");
-        result.add("扫一扫");
-        result.add("收付款");
-        result.add("面对面快传");
-        result.add("帮助与反馈");
-        return result;
+
+    public static List<String> qqPopItems() {
+        return Arrays.asList(
+                "气泡提示",
+                "EasyPopup",
+                "EUIPopup",
+                "帮助与反馈"
+        );
     }
 
     /**
@@ -103,6 +101,101 @@ public class GlobalDataProvider {
             "商品",
             "红包"
     };
+
+    /**
+     * ListPopupwindow数据
+     *
+     * @return
+     */
+    public static List<AdapterItem> addListPopData() {
+        return Arrays.asList(
+                new AdapterItem(App.getAppContext(), "屏幕尺寸", R.mipmap.ico_ptitle_a),
+                new AdapterItem(App.getAppContext(), "设备亮度", R.mipmap.ico_ptitle_b),
+                new AdapterItem(App.getAppContext(), "屏幕分辨率", R.mipmap.ico_ptitle_c),
+                new AdapterItem(App.getAppContext(), "运输事件", R.mipmap.ico_ptitle_d),
+                new AdapterItem(App.getAppContext(), "供销质量", R.mipmap.ico_ptitle_e),
+                new AdapterItem(App.getAppContext(), "裁定单价", R.mipmap.ico_ptitle_f),
+                new AdapterItem(App.getAppContext(), "限定价格", R.mipmap.ico_ptitle_g)
+        );
+    }
+
+    public static List<String> addListPopStringData() {
+        return Arrays.asList(
+                "屏幕尺寸",
+                "设备亮度",
+                "屏幕分辨率",
+                "运输事件",
+                "供销质量",
+                "裁定单价",
+                "限定价格",
+                "品种",
+                "种类数量",
+                "技术工种"
+        );
+    }
+
+    private static List<FiltrateBean> dictList;
+
+    public static List<FiltrateBean> getMultiMenuData() {
+        if (dictList != null) dictList.clear();
+        else dictList = new ArrayList<>();
+        String[] brand = {"屏幕尺寸", "设备亮度", "屏幕分辨率", "运输事件", "供销质量", "裁定单价", "限定价格"};
+        String[] type = {"品种", "种类数量", "技术工种", "平方价格", "作业效率", "时效长度"};
+
+        FiltrateBean filtrateBean_child = new FiltrateBean();
+        filtrateBean_child.setTypeName("材料分析");
+        List<FiltrateBean.Children> childrenList = new ArrayList<>();
+        for (String aBrand : brand) {
+            FiltrateBean.Children cd = new FiltrateBean.Children();
+            cd.setValue(aBrand);
+            childrenList.add(cd);
+        }
+        filtrateBean_child.setChildren(childrenList);
+
+        FiltrateBean filtrateBean_child2 = new FiltrateBean();
+        filtrateBean_child2.setTypeName("质量把关");
+        List<FiltrateBean.Children> childrenList2 = new ArrayList<>();
+        for (String aType : type) {
+            FiltrateBean.Children cd = new FiltrateBean.Children();
+            cd.setValue(aType);
+            childrenList2.add(cd);
+        }
+        filtrateBean_child2.setChildren(childrenList2);
+        dictList.add(filtrateBean_child);
+        dictList.add(filtrateBean_child2);
+
+        return dictList;
+    }
+
+
+    /**
+     * 相册
+     *
+     * @return
+     */
+    public static List<GalleryBean> getAlbumInfo() {
+        return Arrays.asList(
+                new GalleryBean("最近项目", true, R.mipmap.img_a),
+                new GalleryBean("微博时光", false, R.mipmap.img_j),
+                new GalleryBean("微博动图", false, R.mipmap.img_k),
+                new GalleryBean("Video Joiner", false, R.mipmap.img_l),
+                new GalleryBean("动图", false, R.mipmap.img_d),
+                new GalleryBean("全景照片", false, R.mipmap.img_e),
+                new GalleryBean("今日头条", false, R.mipmap.img_nopic),
+                new GalleryBean("慢动作", false, R.mipmap.img_f),
+                new GalleryBean("视频", false, R.mipmap.img_nopic),
+                new GalleryBean("长曝光", false, R.mipmap.img_nopic),
+                new GalleryBean("iQIYI", false, R.mipmap.img_d),
+                new GalleryBean("QQ浏览器", false, R.mipmap.img_g),
+                new GalleryBean("QQ", false, R.mipmap.img_i),
+                new GalleryBean("截屏", false, R.mipmap.img_b),
+                new GalleryBean("延时摄影", false, R.mipmap.img_nopic),
+                new GalleryBean("抖音", false, R.mipmap.img_g),
+                new GalleryBean("个人收藏", false, R.mipmap.img_nopic),
+                new GalleryBean("缩略图", false, R.mipmap.img_f),
+                new GalleryBean("手机淘宝", false, R.mipmap.img_b)
+        );
+    }
 
 
     public static final String HOT = "热门";
@@ -130,12 +223,12 @@ public class GlobalDataProvider {
     public static String IMAGE_PATH_KEY = "image_path";
     public static String CLICK_IMAGE_POSITION_KEY = "click_image_position_key";
 
-    public static String[] title = { GlobalDataProvider.HOT, GlobalDataProvider.XING_GAN};
+    public static String[] title = {GlobalDataProvider.HOT, GlobalDataProvider.XING_GAN};
 
     static {
         URL_COMMITCACHEPATROL = AppConstant.Baseurl + "patrolAction/cacheUploadPatrolRecord";
         //版本信息
-        URL_UpdateVersionURL = AppConstant.Baseurl+"conmmonData/version";
+        URL_UpdateVersionURL = AppConstant.Baseurl + "conmmonData/version";
     }
 
     //======================省市区============================================
@@ -150,9 +243,8 @@ public class GlobalDataProvider {
     public static final String COLUMN_C_PINYIN = "c_pinyin";
     public static final String COLUMN_C_CODE = "c_code";
     public static final String COLUMN_C_TIP = "c_tip";
-    public static final String LATEST_DB_NAME ="china_cities_v2.db" ;
+    public static final String LATEST_DB_NAME = "china_cities_v2.db";
     //========================================================================
-
 
 
     /**
@@ -198,7 +290,6 @@ public class GlobalDataProvider {
         }
         return "SYLB10,SYDT10,SYRECOMMEND";
     }
-
 
 
     public static PICData getGif() {
@@ -346,13 +437,13 @@ public class GlobalDataProvider {
         List<MainItemBean> dataList = new ArrayList<>();
 
         dataList.add(new MainItemBean("Toast", R.mipmap.ico_grid_toast));
-        dataList.add(new MainItemBean("仿IOS Dialog", R.mipmap.ico_grid_ios_dialog));
+        dataList.add(new MainItemBean("Dialog", R.mipmap.ico_grid_ios_dialog));
         dataList.add(new MainItemBean("Loading Dialog", R.mipmap.ico_grid_load_dialog));
         dataList.add(new MainItemBean("ScrollView", R.mipmap.ico_grid_detail));
         dataList.add(new MainItemBean("FloatDragButton", R.mipmap.ico_grid_floatdrag_button));
         dataList.add(new MainItemBean("版本更新", R.mipmap.ico_grid_update));
         dataList.add(new MainItemBean("详情页", R.mipmap.ico_grid_detail));
-        dataList.add(new MainItemBean("Popupwindow筛选", R.mipmap.ico_grid_popupwindow));
+        dataList.add(new MainItemBean("弹窗", R.mipmap.ico_grid_popupwindow));
         dataList.add(new MainItemBean("ArcLayout", R.mipmap.ico_grid_a));
         dataList.add(new MainItemBean("设备信息", R.mipmap.ico_grid_b));
         //10
@@ -370,25 +461,27 @@ public class GlobalDataProvider {
 
     /**
      * Bottomsheet自定义（仿网易云弹窗）
+     *
      * @return
      */
     private static List<CustomBottomSheetItemBean> bsList;
+
     public static List<CustomBottomSheetItemBean> getBsData() {
-        if (bsList != null)bsList.clear();
+        if (bsList != null) bsList.clear();
         else bsList = new ArrayList<>();
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_zan,"鼓励一下"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_play,"下一首播放"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_collect,"收藏到歌单"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_downloadit,"下载(vip)"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_comment,"评论(67045)"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_share,"分享"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_songger,"歌手：柏松"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_album,"专辑：听闻余生"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_ling,"设置铃声或彩铃"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_buyalbum,"购买单曲"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_video_watch,"查看视频"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_rqbyy,"人气榜应援"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_unintrest,"不感兴趣"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_zan, "鼓励一下"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_play, "下一首播放"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_collect, "收藏到歌单"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_downloadit, "下载(vip)"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_comment, "评论(67045)"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_share, "分享"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_songger, "歌手：柏松"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_album, "专辑：听闻余生"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_ling, "设置铃声或彩铃"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_buyalbum, "购买单曲"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_video_watch, "查看视频"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_rqbyy, "人气榜应援"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_unintrest, "不感兴趣"));
         return bsList;
     }
 

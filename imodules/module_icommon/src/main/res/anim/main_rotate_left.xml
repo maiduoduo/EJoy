@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:duration="400"
+    android:fromDegrees="0"
+    android:toDegrees="-135"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    />
+    <!--android:pivotY：旋转轴点的Y坐标，规律同android:pivotX。-->
+    <!--android:fromDegrees：旋转开始的角度，其值可以为正负-->
+    <!--android:toDegrees：旋转结束的角度，其值可以为正负-->
+    <!--ps：toDegrees -fromDegrees > 0，则顺时针旋转；否则，逆时针旋转。-->
+    <!--旋转动画rotate-->

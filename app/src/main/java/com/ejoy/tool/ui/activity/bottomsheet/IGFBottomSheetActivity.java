@@ -47,9 +47,7 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
     @BindView(R.id.ivTitleMore)
     ImageView mIvTitleMore;
 
-    private EUISimplePopup mListPopup;
     private EUISimplePopup mMenuPopup;
-    private EUISimpleExpandablePopup mExpandableListPopup;
 
     @Override
     protected void initRestore(@Nullable Bundle savedInstanceState) {
@@ -68,9 +66,7 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
 
     @Override
     protected void initView(View mRootView) {
-        initListPopup();
         initMenuPopup();
-        initExpandableListPopup();
     }
 
 
@@ -100,9 +96,6 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
             R.id.llBsgrid,
             R.id.ivBsPubUrl,
             R.id.ivTitleMore,
-            R.id.bt1,
-            R.id.bt2,
-            R.id.bt3,
     })
     public void onClick(View v) {
         switch (v.getId()) {
@@ -126,15 +119,7 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
                 //popup:更多样式
                 mMenuPopup.showDown(v);
                 break;
-            case R.id.bt1:
-                mListPopup.showDown(v);
-                break;
-            case R.id.bt2:
-                mExpandableListPopup.clearExpandStatus();
-                mExpandableListPopup.showDown(v);
-                break;
-            case R.id.bt3:
-                mMenuPopup.showDown(v);
+            default:
                 break;
         }
 
@@ -202,20 +187,8 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
         });
     }
 
-
-    private void initListPopup() {
-        mListPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.dpiItems)
-                .create(EDensityUtils.dp2px(_mActivity, 170), new EUISimplePopup.OnPopupItemClickListener() {
-                    @Override
-                    public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
-                        iToast.showIDefaultImgResToast(item.getTitle().toString());
-                    }
-                })
-                .setHasDivider(true);
-    }
-
     /**
-     * 初始化popupwindow
+     * 可伸缩选择框
      */
     private void initMenuPopup() {
         mMenuPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.menuItems)
@@ -230,19 +203,5 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
         mMenuPopup.setPositionOffsetX(-30);
         mMenuPopup.setHasDivider(true);
     }
-
-    private void initExpandableListPopup() {
-        mExpandableListPopup = new EUISimpleExpandablePopup(_mActivity, GlobalDataProvider.expandableItems)
-                .create(EDensityUtils.dp2px(_mActivity, 200), EDensityUtils.dp2px(_mActivity, 200))
-                .setOnExpandableItemClickListener(false, new EUISimpleExpandablePopup.OnExpandableItemClickListener() {
-                    @Override
-                    public void onExpandableItemClick(EUISimpleExpandableListAdapter adapter, ExpandableItem group, int groupPosition, int childPosition) {
-                        iToast.showIDefaultImgResToast(group.getChildItem(childPosition).getTitle()+"");
-                    }
-                });
-        mExpandableListPopup.setPopupTopBottomMinMargin(50);
-        mExpandableListPopup.setPopupLeftRightMinMargin(20);
-    }
-
 
 }

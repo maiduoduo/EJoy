@@ -34,7 +34,7 @@ import java.util.List;
  * <p>
  * TODO:类popupWindow
  */
-public class HintPopupWindow {
+public class IHintPopupWindow {
 
     private Activity activity;
     private WindowManager.LayoutParams params;
@@ -51,7 +51,7 @@ public class HintPopupWindow {
      * @param clickList   点击item的事件
      *                    文字和click事件的list是对应绑定的
      */
-    public HintPopupWindow(Activity activity, List<String> contentList, List<View.OnClickListener> clickList) {
+    public IHintPopupWindow(Activity activity, List<String> contentList, List<View.OnClickListener> clickList) {
 
         this.activity = activity;
         windowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);

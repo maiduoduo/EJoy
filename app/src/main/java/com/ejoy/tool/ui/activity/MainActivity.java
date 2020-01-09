@@ -12,7 +12,6 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,17 +41,16 @@ import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
+import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
 import com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
 import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
-import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowFilterActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
-import com.google.gson.Gson;
 import com.maple.msdialog.ActionSheetDialog;
 import com.module.ires.bean.utils.EDensityUtils;
 
@@ -215,8 +213,8 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
             case 0://Toast
                 startActivity(new Intent(this, ToastActivity.class));
                 break;
-            case 1://仿IOS Dialog
-                startActivity(new Intent(this, IIosDialogActivity.class));
+            case 1://Dialog
+                showActivity(this, IDialogActivity.class,R.anim.push_bottom_in,R.anim.push_bottom_out);
                 break;
             case 2://Loading
                 startActivity(new Intent(this, ILoadingActivity.class));

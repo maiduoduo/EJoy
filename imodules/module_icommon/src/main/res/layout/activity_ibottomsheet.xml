@@ -36,32 +36,6 @@
             android:layout_marginBottom="@dimen/dp_5"
             android:src="@mipmap/img_bottomsheet_doc" />
         <include layout="@layout/layout_line_horizontal_1dp" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/dp_20"
-            android:orientation="horizontal">
-            <Button
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:id="@+id/bt1"
-                android:layout_height="wrap_content"
-                android:text="button1"/>
-            <Button
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:id="@+id/bt2"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dp_10"
-                android:text="button2"/>
-            <Button
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:id="@+id/bt3"
-                android:layout_height="wrap_content"
-                android:text="button3"/>
-
-        </LinearLayout>
         <ScrollView
             android:id="@+id/bgNestedScrollView"
             android:layout_width="match_parent"

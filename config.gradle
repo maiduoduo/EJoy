@@ -140,7 +140,9 @@ ext {
             "PhotoPicker"                       : "me.iwf.photopicker:PhotoPicker:0.9.5@aar",
             //图片移动视觉效果
             "kenburnsview"                      : "com.flaviofaria:kenburnsview:1.0.7",
-            "jsoup"                             : "org.jsoup:jsoup:1.11.2"
+            "jsoup"                             : "org.jsoup:jsoup:1.11.2",
+            //CookieBar一个轻量级的库，用于在屏幕的顶部或底部显示一条简短的消息
+            "cookiebar2"                        : "org.aviran.cookiebar2:cookiebar2:1.1.3"
 
 
 

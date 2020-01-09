@@ -39,6 +39,7 @@
     <dimen name="eui_config_size_content_text">15sp</dimen>
     <dimen name="eui_config_size_explain_text">14sp</dimen>
     <dimen name="eui_config_size_spinner_text">14sp</dimen>
+    <dimen name="sp_17">17sp</dimen>
 
     <!--边距-->
     <dimen name="ejoy_content_spacing_vertical">10dp</dimen>
@@ -72,10 +73,12 @@
     <dimen name="eui_config_simple_list_item_height_tablet_big">61dp</dimen>
     <integer name="config_pop_duration">500</integer>
     <dimen name="config_pop_weib_ico">60dp</dimen>
-
-
-
-
+    <dimen name="dp_80">80dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_7">7dp</dimen>
+    <dimen name="sp_21">21sp</dimen>
 
 
 </resources>

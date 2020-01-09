@@ -19,6 +19,7 @@ import android.support.v7.content.res.AppCompatResources;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 /**
  * 获取res中的资源
@@ -232,6 +233,21 @@ public final class EResUtils {
         int green = (int) ((Color.green(color) * (1 - factor) / 255 + factor) * 255);
         int blue = (int) ((Color.blue(color) * (1 - factor) / 255 + factor) * 255);
         return Color.argb(Color.alpha(color), red, green, blue);
+    }
+
+
+    public static void modifyTextViewDrawable(TextView v, Drawable drawable, int index) {
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+        //index 0:左 1：上 2：右 3：下
+        if (index == 0) {
+            v.setCompoundDrawables(drawable, null, null, null);
+        } else if (index == 1) {
+            v.setCompoundDrawables(null, drawable, null, null);
+        } else if (index == 2) {
+            v.setCompoundDrawables(null, null, drawable, null);
+        } else {
+            v.setCompoundDrawables(null, null, null, drawable);
+        }
     }
 
 }
