@@ -63,6 +63,7 @@
 [更新日志详细-点击查看](https://github.com/maiduoduo/EJoy/blob/dev/README_DEVLOG.md)
 
 
+###### 2020.01.10
 ###### 2020.01.08
 ###### 2020.01.04
 ###### 2019.12.26

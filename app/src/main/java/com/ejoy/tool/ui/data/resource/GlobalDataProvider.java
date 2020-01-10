@@ -1,6 +1,7 @@
 package com.ejoy.tool.ui.data.resource;
 
 
+import android.content.Intent;
 import android.net.Uri;
 
 
@@ -8,14 +9,24 @@ import com.ejoy.tool.R;
 import com.ejoy.tool.app.App;
 import com.ejoy.tool.app.AppConstant;
 import com.ejoy.tool.common.api.HostType;
-import com.ejoy.tool.common.bean.MainItemBean;
+import com.ejoy.tool.common.bean.MainItemBean_temp;
 import com.ejoy.tool.common.bean.PICData;
+import com.ejoy.tool.ui.activity.IArcLayoutActivity;
+import com.ejoy.tool.ui.activity.IScrollViewActivity;
+import com.ejoy.tool.ui.activity.ToastActivity;
+import com.ejoy.tool.ui.activity.bezer.BezierActivity;
+import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
+import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
+import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
+import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
+import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
+import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
+import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.module.ires.bean.CustomBottomSheetItemBean;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.ExpandableItem;
 import com.module.iviews.popup.bean.GalleryBean;
 import com.module.iviews.popup.menu.bean.FiltrateBean;
-import com.module.iviews.popup.weibo.PopMenuItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +38,9 @@ import java.util.List;
  * @describe： 全局配置及演示数据
  */
 public class GlobalDataProvider {
+
+    private static final int TYPE_TITLE = 0;
+    private static final int TYPE_CONTENT = 1;
 
     public static String[] titles = new String[]{
             "伪装者:胡歌演绎'痞子特工'",
@@ -433,29 +447,57 @@ public class GlobalDataProvider {
         return data1;
     }
 
-    public static List<MainItemBean> getMainItemData() {
-        List<MainItemBean> dataList = new ArrayList<>();
 
-        dataList.add(new MainItemBean("Toast", R.mipmap.ico_grid_toast));
-        dataList.add(new MainItemBean("Dialog", R.mipmap.ico_grid_ios_dialog));
-        dataList.add(new MainItemBean("Loading Dialog", R.mipmap.ico_grid_load_dialog));
-        dataList.add(new MainItemBean("ScrollView", R.mipmap.ico_grid_detail));
-        dataList.add(new MainItemBean("FloatDragButton", R.mipmap.ico_grid_floatdrag_button));
-        dataList.add(new MainItemBean("版本更新", R.mipmap.ico_grid_update));
-        dataList.add(new MainItemBean("详情页", R.mipmap.ico_grid_detail));
-        dataList.add(new MainItemBean("弹窗", R.mipmap.ico_grid_popupwindow));
-        dataList.add(new MainItemBean("ArcLayout", R.mipmap.ico_grid_a));
-        dataList.add(new MainItemBean("设备信息", R.mipmap.ico_grid_b));
-        //10
-        dataList.add(new MainItemBean("图片处理", R.mipmap.ico_grid_c));
-        dataList.add(new MainItemBean("BottomSheetDialog", R.mipmap.ico_grid_d));
-        dataList.add(new MainItemBean("日期等选择器", R.mipmap.ico_grid_e));
-        dataList.add(new MainItemBean("下拉刷新", R.mipmap.ico_grid_f));
-        dataList.add(new MainItemBean("通用标题栏", R.mipmap.ico_grid_f));
-        dataList.add(new MainItemBean("通用TextView", R.mipmap.ico_grid_f));
+    public static List<MainItemBean_temp> getMainItemData() {
+      return Arrays.asList(
+                new MainItemBean_temp(TYPE_TITLE, "弹窗"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("Toast", "吐司，支持图标，文本时长等",0,ToastActivity.class,""),
+                        new MainItemBean_temp.ContentBean("Dialog", "系统对话框解决方案，仿IOS样式",1, IDialogActivity.class,""),
+                        new MainItemBean_temp.ContentBean("Popupwindow", "Popupwindow、ECookieBar、SnackBar等",2, IPopupwindowActivity.class,""),
+                        new MainItemBean_temp.ContentBean("BottomSheetDialog","自定义BottomSheetDialog及官方示例",3, IBottomSheetActivity.class,""),
+                        new MainItemBean_temp.ContentBean("日期等选择器", "日期选择器，省市区级联选择",4, ITimeDateOrActivity.class,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "长文本"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("ScrollView","ScrollView显示内容量大计算合理高度显示内容" ,5, IScrollViewActivity.class,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "菜单"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("详情页", "商城类详情页示例",6, null,""),
+                        new MainItemBean_temp.ContentBean("FloatDragButton", "可展开可拖拽的菜单",7, BezierActivity.class,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "Banner"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("ArcLayout", "广告条弧度，广告轮播条",8, IArcLayoutActivity.class,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "设备"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("设备信息","设备工具，设备信息等",9, DeviceToolActviity.class,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "图片处理"),
+                new MainItemBean_temp(TYPE_CONTENT,Arrays.asList(
+                        new MainItemBean_temp.ContentBean("图片处理", "图片选择，单张压缩/批量压缩及信息",10, null,"BITMAP")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "刷新"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("下拉刷新", "界面数据下拉刷新样式示例",11, IRefreshActivity.class,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "标题栏"),
+                new MainItemBean_temp(TYPE_CONTENT,  Arrays.asList(
+                        new MainItemBean_temp.ContentBean("通用标题栏","通用封装的标题栏",12, null,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "文本"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("通用TextView", "通用的文本，支持通用需求",13, null,"")
+                )),
+                new MainItemBean_temp(TYPE_TITLE, "应用更新"),
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("版本更新", "应用检查更新下载并安装封装",14, null,"")
+                ))
+        );
 
 
-        return dataList;
     }
 
 

@@ -172,7 +172,7 @@ public class IGFBottomSheetActivity extends BaseActivity implements View.OnClick
     private void initDialogGrid(RecyclerView recyclerView) {
         List<CustomBottomSheetItemBean> bsData = GlobalDataProvider.getBsData();
         WidgetUtils.initGridRecyclerView(recyclerView, 3, EDensityUtils.dp2px(_mActivity, 2));
-        recyclerView.setAdapter(new BaseQuickAdapter<CustomBottomSheetItemBean, BaseViewHolder>(R.layout.item_main_layout, bsData) {
+        recyclerView.setAdapter(new BaseQuickAdapter<CustomBottomSheetItemBean, BaseViewHolder>(R.layout.item_gfbottomsheet_layout, bsData) {
             @Override
             protected void convert(BaseViewHolder helper, CustomBottomSheetItemBean item) {
                 ImageView itemIcon = helper.getView(R.id.item_icon);

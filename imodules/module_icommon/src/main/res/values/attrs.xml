@@ -60,4 +60,15 @@
     </declare-styleable>
 
     <attr format="dimension" name="eui_config_content_spacing_horizontal"/>
+
+    <declare-styleable name="IExpandableLayout">
+        <!--动画持续的时间，默认是300ms-->
+        <attr format="integer" name="el_duration"/>
+        <!--是否是展开的，默认是false-->
+        <attr format="boolean" name="el_expanded"/>
+        <!--视差效果，默认是1-->
+        <attr format="float" name="el_parallax"/>
+        <!--对齐方式，默认是VERTICAL，垂直-->
+        <attr name="android:orientation"/>
+    </declare-styleable>
 </resources>

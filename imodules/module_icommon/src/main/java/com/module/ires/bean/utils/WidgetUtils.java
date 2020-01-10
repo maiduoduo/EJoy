@@ -22,10 +22,15 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.module.ires.R;
 import com.module.ires.bean.view.EDividerItemDecoration;
 import com.module.ires.bean.view.EGridDividerItemDecoration;
 import com.module.ires.bean.view.EGridLayoutManager;
@@ -116,6 +121,30 @@ public final class WidgetUtils {
         recyclerView.addItemDecoration(new EGridDividerItemDecoration(recyclerView.getContext(), spanCount, dividerWidth, dividerColor));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
+
+
+    /**
+     * 初始化RecyclerView
+     *
+     * @param recyclerView
+     * @param adapter
+     */
+    public static void initRecyclerView(Context context,@NonNull RecyclerView recyclerView, BaseQuickAdapter adapter,View headerView) {
+        recyclerView.setLayoutManager(new ELinearLayoutManager(context,LinearLayoutManager.VERTICAL,false));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemViewCacheSize(10);
+        recyclerView.setAdapter(adapter);
+        // 打开动画效果
+        adapter.openLoadAnimation();
+        // 动画一直执行
+        adapter.isFirstOnly(true);
+        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+        adapter.setNotDoAnimationCount(10);
+        adapter.setEnableLoadMore(false);
+        headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,EDensityUtils.dp2px(context,100)));
+        adapter.addHeaderView(headerView);
+    }
+
 
     /**
      * 初始化RecyclerView

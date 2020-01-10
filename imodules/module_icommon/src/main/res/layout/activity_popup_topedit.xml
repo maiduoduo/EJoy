@@ -80,7 +80,9 @@
                     android:background="@drawable/shape_edit"
                     android:textSize="@dimen/sp_12"
                     android:paddingHorizontal="@dimen/dp_15"
-                    android:hint="写评论..." />
+                    android:textColorHint="@color/material_red_A200"
+                    android:textAllCaps="false"
+                    android:hint="点击试试弹出弹窗..." />
                 
             </LinearLayout>
             <TextView

@@ -12,28 +12,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:paddingHorizontal="@dimen/dp_3"
     android:paddingVertical="@dimen/dp_10">
-    <Space
-        android:layout_width="@dimen/dp_10"
-        android:layout_height="match_parent" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="@dimen/dp_3"
-        android:paddingVertical="@dimen/dp_10">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="vertical">
         <ImageView
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/item_icon"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
             android:contentDescription="Item Icon"
             android:src="@mipmap/icon_grid_collapse_top_bar" />
 
@@ -47,10 +40,11 @@
             android:paddingHorizontal="@dimen/dp_2"
             android:text="工具类"
             android:textStyle="bold"
-            android:textColor="@color/black_55"
+            android:textColor="@color/black_33"
             android:textSize="13sp"/>
     </LinearLayout>
     <TextView
+        android:visibility="gone"
         android:id="@+id/item_des"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,5 +56,4 @@
         android:text="工具类:集中处理发士大夫吉林省地方就"
         android:textColor="@color/Gray3"
         android:textSize="11sp"/>
-    </LinearLayout>
 </LinearLayout>

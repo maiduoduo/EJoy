@@ -17,10 +17,15 @@ package com.ejoy.tool.ui.activity.popupwindow;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -93,12 +98,7 @@ public class IPopupwindowTopEditActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.et_comment:
-                IPopupwindowUse popWindow = new IPopupwindowUse.PopupWindowBuilder(this)
-                        .setView(R.layout.layout_pop_bottom)
-                        .setFocusable(true)
-                        .setOutsideTouchable(true)
-                        .create();
-                popWindow.showPopupWindow(mEtComment, FROM_BOTTOM);
+                showInputEditPop();
 
                 // 设置popupWindow的显示位置，此处是在手机屏幕底部且水平居中的位置
 //                popupWindow.showAtLocation(SettingActivity.this.findViewById(R.id.setting), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -111,11 +111,26 @@ public class IPopupwindowTopEditActivity extends BaseActivity {
         }
     }
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    /**
+     * 弹出依附在输入法之上的Bottom弹窗
+     */
+    private void showInputEditPop() {
+        View mContentView = LayoutInflater.from(_mActivity).inflate(R.layout.layout_edit_pop, null);
+        IPopupwindowUse popWindow = new IPopupwindowUse.PopupWindowBuilder(this)
+                .autoOpenSoftInput(_mActivity,true)
+                .setView(mContentView)
+                .setFocusable(true)
+                .setOutsideTouchable(true)
+                .enableBackgroundDark(true)
+                .create();
+        View parent = (View) mContentView.getParent();
+        //辅助设置圆角
+        if (parent != null) {
+            parent.setBackgroundColor(_mActivity.getResources().getColor(android.R.color.transparent));
+            CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) (parent)
+                    .getLayoutParams();
+            parent.setLayoutParams(layoutParams);
+        }
+        popWindow.showPopupWindow(mEtComment, FROM_BOTTOM);
     }
 }
