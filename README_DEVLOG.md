@@ -17,6 +17,14 @@
 
 ##### 💥 更新日志
 
+###### 2020.01.10
+
+> IPopupwindowTopEditActivity/UI调整
+
+* 自定义依附在输入法之上的Bottom弹窗
+* 布局优化与调整
+* popupwindow界面实现收缩折叠布局
+
 ###### 2020.01.08
 
 > BottomSheetDialog/BottomSheetDialogFragment

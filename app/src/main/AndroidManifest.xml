@@ -80,7 +80,9 @@
         <activity android:name=".ui.activity.popupwindow.IPopupWindowPopmenuActivity"/>
         <activity android:name=".ui.activity.popupwindow.IPopupwindowUseActivity"/>
         <activity android:name=".ui.activity.popupwindow.ICookieBarActivity"/>
-        <activity android:name=".ui.activity.popupwindow.IPopupwindowTopEditActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupwindowTopEditActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="screenSize|screenLayout|navigation"/>
 
 
         <!--FileProvider共享文件-->

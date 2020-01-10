@@ -1,5 +1,6 @@
 package com.ejoy.tool.ui.activity.iosdialog;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import com.ejoy.tool.R;
 import com.ejoy.tool.common.helper.InfoDialog.IDialog;
 import com.ejoy.tool.scaffold.view.loading.LoadingDialog;
 import com.ejoy.tool.ui.activity.MainActivity;
+import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.maple.msdialog.ActionSheetDialog;
@@ -49,11 +51,11 @@ public class IDialogActivity extends BaseActivity {
 
 
     @Override
-    protected void initView(View mRootView) { 
-        if (mPublishDialog==null) {
+    protected void initView(View mRootView) {
+        if (mPublishDialog == null) {
             mPublishDialog = new IPublishDialog(_mActivity);
         }
-        
+
     }
 
     @Override
@@ -91,6 +93,7 @@ public class IDialogActivity extends BaseActivity {
     @OnClick({
             R.id.EIosDialog,
             R.id.EDialogMenu,
+            R.id.ELoadingDialog,
             R.id.iBack
     })
     public void bindViewclick(View view) {
@@ -100,6 +103,9 @@ public class IDialogActivity extends BaseActivity {
                 break;
             case R.id.EDialogMenu:
                 mPublishDialog.show();
+                break;
+            case R.id.ELoadingDialog:
+                startActivity(new Intent(this, ILoadingActivity.class));
                 break;
             case R.id.iBack:
                 finish();

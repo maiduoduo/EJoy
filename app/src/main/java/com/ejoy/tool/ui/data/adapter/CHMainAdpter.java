@@ -16,19 +16,20 @@ import java.util.List;
  * Date:   2019/11/21
  * Des:    主界面数据适配器
  */
-public class CHMainAdpter extends BaseQuickAdapter<MainItemBean,BaseViewHolder> {
+public class CHMainAdpter extends BaseQuickAdapter<MainItemBean.ContentBean,BaseViewHolder> {
     private static final String TAG = "CHMainAdpter";
     private Context mContext;
-    public CHMainAdpter(int layoutResId, List<MainItemBean> data, Context context) {
+    public CHMainAdpter(int layoutResId, List<MainItemBean.ContentBean> data, Context context) {
         super(layoutResId, data);
         mContext = context;
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, MainItemBean item) {
+    protected void convert(BaseViewHolder helper, MainItemBean.ContentBean item) {
         int position = helper.getAdapterPosition();
         helper.setText(R.id.item_name, item.getItemTitle() == null ? "" : item.getItemTitle());
-        helper.setImageResource(R.id.item_icon,item.getItemSrc());
+        helper.setText(R.id.item_des, item.getItemDes() == null ? "" : item.getItemDes());
+//        helper.setImageResource(R.id.item_icon,item.getItemSrc());
     }
 }
 

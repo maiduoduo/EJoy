@@ -35,6 +35,8 @@
     <color name="app_color_theme_alpha_2">#44FE6D4B</color> <!-- Bittersweet -->
     <color name="app_color_theme_alpha_3">#44FFCF47</color> <!-- Sunflower -->
     <color name="app_color_theme_alpha_8">#55AC8FEF</color> <!-- Lavender -->
+    <color name="blue_55">#555CA3E5</color>
+    <color name="black_35">#59000000</color>
 
 
     <color name="bar_divider">#D4D6D8</color>

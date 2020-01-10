@@ -10,7 +10,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +34,6 @@ import com.ejoy.tool.scaffold.utils.ActivityUtils;
 import com.ejoy.tool.scaffold.utils.FileUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
-import com.ejoy.tool.scaffold.view.decorator.GridItemDecoration;
 import com.ejoy.tool.ui.activity.bezer.BezierActivity;
 import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
@@ -42,17 +41,19 @@ import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
-import com.ejoy.tool.ui.activity.iosdialog.IIosDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
 import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
-import com.ejoy.tool.ui.data.adapter.CHMainAdpter;
-import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
+import com.ejoy.tool.ui.data.adapter.HomeMultipleRecycleAdapter;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.maple.msdialog.ActionSheetDialog;
 import com.module.ires.bean.utils.EDensityUtils;
+import com.module.ires.bean.utils.EJsonUtils;
+import com.module.ires.bean.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,9 +95,10 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     CollapsingToolbarLayout mCollapsingToolbarLayout;
     @BindView(R.id.head_iv)
     ImageView mHeaderIv;
-
+    public static final int SPAN_COUNT = 4;
     private String localImgUrl = "";
-    private CHMainAdpter mCHMainAdpter;
+    private HomeMultipleRecycleAdapter mMainAdpter;
+    private View headerView;
     private List<MainItemBean> mData;
     private BottomSheetDialog bottomSheetDialog;
     private ExitDialog mExitDialog;
@@ -168,42 +170,31 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     }
 
     private void initRecyclerView() {
-        GridLayoutManager linearLayoutManager = new GridLayoutManager(_mActivity, 4);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setItemViewCacheSize(10);
-        mCHMainAdpter = new CHMainAdpter(R.layout.item_main_layout, mData, _mActivity);
-        mCHMainAdpter.setOnItemClickListener(this);
-        mRecyclerView.setAdapter(mCHMainAdpter);
-        // 打开动画效果
-        mCHMainAdpter.openLoadAnimation();
-        GridItemDecoration divider = new GridItemDecoration.Builder(_mActivity)
-                .setHorizontalSpan(R.dimen.common_vew_column_padding)
-                .setVerticalSpan(R.dimen.common_vew_raw_padding)
-                .setColorResource(R.color.LGray1)
-                .setShowLastLine(true)
-                .build();
-        mRecyclerView.addItemDecoration(divider);
-
-        // 动画一直执行
-        mCHMainAdpter.isFirstOnly(true);
-        mCHMainAdpter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
-        mCHMainAdpter.setNotDoAnimationCount(10);
-        View headerView=getLayoutInflater().inflate(R.layout.layout_main_header, null);
-        headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,EDensityUtils.dp2px(_mActivity,100)));
-        mCHMainAdpter.addHeaderView(headerView);
+        WidgetUtils.initRecyclerView(_mActivity,mRecyclerView,mMainAdpter = new HomeMultipleRecycleAdapter(_mActivity, mData),
+                headerView = getLayoutInflater().inflate(R.layout.layout_main_header, null));
         headerView.findViewById(R.id.mainRvheader).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 iToast.showIDefaultImgResToast("快速预览");
+                String clazzStr = "com.ejoy.tool.ui.activity.ToastActivity";
+                Class clazz = null;
+                try {
+                    clazz = Class.forName(clazzStr);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                Intent intent = new Intent(MainActivity.this,clazz);
+                startActivity(intent);
             }
         });
     }
 
     private void addData() {
-        List<MainItemBean> mainItemData = GlobalDataProvider.getMainItemData();
-        mData.addAll(mainItemData);
-        mCHMainAdpter.setNewData(mData);
+        String jsonStr = EJsonUtils.getJson(this,"main_data.json");
+        Gson gson = new Gson();
+        List<MainItemBean> mainItemDataList = gson.fromJson(jsonStr,new TypeToken<List<MainItemBean>>() {}.getType());
+        mData.addAll(mainItemDataList);
+        mMainAdpter.setNewData(mData);
     }
 
 

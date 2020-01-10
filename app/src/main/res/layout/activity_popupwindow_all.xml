@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_dark_bg">
+    android:background="@drawable/img_bg4">
     <FrameLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -53,31 +53,6 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <FrameLayout
-                android:id="@+id/albumTitle"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
-                android:paddingHorizontal="@dimen/dp_10"
-                android:background="@color/transparent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-                <TextView
-                    android:id="@+id/Ppictitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:drawablePadding="5dp"
-                    android:layout_gravity="center"
-                    android:drawableRight="@mipmap/eico_arrow_down"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:maxEms="11"
-                    android:padding="6dp"
-                    android:text="相机胶卷"
-                    android:textColor="@color/white"
-                    android:textSize="17sp" />
-            </FrameLayout>
             <LinearLayout
                 android:id="@+id/popupwindow"
                 android:layout_width="match_parent"
@@ -86,142 +61,203 @@
                 android:paddingRight="@dimen/dp_10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/albumTitle">
-                <LinearLayout
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/rlPopupRoot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="@dimen/dp_10"
                     android:paddingVertical="@dimen/dp_10"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:gravity="center_vertical">
+                    <FrameLayout
+                        android:id="@+id/albumTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/iv_indicator"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@color/transparent">
+                        <TextView
+                            android:id="@+id/Ppictitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:drawablePadding="5dp"
+                            android:layout_gravity="center"
+                            android:drawableRight="@mipmap/eico_arrow_down"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxEms="11"
+                            android:padding="6dp"
+                            android:text="相机胶卷"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </FrameLayout>
                     <ImageView
+                        android:id="@+id/ivico"
                         android:layout_width="@dimen/dp_20"
                         android:layout_height="@dimen/dp_20"
+                        android:layout_centerVertical="true"
                         android:src="@mipmap/ico_ptitle_a"/>
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/ivico"
+                        android:layout_centerVertical="true"
                         android:textSize="@dimen/sp_17"
                         android:textColor="@color/white"
                         android:text="Popupwindow"/>
+                    <ImageView
+                        android:id="@+id/iv_indicator"
+                        android:layout_gravity="right"
+                        android:layout_width="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_25"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_arrow_right" />
 
-                </LinearLayout>
+                </RelativeLayout>
                 <TextView
-                    android:id="@+id/tvCustomPWFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/whiteAlpha50"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/popupwindow"/>
+                <com.module.iviews.view.widget.IExpandableLayout
+                    android:id="@+id/expandable_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="Popupwindow筛选菜单"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="15sp"/>
-                <TextView
-                    android:id="@+id/tvWb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="Popupwindow仿微博弹簧弹窗"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:id="@+id/popBaseUse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="Popupwindow基础封装"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:id="@+id/popCustomEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="自定义依附在输入法之上的Bottom弹窗"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:id="@+id/qqPopupshowText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="仿QQ右上角弹窗"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:id="@+id/multiMenuShow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="多类型筛选弹框"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="17sp"/>
-                <TextView
-                    android:id="@+id/albumListPop"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:paddingVertical="@dimen/dp_10"
-                    android:text="相机胶卷弹窗"
-                    android:textColor="@color/whiteAlpha50"
-                    android:textSize="17sp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/dp_40"
-                    android:orientation="horizontal"
-                    android:paddingVertical="@dimen/dp_10">
-                    <TextView
-                        android:layout_weight="1"
-                        android:id="@+id/Epop_normal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/transparent"
-                        android:text="普通选择框"
-                        android:textColor="@color/whiteAlpha50"
-                        android:textSize="17sp" />
-                    <TextView
-                        android:layout_width="@dimen/dp_1"
-                        android:layout_height="match_parent"
-                        android:background="@color/whiteAlpha50"/>
-                    <TextView
-                        android:layout_weight="1"
-                        android:id="@+id/Epop_extends"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/transparent"
-                        android:gravity="center"
-                        android:text="可伸缩选择框"
-                        android:textColor="@color/whiteAlpha50"
-                        android:textSize="17sp" />
-                    <TextView
-                        android:layout_width="@dimen/dp_1"
-                        android:layout_height="match_parent"
-                        android:background="@color/whiteAlpha50"/>
-                    <TextView
-                        android:layout_weight="1"
-                        android:id="@+id/Epop_menu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/transparent"
-                        android:gravity="center"
-                        android:text="弹出菜单"
-                        android:textColor="@color/whiteAlpha50"
-                        android:textSize="17sp" />
-                </LinearLayout>
+                    app:el_duration="300"
+                    app:el_expanded="false">
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+                       <!--折叠项-->
+                       <TextView
+                           android:id="@+id/tvCustomPWFilter"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="Popupwindow筛选菜单"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="15sp"/>
+                       <TextView
+                           android:id="@+id/tvWb"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/transparent"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="Popupwindow仿微博弹簧弹窗"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="17sp"/>
+                       <TextView
+                           android:id="@+id/popBaseUse"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/transparent"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="Popupwindow基础封装"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="17sp"/>
+                       <TextView
+                           android:id="@+id/popCustomEdit"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/transparent"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="自定义依附在输入法之上的Bottom弹窗"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="17sp"/>
+                       <TextView
+                           android:id="@+id/qqPopupshowText"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/transparent"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="仿QQ右上角弹窗"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="17sp"/>
+                       <TextView
+                           android:id="@+id/multiMenuShow"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/transparent"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="多类型筛选弹框"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="17sp"/>
+                       <TextView
+                           android:id="@+id/albumListPop"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@color/transparent"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:paddingVertical="@dimen/dp_10"
+                           android:text="相机胶卷弹窗"
+                           android:textColor="@color/whiteAlpha50"
+                           android:textSize="17sp"/>
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:paddingLeft="@dimen/dp_40"
+                           android:orientation="horizontal"
+                           android:paddingVertical="@dimen/dp_10">
+                           <TextView
+                               android:layout_weight="1"
+                               android:id="@+id/Epop_normal"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:background="@color/transparent"
+                               android:text="普通选择框"
+                               android:textColor="@color/whiteAlpha50"
+                               android:textSize="17sp" />
+                           <TextView
+                               android:layout_width="@dimen/dp_1"
+                               android:layout_height="match_parent"
+                               android:background="@color/whiteAlpha50"/>
+                           <TextView
+                               android:layout_weight="1"
+                               android:id="@+id/Epop_extends"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:background="@color/transparent"
+                               android:gravity="center"
+                               android:text="可伸缩选择框"
+                               android:textColor="@color/whiteAlpha50"
+                               android:textSize="17sp" />
+                           <TextView
+                               android:layout_width="@dimen/dp_1"
+                               android:layout_height="match_parent"
+                               android:background="@color/whiteAlpha50"/>
+                           <TextView
+                               android:layout_weight="1"
+                               android:id="@+id/Epop_menu"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:background="@color/transparent"
+                               android:gravity="center"
+                               android:text="弹出菜单"
+                               android:textColor="@color/whiteAlpha50"
+                               android:textSize="17sp" />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                </com.module.iviews.view.widget.IExpandableLayout>
             </LinearLayout>
             <TextView
+                android:visibility="gone"
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
@@ -230,18 +266,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/popupwindow"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/snackbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_20"
                 android:paddingVertical="@dimen/dp_10"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line1" >
+                app:layout_constraintTop_toBottomOf="@+id/popupwindow" >
                 <ImageView
+                    android:id="@+id/ivr2"
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
                     android:src="@mipmap/ico_ptitle_b"/>
@@ -249,23 +286,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/ivr2"
                     android:textSize="@dimen/sp_17"
                     android:textColor="@color/white"
                     android:text="Snackbar"/>
+                <ImageView
+                    android:layout_gravity="right"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_arrow_right" />
 
-            </LinearLayout>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/white"
+                android:background="@color/whiteAlpha50"
                 android:layout_marginHorizontal="@dimen/dp_10"
                 app:layout_constraintTop_toBottomOf="@+id/snackbar"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/ECookieBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_20"
                 android:paddingVertical="@dimen/dp_10"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -273,6 +319,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/line2" >
                 <ImageView
+                    android:id="@+id/ivr3"
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
                     android:src="@mipmap/ico_ptitle_h"/>
@@ -280,11 +327,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/ivr3"
                     android:textSize="@dimen/sp_17"
                     android:textColor="@color/white"
                     android:text="ECookieBar"/>
+                <ImageView
+                    android:layout_gravity="right"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_arrow_right" />
 
-            </LinearLayout>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/line6"
                 android:layout_width="match_parent"
@@ -292,18 +347,19 @@
                 android:background="@color/whiteAlpha50"
                 android:layout_marginHorizontal="@dimen/dp_10"
                 app:layout_constraintTop_toBottomOf="@+id/ECookieBar"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/noficationBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_20"
                 android:paddingVertical="@dimen/dp_10"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/line6" >
                 <ImageView
+                    android:id="@+id/ivr4"
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
                     android:src="@mipmap/ico_ptitle_c"/>
@@ -311,11 +367,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/ivr4"
                     android:textSize="@dimen/sp_17"
                     android:textColor="@color/white"
                     android:text="NoficationBar"/>
+                <ImageView
+                    android:layout_gravity="right"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_arrow_right" />
 
-            </LinearLayout>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/line3"
                 android:layout_width="match_parent"
@@ -323,18 +387,19 @@
                 android:background="@color/whiteAlpha50"
                 android:layout_marginHorizontal="@dimen/dp_10"
                 app:layout_constraintTop_toBottomOf="@+id/noficationBar"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/Etoast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_20"
                 android:paddingVertical="@dimen/dp_10"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/line3" >
                 <ImageView
+                    android:id="@+id/ivr5"
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
                     android:src="@mipmap/ico_ptitle_d"/>
@@ -344,9 +409,17 @@
                     android:layout_marginLeft="@dimen/dp_10"
                     android:textSize="@dimen/sp_17"
                     android:textColor="@color/white"
+                    android:layout_toRightOf="@+id/ivr5"
                     android:text="EToast"/>
+                <ImageView
+                    android:layout_gravity="right"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_arrow_right" />
 
-            </LinearLayout>
+            </RelativeLayout>
             <TextView
                 android:id="@+id/line4"
                 android:layout_width="match_parent"

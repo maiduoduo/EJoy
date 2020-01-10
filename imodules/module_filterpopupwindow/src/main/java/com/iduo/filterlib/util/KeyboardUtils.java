@@ -42,6 +42,17 @@ public final class KeyboardUtils {
         imm.showSoftInput(view, InputMethodManager.SHOW_FORCED);
     }
 
+
+    public static void showSoftInput(View view) {
+        InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(view, InputMethodManager.SHOW_FORCED);
+    }
+
+    public static void hideSoftInput(View view) {
+        InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
     /**
      * Show the soft input.
      *
@@ -91,6 +102,17 @@ public final class KeyboardUtils {
                 (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm == null) return;
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    /**
+     * 自动弹出键盘
+     */
+    public static void showInputMethod(Context context) {
+        //自动弹出键盘
+        InputMethodManager inputManager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        //强制隐藏Android输入法窗口
+        // inputManager.hideSoftInputFromWindow(edit.getWindowToken(),0);
     }
 
     /**

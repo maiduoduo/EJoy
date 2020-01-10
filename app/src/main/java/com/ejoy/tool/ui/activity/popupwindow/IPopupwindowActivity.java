@@ -19,12 +19,15 @@ package com.ejoy.tool.ui.activity.popupwindow;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.scaffold.view.widget.ExpandLayout;
 import com.ejoy.tool.ui.activity.MainActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
@@ -43,6 +46,7 @@ import com.module.iviews.popup.menu.IScreenMenuPopWindow;
 import com.module.iviews.popup.menu.bean.FiltrateBean;
 import com.module.iviews.popup.qq.IQQPopupWindow;
 import com.module.iviews.popup.weibo.WeiboPopupWindow;
+import com.module.iviews.view.widget.IExpandableLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +72,10 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     FrameLayout mTitle;
     @BindView(R.id.Ppictitle)
     TextView mPpictitle;
+    @BindView(R.id.expandable_layout)
+    IExpandableLayout mExpandableLayout;
+    @BindView(R.id.iv_indicator)
+    ImageView mIvIndicator;
     private IQQPopupWindow mQQPopupWindow;
     private List<String> mPopData;
     private WeiboPopupWindow mWeiboPopupWindow;
@@ -96,10 +104,24 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
 
     @Override
     protected void initView(View mRootView) {
+        setExpand();
         initPop();
         initListPopup();
         initMenuPopup();
         initExpandableListPopup();
+    }
+
+    private void setExpand() {
+        mExpandableLayout.setInterpolator(new OvershootInterpolator());
+        mExpandableLayout.setOnExpansionChangedListener(new IExpandableLayout.OnExpansionChangedListener() {
+            @Override
+            public void onExpansionChanged(float expansion, int state) {
+                if (mIvIndicator != null) {
+                    mIvIndicator.setRotation(expansion * 90);
+                }
+            }
+        });
+        mExpandableLayout.setExpanded(false, false);
     }
 
     private void initPop() {
@@ -135,7 +157,9 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             R.id.Ppictitle,
             R.id.ECookieBar,
             R.id.albumListPop,
-            R.id.popCustomEdit
+            R.id.popCustomEdit,
+            R.id.rlPopupRoot,
+            R.id.albumTitle
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -178,6 +202,16 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
                 break;
             case R.id.ECookieBar://CookieBar2
                 showActivity(_mActivity, ICookieBarActivity.class);
+                break;
+            case R.id.albumTitle:
+                showAlbumListPopup();
+                break;
+            case R.id.rlPopupRoot:
+                if (mExpandableLayout.isExpanded()) {
+                    mExpandableLayout.collapse();
+                } else {
+                    mExpandableLayout.expand();
+                }
                 break;
             default:
                 break;

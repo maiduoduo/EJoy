@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,6 +17,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
+
+import com.iduo.filterlib.util.KeyboardUtils;
 
 /**
  * CN:      IPopupwindowUse
@@ -462,6 +465,33 @@ public class IPopupwindowUse implements PopupWindow.OnDismissListener{
             return this;
         }
 
+        private ShowSoftInputTask showSoftInputTask;
+        public PopupWindowBuilder showSoftInput2(View focusView, boolean autoOpenSoftInput){
+            if (autoOpenSoftInput) {
+                if (showSoftInputTask == null) {
+                    showSoftInputTask = new ShowSoftInputTask(focusView);
+                } else {
+                    focusView.removeCallbacks(showSoftInputTask);
+                }
+                focusView.postDelayed(showSoftInputTask, 10);
+            }
+            return this;
+        }
+
+        public PopupWindowBuilder autoOpenSoftInput(final Activity context, boolean autoOpenSoftInput){
+            if (autoOpenSoftInput) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        KeyboardUtils.showInputMethod(context);
+                    }
+                }, 100);
+            }else {
+                KeyboardUtils.hideSoftInput(context);
+            }
+            return this;
+        }
+
 
         public IPopupwindowUse create(){
             //构建PopWindow
@@ -492,6 +522,23 @@ public class IPopupwindowUse implements PopupWindow.OnDismissListener{
         LEFT_CENTER,
 
         FROM_BOTTOM,
+    }
+
+    static class ShowSoftInputTask implements Runnable {
+        View focusView;
+        boolean isDone = false;
+
+        public ShowSoftInputTask(View focusView) {
+            this.focusView = focusView;
+        }
+
+        @Override
+        public void run() {
+            if (focusView != null && !isDone) {
+                isDone = true;
+                KeyboardUtils.showSoftInput(focusView);
+            }
+        }
     }
 
 }

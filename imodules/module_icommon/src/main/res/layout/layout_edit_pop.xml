@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@drawable/shape_edit_corner"
+    style="@style/BottomSheetDialogStyle"
+    android:paddingTop="@dimen/dp_10">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center"
+      android:paddingHorizontal="10dp">
+      <EditText
+          android:layout_weight="1"
+          android:id="@+id/et_comment"
+          android:gravity="top"
+          android:layout_width="wrap_content"
+          android:layout_height="100dp"
+          android:paddingVertical="@dimen/dp_8"
+          android:background="@drawable/shape_edit2"
+          android:textSize="@dimen/sp_12"
+          android:paddingHorizontal="@dimen/dp_15"
+          android:hint="写评论..." />
+      <TextView
+          android:id="@+id/et_send"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingVertical="@dimen/dp_8"
+          android:textSize="@dimen/sp_15"
+          android:textColor="@color/orange"
+          android:layout_gravity="bottom"
+          android:paddingHorizontal="@dimen/dp_15"
+          android:text="发送" />
+
+  </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:src="@mipmap/ic_edit_wb"/>
+</LinearLayout>
