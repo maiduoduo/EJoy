@@ -17,6 +17,7 @@ package com.ejoy.tool.scaffold.utils;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,10 +26,21 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.widget.LinearLayout;
+
+import com.ejoy.tool.R;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -643,6 +655,106 @@ public class IBitmapUtils {
         }
         return bitmap;
     }
+
+
+    /**
+     * 高斯模糊
+     * @param activity
+     * @param view
+     */
+//    public static void rootBlur(Activity activity, final LinearLayout llContent) {
+    public static void rootBlur(Activity activity, final View view) {
+        view.getViewTreeObserver().addOnPreDrawListener(
+                new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        applyBlur(activity,view);
+                        return true;
+                    }
+                });
+    }
+
+    private static void applyBlur(Activity activity,  View llContent) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache(true);
+        /**
+         * 获取当前窗口快照，相当于截屏
+         */
+        Bitmap bmp1 = view.getDrawingCache();
+//        final Bitmap bmp1 = BitmapFactory.decodeResource(getResources(), R.drawable.bg);
+        int height = getOtherHeight(activity);
+        /**
+         * 除去状态栏和标题栏
+         */
+        Bitmap bmp2 = Bitmap.createBitmap(bmp1, 0, height,bmp1.getWidth(), bmp1.getHeight() - height);
+        blur(activity,bmp2, llContent);
+    }
+
+    @SuppressLint("NewApi")
+    private static void blur(Activity activity, Bitmap bkg, View view) {
+        long startMs = System.currentTimeMillis();
+        float scaleFactor = 8;//图片缩放比例；
+        float radius = 5;//模糊程度
+
+        Bitmap overlay = Bitmap.createBitmap(
+                (int) (view.getMeasuredWidth() / scaleFactor),
+                (int) (view.getMeasuredHeight() / scaleFactor),
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(overlay);
+        canvas.translate(-view.getLeft() / scaleFactor, -view.getTop()/ scaleFactor);
+        canvas.scale(1 / scaleFactor, 1 / scaleFactor);
+        Paint paint = new Paint();
+        paint.setFlags(Paint.FILTER_BITMAP_FLAG);
+        canvas.drawBitmap(bkg, 10, 0, paint);
+
+
+        overlay = FastBlur.doBlur(overlay, (int) radius, true);
+        view.setBackground(new BitmapDrawable(activity.getResources(), overlay));
+        view.setBackgroundResource(R.drawable.bg9);
+//        view.setBackgroundResource(R.color.white);
+        /**
+         * 打印高斯模糊处理时间，如果时间大约16ms，用户就能感到到卡顿，时间越长卡顿越明显，如果对模糊完图片要求不高，可是将scaleFactor设置大一些。
+         */
+        Log.i("jerome", "blur time:" + (System.currentTimeMillis() - startMs));
+    }
+
+    /**
+     * 获取系统状态栏和软件标题栏，部分软件没有标题栏，看自己软件的配置；
+     * @return
+     */
+    private static int getOtherHeight(Activity activity) {
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        int contentTop = activity.getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
+        int titleBarHeight = contentTop - statusBarHeight;
+        return statusBarHeight + titleBarHeight;
+    }
+
+
+    /**
+     * 图片形状
+     * @param activity
+     * @param imageId
+     * @return
+     */
+    public static Drawable getRoundedBitmap(Activity activity, int imageId) {
+        Bitmap src = BitmapFactory.decodeResource(activity.getResources(), imageId);
+        Bitmap dst;
+        if (src.getWidth() >= src.getHeight()) {
+            dst = Bitmap.createBitmap(src, src.getWidth() / 2 - src.getHeight() / 2, 0, src.getHeight(), src.getHeight());
+        } else {
+            dst = Bitmap.createBitmap(src, 0, src.getHeight() / 2 - src.getWidth() / 2, src.getWidth(), src.getWidth());
+        }
+        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(activity.getResources(), dst);
+        roundedBitmapDrawable.setCornerRadius(dst.getWidth() / 2);
+        roundedBitmapDrawable.setAntiAlias(true);
+        return roundedBitmapDrawable;
+    }
+
+
+
 
 
 }

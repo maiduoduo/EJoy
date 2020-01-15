@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
         android:paddingHorizontal="@dimen/dp_10"
-        android:background="@color/app_color_theme_5_2"
+        android:background="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,7 +18,7 @@
             android:layout_gravity="center_vertical"
             android:onClick="ivBack"
             android:gravity="center"
-            android:src="@drawable/ico_back_white_90px"/>
+            android:src="@drawable/ico_back_black_90px"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -26,7 +26,7 @@
             android:gravity="center"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/Black"
             android:text="Popupwindow基础封装"/>
 
         <ImageButton
@@ -34,8 +34,8 @@
             android:layout_width="@dimen/dp_20"
             android:layout_height="@dimen/dp_20"
             android:layout_gravity="center_vertical|right"
-            android:background="@mipmap/eicon_add"
-            android:visibility="gone"
+            android:background="@mipmap/ico_add_black_80px"
+            android:visibility="visible"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center" />
@@ -254,6 +254,25 @@
                 android:layout_height="0.5dp"
                 android:background="@color/LGray3"
                 android:layout_marginHorizontal="@dimen/dp_10"/>
+
+
+            <Button
+                android:id="@+id/btnAnchorPop"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/shape_button"
+                android:paddingHorizontal="@dimen/dp_15"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="anchorview\n点击试试"
+                android:textColor="@color/material_red_400"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

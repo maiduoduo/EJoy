@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res"/><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\build\generated\res\rs\debug"/><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res"><file name="bs_list_item_in" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim\bs_list_item_in.xml" qualifiers="" type="anim"/><file name="bs_list_layout_anim_in" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim\bs_list_layout_anim_in.xml" qualifiers="" type="anim"/><file name="bs_list_layout_fade_in" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim\bs_list_layout_fade_in.xml" qualifiers="" type="anim"/><file name="dock_bottom_enter" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim\dock_bottom_enter.xml" qualifiers="" type="anim"/><file name="dock_bottom_exit" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim\dock_bottom_exit.xml" qualifiers="" type="anim"/><file name="bs_list_item_in" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim-v21\bs_list_item_in.xml" qualifiers="v21" type="anim"/><file name="bs_list_layout_anim_in" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\anim-v21\bs_list_layout_anim_in.xml" qualifiers="v21" type="anim"/><file name="bs_list_dark_selector" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable\bs_list_dark_selector.xml" qualifiers="" type="drawable"/><file name="bs_list_selector" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable\bs_list_selector.xml" qualifiers="" type="drawable"/><file name="list_normal_selector" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable\list_normal_selector.xml" qualifiers="" type="drawable"/><file name="bs_ic_clear" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-hdpi\bs_ic_clear.png" qualifiers="hdpi-v4" type="drawable"/><file name="bs_ic_more" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-hdpi\bs_ic_more.png" qualifiers="hdpi-v4" type="drawable"/><file name="bs_ic_more_light" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-hdpi\bs_ic_more_light.png" qualifiers="hdpi-v4" type="drawable"/><file name="bs_ic_clear" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-mdpi\bs_ic_clear.png" qualifiers="mdpi-v4" type="drawable"/><file name="bs_ic_more" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-mdpi\bs_ic_more.png" qualifiers="mdpi-v4" type="drawable"/><file name="bs_ic_more_light" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-mdpi\bs_ic_more_light.png" qualifiers="mdpi-v4" type="drawable"/><file name="bs_list_dark_selector" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-v21\bs_list_dark_selector.xml" qualifiers="v21" type="drawable"/><file name="bs_list_selector" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-v21\bs_list_selector.xml" qualifiers="v21" type="drawable"/><file name="bs_ic_clear" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xhdpi\bs_ic_clear.png" qualifiers="xhdpi-v4" type="drawable"/><file name="bs_ic_more" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xhdpi\bs_ic_more.png" qualifiers="xhdpi-v4" type="drawable"/><file name="bs_ic_more_light" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xhdpi\bs_ic_more_light.png" qualifiers="xhdpi-v4" type="drawable"/><file name="bs_ic_clear" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xxhdpi\bs_ic_clear.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="bs_ic_clear_light" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xxhdpi\bs_ic_clear_light.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="bs_ic_more" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xxhdpi\bs_ic_more.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="bs_ic_more_light" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\drawable-xxhdpi\bs_ic_more_light.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="bottom_sheet_dialog" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\layout\bottom_sheet_dialog.xml" qualifiers="" type="layout"/><file name="bs_grid_entry" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\layout\bs_grid_entry.xml" qualifiers="" type="layout"/><file name="bs_header" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\layout\bs_header.xml" qualifiers="" type="layout"/><file name="bs_list_divider" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\layout\bs_list_divider.xml" qualifiers="" type="layout"/><file name="bs_list_entry" path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\layout\bs_list_entry.xml" qualifiers="" type="layout"/><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="BottomSheet">
+        <attr format="reference" name="bs_bottomSheetStyle"/>
+        <attr format="color|reference" name="bs_dialogBackground"/>
+        <attr format="reference" name="bs_listStyle"/>
+        <attr format="color|reference" name="bs_dividerColor"/>
+        <attr format="integer" name="bs_numColumns"/>
+        <attr format="reference" name="bs_titleTextAppearance"/>
+        <attr format="reference" name="bs_listItemTitleTextAppearance"/>
+        <attr format="reference" name="bs_gridItemTitleTextAppearance"/>
+        <attr format="reference" name="bs_moreDrawable"/>
+        <attr format="string" name="bs_moreText"/>
+        <attr format="reference" name="bs_closeDrawable"/>
+        <attr format="boolean" name="bs_collapseListIcons"/>
+        <attr format="reference" name="bs_listItemLayout"/>
+        <attr format="reference" name="bs_gridItemLayout"/>
+        <attr format="reference" name="bs_headerLayout"/>
+    </declare-styleable></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\colors.xml" qualifiers=""><color name="bs_divider_color">#1f000000</color><color name="bs_dark_divider_color">#1fffffff</color><color name="Lgray5">#1ff5f0f0</color><color name="White_bs">#1ff5f0f0</color><color name="BS_LGray1">#ffedeef0</color><color name="BS_LGray2">#fff0f1f2</color><color name="BS_LGray3">#fff2f3f5</color><color name="BS_LGray4">#fff5f6f7</color><color name="BS_LGray5">#40f5f6f7</color><color name="bs_bg">#4045617c</color></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\dimens.xml" qualifiers=""><dimen name="bs_grid_left_padding">8dp</dimen><dimen name="bs_grid_top_padding">0dp</dimen><dimen name="bs_grid_right_padding">8dp</dimen><dimen name="bs_grid_bottom_padding">8dp</dimen></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\ids.xml" qualifiers=""><item name="bs_more" type="id"/><item name="bs_list_image" type="id"/><item name="bs_list_title" type="id"/><item name="bottom_sheet_title_image" type="id"/><item name="bottom_sheet_title" type="id"/></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\integer.xml" qualifiers=""><integer name="no_limit">0</integer><integer name="bs_grid_colum">3</integer><integer name="bs_initial_grid_row">3</integer><integer name="bs_initial_list_row">5</integer></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\string.xml" qualifiers=""><string name="bs_more">More</string></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values\styles.xml" qualifiers=""><style name="BottomSheet"/><style name="BottomSheet.Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:textColor">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/BottomSheet.Animation</item>
+        <item name="android:textColorPrimary">#DD000000</item>
+        <item name="android:textColorSecondary">#8A000000</item>
+        <item name="android:textColorHint">#42000000</item>
+        <item name="bs_dialogBackground">@android:color/background_light</item>
+        <item name="bs_dividerColor">@color/bs_divider_color</item>
+        <item name="bs_numColumns">@integer/bs_grid_colum</item>
+        <item name="bs_titleTextAppearance">@style/Text.Headline</item>
+        <item name="bs_listItemTitleTextAppearance">@style/Text.Title</item>
+        <item name="bs_gridItemTitleTextAppearance">@style/Text.Hint</item>
+        <item name="bs_moreText">@string/bs_more</item>
+        <item name="bs_closeDrawable">@drawable/bs_ic_clear_light</item>
+        <item name="bs_moreDrawable">@drawable/bs_ic_more_light</item>
+        <item name="bs_listStyle">@style/BottomSheet.List</item>
+        <item name="bs_collapseListIcons">true</item>
+        <item name="bs_listItemLayout">@layout/bs_list_entry</item>
+        <item name="bs_gridItemLayout">@layout/bs_grid_entry</item>
+        <item name="bs_headerLayout">@layout/bs_header</item>
+    </style><style name="BottomSheet.Dialog.Dark" parent="BottomSheet.Dialog">
+        <item name="android:textColorPrimary">#DDffffff</item>
+        <item name="android:textColorSecondary">#8Affffff</item>
+        <item name="android:textColorHint">#42ffffff</item>
+        <item name="bs_dialogBackground">@android:color/background_dark</item>
+        <item name="bs_dividerColor">@color/bs_dark_divider_color</item>
+        <item name="bs_listStyle">@style/BottomSheet.List.Dark</item>
+        <item name="bs_closeDrawable">@drawable/bs_ic_clear</item>
+        <item name="bs_moreDrawable">@drawable/bs_ic_more</item>
+    </style><style name="Text"/><style name="Text.Headline">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily" ns1:ignore="NewApi">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style><style name="Text.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:fontFamily" ns1:ignore="NewApi">sans-serif-medium</item>
+    </style><style name="Text.Hint">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:textColorHint</item>
+        <item name="android:fontFamily" ns1:ignore="NewApi">sans-serif-medium</item>
+    </style><style name="Text.Subhead">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:fontFamily" ns1:ignore="NewApi">sans-serif</item>
+    </style><style name="BottomSheet.Title">
+        <item name="android:textAlignment" ns1:ignore="NewApi">viewStart</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?bs_titleTextAppearance</item>
+        <item name="android:gravity">center_vertical</item>
+    </style><style name="BottomSheet.Icon">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+    </style><style name="BottomSheet.List">
+        <item name="android:listSelector">@drawable/bs_list_selector</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:layoutAnimation">@anim/bs_list_layout_anim_in</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:clipToPadding">false</item>
+    </style><style name="BottomSheet.List.Dark">
+        <item name="android:listSelector">@drawable/bs_list_dark_selector</item>
+    </style><style name="BottomSheet.ListItem">
+        <item name="android:layoutDirection" ns1:ignore="NewApi">locale</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layoutAnimation">@null</item>
+    </style><style name="BottomSheet.ListItemImage">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+    </style><style name="BottomSheet.ListItemTitle">
+        <item name="android:textAlignment" ns1:targetApi="jelly_bean_mr1">viewStart</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textAppearance">?bs_listItemTitleTextAppearance</item>
+    </style><style name="BottomSheet.ListDivider">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:minHeight">1dp</item>
+        <item name="android:background">?bs_dividerColor</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style><style name="BottomSheet.GridItemImage">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">0dp</item>
+    </style><style name="BottomSheet.GridItemTitle">
+        <item name="android:singleLine">true</item>
+        <item name="android:textAppearance">?bs_gridItemTitleTextAppearance</item>
+        <item name="android:padding">0dp</item>
+    </style><style name="BottomSheet.Grid"/><style name="BottomSheet.GridItem">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style><style name="BottomSheet.StyleList" parent="BottomSheet.List.Dark">
+        <item name="android:listSelector">@drawable/list_normal_selector</item>
+        <item name="android:layoutAnimation">@anim/bs_list_layout_fade_in</item>
+    </style><style name="BottomSheet.Animation">
+        <item name="android:windowEnterAnimation">@anim/dock_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/dock_bottom_exit</item>
+    </style><style name="BottomSheet.TopDivider">
+        <item name="android:background">@color/BS_LGray3</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style><style name="BottomSheet.StyleDialog" parent="BottomSheet.Dialog">
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowAnimationStyle">@style/BottomSheet.Animation</item>
+        <item name="android:textColorPrimary">#DDffffff</item>
+        <item name="android:textColorSecondary">#8Affffff</item>
+        <item name="android:textColorHint">#42ffffff</item>
+        <item name="bs_dialogBackground">#4a54c1</item>
+        <item name="bs_dividerColor">@color/abc_search_url_text_pressed</item>
+        <item name="bs_numColumns">4</item>
+        <item name="bs_listStyle">@style/BottomSheet.StyleList</item>
+    </style><style name="BottomSheet.CustomDialog" parent="BottomSheet.Dialog">
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowAnimationStyle">@style/BottomSheet.Animation</item>
+        <item name="android:textColorPrimary">#DDffffff</item>
+        <item name="android:textColorSecondary">#8Affffff</item>
+        <item name="android:textColorHint">#42ffffff</item>
+        <item name="bs_dividerColor">@color/abc_search_url_text_pressed</item>
+        <item name="bs_numColumns">4</item>
+        <item name="bs_listStyle">@style/BottomSheet.StyleList</item>
+        <item name="bs_listItemLayout">@layout/bs_list_entry</item>
+        <item name="bs_gridItemLayout">@layout/bs_grid_entry</item>
+        <item name="bs_headerLayout">@layout/bs_header</item>
+    </style></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values-land\integer.xml" qualifiers="land"><integer name="bs_grid_colum">4</integer><integer name="bs_initial_grid_row">2</integer><integer name="bs_initial_list_row">3</integer></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values-sw600dp\integer.xml" qualifiers="sw600dp-v13"><integer name="bs_grid_colum">4</integer><integer name="bs_initial_grid_row">3</integer><integer name="bs_initial_list_row">5</integer></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values-sw600dp-land\integer.xml" qualifiers="sw600dp-land-v13"><integer name="bs_grid_colum">5</integer><integer name="bs_initial_grid_row">2</integer><integer name="bs_initial_list_row">4</integer></file><file path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\main\res\values-zh\string.xml" qualifiers="zh"><string name="bs_more">更多</string></file></source><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\build\generated\res\rs\debug"/><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="E:\Android\DeveloperProjects\MProjects\EJoy\imodules\module_likebottomsheet\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="BottomSheet">
+        <attr format="reference" name="bs_bottomSheetStyle"/>
+        <attr format="color|reference" name="bs_dialogBackground"/>
+        <attr format="reference" name="bs_listStyle"/>
+        <attr format="color|reference" name="bs_dividerColor"/>
+        <attr format="integer" name="bs_numColumns"/>
+        <attr format="reference" name="bs_titleTextAppearance"/>
+        <attr format="reference" name="bs_listItemTitleTextAppearance"/>
+        <attr format="reference" name="bs_gridItemTitleTextAppearance"/>
+        <attr format="reference" name="bs_moreDrawable"/>
+        <attr format="string" name="bs_moreText"/>
+        <attr format="reference" name="bs_closeDrawable"/>
+        <attr format="boolean" name="bs_collapseListIcons"/>
+        <attr format="reference" name="bs_listItemLayout"/>
+        <attr format="reference" name="bs_gridItemLayout"/>
+        <attr format="reference" name="bs_headerLayout"/>
+    </declare-styleable></configuration></mergedItems></merger>

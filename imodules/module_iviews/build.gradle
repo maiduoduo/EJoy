@@ -28,4 +28,10 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies["espresso-core"]
     api project(':imodules:module_filterpopupwindow')
     implementation files('libs/rebound-0.3.8.jar')
+    api project(':imodules:module_iiosdialog')
+    api files('libs/nineoldandroids-2.4.0.jar')
+    api files('libs/universal-image-loader-1.9.4.jar')
+    api files('libs/universal-image-loader-1.9.4-sources.jar')
+//    implementation ('com.google.android.material:material:1.1.0-alpha09'){
+//    }
 }

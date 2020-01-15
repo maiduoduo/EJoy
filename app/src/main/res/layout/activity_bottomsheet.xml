@@ -61,4 +61,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCustomBS" />
+    <TextView
+        android:id="@+id/tvBaseuse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_10"
+        android:text="BottomSheet + BottomSheetBehavior"
+        android:textColor="@color/Gray2"
+        android:textSize="17sp"
+        android:onClick="bottomSheetBehavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGFBS" />
 </android.support.constraint.ConstraintLayout>

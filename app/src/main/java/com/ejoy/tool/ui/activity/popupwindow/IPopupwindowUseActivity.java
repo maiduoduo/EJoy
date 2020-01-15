@@ -17,13 +17,18 @@ package com.ejoy.tool.ui.activity.popupwindow;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -35,6 +40,8 @@ import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.module.ires.bean.utils.EDensityUtils;
+import com.module.ires.bean.utils.EResUtils;
+import com.module.iviews.popup.baseuse.ICommonPopupWindow;
 import com.module.iviews.popup.baseuse.IPopupwindowUse;
 import com.module.iviews.popup.baseuse.ISimpleListPopupWindow;
 
@@ -44,8 +51,20 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.TOP_LEFT;
 import static com.module.iviews.popup.baseuse.IPopupwindowUse.LocationType.BOTTOM_CENTER;
 import static com.module.iviews.popup.baseuse.IPopupwindowUse.LocationType.TOP_CENTER;
+
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.BOTTOM_LEFT;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.BOTTOM_RIGHT;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.FROM_BOTTOM;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.LEFT_BOTTOM;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.LEFT_CENTER;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.LEFT_TOP;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.RIGHT_BOTTOM;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.RIGHT_CENTER;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.RIGHT_TOP;
+import static com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.TOP_RIGHT;
 
 /**
  * CN:      IPopupwindowUseActivity
@@ -69,6 +88,10 @@ public class IPopupwindowUseActivity extends BaseActivity {
     LinearLayout mAnimateshow;
     @BindView(R.id.Dismissshow)
     LinearLayout mDismissshow;
+    @BindView(R.id.title)
+    FrameLayout mTitleBar;
+    @BindView(R.id.btnAnchorPop)
+    Button mBtnAnchorPop;
 
     private List<String> mData;
     private IPopupwindowUse mIPopupwindowUse;
@@ -80,7 +103,12 @@ public class IPopupwindowUseActivity extends BaseActivity {
 
     @Override
     protected Object registSatusbarBgcolor() {
-        return defalutStatus6;
+        return baseWhite;
+    }
+
+    @Override
+    protected boolean isRegistSatusbarFontDark() {
+        return true;
     }
 
     @Override
@@ -111,7 +139,8 @@ public class IPopupwindowUseActivity extends BaseActivity {
             R.id.ScreenListshow,
             R.id.BgChangeshow,
             R.id.Animateshow,
-            R.id.Dismissshow
+            R.id.Dismissshow,
+            R.id.btnAnchorPop
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -136,12 +165,35 @@ public class IPopupwindowUseActivity extends BaseActivity {
             case R.id.Dismissshow://点击popupwindow外部不消失
                 touchOutsideDontDisMiss();
                 break;
+            case R.id.btnAnchorPop://不同位置弹窗
+                showAnchorPop();
+                break;
             default:
                 break;
 
         }
     }
 
+    /**
+     * 不同方向弹窗
+     */
+    private void showAnchorPop() {
+        View contentView = LayoutInflater.from(this).inflate(R.layout.layout_popbase_listanchor, null);
+        //处理popWindow 显示内容
+        handleLogic(contentView);
+        //创建并显示popWindow
+        mIPopupwindowUse = new IPopupwindowUse.PopupWindowBuilder(this)
+                .setView(contentView)
+                .enableBackgroundDark(true) //弹出popWindow时，背景是否变暗
+                .setBgDarkAlpha(0.8f) // 控制亮度
+                .size(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                .create()
+                .showAsDropDown(mTitleBar, ((int) (EDensityUtils.getScreenWidth(_mActivity) * 0.5 - 150)), -15);
+    }
+
+    /**
+     * ListPop
+     */
     private void showListMenuPop() {
         View contentView = LayoutInflater.from(this).inflate(R.layout.layout_popbase_listmenu, null);
         //处理popWindow 显示内容
@@ -288,30 +340,48 @@ public class IPopupwindowUseActivity extends BaseActivity {
                 String showContent = "";
                 switch (v.getId()) {
                     case R.id.menu1:
-                        showContent = list.get(0);
+                        showPopupWindow(TOP_LEFT);
                         break;
                     case R.id.menu2:
-                        showContent = list.get(1);
+                        showPopupWindow(TOP_RIGHT);
                         break;
                     case R.id.menu3:
-                        showContent = list.get(2);
+                        showPopupWindow(com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.TOP_CENTER);
                         break;
                     case R.id.menu4:
-                        showContent = list.get(3);
+                        showPopupWindow(BOTTOM_LEFT);
                         break;
                     case R.id.menu5:
-                        showContent = list.get(4);
+                        showPopupWindow(BOTTOM_RIGHT);
                         break;
                     case R.id.menu6:
-                        showContent = list.get(5);
+                        showPopupWindow(com.module.iviews.popup.baseuse.ICommonPopupWindow.LocationType.BOTTOM_CENTER);
                         break;
                     case R.id.menu7:
-                        showContent = list.get(6);
+                        showPopupWindow(LEFT_TOP);
+                        break;
+                    case R.id.menu8:
+                        showPopupWindow(LEFT_BOTTOM);
+                        break;
+                    case R.id.menu9:
+                        showPopupWindow(LEFT_CENTER);
+                        break;
+                    case R.id.menu10:
+                        showPopupWindow(RIGHT_TOP);
+                        break;
+                    case R.id.menu11:
+                        showPopupWindow(RIGHT_BOTTOM);
+                        break;
+                    case R.id.menu12:
+                        showPopupWindow(RIGHT_CENTER);
+                        break;
+                    case R.id.menu13:
+                        showPopupWindow(FROM_BOTTOM);
                         break;
                     case R.id.rootView:
+//                        showPopupWindow(TOP_LEFT);
                         break;
                 }
-                iToast.showISimpleToast(showContent + "");
             }
         };
         contentView.findViewById(R.id.menu1).setOnClickListener(listener);
@@ -321,7 +391,31 @@ public class IPopupwindowUseActivity extends BaseActivity {
         contentView.findViewById(R.id.menu5).setOnClickListener(listener);
         contentView.findViewById(R.id.menu6).setOnClickListener(listener);
         contentView.findViewById(R.id.menu7).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu8).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu9).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu10).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu11).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu12).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu13).setOnClickListener(listener);
         contentView.findViewById(R.id.rootView).setOnClickListener(listener);
+    }
+
+
+    private void showPopupWindow(ICommonPopupWindow.LocationType type) {
+        ICommonPopupWindow popupWindow = new ICommonPopupWindow
+                .Builder(this)
+                .setLayoutId(R.layout.layout_pop_anchor)
+                .setBackgroundDrawable(new ColorDrawable(Color.GRAY))
+                .setAnimationStyle(R.style.PopupWindowScaleTheme)
+                .setOutsideTouchable(true)
+                .setTouchable(true)
+                .setOnDismissListener(new PopupWindow.OnDismissListener() {
+                    @Override
+                    public void onDismiss() {
+                    }
+                })
+                .build();
+        popupWindow.showPopupWindow(mBtnAnchorPop, type);
     }
 
 }

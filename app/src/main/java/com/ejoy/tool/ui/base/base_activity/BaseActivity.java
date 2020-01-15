@@ -46,7 +46,9 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.loading.IProgressDialog;
 import com.ejoy.tool.ui.activity.ICameraActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
+import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
+import com.module.iviews.popup.EUISimplePopup;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -61,6 +63,7 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public static final String _TAG = BaseActivity.class.getSimpleName();
     public  Activity _mActivity;
     public IToast iToast;
+//    public EUISimplePopup mListPopup;
     public String baseYellow = "#FFCF47";
     public String baseWhite = "#FFFFFF";
     public String baseTransparent = "#00000000";
@@ -134,9 +137,9 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         return false;
     }
 
-
-
-
+    protected String[] fixPopData() {
+        return new String[]{""};
+    }
 
 
     private Unbinder unbinder;
@@ -152,6 +155,8 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         unbinder = ButterKnife.bind(this);
         //初始化自定义Toast
         iToast = new IToast().builder();
+        //初始化popupwindow
+//        mListPopup = new EUISimplePopup(_mActivity, fixPopData());
         if (getPresenter() != null) {
             getPresenter().attachView(this);
         }

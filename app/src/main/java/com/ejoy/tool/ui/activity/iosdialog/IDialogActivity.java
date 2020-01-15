@@ -94,7 +94,8 @@ public class IDialogActivity extends BaseActivity {
             R.id.EIosDialog,
             R.id.EDialogMenu,
             R.id.ELoadingDialog,
-            R.id.iBack
+            R.id.iBack,
+            R.id.ELikeBsDialog,
     })
     public void bindViewclick(View view) {
         switch (view.getId()) {
@@ -109,6 +110,9 @@ public class IDialogActivity extends BaseActivity {
                 break;
             case R.id.iBack:
                 finish();
+                break;
+            case R.id.ELikeBsDialog:
+                showActivity(_mActivity, IDialogBottomsheetActivity.class, R.anim.anim_fade_in, R.anim.anim_fade_out);
                 break;
         }
     }

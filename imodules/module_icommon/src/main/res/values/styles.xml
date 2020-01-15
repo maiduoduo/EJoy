@@ -129,5 +129,22 @@
         <item name="android:windowExitAnimation">@anim/popwindow_anim_out</item>
     </style>
 
+    <!--PopupWindow从底部弹出-->
+    <style name="PopupWindowTranslateThemeFromBottom">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_bottom_out</item>
+    </style>
+
+    <style name="PopupWindowScaleTheme">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_scale_out</item>
+    </style>
+
+    <!--类Bottomsheet 底部弹窗-->
+
+
+
+
+
 
 </resources>

@@ -212,6 +212,19 @@ public class GlobalDataProvider {
     }
 
 
+    public static String[] bottomsheetItems = new String[]{
+            "RecyclerView",
+            "ScrollView",
+            "Recycler View in DialogBtmSheet"
+    };
+
+    public static List<String> likeBottomsheetData() {
+        return Arrays.asList(
+                "From Xml", "Without Icon", "Dark Theme", "Grid", "Style", "Style from Theme", "ShareAction", "FullScreen", "Menu Manipulate", "HeaderLayout"
+        );
+    }
+
+
     public static final String HOT = "热门";
     public static final String XING_GAN = "新鲜";
     public static final String MM = "mm";
@@ -449,51 +462,51 @@ public class GlobalDataProvider {
 
 
     public static List<MainItemBean_temp> getMainItemData() {
-      return Arrays.asList(
+        return Arrays.asList(
                 new MainItemBean_temp(TYPE_TITLE, "弹窗"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("Toast", "吐司，支持图标，文本时长等",0,ToastActivity.class,""),
-                        new MainItemBean_temp.ContentBean("Dialog", "系统对话框解决方案，仿IOS样式",1, IDialogActivity.class,""),
-                        new MainItemBean_temp.ContentBean("Popupwindow", "Popupwindow、ECookieBar、SnackBar等",2, IPopupwindowActivity.class,""),
-                        new MainItemBean_temp.ContentBean("BottomSheetDialog","自定义BottomSheetDialog及官方示例",3, IBottomSheetActivity.class,""),
-                        new MainItemBean_temp.ContentBean("日期等选择器", "日期选择器，省市区级联选择",4, ITimeDateOrActivity.class,"")
+                        new MainItemBean_temp.ContentBean("Toast", "吐司，支持图标，文本时长等", 0, ToastActivity.class, ""),
+                        new MainItemBean_temp.ContentBean("Dialog", "系统对话框解决方案，仿IOS样式", 1, IDialogActivity.class, ""),
+                        new MainItemBean_temp.ContentBean("Popupwindow", "Popupwindow、ECookieBar、SnackBar等", 2, IPopupwindowActivity.class, ""),
+                        new MainItemBean_temp.ContentBean("BottomSheetDialog", "自定义BottomSheetDialog及官方示例", 3, IBottomSheetActivity.class, ""),
+                        new MainItemBean_temp.ContentBean("日期等选择器", "日期选择器，省市区级联选择", 4, ITimeDateOrActivity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "长文本"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("ScrollView","ScrollView显示内容量大计算合理高度显示内容" ,5, IScrollViewActivity.class,"")
+                        new MainItemBean_temp.ContentBean("ScrollView", "ScrollView显示内容量大计算合理高度显示内容", 5, IScrollViewActivity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "菜单"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("详情页", "商城类详情页示例",6, null,""),
-                        new MainItemBean_temp.ContentBean("FloatDragButton", "可展开可拖拽的菜单",7, BezierActivity.class,"")
+                        new MainItemBean_temp.ContentBean("详情页", "商城类详情页示例", 6, null, ""),
+                        new MainItemBean_temp.ContentBean("FloatDragButton", "可展开可拖拽的菜单", 7, BezierActivity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "Banner"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("ArcLayout", "广告条弧度，广告轮播条",8, IArcLayoutActivity.class,"")
+                        new MainItemBean_temp.ContentBean("ArcLayout", "广告条弧度，广告轮播条", 8, IArcLayoutActivity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "设备"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("设备信息","设备工具，设备信息等",9, DeviceToolActviity.class,"")
+                        new MainItemBean_temp.ContentBean("设备信息", "设备工具，设备信息等", 9, DeviceToolActviity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "图片处理"),
-                new MainItemBean_temp(TYPE_CONTENT,Arrays.asList(
-                        new MainItemBean_temp.ContentBean("图片处理", "图片选择，单张压缩/批量压缩及信息",10, null,"BITMAP")
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("图片处理", "图片选择，单张压缩/批量压缩及信息", 10, null, "BITMAP")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "刷新"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("下拉刷新", "界面数据下拉刷新样式示例",11, IRefreshActivity.class,"")
+                        new MainItemBean_temp.ContentBean("下拉刷新", "界面数据下拉刷新样式示例", 11, IRefreshActivity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "标题栏"),
-                new MainItemBean_temp(TYPE_CONTENT,  Arrays.asList(
-                        new MainItemBean_temp.ContentBean("通用标题栏","通用封装的标题栏",12, null,"")
+                new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
+                        new MainItemBean_temp.ContentBean("通用标题栏", "通用封装的标题栏", 12, null, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "文本"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("通用TextView", "通用的文本，支持通用需求",13, null,"")
+                        new MainItemBean_temp.ContentBean("通用TextView", "通用的文本，支持通用需求", 13, null, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "应用更新"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("版本更新", "应用检查更新下载并安装封装",14, null,"")
+                        new MainItemBean_temp.ContentBean("版本更新", "应用检查更新下载并安装封装", 14, null, "")
                 ))
         );
 
@@ -511,20 +524,39 @@ public class GlobalDataProvider {
     public static List<CustomBottomSheetItemBean> getBsData() {
         if (bsList != null) bsList.clear();
         else bsList = new ArrayList<>();
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_zan, "鼓励一下"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_play, "下一首播放"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_collect, "收藏到歌单"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_downloadit, "下载(vip)"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_comment, "评论(67045)"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_share, "分享"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_songger, "歌手：柏松"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_album, "专辑：听闻余生"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_ling, "设置铃声或彩铃"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_buyalbum, "购买单曲"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_video_watch, "查看视频"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_rqbyy, "人气榜应援"));
-        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_unintrest, "不感兴趣"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_zan, "鼓励一下", "好的专辑离不开每一个爱好者去孜孜的追求"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_play, "下一首播放", "直接切换到下一曲播放，音乐就是这么自然"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_collect, "收藏到歌单", "好听就先收藏，改日再听"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_downloadit, "下载(vip)", "下载下来，他就是你的生活伴侣，注意VIP才可以哦"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_comment, "评论(67045)", "觉得好给个讯息吧"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_share, "分享", "分享给你的盆友，一起嗨皮吧"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_songger, "歌手：柏松", "喜欢歌曲，看看作者吧"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_album, "专辑：听闻余生", "歌曲收录在哪张专辑中，信息可以查看"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_ling, "设置铃声或彩铃", "设置你的手机铃声吧，无时无地都可以听到1"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_buyalbum, "购买单曲", "购买这张单曲，就可以一直拥有它"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_video_watch, "查看视频", "看看视频，MV对歌曲的诠释"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_rqbyy, "人气榜应援", "为你喜欢的歌曲应援吧"));
+        bsList.add(new CustomBottomSheetItemBean(R.mipmap.ico_unintrest, "不感兴趣", "好遗憾，没能让你满意。"));
         return bsList;
+    }
+
+
+    public static List<CustomBottomSheetItemBean> getBsRightData() {
+        return Arrays.asList(
+                new CustomBottomSheetItemBean(R.mipmap.ico_zan, "", "好的专辑离不开每一个爱好者去孜孜的追求"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_play, "下一首播放", "直接切换到下一曲播放，音乐就是这么自然"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_collect, "收藏到歌单", "好听就先收藏，改日再听"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_downloadit, "下载(vip)", "下载下来，他就是你的生活伴侣，注意VIP才可以哦"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_comment, "评论(67045)", "觉得好给个讯息吧"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_share, "分享", "分享给你的盆友，一起嗨皮吧"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_songger, "歌手：柏松", "喜欢歌曲，看看作者吧"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_album, "专辑：听闻余生", "歌曲收录在哪张专辑中，信息可以查看"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_ling, "设置铃声或彩铃", "设置你的手机铃声吧，无时无地都可以听到1"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_buyalbum, "购买单曲", "购买这张单曲，就可以一直拥有它"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_video_watch, "查看视频", "看看视频，MV对歌曲的诠释"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_rqbyy, "人气榜应援", "为你喜欢的歌曲应援吧"),
+                new CustomBottomSheetItemBean(R.mipmap.ico_unintrest, "不感兴趣", "好遗憾，没能让你满意。")
+        );
     }
 
 

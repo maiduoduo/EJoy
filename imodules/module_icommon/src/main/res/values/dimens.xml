@@ -80,5 +80,10 @@
     <dimen name="dp_7">7dp</dimen>
     <dimen name="sp_21">21sp</dimen>
 
+    <dimen name="shape2_radius">8dp</dimen>
+    <dimen name="shape2_width">1px</dimen>
+    <dimen name="dialog2_radius">15dp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+
 
 </resources>

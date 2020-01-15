@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@id/bottom_sheet_title_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_sylm_longpic"/>
+        <!--<ImageView
+            android:id="@id/bottom_sheet_title_image"
+            style="@style/BottomSheet.Icon"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />-->
+
+
+        <TextView
+            android:id="@id/bottom_sheet_title"
+            style="@style/BottomSheet.Title"
+            android:visibility="visible" />
+
+    </FrameLayout>
+</LinearLayout>
