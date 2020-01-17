@@ -224,6 +224,12 @@ public class GlobalDataProvider {
         );
     }
 
+    public static List<String> aboutListData() {
+        return Arrays.asList(
+                "访问Github", "说明文档", "版本更新", "设置", "加入技术群聊"
+        );
+    }
+
 
     public static final String HOT = "热门";
     public static final String XING_GAN = "新鲜";

@@ -94,7 +94,7 @@ public class IListPopupwindow extends PopupWindow {
         /* 设置列表的高度 ----- */
         recyclerView.getLayoutParams().height = (int) (EDensityUtils.getScreenHeight(context) * 0.6);
         recyclerView.addItemDecoration(new EDividerItemDecoration(
-                context, LinearLayoutManager.HORIZONTAL, 0, ContextCompat.getColor(context, R.color.transparent)));
+                context, LinearLayoutManager.HORIZONTAL, 0, R.color.transparent));
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         adapter = new BaseQuickAdapter<GalleryBean, BaseViewHolder>(R.layout.item_album_pop,mList) {
             @Override

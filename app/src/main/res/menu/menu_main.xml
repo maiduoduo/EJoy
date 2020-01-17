@@ -5,13 +5,14 @@
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/webview"
-        android:icon="@mipmap/icon_blog"
-        android:orderInCategory="80"
-        android:title="web"
+        android:id="@+id/userCenter"
+        android:icon="@mipmap/ico_user_center"
+        android:orderInCategory="90"
+        android:title="我的"
         app:showAsAction="ifRoom" />
 
     <item
+        android:visible="false"
         android:id="@+id/weibo"
         android:icon="@mipmap/icon_weibo"
         android:orderInCategory="90"

@@ -18,6 +18,7 @@ package com.module.ires.bean.view;
 //      ┗┻┛　┗┻┛
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -31,6 +32,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.module.ires.bean.utils.EDensityUtils;
+import com.module.ires.bean.utils.EResUtils;
 
 /**
  * CN:      EGridDividerItemDecoration
@@ -87,10 +89,15 @@ public class EGridDividerItemDecoration extends RecyclerView.ItemDecoration {
      */
     public EGridDividerItemDecoration(Context context, int spanCount, int dividerWidth, int dividerColor) {
         this(context, spanCount);
-        mDividerWidth = dividerWidth;
-        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(dividerColor);
-        mPaint.setStyle(Paint.Style.FILL);
+        try {
+            mDividerWidth = dividerWidth;
+            mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            mPaint.setColor(EResUtils.getColor(context,dividerColor));
+            mPaint.setStyle(Paint.Style.FILL);
+        }catch (Resources.NotFoundException e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override

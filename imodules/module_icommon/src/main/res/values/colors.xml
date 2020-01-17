@@ -446,6 +446,16 @@
     <color name="md_black_1000">#000000</color>
     <color name="md_white_1000">#ffffff</color>
 
+    <color name="eui_config_color_gray_1">#353C46</color>
+    <color name="eui_config_color_gray_2">#49505A</color>
+    <color name="eui_config_color_gray_3">#5D646E</color>
+    <color name="eui_config_color_gray_4">#717882</color>
+    <color name="eui_config_color_gray_5">#858C96</color>
+    <color name="eui_config_color_gray_6">#99A0AA</color>
+    <color name="eui_config_color_gray_7">#ADB4BE</color>
+    <color name="eui_config_color_gray_8">#C4C8D0</color>
+    <color name="eui_config_color_gray_9">#D8DCE4</color>
+
 
     <color name="B1">#ff000000</color>
     <color name="BL1">#ff6dd1ff</color>
@@ -481,6 +491,7 @@
     <color name="Purple">#ff8a32fc</color>
     <color name="Purple1">#ffa460fc</color>
     <color name="Purple2">#11a460fc</color>
+    <color name="config_color_red">#F15C58</color>
     <color name="R1">#ffe6393f</color>
     <color name="R2">#ffff816d</color>
     <color name="R3">#fff46a4d</color>

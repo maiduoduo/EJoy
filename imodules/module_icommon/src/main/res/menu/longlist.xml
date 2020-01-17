@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/share" android:title="@string/share" android:icon="@mipmap/ico_grid_j"/>
     <item android:id="@+id/upload" android:title="@string/upload" android:icon="@mipmap/ico_grid_j"/>
@@ -19,8 +18,8 @@
     <item android:id="@id/print" android:title="@string/print" android:icon="@mipmap/ico_grid_j"/>
     <item android:id="@id/print" android:title="@string/upload" android:icon="@mipmap/ico_grid_j"/>
     </group>
-    <item android:id="@id/print" android:title="@string/call" android:icon="@mipmap/ico_grid_j"/>
+  <!--  <item android:id="@id/print" android:title="@string/call" android:icon="@mipmap/ico_grid_j"/>
     <item android:id="@id/print" android:title="@string/print" android:icon="@mipmap/ico_grid_j"/>
-    <item android:id="@id/print" android:title="@string/call" android:icon="@mipmap/ico_grid_j"/>
+    <item android:id="@id/print" android:title="@string/call" android:icon="@mipmap/ico_grid_j"/>-->
 
 </menu>

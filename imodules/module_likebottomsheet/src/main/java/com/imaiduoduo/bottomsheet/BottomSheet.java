@@ -50,14 +50,16 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * One way to present a set of actions to a user is with bottom sheets, a sheet of paper that slides up from the bottom edge of the screen. Bottom sheets offer flexibility in the display of clear and simple actions that do not need explanation.
  * https://www.google.com/design/spec/components/bottom-sheets.html
- *
+ * <p>
  * Project: BottomSheet
  */
 @SuppressWarnings("unused")
@@ -455,7 +457,6 @@ public class BottomSheet extends Dialog implements DialogInterface {
     }
 
 
-
     public Menu getMenu() {
         return builder.menu;
     }
@@ -544,6 +545,8 @@ public class BottomSheet extends Dialog implements DialogInterface {
             menu.add(item);
             return this;
         }
+
+
 
         /**
          * Add one item into BottomSheet

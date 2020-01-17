@@ -18,6 +18,7 @@ package com.module.ires.bean.view;
 //      ┗┻┛　┗┻┛
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -101,10 +102,14 @@ public class EDividerItemDecoration extends RecyclerView.ItemDecoration {
      */
     public EDividerItemDecoration(Context context, int orientation, int dividerHeight, int dividerColor) {
         this(context, orientation);
-        mDividerHeight = dividerHeight;
-        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(dividerColor);
-        mPaint.setStyle(Paint.Style.FILL);
+        try {
+            mDividerHeight = dividerHeight;
+            mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            mPaint.setColor(context.getResources().getColor(dividerColor));
+            mPaint.setStyle(Paint.Style.FILL);
+        }catch (Resources.NotFoundException e){
+            e.printStackTrace();
+        }
     }
 
     public EDividerItemDecoration setDivider(@NonNull Drawable divider) {
@@ -124,11 +129,15 @@ public class EDividerItemDecoration extends RecyclerView.ItemDecoration {
      */
     public EDividerItemDecoration(Context context, int orientation, int dividerHeight, int dividerColor, int extraPadding) {
         this(context, orientation);
-        mDividerHeight = dividerHeight;
-        mExtraPadding = extraPadding;
-        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(dividerColor);
-        mPaint.setStyle(Paint.Style.FILL);
+        try {
+            mDividerHeight = dividerHeight;
+            mExtraPadding = extraPadding;
+            mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            mPaint.setColor(context.getResources().getColor(dividerColor));
+            mPaint.setStyle(Paint.Style.FILL);
+        }catch (Resources.NotFoundException e){
+            e.printStackTrace();
+        }
     }
 
     /**

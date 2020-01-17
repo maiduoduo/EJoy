@@ -118,7 +118,7 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
 
 //            mRecyclerView.addItemDecoration(build);
 //            mRecyclerView.addItemDecoration(new GridDividerItemDecoration(1,EResUtils.getColor(context,R.color.Gray4)));
-            mRecyclerView.addItemDecoration(new EGridDividerItemDecoration(context, 3, 1, R.color.LGray2));
+            mRecyclerView.addItemDecoration(new EGridDividerItemDecoration(context, 3, 1, R.color.LGray3));
 
             // 动画一直执行
             mCHMainAdpter.isFirstOnly(true);

@@ -140,7 +140,12 @@
         <item name="android:windowExitAnimation">@anim/anim_popup_scale_out</item>
     </style>
 
-    <!--类Bottomsheet 底部弹窗-->
+    <!-- 提示point -->
+    <style name="EUITipPoint">
+        <item name="android:layout_width">@dimen/tips_point_size</item>
+        <item name="android:layout_height">@dimen/tips_point_size</item>
+        <item name="android:background">@drawable/shape_tips_point</item>
+    </style>
 
 
 

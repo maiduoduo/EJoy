@@ -11,6 +11,12 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //bugly 设置支持的SO库架构
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
     buildTypes {
         release {
@@ -89,6 +95,8 @@ dependencies {
     implementation rootProject.ext.dependencies["greendao-generator"]
 //    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 //    implementation rootProject.ext.dependencies["SmartRefreshLayout_104"]
+    //状态栏
+    implementation rootProject.ext.dependencies["statusbarutil"]
 
     //mudules
 //    implementation project(':imodules:module_iiosdialog')
@@ -97,5 +105,13 @@ dependencies {
     implementation project(':imodules:module_iviews')
     implementation project(':imodules:module_arclayout')
     implementation project(':imodules:module_likebottomsheet')
+
+
+
+    //注释掉原有bugly的仓库
+    //compile 'com.tencent.bugly:crashreport:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.3.2
+//    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+//    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
 
 }

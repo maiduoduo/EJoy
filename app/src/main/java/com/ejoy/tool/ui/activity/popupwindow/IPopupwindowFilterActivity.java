@@ -130,11 +130,6 @@ public class IPopupwindowFilterActivity extends BaseActivity implements OnSelect
         }
     }
 
-    @Override
-    protected void initStatusbar() {
-        super.initStatusbar();
-    }
-
     /**
      * 获取assets下的json文件
      *

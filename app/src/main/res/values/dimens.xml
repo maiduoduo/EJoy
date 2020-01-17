@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <dimen name="ban_size">180dp</dimen>
+    <dimen name="buffer_distance">1dp</dimen>
 </resources>

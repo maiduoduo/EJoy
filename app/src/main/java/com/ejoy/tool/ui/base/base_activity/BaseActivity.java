@@ -21,12 +21,11 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
+import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
-import android.support.annotation.Size;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
@@ -46,12 +45,17 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.loading.IProgressDialog;
 import com.ejoy.tool.ui.activity.ICameraActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
-import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
-import com.module.iviews.popup.EUISimplePopup;
+import com.tencent.bugly.beta.Beta;
+import com.tencent.bugly.beta.upgrade.UpgradeStateListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static android.os.Build.VERSION_CODES.M;
 
 /**
  * CN:      BaseActivity
@@ -61,9 +65,9 @@ import butterknife.Unbinder;
  */
 public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public static final String _TAG = BaseActivity.class.getSimpleName();
-    public  Activity _mActivity;
+    public Activity _mActivity;
     public IToast iToast;
-//    public EUISimplePopup mListPopup;
+    //    public EUISimplePopup mListPopup;
     public String baseYellow = "#FFCF47";
     public String baseWhite = "#FFFFFF";
     public String baseTransparent = "#00000000";
@@ -77,11 +81,16 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     public String defalutStatus5 = "#ffe6393f";
     public String defalutStatus6 = "#024031";
     public String defalutStatus7 = "#8c9eff";
+    public List<String> strList;
 
     protected abstract void initRestore(@Nullable Bundle savedInstanceState);
+
     protected abstract int getContentViewId();
+
     protected abstract void initView(View mRootView);
+
     protected abstract void initData();
+
     protected abstract void addListener();
 
 
@@ -106,7 +115,8 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     /**
      * 透明状态栏
-     *      TODO:(子类界面重写此方法)
+     * TODO:(子类界面重写此方法)
+     *
      * @return
      */
     protected boolean isRegistSatusbarFullScreenTransluent() {
@@ -115,10 +125,11 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     /**
      * 状态栏背景颜色
-     *      1.推荐使用：字符串类型颜色：eg:"#FFCF47",{@link android.support.annotation.ColorRes}
-     *      2.不推荐使用：color.xml下颜色：R.color.LGray3   todo:---------注意:会出现混合色------
+     * 1.推荐使用：字符串类型颜色：eg:"#FFCF47",{@link android.support.annotation.ColorRes}
+     * 2.不推荐使用：color.xml下颜色：R.color.LGray3   todo:---------注意:会出现混合色------
+     * <p>
+     * TODO:(子类界面重写此方法)
      *
-     *      TODO:(子类界面重写此方法)
      * @return
      */
     protected Object registSatusbarBgcolor() {
@@ -127,11 +138,12 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     /**
      * 状态栏字体颜色
-     *      深色/浅色切换
+     * 深色/浅色切换
+     *
+     * @return
      * @dark true 深色
      * @light false 浅色
-     *        TODO:(子类界面重写此方法)
-     * @return
+     * TODO:(子类界面重写此方法)
      */
     protected boolean isRegistSatusbarFontDark() {
         return false;
@@ -143,59 +155,46 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
 
     private Unbinder unbinder;
+
     @SuppressLint("Range")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initStatusbar();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            initStatusbar(0x00000000);
+        } else {
+            initStatusbarUnder5(R.color.black);
+        }
         initRestore(savedInstanceState);
         View mRootView = getView(getContentViewId());
         _mActivity = this;
+        if (strList != null) strList.clear();
+        else strList = new ArrayList<>();
         setContentView(mRootView);
         unbinder = ButterKnife.bind(this);
         //初始化自定义Toast
         iToast = new IToast().builder();
-        //初始化popupwindow
-//        mListPopup = new EUISimplePopup(_mActivity, fixPopData());
         if (getPresenter() != null) {
             getPresenter().attachView(this);
         }
         if (isRegisterEventBus()) {
             EventBusUtil.register(this);
         }
-        if (isRegistSatusbarFullScreenTransluent()){
-            StatusBarTool.setTranslucentStatus(this);//透明状态栏
-            //用来设置整体下移，状态栏沉浸
-            StatusBarTool.setRootViewFitsSystemWindows(this, false);
-        }else {
-            StatusBarTool.setRootViewFitsSystemWindows(this,true);
-        }
-        if (isRegistSatusbarFontDark()){
-            //黑色字体
-            StatusBarTool.setStatusBarDarkTheme(this, true);
-        }else{
-            //浅色字体
-            StatusBarTool.setStatusBarDarkTheme(this, false);
-        }
-        if (registSatusbarBgcolor() instanceof String ){
-            if (!TextUtils.isEmpty((String)registSatusbarBgcolor())) {
-                StatusBarTool.setStatusBarStringColor(_mActivity, (String) registSatusbarBgcolor());
-            }
-        }else if (registSatusbarBgcolor() instanceof Integer){
-            if ((Integer)registSatusbarBgcolor() > 0) {
-                StatusBarTool.setStatusBarColor(_mActivity, (Integer) registSatusbarBgcolor());
-            }
-        }
-//        if (!TextUtils.isEmpty(registSatusbarBgcolor())) {
-//            StatusBarTool.setStatusBarColor(_mActivity, Color.parseColor(registSatusbarBgcolor()));
-//        }
+        setStatusbar();
         initView(mRootView);
         initData();
         addListener();
 
     }
 
-    protected void initStatusbar() {
+    private void initStatusbarUnder5(int colorId) {
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(this.getResources().getColor(colorId));
+    }
+
+
+    protected void initStatusbar(int colorid) {
         //沉浸式代码配置
         //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
         StatusBarTool.setRootViewFitsSystemWindows(this, true);
@@ -206,8 +205,9 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         if (!StatusBarTool.setStatusBarDarkTheme(this, true)) {
             //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
             //这样半透明+白=灰, 状态栏的文字能看得清
+            StatusBarTool.setStatusBarColor(this, colorid);
 //            StatusBarTool.setStatusBarColor(this, 0x55000000);
-            StatusBarTool.setStatusBarColor(this, 0x00000000);
+//            StatusBarTool.setStatusBarColor(this, 0x00000000);
         }
 
 
@@ -259,6 +259,34 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         win.setAttributes(winParams);
     }
 
+    private void setStatusbar() {
+        if (Build.VERSION.SDK_INT >= M) {
+            if (isRegistSatusbarFullScreenTransluent()) {
+                StatusBarTool.setTranslucentStatus(this);//透明状态栏
+                //用来设置整体下移，状态栏沉浸
+                StatusBarTool.setRootViewFitsSystemWindows(this, false);
+            } else {
+                StatusBarTool.setRootViewFitsSystemWindows(this, true);
+            }
+            if (isRegistSatusbarFontDark()) {
+                //黑色字体
+                StatusBarTool.setStatusBarDarkTheme(this, true);
+            } else {
+                //浅色字体
+                StatusBarTool.setStatusBarDarkTheme(this, false);
+            }
+            if (registSatusbarBgcolor() instanceof String) {
+                if (!TextUtils.isEmpty((String) registSatusbarBgcolor())) {
+                    StatusBarTool.setStatusBarStringColor(_mActivity, (String) registSatusbarBgcolor());
+                }
+            } else if (registSatusbarBgcolor() instanceof Integer) {
+                if ((Integer) registSatusbarBgcolor() > 0) {
+                    StatusBarTool.setStatusBarColor(_mActivity, (Integer) registSatusbarBgcolor());
+                }
+            }
+        }
+    }
+
 
     @Override
     public void showLoadingDialog(String msg) {
@@ -274,22 +302,53 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
     }
 
 
+    @Override
+    protected void onResume() {
+        /**
+         * 参数1：isManual 用户手动点击检查，非用户点击操作请传false
+         * 参数2：isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
+         */
+        Beta.checkUpgrade(false, false);
+        /* 设置更新状态回调接口 */
+        Beta.upgradeStateListener = new UpgradeStateListener() {
+            @Override
+            public void onUpgradeSuccess(boolean isManual) {
+            }
 
+            @Override
+            public void onUpgradeFailed(boolean isManual) {
+            }
 
+            @Override
+            public void onUpgrading(boolean isManual) {
+
+            }
+
+            @Override
+            public void onDownloadCompleted(boolean b) {
+
+            }
+
+            @Override
+            public void onUpgradeNoVersion(boolean isManual) {
+            }
+        };
+        super.onResume();
+    }
 
     @Override
     public void showToast(String msg) {
-        Toast.makeText(this,msg+"",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, msg + "", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showSuccessTips(String msg) {
-        iToast.showIImgToast(msg+"", IToastImageType.SUCCESS);
+        iToast.showIImgToast(msg + "", IToastImageType.SUCCESS);
     }
 
     @Override
     public void showFailTips(String msg) {
-        iToast.showIImgToast(msg+"", IToastImageType.FAIL);
+        iToast.showIImgToast(msg + "", IToastImageType.FAIL);
     }
 
 
@@ -317,6 +376,7 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     /**
      * 隐藏View
+     *
      * @param views
      */
     public void goneView(View... views) {
@@ -328,6 +388,7 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     /**
      * 展示View
+     *
      * @param views
      */
     public void showView(View... views) {
@@ -339,20 +400,22 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     /**
      * 开启Activity并关闭当前
+     *
      * @param c
      * @param finish
      */
-    public void startActivityFinishCurrent(Class c,boolean finish) {
+    public void startActivityFinishCurrent(Class c, boolean finish) {
         startActivity(new Intent(this, c));
-        if(finish) finish();
+        if (finish) finish();
     }
 
     /**
      * 开启Activity
+     *
      * @param c
      */
     public void startActivity(Class c) {
-        startActivityFinishCurrent(c,false);
+        startActivityFinishCurrent(c, false);
     }
 
     public boolean isNotNullAndEmpty(String content, String tips) {
@@ -378,7 +441,8 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         aty.startActivity(i);
         aty.overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
     }
-    public void showActivity(Activity aty, Class clazz,int enterAnim, int exitAnim) {
+
+    public void showActivity(Activity aty, Class clazz, int enterAnim, int exitAnim) {
         Intent i = new Intent(aty, clazz);
         aty.startActivity(i);
         aty.overridePendingTransition(enterAnim, exitAnim);
@@ -389,6 +453,11 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         super.onDestroy();
         if (getPresenter() != null) getPresenter().detachView();
         if (isRegisterEventBus()) EventBusUtil.unregister(this);
-        try { unbinder.unbind(); } catch (Exception e) { }
+        try {
+            unbinder.unbind();
+        } catch (Exception e) {
+        }
     }
+
+
 }
