@@ -25,8 +25,8 @@
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg)](https://android-arsenal.com/api?level=9)
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
-[![release](https://img.shields.io/badge/downloads-5M-brightgreen)](https://www.lanzous.com/i8k5dzg)
-[![release](https://img.shields.io/badge/release-v1.2.3-blue.svg)](https://www.lanzous.com/i8k5dzg)
+[![release](https://img.shields.io/badge/downloads-5M-brightgreen)](https://www.lanzous.com/i8qbtfe)
+[![release](https://img.shields.io/badge/release-v1.2.3-blue.svg)](https://www.lanzous.com/i8qbtfe)
 
 <br/><br/><br/>
 
