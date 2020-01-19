@@ -17,6 +17,42 @@
 
 ##### 💥 更新日志
 
+###### 2020.01.17
+
+* 完善版本更新
+* 修复Android5.0及以下机型沉浸式状态栏问题
+
+###### 2020.01.16
+
+> 加入版本更新
+
+
+
+###### 2020.01.15
+
+> 类Bottomsheet 底部弹窗
+
+* From Xml
+* Without Icon
+* Dark Theme
+* Grid
+* Style
+* Style from Theme
+* ShareAction
+* FullScreen
+* Menu Manipulate
+* HeaderLayout"
+
+
+
+###### 2020.01.10
+
+> 选择图片相册列表及显示/BottomsheetBehavior
+
+* BottomSheet Recyclerview列表
+* BottomSheet ScrollView列表
+* 仿微博发表图片/视频界面，相册展示列表及选择
+
 ###### 2020.01.10
 
 > IPopupwindowTopEditActivity/UI调整

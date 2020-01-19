@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,15 +26,15 @@ import com.module.iviews.R;
 import java.util.ArrayList;
 
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 
 /**
- * CN:      ImgFolderPopWindow
+ * CN:      EImgFolderPopWindow
  * Author： DINGCL
- * Date:   2016-5-8
  * Des:    TODO:相册页的弹出界面
  */
-public class ImgFolderPopWindow extends PopupWindow {
+public class EImgFolderPopWindow extends PopupWindow {
 
     private View mView;
     private RecyclerView mRecyclerView;
@@ -46,7 +47,7 @@ public class ImgFolderPopWindow extends PopupWindow {
     private BaseQuickAdapter mAdapter;
 
 
-    public ImgFolderPopWindow(Context context, int width, int height, ArrayList<AlbumFolderInfo> folderList, int currentFolder) {
+    public EImgFolderPopWindow(Context context, int width, int height, ArrayList<AlbumFolderInfo> folderList, int currentFolder) {
         this.mContext = context;
         this.mWidth = width;
         this.mHeight = height;
@@ -76,7 +77,7 @@ public class ImgFolderPopWindow extends PopupWindow {
                                          helper.setText(R.id.foldername,item.getFolderName());
                                          helper.setText(R.id.num,"(" + item.getImageInfoList().size() + ")");
 
-                                         Glide.with(mContext).load("file:///" + item.getFrontCover().getAbsolutePath()).bitmapTransform(new CropCircleTransformation(mContext))
+                                         Glide.with(mContext).load("file:///" + item.getFrontCover().getAbsolutePath()).bitmapTransform(new RoundedCornersTransformation(mContext,5,2))
                                                  .into((ImageView) helper.getView(R.id.firstpic));
                                      }
                                  }
@@ -84,6 +85,7 @@ public class ImgFolderPopWindow extends PopupWindow {
         mRecyclerView.getLayoutParams().height = mHeight;
 
     }
+
 
 
     public interface OnFolderClickListener {
@@ -125,6 +127,17 @@ public class ImgFolderPopWindow extends PopupWindow {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void showAsDropDown(View anchor) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            Rect rect = new Rect();
+            anchor.getGlobalVisibleRect(rect);
+            int h = anchor.getResources().getDisplayMetrics().heightPixels - rect.bottom;
+            setHeight(h);
+        }
+        super.showAsDropDown(anchor);
     }
 }
 

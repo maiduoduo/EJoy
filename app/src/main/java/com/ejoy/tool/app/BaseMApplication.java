@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import com.ejoy.tool.R;
+import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -94,6 +95,7 @@ public class BaseMApplication extends Application {
     public void onCreate() {
         super.onCreate();
         appContext = this;
+        BuglyHelper.getInstance().initBuglyApp(this);
         initLogger();
         mainTid = android.os.Process.myTid();
         handler=new Handler();

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/dp_10">
+    <LinearLayout
+        android:id="@+id/llitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/itemico"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:src="@mipmap/ico_grid_j" />
+
+        <TextView
+            android:id="@+id/list_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/itemico"
+            android:text="收藏的歌曲"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/list_subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llitem"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingVertical="@dimen/dp_5"
+        android:text="歌曲收录在哪张专辑中，信息可以查看歌曲收录在哪张专辑中，信息可以查看歌曲收录在哪张专辑中，信息可以查看"
+        android:textColor="@color/gray4"
+        android:textSize="@dimen/sp_10"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/list_subtext"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/LGray3" />
+</RelativeLayout>

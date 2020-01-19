@@ -446,6 +446,16 @@
     <color name="md_black_1000">#000000</color>
     <color name="md_white_1000">#ffffff</color>
 
+    <color name="eui_config_color_gray_1">#353C46</color>
+    <color name="eui_config_color_gray_2">#49505A</color>
+    <color name="eui_config_color_gray_3">#5D646E</color>
+    <color name="eui_config_color_gray_4">#717882</color>
+    <color name="eui_config_color_gray_5">#858C96</color>
+    <color name="eui_config_color_gray_6">#99A0AA</color>
+    <color name="eui_config_color_gray_7">#ADB4BE</color>
+    <color name="eui_config_color_gray_8">#C4C8D0</color>
+    <color name="eui_config_color_gray_9">#D8DCE4</color>
+
 
     <color name="B1">#ff000000</color>
     <color name="BL1">#ff6dd1ff</color>
@@ -481,6 +491,7 @@
     <color name="Purple">#ff8a32fc</color>
     <color name="Purple1">#ffa460fc</color>
     <color name="Purple2">#11a460fc</color>
+    <color name="config_color_red">#F15C58</color>
     <color name="R1">#ffe6393f</color>
     <color name="R2">#ffff816d</color>
     <color name="R3">#fff46a4d</color>
@@ -805,7 +816,6 @@
     <color name="list_view_item_org">#f8f8f8</color>
     <color name="list_view_item_white">#ffffff</color>
     <color name="background_tab_pressed">#e5e5e5</color>
-    <color name="action_sheet_blue">#037BFF</color>
     <color name="gold">#FFD700</color>
     <color name="gold_white">#f4f2ee</color>
     <color name="goldenrod">#DAA520</color>
@@ -979,6 +989,20 @@
     <color name="transparent_normal">#F0FFFFFF</color>
     <color name="transparent_selected">#E0DBDBDB</color>
     <color name="cookie_bar_default_bg_color">#323232</color>
+    <!--正在加载时候图片的占位图颜色-白天 -->
+    <color name="loadding_site_bg">#E4E4E4</color>
+    <color name="global_bg">#F5F5F5</color>
+    <!-- TopBar 一系列颜色 -->
+    <color name="topbar_bg">#FFFFFF</color><!--顶部Bar的背景样式-->
+    <color name="topbar_center">#545454</color><!--顶部Bar字体颜色-->
+    <color name="topbar_bottom_drive">#e3e3e3</color><!--顶部Bar的底部分割线-->
+    <color name="topbar_center_highlight_bg">#e7e7e7</color><!--顶部Bar的分组的按压颜色-->
+
+    <color name="act2_def_bg">#FFFFFF</color>
+    <color name="act2_sel_bg">#D9D9D9</color>
+    <color name="act2_line">#C9C9C9</color>
+    <color name="action_sheet_blue">#037BFF</color>
+    <color name="line2_default_color">#e5e5e5</color>
 
 
 

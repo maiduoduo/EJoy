@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bs_divider_color">#1f000000</color>
+    <color name="bs_dark_divider_color">#1fffffff</color>
+    <color name="Lgray5">#1ff5f0f0</color>
+    <color name="White_bs">#1ff5f0f0</color>
+    <color name="BS_LGray1">#ffedeef0</color>
+    <color name="BS_LGray2">#fff0f1f2</color>
+    <color name="BS_LGray3">#fff2f3f5</color>
+    <color name="BS_LGray4">#fff5f6f7</color>
+    <color name="BS_LGray5">#40f5f6f7</color>
+    <color name="bs_bg">#4045617c</color>
+
+</resources>

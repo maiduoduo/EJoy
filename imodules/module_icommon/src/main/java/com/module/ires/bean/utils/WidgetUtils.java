@@ -32,6 +32,7 @@ import android.view.WindowManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.module.ires.R;
 import com.module.ires.bean.view.EDividerItemDecoration;
+import com.module.ires.bean.view.EDividerItemDecoration2;
 import com.module.ires.bean.view.EGridDividerItemDecoration;
 import com.module.ires.bean.view.EGridLayoutManager;
 import com.module.ires.bean.view.ELinearLayoutManager;
@@ -180,6 +181,18 @@ public final class WidgetUtils {
     public static void initRecyclerView(@NonNull RecyclerView recyclerView, int dividerHeight, int dividerColor) {
         recyclerView.setLayoutManager(new ELinearLayoutManager(recyclerView.getContext()));
         recyclerView.addItemDecoration(new EDividerItemDecoration(recyclerView.getContext(), VERTICAL, dividerHeight, dividerColor));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    /**
+     * 初始化RecyclerView
+     *
+     * @param recyclerView
+     * @param dividerColor  分割线的颜色
+     */
+    public static void initDefaultRecyclerView(@NonNull RecyclerView recyclerView, int dividerColor) {
+        recyclerView.setLayoutManager(new ELinearLayoutManager(recyclerView.getContext()));
+        recyclerView.addItemDecoration(new EDividerItemDecoration2(recyclerView.getContext(),dividerColor));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 

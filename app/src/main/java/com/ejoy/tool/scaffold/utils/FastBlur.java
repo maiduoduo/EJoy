@@ -25,10 +25,6 @@ package com.ejoy.tool.scaffold.utils;
  * <p>
  * Created by Lee on 2018/4/26.
  */
-/**
- * Created by Lee on 2018/4/26.
- */
-
 import android.graphics.Bitmap;
 
 public class FastBlur {

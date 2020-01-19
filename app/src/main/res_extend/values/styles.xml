@@ -166,6 +166,11 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="BottomSheet.CustomizedDialog" parent="BottomSheet.StyleDialog">
+        <item name="bs_gridItemLayout">@layout/layout_like_bs_grid_entry</item>
+        <item name="bs_headerLayout">@layout/layout_like_bs_new_header</item>
+    </style>
+
 
 
 

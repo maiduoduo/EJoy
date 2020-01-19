@@ -23,6 +23,7 @@ package com.ejoy.tool.app;
 
 import android.util.Log;
 
+import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.greendao.gen.DaoMaster;
 import com.ejoy.tool.greendao.gen.DaoSession;
 import com.facebook.drawee.backends.pipeline.Fresco;

@@ -129,5 +129,27 @@
         <item name="android:windowExitAnimation">@anim/popwindow_anim_out</item>
     </style>
 
+    <!--PopupWindow从底部弹出-->
+    <style name="PopupWindowTranslateThemeFromBottom">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_bottom_out</item>
+    </style>
+
+    <style name="PopupWindowScaleTheme">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_scale_out</item>
+    </style>
+
+    <!-- 提示point -->
+    <style name="EUITipPoint">
+        <item name="android:layout_width">@dimen/tips_point_size</item>
+        <item name="android:layout_height">@dimen/tips_point_size</item>
+        <item name="android:background">@drawable/shape_tips_point</item>
+    </style>
+
+
+
+
+
 
 </resources>

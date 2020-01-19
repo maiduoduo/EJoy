@@ -97,10 +97,6 @@ public class ToastActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void initStatusbar() {
-        super.initStatusbar();
-    }
 
 
     @OnClick({

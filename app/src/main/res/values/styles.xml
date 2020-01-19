@@ -111,6 +111,12 @@
         <item name="android:backgroundDimAmount">0.4</item>  <!--背景透明度-->
     </style>
 
+    <style name="ScrollViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
 
 
 

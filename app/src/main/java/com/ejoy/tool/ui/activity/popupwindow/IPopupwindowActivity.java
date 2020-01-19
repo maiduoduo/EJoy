@@ -17,22 +17,28 @@ package com.ejoy.tool.ui.activity.popupwindow;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ejoy.tool.R;
-import com.ejoy.tool.scaffold.view.widget.ExpandLayout;
-import com.ejoy.tool.ui.activity.MainActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
+import com.google.gson.Gson;
+import com.module.ires.bean.utils.EBlurHelper;
 import com.module.ires.bean.utils.EDensityUtils;
+import com.module.ires.bean.utils.ETextviewUtils;
+import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.EUISimpleAdapter;
 import com.module.iviews.popup.EUISimpleExpandableListAdapter;
@@ -45,7 +51,10 @@ import com.module.iviews.popup.bean.GalleryBean;
 import com.module.iviews.popup.menu.IScreenMenuPopWindow;
 import com.module.iviews.popup.menu.bean.FiltrateBean;
 import com.module.iviews.popup.qq.IQQPopupWindow;
+import com.module.iviews.popup.weibo.AlertDesignViewDialog;
+import com.module.iviews.popup.weibo.ImageInfoBean;
 import com.module.iviews.popup.weibo.WeiboPopupWindow;
+import com.module.iviews.popup.weibo.adpter.ImgListAdapter;
 import com.module.iviews.view.widget.IExpandableLayout;
 
 import java.util.ArrayList;
@@ -76,17 +85,20 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     IExpandableLayout mExpandableLayout;
     @BindView(R.id.iv_indicator)
     ImageView mIvIndicator;
+    @BindView(R.id.pop_root) ConstraintLayout mPopRoot;
+    @BindView(R.id.tvWarn) TextView mTvWarn;
+    @BindView(R.id.tvWarn2) TextView mTvWarn2;
     private IQQPopupWindow mQQPopupWindow;
     private List<String> mPopData;
     private WeiboPopupWindow mWeiboPopupWindow;
-
-    private EUISimplePopup mListPopup;
+    public EUISimplePopup mListPopup;
     private EUISimplePopup mMenuPopup;
     private EUISimpleExpandablePopup mExpandableListPopup;
     private IScreenMenuPopWindow screenPopWindow;
     //选取相册弹窗
     private IListPopupwindow iListPopupwindow;
     private List<GalleryBean> mGalleryList;
+    private ArrayList<ImageInfoBean> mSelectImgList = new ArrayList<ImageInfoBean>();
 
     @Override
     protected void initRestore(@Nullable Bundle savedInstanceState) {
@@ -104,11 +116,21 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
 
     @Override
     protected void initView(View mRootView) {
+        blurGlobal();
         setExpand();
         initPop();
         initListPopup();
         initMenuPopup();
         initExpandableListPopup();
+    }
+
+    private void blurGlobal() {
+        //高斯模糊背景
+        new EBlurHelper().setContainerView(mPopRoot)
+                .setImageResourse(R.drawable.img_bg5)
+                .setRadius(20f)
+                .setContext(_mActivity)
+                .build();
     }
 
     private void setExpand() {
@@ -130,7 +152,9 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
 
     @Override
     protected void initData() {
-
+        //这一句很重要，否则ClickableSpan内的onClick方法将无法触发！！
+        mTvWarn.setMovementMethod(LinkMovementMethod.getInstance());
+        mTvWarn2.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     @Override
@@ -159,7 +183,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             R.id.albumListPop,
             R.id.popCustomEdit,
             R.id.rlPopupRoot,
-            R.id.albumTitle
+            R.id.albumTitle,
+            R.id.wbalbumList
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -194,10 +219,10 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             case R.id.Epop_menu://弹出菜单
                 mMenuPopup.showDown(view);
                 break;
-            case R.id.Ppictitle://相册列表弹窗
+            case R.id.Ppictitle://相机胶卷弹窗
                 showAlbumListPopup();
                 break;
-            case R.id.albumListPop://相册列表弹窗
+            case R.id.albumListPop://相机胶卷弹窗
                 showAlbumListPopup();
                 break;
             case R.id.ECookieBar://CookieBar2
@@ -205,6 +230,11 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
                 break;
             case R.id.albumTitle:
                 showAlbumListPopup();
+                break;
+            case R.id.wbalbumList:
+                Intent intent = new Intent(_mActivity, IWBAlbumActivity.class);
+                intent.putParcelableArrayListExtra("selectedImglist", mSelectImgList);
+                startActivityForResult(intent, 0);
                 break;
             case R.id.rlPopupRoot:
                 if (mExpandableLayout.isExpanded()) {
@@ -268,12 +298,17 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
         finish();
     }
 
+    @Override
+    protected String[] fixPopData() {
+        return GlobalDataProvider.wbDialogItems;
+    }
+
     /**
      * 普通选择框
      */
     private void initListPopup() {
-        mListPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.wbDialogItems)
-                .create(EDensityUtils.dp2px(_mActivity, 170), new EUISimplePopup.OnPopupItemClickListener() {
+        mListPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.wbDialogItems);
+        mListPopup.create(EDensityUtils.dp2px(_mActivity, 170), new EUISimplePopup.OnPopupItemClickListener() {
                     @Override
                     public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
                         iToast.showIDefaultImgResToast(item.getTitle().toString());
@@ -414,5 +449,43 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     public void popItemSelected(String title) {
         mPpictitle.setText(title);
         iListPopupwindow.dismiss();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case 0:
+                if (data != null) {
+                    mSelectImgList = data.getParcelableArrayListExtra("selectImgList");
+                    initImgList();
+                }
+                break;
+        }
+    }
+
+    AlertDesignViewDialog viewDialog;
+    private void initImgList() {
+        viewDialog = new AlertDesignViewDialog(_mActivity)
+                .build(mSelectImgList)
+                .setCancelable(true)
+                .setScaleWidth(0.8)// 设置宽度，占屏幕宽度百分比
+                .addOnAddPicClickListener(new AlertDesignViewDialog.OnAddPicClickListener() {
+                    @Override
+                    public void onAddPic() {
+                        viewDialog.cancelIt();
+                        Intent intent = new Intent(_mActivity, IWBAlbumActivity.class);
+                        intent.putParcelableArrayListExtra("selectedImglist", mSelectImgList);
+                        startActivityForResult(intent, 0);
+                    }
+                })
+                .setRightButton("确定", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        iToast.showISimpleToast("退出");
+                    }
+                })
+                .show();
     }
 }

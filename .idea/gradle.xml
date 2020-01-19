@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/imodules/module_idatetime" />
             <option value="$PROJECT_DIR$/imodules/module_iiosdialog" />
             <option value="$PROJECT_DIR$/imodules/module_iviews" />
+            <option value="$PROJECT_DIR$/imodules/module_likebottomsheet" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

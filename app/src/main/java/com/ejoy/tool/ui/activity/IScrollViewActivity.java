@@ -118,9 +118,5 @@ public class IScrollViewActivity extends BaseActivity {
         }
     }
 
-    @Override
-    protected void initStatusbar() {
-        super.initStatusbar();
-    }
 
 }

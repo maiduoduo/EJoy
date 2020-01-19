@@ -24,6 +24,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
         android:name=".app.App"
@@ -83,6 +84,17 @@
         <activity android:name=".ui.activity.popupwindow.IPopupwindowTopEditActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.popupwindow.IWBAlbumActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <!--BottomSheetRecycler-->
+        <activity android:name=".ui.activity.bottomsheet.IBottomSheetRecyclerActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.bottomsheet.IBottomShhetScrollActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.iosdialog.IDialogBottomsheetActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.AboutMeActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
 
 
         <!--FileProvider共享文件-->
@@ -94,6 +106,26 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_path" />
+        </provider>
+
+
+
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!--腾讯升级界面-->
+        <provider
+            android:name=".app.bugly.BuglyFileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="name,authorities,exported,grantUriPermissions">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="name,resource" />
         </provider>
 
     </application>

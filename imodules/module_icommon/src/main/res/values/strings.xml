@@ -17,4 +17,19 @@
     <string name="custom_anim_cookie_message">Did you notice it entered from the left?\nCan you guess how it will leave the screen?\nIf you guessed from the right, you\'re right!</string>
     <string name="custom_click_result">操作成功</string>
     <string name="action">Action</string>
+    <string name="signup_agreeTerms">我同意<a href="http://www.baidu.com/">用户协议</a>中的所有内容</string>
+    <string name="str_agreeTerms">本板块内容参考自项目<a href="https://github.com/xuexiangjys/XUI/">XUI</a>中的部分内容，对此表示感谢</string>
+    <string name="str_agreeTerms2">如有问题请<a href="https://github.com/maiduoduo/EJoy/issues/">联系我</a>调整</string>
+    <!--<string name="str_agreeTerms">本板块内容有一部分内容参考自作者xuexiangjys项目<a herf="https://github.com/xuexiangjys/XUI/">XUI</a>,如有问题请<a herf="https://github.com/maiduoduo/EJoy/">联系我</a>调整</string>-->
+    <!--<string name="str_agreeTerms">本板块内容有一部分内容参考自作者xuexiangjys项目<a herf="https://github.com/xuexiangjys/XUI/">XUI</a>,如有问题请联系我调整</string>-->
+
+    <!--bottomsheet-->
+    <string name="share">分享</string>
+    <string name="upload">上传</string>
+    <string name="copy">复制</string>
+    <string name="print">粘贴</string>
+    <string name="call">电话</string>
+    <string name="help">帮助</string>
+    <string name="bottomsheet">BottomSheet 示例</string>
+
 </resources>

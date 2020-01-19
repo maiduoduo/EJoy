@@ -99,6 +99,29 @@
                     android:text="LoadingDialog"/>
 
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ELikeBsDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_10"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@mipmap/ico_ptitle_e"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/black_33"
+                    android:text="类BottomSheet底部弹窗"/>
+
+            </LinearLayout>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />

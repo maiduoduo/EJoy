@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--main content-->
+    <RelativeLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/black_55"
+            android:textStyle="bold"
+            android:text="RecyclerView\n拖拽移动可以展开或者折叠此布局!" />
+    </RelativeLayout>
+
+    <!--bottomsheet content-->
+    <RelativeLayout
+        android:id="@+id/main_bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:clipToPadding="true"
+        android:background="@drawable/shape_bs"
+        style="@style/BottomSheetDialogStyle"
+        app:layout_behavior="com.module.iviews.bottomsheet.behavior.control.BottomSheetBehavior">
+
+        <RelativeLayout
+            android:id="@+id/bottomsheet_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/shape_rect_share_material_tab"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Drag to See RecyclerView"
+                android:textColor="@color/black"
+                android:layout_below="@+id/imageView"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_15"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/topline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/LGray3"
+            android:layout_below="@+id/bottomsheet_title"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topline"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/btm_recyclerview_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+            </android.support.design.widget.CoordinatorLayout>
+            <TextView
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/LGray3"/>
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/btm_recyclerview_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"></android.support.v7.widget.RecyclerView>
+            </android.support.design.widget.CoordinatorLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

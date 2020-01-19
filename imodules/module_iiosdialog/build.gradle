@@ -18,4 +18,5 @@ android {
 
 dependencies {
     implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation project(':imodules:module_icommon')
 }

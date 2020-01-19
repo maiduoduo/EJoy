@@ -12,6 +12,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
+import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.common.bean.MainItemBean;
 import com.ejoy.tool.common.db.CitysBean;
 import com.ejoy.tool.common.db.engine.CitiesDaoHelper;
@@ -120,6 +122,8 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     protected void initView(View mRootView) {
         if (mData == null) mData = new ArrayList<>();
         else mData.clear();
+        //检测更新
+        BuglyHelper.getInstance().doCheckUpgrade(this);
         initTopHeader();
         initRecyclerView();
         addData();
@@ -343,18 +347,16 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     public boolean onOptionsItemSelected(MenuItem item) {
         String msg = "";
         switch (item.getItemId()) {
-            case R.id.webview:
-                msg += "博客跳转";
-                break;
-            case R.id.weibo:
-                msg += "微博跳转";
+            case R.id.userCenter:
+                msg += "关于";
+                showActivity(_mActivity,AboutMeActivity.class);
                 break;
             case R.id.action_settings:
                 msg += "设置";
                 break;
         }
-        if (!msg.equals("")) {
-            Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+        if (!TextUtils.isEmpty(msg)) {
+            iToast.showISimpleToast(msg);
         }
         return super.onOptionsItemSelected(item);
     }
