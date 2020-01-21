@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -30,8 +31,8 @@ import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
+import com.module.ires.bean.utils.EBlurHelper;
 import com.module.ires.bean.utils.WidgetUtils;
-import com.tencent.bugly.beta.Beta;
 
 import org.jsoup.helper.StringUtil;
 
@@ -51,6 +52,8 @@ public class AboutMeActivity extends BaseActivity {
     RecyclerView aboutList;
     @BindView(R.id.copyright)
     TextView copyright;
+    @BindView(R.id.llTopHeader)
+    LinearLayout llTopHeader;
 
     private BaseQuickAdapter mAdapter;
 
@@ -77,10 +80,16 @@ public class AboutMeActivity extends BaseActivity {
     @Override
     protected void initView(View mRootView) {
         initList();
+        //高斯模糊背景
+        new EBlurHelper().setContainerView(llTopHeader)
+                .setImageResourse(R.mipmap.img_bg_h)
+                .setRadius(10f)
+                .setContext(_mActivity)
+                .build();
     }
 
     private void initList() {
-        WidgetUtils.initDefaultRecyclerView(aboutList, R.color.LGray3);
+        WidgetUtils.initDefaultRecyclerView(aboutList, R.color.black_11);
         aboutList.setAdapter(mAdapter = new BaseQuickAdapter<String, BaseViewHolder>(R.layout.layout_common_list_item, strList) {
             @Override
             protected void convert(BaseViewHolder helper, String item) {
@@ -121,4 +130,8 @@ public class AboutMeActivity extends BaseActivity {
         return null;
     }
 
+
+    public void iBack(View view) {
+        finish();
+    }
 }

@@ -1,57 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView style="@style/ScrollViewStyle"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_height="@dimen/dp_45"
         android:background="@color/white"
-        android:orientation="vertical"
-        android:paddingTop="50dp"
-        android:paddingBottom="25dp">
+        android:paddingHorizontal="@dimen/dp_10">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:contentDescription="Logo"
-            android:src="@mipmap/ic_app_launcher" />
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:onClick="iBack"
+            android:src="@drawable/ico_back_black_90px" />
 
         <TextView
-            android:id="@+id/version"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/Gray3"
-            android:text="@string/app_vname"
-            android:layout_marginBottom="@dimen/dp_30"
-            android:textSize="16sp" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="关于"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+    <include layout="@layout/layout_line_horizontal_1dp"/>
 
-        <include layout="@layout/layout_line_horizontal_1dp"/>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/about_list"
+    <android.support.v4.widget.NestedScrollView
+        style="@style/ScrollViewStyle"
+        android:background="@mipmap/img_bg_h">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp_10"
-            android:background="@color/white" />
-        <include layout="@layout/layout_line_horizontal_1dp"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_30"/>
-
-        <TextView
-            android:id="@+id/copyright"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:textSize="@dimen/sp_12"
-            android:text="@string/allrights"
-            android:background="@color/LGray3"
+            android:background="@color/transparent"
             android:gravity="center_horizontal"
-            android:textColor="@color/Gray3" />
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/llTopHeader"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Logo"
+                    android:src="@mipmap/ic_app_launcher" />
+                <TextView
+                    android:id="@+id/version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/app_vname"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
 
-    </LinearLayout>
+            </LinearLayout>
+            <include layout="@layout/layout_line_horizontal_1dp" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/about_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:padding="@dimen/dp_10" />
+            <include layout="@layout/layout_line_horizontal_1dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30" />
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@color/transparent"
+                android:gravity="center_horizontal"
+                android:text="@string/allrights"
+                android:textColor="@color/Gray3"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

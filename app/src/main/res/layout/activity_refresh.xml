@@ -58,6 +58,29 @@
                     android:textColor="@color/Gray2"
                     android:textSize="15sp" />
                 <include layout="@layout/layout_line_horizontal_1dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:onClick="pulldownView"
+                    android:paddingVertical="@dimen/dp_5">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="下拉刷新、上拉更多控件示范"
+                        android:textColor="@color/Gray2"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:text="支持RecyclerView,View, ScrollView, ListView, GridView下拉刷新,上拉加载更多,上拉自动加载更多."
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:textColor="@color/Gray3"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <include layout="@layout/layout_line_horizontal_1dp"/>
 
 
 

@@ -17,6 +17,15 @@
 
 ##### 💥 更新日志
 
+###### 2020.01.21
+
+> RefreshLoadMoreLayout
+
+* 支持RecyclerView,View, ScrollView, ListView,GridView下拉刷新,上拉加载更多,上拉自动加载更多.
+* 切换刷新样式
+* 解决视图上不合理地方。
+
+
 ###### 2020.01.17
 
 * 完善版本更新

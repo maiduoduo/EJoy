@@ -30,9 +30,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -52,9 +51,8 @@
 
         <LinearLayout
             android:id="@+id/menu2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -74,9 +72,8 @@
 
         <LinearLayout
             android:id="@+id/menu3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_7"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -96,9 +93,8 @@
 
         <LinearLayout
             android:id="@+id/menu4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -118,9 +114,8 @@
 
         <LinearLayout
             android:id="@+id/menu5"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -140,9 +135,8 @@
 
         <LinearLayout
             android:id="@+id/menu6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -162,9 +156,8 @@
 
         <LinearLayout
             android:id="@+id/menu7"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -183,9 +176,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu8"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -204,9 +196,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu9"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -225,9 +216,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu10"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -246,9 +236,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu11"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -267,9 +256,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu12"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">
@@ -288,9 +276,8 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/menu13"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="@dimen/dp_5">

@@ -23,6 +23,7 @@ import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.module.ires.bean.CustomBottomSheetItemBean;
+import com.module.ires.bean.bean.IBaseBean;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.ExpandableItem;
 import com.module.iviews.popup.bean.GalleryBean;
@@ -227,6 +228,35 @@ public class GlobalDataProvider {
     public static List<String> aboutListData() {
         return Arrays.asList(
                 "访问Github", "说明文档", "版本更新", "设置", "加入技术群聊"
+        );
+    }
+
+    public static List<IBaseBean> headerfooterListData() {
+        return Arrays.asList(
+                new IBaseBean("8K视觉盛宴：探索另一个世界的流光溢彩","拍摄颜料和液体在帆布上的动态，一直是摄影师 Roman 有别于其他创作者的地方。他用 8K RED DSMC2 和 微距镜头捕捉下常人看不到的颜色之美。\n" +
+                        "From Roman De Giuli","第一财经   7分钟前","http://img.kaiyanapp.com/f4a9aba1c6857ee0cefcdc5aee0a1fc9.png?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("广告说出社畜心声，假期中被迫回岗工作","丹叔 Daniel Craig 是世界知名的演员，但在 007 粉丝眼里，他就是詹姆斯·邦德的化身和代名词。尽管即将上映的「007：无暇赴死」将是他最后一次出演","中国基金报   27分钟前","http://img.kaiyanapp.com/453bad3420bbe677e0c2875d060c0cb3.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("山地车大神横穿以色列，比旅拍大片还好看","以色列官方旅游局邀请山地车大神 Fabio Wibmer 到以色列旅行，当然不仅仅是玩玩而已。Fabio 骑着他的山地车，在以色列街头，景点甚至是海上肆意撒欢。","中国证券报·中证网   28分钟前",""),
+                new IBaseBean("脑洞开了！史上第一次 ASMR 模式抢银行","抢银行都听过，可 ASMR 模式下的抢银行可没看过。这不，上次用异形吓死人的 ASMR 模式又来开脑洞了。真佩服她的执行力和创意~\n" +
+                        "From Rhino Stew","中国基金报   36分钟前","http://img.kaiyanapp.com/fe8ad3a66ee3f46405b1c2eda03be8eb.png?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("广告会玩丨追剧少女的终极梦想就是这样吧","这支 3 分钟的广告名为「Beto & Elena」，Beto是该片要宣传的电视「De Vuelta al Barrio」中的重要角色","第一财经  28分钟前","http://img.kaiyanapp.com/b4236d1d03aafcc0604c85dc144238cd.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("酷炫转场！地球最性感的小岛：波拉波拉","冬季旅行就想去暖和的地方，位于南太平洋玻利尼西亚社会群岛，被人称为“太平洋上的明珠”的波拉波拉岛就很适合。这","中国基金报   28赞","http://img.kaiyanapp.com/045c0d948e572cdd0ba865484fa4611f.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("环保 MV「我曾有个梦」，动物消失前的绝唱","","第一基金   15分钟前","http://img.kaiyanapp.com/0e0be4626614f90624d3ecebe9f4402d.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("酷炫转场！地球最性感的小岛：波拉波拉","","中国基金报   26分钟前","http://img.kaiyanapp.com/045c0d948e572cdd0ba865484fa4611f.jpeg?imageMogr2/quality/60/format/jpg")
+        );
+    }
+
+    public static List<IBaseBean> headerfooterListMoreData() {
+        return Arrays.asList(
+                new IBaseBean("年度影视混剪：一场名为 2019 的旅程","2019 是不平凡的历程，2020 亦是新的征程","第一财经  1002赞","http://img.kaiyanapp.com/b7380cec3f8800157ef5187319d17a4e.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("绿日乐队新单「Oh Yeah!」MV，嘲讽网络时代","绿日乐队回归新单「Oh网络时代。每个人都，不在意身边发生的事。\n" +
+                        "From Green Day","证券网  1小时25分钟前",""),
+                new IBaseBean("猫掉进鱼堆，就像肉食的你遇见潮汕牛肉火锅","潮汕牛肉锅能拒绝这样最，等待春天吧。我人狠话不多！","中证网  32分钟前","http://img.kaiyanapp.com/dc749078b441d0460420e4460d01f9c1.png?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("泰式新年沙雕：让你偷懒成功的春节必备 APP","过年前，总会需要给家里置办年货。这不，泰国一家 APP 就洞察到了这个消费者的痛点。用自家产品为所有人解决了一切烦恼，还让男主练就了一身太极功夫。From Grab Official","今晚打老虎  99赞","http://img.kaiyanapp.com/00f3ca1f47f03a975bfdd5b5c9ec26d0.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("史诗级超强混剪：欢迎来到地狱俱乐部","","中证网  20分钟前",""),
+                new IBaseBean("泰式新年沙雕：让你偷懒成功的春节必备 APP","","今晚打老虎  0赞","http://img.kaiyanapp.com/00f3ca1f47f03a975bfdd5b5c9ec26d0.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("开保时捷登阿尔卑斯山，壕就是任性","","中证网  1小时8分钟前",""),
+                new IBaseBean("任天堂主题乐园宣传曲 MV ，2020 打卡圣地","","今晚打老虎  99赞","http://img.kaiyanapp.com/bf1b56d1a45d0f73283ff85a8df6e3cb.jpeg?imageMogr2/quality/60/format/jpg")
         );
     }
 

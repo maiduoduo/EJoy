@@ -74,7 +74,7 @@ public class IRefreshActivity extends BaseActivity {
      * @param view
      */
     public void smartRefresh(View view) {
-        showActivity(this,IRefreshSmartActivty.class);
+        showActivity(this,IRefreshSmartActivity.class);
     }
 
     /**
@@ -82,6 +82,14 @@ public class IRefreshActivity extends BaseActivity {
       * Des  :   TODO: 视频下拉刷新示范
      */
     public void videoRefresh(View view) {
-        showActivity(this,IRefreshVideoActivty.class);
+        showActivity(this,IRefreshVideoActivity.class);
+    }
+
+    /**
+     * Author： JSYL_Dingcl
+     * Des  :   TODO: 下拉刷新、上拉更多控件示范
+     */
+    public void pulldownView(View view) {
+        showActivity(this,IRefreshHeaderAndFooterActivity.class);
     }
 }

@@ -44,7 +44,7 @@
             android:text=""
             android:gravity="start|center_vertical"
             android:includeFontPadding="false"
-            android:textColor="@color/black_77"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_18"/>
 
         <Space

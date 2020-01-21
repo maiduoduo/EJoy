@@ -51,22 +51,18 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
         iToast = new IToast().builder();
         addItemType(MainItemBean.MAIN_TYPE_TITLE, R.layout.layout_ihome_title);
         addItemType(MainItemBean.MAIN_TYPE_CONTENT, R.layout.layout_ihome_content);
-        Log.e(TAG, "HomeMultipleRecycleAdapter555:  -----data----------\n"+new Gson().toJson(data));
     }
 
 
     @Override
     protected void convert(BaseViewHolder helper, MainItemBean item) {
-        Log.e(TAG, "HomeMultipleRecycleAdapter:  -----getItemType----------" + item.getType() + "  " + item.getItemTypeTitle());
         int position = helper.getAdapterPosition();
         switch (helper.getItemViewType()) {
             case MainItemBean.MAIN_TYPE_TITLE:
                 bindTitleData(helper, item);
-                Log.e(TAG, "HomeMultipleRecycleAdapter333:  --bindTitleData-------------");
                 break;
             case MainItemBean.MAIN_TYPE_CONTENT:
                 bindContentListData(helper, item);
-                Log.e(TAG, "HomeMultipleRecycleAdapter333:  -----bindContentListData----------");
                 break;
             default:
                 break;
@@ -83,7 +79,6 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
     private void bindTitleData(BaseViewHolder helper, MainItemBean item) {
         if (item != null) {
             helper.setText(R.id.homeTile, item.getItemTypeTitle() == null ? "" : item.getItemTypeTitle());
-            Log.e(TAG, "HomeMultipleRecycleAdapter444:  -----bindTitleData----------");
         }
     }
 
@@ -96,7 +91,6 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
      */
     private void bindContentListData(BaseViewHolder helper, MainItemBean item) {
         if (item != null) {
-            Log.e(TAG, "HomeMultipleRecycleAdapter444:  -----bindContentListData----------");
             RecyclerView mRecyclerView = helper.getView(R.id.iRecyclerView);
             //Recyclerview
             GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
@@ -118,7 +112,7 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
 
 //            mRecyclerView.addItemDecoration(build);
 //            mRecyclerView.addItemDecoration(new GridDividerItemDecoration(1,EResUtils.getColor(context,R.color.Gray4)));
-            mRecyclerView.addItemDecoration(new EGridDividerItemDecoration(context, 3, 1, R.color.LGray3));
+            mRecyclerView.addItemDecoration(new EGridDividerItemDecoration(context, 3, 1, R.color.Gray4));
 
             // 动画一直执行
             mCHMainAdpter.isFirstOnly(true);
@@ -130,7 +124,6 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
                     MainItemBean.ContentBean contentBean = item.getContent().get(position);
                     String flag = contentBean.getFlag();
                     if (!TextUtils.isEmpty(contentBean.getClazz())) {
-//                        showActivity(context, contentBean.clazz);
                         Class clazz = null;
                         try {
                             clazz = Class.forName(contentBean.getClazz());
