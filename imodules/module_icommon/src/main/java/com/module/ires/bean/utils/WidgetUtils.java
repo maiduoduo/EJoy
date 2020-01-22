@@ -225,9 +225,9 @@ public final class WidgetUtils {
      * @param recyclerView
      * @param dividerColor  分割线的颜色
      */
-    public static void initDefaultRecyclerView(@NonNull RecyclerView recyclerView, int dividerColor) {
-        recyclerView.setLayoutManager(new ELinearLayoutManager(recyclerView.getContext()));
-        recyclerView.addItemDecoration(new EDividerItemDecoration2(recyclerView.getContext(),dividerColor));
+    public static void initDefaultRecyclerView(Context context,@NonNull RecyclerView recyclerView, int dividerColor) {
+        recyclerView.setLayoutManager(new ELinearLayoutManager(context));
+        recyclerView.addItemDecoration(new EDividerItemDecoration2(context,dividerColor));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 

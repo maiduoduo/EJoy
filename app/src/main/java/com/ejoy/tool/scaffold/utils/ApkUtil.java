@@ -105,7 +105,7 @@ public final class ApkUtil {
             return packageInfo.versionName;
         } catch (Exception e) {
             e.printStackTrace();
-            return "img_a.0.0";
+            return "app_a.0.0";
         }
     }
 }

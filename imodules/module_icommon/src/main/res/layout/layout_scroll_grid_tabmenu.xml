@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/li_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/tour_icon"
+            android:gravity="center_horizontal"
+            android:text="自由行"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/wifi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/wifi_icon"
+            android:gravity="center_horizontal"
+            android:text="WiFi电话卡"
+            android:textSize="12sp" />
+
+        <TextView
+
+            android:id="@+id/visa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/visa_icon"
+            android:gravity="center_horizontal"
+            android:text="保险·签证"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/currency_icon"
+            android:gravity="center_horizontal"
+            android:text="换外币·购"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/guide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/guide_icon"
+            android:gravity="center_horizontal"
+            android:text="当地向导"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/li_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/li_1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/air_ticket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/air_icon"
+            android:gravity="center_horizontal"
+            android:text="特价机票"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/gift"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/gift_icon"
+            android:gravity="center_horizontal"
+            android:text="礼品卡"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/bank_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/bank_card_icon"
+            android:gravity="center_horizontal"
+            android:text="申卡·借钱"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/cooperation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/cooperation_icon"
+            android:gravity="center_horizontal"
+            android:text="加盟合作"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/more_icon"
+            android:gravity="center_horizontal"
+            android:text="更多"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

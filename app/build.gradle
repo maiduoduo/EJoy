@@ -15,8 +15,13 @@ android {
         //bugly 设置支持的SO库架构
         ndk {
             // 设置支持的SO库架构
-            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            //我们可能会用到模糊效果，就会想到renderscript.jar , 但是模糊效果是3.0以后的效果，在有的4.x以上的手机上也会造成错误，Error loading RS jni library: java.lang.UnsatisfiedLinkError，会报出这样的错误，明显是手机上没有.so包。
+            //增加armeabi-v7a
+            abiFilters "armeabi", "armeabi-v7a"
+            // "x86", "mips",'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
         }
+        renderscriptTargetApi 25
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -84,7 +89,6 @@ dependencies {
     implementation rootProject.ext.dependencies["rxlifecomponents"]
     implementation rootProject.ext.dependencies["kenburnsview"]
 //    implementation rootProject.ext.dependencies["constraint-layout"]
-    implementation 'com.youth.banner:banner:1.4.10'
     //知乎图片框架
     implementation 'com.zhihu.android:matisse:0.5.2-beta2'
     //http://www.open-open.com/jsoup/
@@ -106,12 +110,11 @@ dependencies {
     implementation project(':imodules:module_arclayout')
     implementation project(':imodules:module_likebottomsheet')
 
-
-
     //注释掉原有bugly的仓库
     //compile 'com.tencent.bugly:crashreport:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.3.2
 //    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
-    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
 //    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
 
 }

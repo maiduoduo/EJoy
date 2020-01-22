@@ -276,28 +276,6 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 .show();
     }
 
-   /* private void showBottomSheet() {
-        bottomSheetDialog = new BottomSheetDialog(this);
-        //创建recyclerView
-        View view = getLayoutInflater().inflate(R.layout.layout_parent_problem_local, null);
-        PowerfulRecyclerView recyclerView = (PowerfulRecyclerView) view.findViewById(R.id.mRecyclerView);
-        ImageView ivOffClose = view.findViewById(R.id.ivOffClose);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        ProblemReportLocalDataListAdapter recyclerAdapter = new ProblemReportLocalDataListAdapter(R.layout.item_problem_offline,problemReportCacheBeans,this);
-        recyclerView.setAdapter(recyclerAdapter);
-
-        ivOffClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (bottomSheetDialog != null && bottomSheetDialog.isShowing()){
-                    bottomSheetDialog.dismiss();
-                }
-            }
-        });
-    }*/
-
 
     /**
      * 设置毛玻璃效果和沉浸状态栏

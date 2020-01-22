@@ -3,12 +3,16 @@ package com.ejoy.tool.ui.data.adapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -18,6 +22,8 @@ import com.ejoy.tool.scaffold.utils.IToast;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
+import com.ejoy.tool.ui.activity.more_detail.IAllViewShowActivity;
+import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
 import com.google.gson.Gson;
 import com.maple.msdialog.ActionSheetDialog;
 import com.module.ires.bean.view.EGridDividerItemDecoration;
@@ -51,6 +57,7 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
         iToast = new IToast().builder();
         addItemType(MainItemBean.MAIN_TYPE_TITLE, R.layout.layout_ihome_title);
         addItemType(MainItemBean.MAIN_TYPE_CONTENT, R.layout.layout_ihome_content);
+        addItemType(MainItemBean.MAIN_TYPE_More, R.layout.layout_ihome_more);
     }
 
 
@@ -63,6 +70,9 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
                 break;
             case MainItemBean.MAIN_TYPE_CONTENT:
                 bindContentListData(helper, item);
+                break;
+            case MainItemBean.MAIN_TYPE_More:
+                bindMoreData(helper, item);
                 break;
             default:
                 break;
@@ -79,6 +89,26 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
     private void bindTitleData(BaseViewHolder helper, MainItemBean item) {
         if (item != null) {
             helper.setText(R.id.homeTile, item.getItemTypeTitle() == null ? "" : item.getItemTypeTitle());
+        }
+    }
+
+    /**
+     * 更多
+     *
+     * @param helper
+     * @param item
+     */
+    private void bindMoreData(BaseViewHolder helper, MainItemBean item) {
+        if (item != null) {
+            AppCompatImageView moreImage = helper.getView(R.id.moreImage);
+            LinearLayout llMoreView = helper.getView(R.id.llMoreView);
+            Glide.with(context).load(R.mipmap.img_gif_more_b).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(moreImage);
+            llMoreView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showActivity(context,IAllViewShowActivity.class,R.anim.zoomin,R.anim.zoomout);
+                }
+            });
         }
     }
 
@@ -123,6 +153,8 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
                 public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                     MainItemBean.ContentBean contentBean = item.getContent().get(position);
                     String flag = contentBean.getFlag();
+                    String clazz1 = contentBean.getClazz();
+                    Log.e(TAG, "-----------onItemClick  clazz1: " + clazz1);
                     if (!TextUtils.isEmpty(contentBean.getClazz())) {
                         Class clazz = null;
                         try {
@@ -130,7 +162,7 @@ public class HomeMultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MainIt
                         } catch (ClassNotFoundException e) {
                             e.printStackTrace();
                         }
-                        Intent intent = new Intent(context,clazz);
+                        Intent intent = new Intent(context, clazz);
                         context.startActivity(intent);
                     } else {
                         if ("BITMAP".equals(flag)) {
