@@ -21,7 +21,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:gravity="center"
+<<<<<<< HEAD
                 android:background="@color/alpha_50_black"
+=======
+                android:background="@mipmap/img_bg_i"
+>>>>>>> 96c65ba55b1c229fd6834426ad1f3ada8d552a7e
                 android:orientation="vertical">
                 <ImageView
                     android:layout_width="100dp"

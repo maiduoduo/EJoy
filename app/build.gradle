@@ -17,7 +17,11 @@ android {
             // 设置支持的SO库架构
             //我们可能会用到模糊效果，就会想到renderscript.jar , 但是模糊效果是3.0以后的效果，在有的4.x以上的手机上也会造成错误，Error loading RS jni library: java.lang.UnsatisfiedLinkError，会报出这样的错误，明显是手机上没有.so包。
             //增加armeabi-v7a
+
             abiFilters "armeabi", "armeabi-v7a",'armeabi-v8a',"x86",'x86_64','mips','mips64'
+
+            abiFilters "armeabi", "armeabi-v7a"
+
             // "x86", "mips",'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
         }
         renderscriptTargetApi 25
