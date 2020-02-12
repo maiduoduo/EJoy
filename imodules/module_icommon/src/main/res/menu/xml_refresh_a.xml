@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/hideMsg" android:icon="@mipmap/ico_grid_h" android:title="隐藏刷新文字"/>
+    <item android:id="@+id/showMsg" android:icon="@mipmap/ico_grid_j" android:title="显示刷新文字"/>
+</menu>

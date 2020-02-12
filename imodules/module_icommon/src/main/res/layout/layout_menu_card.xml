@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <!--第一行菜单-->
+    <LinearLayout
+        android:id="@+id/re_card_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card_1"
+        android:orientation="horizontal">
+        <!--酒店-->
+        <RelativeLayout
+            android:id="@+id/re_hotel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="酒店"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+        <!--民宿·客栈-->
+        <RelativeLayout
+            android:id="@+id/re_homeStay_inn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_hotel"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="春节促"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+
+            <TextView
+                android:id="@+id/MS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="民宿·客栈"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <!--机票/火车票+酒店-->
+        <RelativeLayout
+            android:id="@+id/re_air_train_ticket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_homeStay_inn"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="游新春"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="30dp"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:background="@drawable/bg_card_5"
+                android:textColor="#ffffff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="机票/火车票+酒店"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--第二行菜单-->
+    <LinearLayout
+        android:id="@+id/re_card_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card_2"
+        android:orientation="horizontal">
+
+        <!--机票-->
+        <RelativeLayout
+            android:id="@+id/re_air_ticket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="春节特惠"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="机票"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <!--火车票-->
+        <RelativeLayout
+            android:id="@+id/re_train_ticket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_air_ticket"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="火车票"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!--汽车·船票-->
+        <RelativeLayout
+            android:id="@+id/re_car_boat_ticket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_train_ticket"
+            android:layout_weight="0.8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="汽车·船票"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!--打车·租车-->
+        <RelativeLayout
+            android:id="@+id/re_taxi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_car_boat_ticket"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="打车·租车"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--第三行菜单-->
+    <LinearLayout
+        android:id="@+id/re_card_3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card_3"
+        android:orientation="horizontal">
+        <!--旅游-->
+        <RelativeLayout
+            android:id="@+id/re_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="春节趣拜年"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="旅游"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <!--高铁游-->
+        <RelativeLayout
+            android:id="@+id/re_train_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_tour"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="高铁游"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!--邮轮游-->
+        <RelativeLayout
+            android:id="@+id/re_boat_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_train_tour"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="邮轮游"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!--定制游-->
+        <RelativeLayout
+            android:id="@+id/re_custom_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_boat_tour"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="游新春"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="定制游"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

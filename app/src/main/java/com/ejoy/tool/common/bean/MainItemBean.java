@@ -32,6 +32,7 @@ public class MainItemBean implements MultiItemEntity {
     //类型---------->
     public static final int MAIN_TYPE_TITLE = 0;
     public static final int MAIN_TYPE_CONTENT = 1;
+    public static final int MAIN_TYPE_More = 2;
     /**
      * itemType : 0
      * itemTypeTitle : 弹窗
@@ -46,9 +47,6 @@ public class MainItemBean implements MultiItemEntity {
     @Override
     public int getItemType() {
         return type;
-//        if (type == 0)return MAIN_TYPE_TITLE;
-//        if (type == 1)return MAIN_TYPE_CONTENT;
-//        else return MAIN_TYPE_CONTENT;
     }
 
     public int getType() {

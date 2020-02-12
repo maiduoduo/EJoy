@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/share" android:icon="@mipmap/icon_logo_weibo" android:title="@string/share"/>
     <item android:id="@+id/upload" android:icon="@mipmap/icon_logo_qq" android:title="@string/upload"/>

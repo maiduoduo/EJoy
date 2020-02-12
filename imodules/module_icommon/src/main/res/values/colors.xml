@@ -1003,6 +1003,12 @@
     <color name="act2_line">#C9C9C9</color>
     <color name="action_sheet_blue">#037BFF</color>
     <color name="line2_default_color">#e5e5e5</color>
+    <color name="split_light">#cdcdd1</color>
+    <color name="split_dark">#313131</color>
+
+    <color name="menu_tab_text">#1afa29</color>
+    <color name="bg_gray">#f0f0f0</color>
+    <color name="lighter_gray">#f5f1f1</color>
 
 
 
