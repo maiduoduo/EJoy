@@ -25,6 +25,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -35,12 +36,29 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
+import com.ejoy.tool.scaffold.utils.ActivityUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.Utils;
+import com.ejoy.tool.ui.activity.IArcLayoutActivity;
+import com.ejoy.tool.ui.activity.IScrollViewActivity;
+import com.ejoy.tool.ui.activity.ToastActivity;
+import com.ejoy.tool.ui.activity.bezer.BezierActivity;
+import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
+import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
+import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
+import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
+import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
+import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
+import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
+import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
+import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
+import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
+import com.maple.msdialog.ActionSheetDialog;
 import com.module.ires.bean.view.EEditTextSearch;
 import com.module.iviews.view.IObserverScrollView;
 import com.tencent.map.geolocation.TencentLocation;
@@ -78,20 +96,30 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     LinearLayout topTabLine;
     @BindView(R.id.banner)
     Banner mBanner;
-    @BindView(R.id.re_hotel)
-    RelativeLayout reHotel;
+    @BindView(R.id.clickScrollView)
+    LinearLayout clickScrollView;
+    @BindView(R.id.clickDeviceInfo)
+    LinearLayout clickDeviceInfo;
+    @BindView(R.id.re_imagesoft)
+    RelativeLayout reImagesoft;
+    @BindView(R.id.re_refreshStyle)
+    RelativeLayout reRefreshStyle;
+    @BindView(R.id.reCommonTitlebar)
+    RelativeLayout reCommonTitlebar;
+    @BindView(R.id.re_common_textview)
+    RelativeLayout reCommonTextview;
+    @BindView(R.id.re_version_upgrade)
+    RelativeLayout reVersionUpgrade;
     @BindView(R.id.MS)
     TextView MS;
-    @BindView(R.id.re_homeStay_inn)
-    RelativeLayout reHomeStayInn;
-    @BindView(R.id.re_air_train_ticket)
-    RelativeLayout reAirTrainTicket;
+    @BindView(R.id.clickDetail)
+    LinearLayout clickDetail;
     @BindView(R.id.re_card_1)
     LinearLayout reCard1;
-    @BindView(R.id.re_air_ticket)
-    RelativeLayout reAirTicket;
-    @BindView(R.id.re_train_ticket)
-    RelativeLayout reTrainTicket;
+    @BindView(R.id.clickFloatDragButton)
+    LinearLayout clickFloatDragButton;
+    @BindView(R.id.clickArcLayout)
+    LinearLayout clickArcLayout;
     @BindView(R.id.re_car_boat_ticket)
     RelativeLayout reCarBoatTicket;
     @BindView(R.id.re_taxi)
@@ -148,12 +176,14 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     ImageView messageIcon;
     @BindView(R.id.re_search)
     RelativeLayout re_search;
+    @BindView(R.id.backto)
+    ImageView backto;
 
 
     private TencentLocationManager tencentLocationManager;
     // 用于记录定位参数, 以显示到 UI
     private String mRequestParams;
-    private static final int[] LEVELS = new int[] {
+    private static final int[] LEVELS = new int[]{
             TencentLocationRequest.REQUEST_LEVEL_GEO,
             TencentLocationRequest.REQUEST_LEVEL_NAME,
             TencentLocationRequest.REQUEST_LEVEL_ADMIN_AREA,
@@ -179,17 +209,22 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
 
     /**
      * 加载广告banner轮播图
-     *
      */
     private void initBanner() {
-        List<String> images = new ArrayList<>();
-        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image8.jpg");
-        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image9.jpg");
-        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image11.jpg");
-        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image13.jpg");
-        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image16.jpg");
-        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image19.jpg");
-        Utils.initBanner(me, banner, images, 0);
+        List<Integer> images = new ArrayList<>();
+//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image8.jpg");
+//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image9.jpg");
+//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image11.jpg");
+//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image13.jpg");
+//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image16.jpg");
+//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image19.jpg");
+
+        images.add(R.mipmap.banner_3_a);
+        images.add(R.mipmap.banner_3_b);
+        images.add(R.mipmap.banner_3_c);
+        images.add(R.mipmap.banner_3_d);
+        images.add(R.mipmap.banner_3_f);
+        Utils.initBanner(me, mBanner, images, 0);
         mBanner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
@@ -259,19 +294,23 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                             re_search.setBackgroundColor(Color.argb((int) 0, 255, 255, 255));//AGB由相关工具获得，或者美工提供
                             //设置文字颜色，黑色
                             editTextSearch.setBackgroundResource(R.drawable.search_edit_round);
+                            backto.setImageResource(R.mipmap.pick_ico_back_white_90px);
+                            messageIcon.setImageResource(R.drawable.ico_message_white_32px);
                             locationCity.setTextColor(Color.parseColor("#FFFFFF"));
                             StatusBarTool.setTranslucentStatus(me);
-                            StatusBarTool.setStatusBarDarkTheme(me,false);
+                            StatusBarTool.setStatusBarDarkTheme(me, false);
                         } else if (y > 0 && y <= imageHeight) {
                             float scale = (float) y / imageHeight;
                             float alpha = (255 * scale);
                             // 只是layout背景透明(仿知乎滑动效果)白色透明
                             re_search.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
                             //设置文字颜色，黑色，加透明度
+                            backto.setImageResource(R.mipmap.img_back_black_48px);
+                            messageIcon.setImageResource(R.drawable.ico_message_black_32px);
                             locationCity.setTextColor(Color.argb((int) alpha, 0, 0, 0));
                             editTextSearch.setBackgroundResource(R.drawable.search_edit_round_dark);
-                            StatusBarTool.setStatusBarColor(me,Color.parseColor("#FFFFFF"));
-                            StatusBarTool.setStatusBarDarkTheme(me,true);
+                            StatusBarTool.setStatusBarColor(me, Color.parseColor("#FFFFFF"));
+                            StatusBarTool.setStatusBarDarkTheme(me, true);
                         } else {
                             //白色不透明
                             re_search.setBackgroundColor(Color.argb((int) 255, 255, 255, 255));
@@ -283,7 +322,6 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             }
         });
     }
-
 
 
     @OnClick({
@@ -328,7 +366,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
         Log.e("xiejinbo", "error: " + error);
         if (error == TencentLocation.ERROR_OK) {
             // 定位成功
-            String location = toString(tencentLocation,mLevel);
+            String location = toString(tencentLocation, mLevel);
             Log.e("xiejinbo", "location: " + location);
             stopLocation();
         }
@@ -381,7 +419,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     }
 
     // ===== util method
-    private  String toString(TencentLocation location, int level) {
+    private String toString(TencentLocation location, int level) {
         StringBuilder sb = new StringBuilder();
 
         sb.append("latitude=").append(location.getLatitude()).append(",");
@@ -411,7 +449,11 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 sb.append("streetNo=").append(location.getStreetNo()).append(",");
 
                 //此处动态设置用户当前所处城市：
-                locationCity.setText(location.getDistrict());
+                if (!TextUtils.isEmpty(location.getDistrict()) && !location.getDistrict().equals("Unknown") && location.getDistrict() != null) {
+                    locationCity.setText(location.getDistrict());
+                } else {
+                    locationCity.setText("北京");
+                }
                 if (level == TencentLocationRequest.REQUEST_LEVEL_POI) {
                     List<TencentPoi> poiList = location.getPoiList();
                     int size = poiList.size();
@@ -430,6 +472,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
 
         return sb.toString();
     }
+
     private static String toString(TencentPoi poi) {
         StringBuilder sb = new StringBuilder();
         sb.append("name=").append(poi.getName()).append(",");
@@ -444,5 +487,80 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+
+    @OnClick({
+            R.id.clickScrollView,
+            R.id.clickDetail,
+            R.id.clickFloatDragButton,
+            R.id.clickArcLayout,
+            R.id.clickDeviceInfo,
+            R.id.re_imagesoft,
+            R.id.re_refreshStyle,
+            R.id.backto,
+    })
+    public void bindViewclick(View view) {
+        switch (view.getId()) {
+            case R.id.clickScrollView://ScrollView
+                jump(IScrollViewActivity.class);
+                break;
+            case R.id.clickDetail:
+                break;
+            case R.id.clickFloatDragButton:
+                jump(BezierActivity.class);
+                break;
+            case R.id.reCommonTitlebar:
+                break;
+            case R.id.re_common_textview:
+                break;
+            case R.id.re_version_upgrade:
+                break;
+            case R.id.clickArcLayout://ArcLayout
+                jump(IArcLayoutActivity.class);
+                break;
+            case R.id.clickDeviceInfo://设备信息
+                ActivityUtils.getInstance().showActivity(this, DeviceToolActviity.class);
+                break;
+            case R.id.re_imagesoft://图片处理
+                showBotttomDialog();
+                break;
+            case R.id.re_refreshStyle://下拉刷新
+                jump(IRefreshActivity.class);
+                break;
+            case R.id.backto://返回
+                finishActivity();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void showBotttomDialog() {
+        new ActionSheetDialog(me)
+                .setCancelable(false)
+                .setCanceledOnTouchOutside(false)
+                .addSheetItem("单张图片压缩", Color.parseColor("#037BFF"),
+                        new ActionSheetDialog.OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                jump(IBitmapSingChoiceActivity.class);
+                            }
+                        })
+                .addSheetItem("批量图片压缩", Color.parseColor("#037BFF"),
+                        new ActionSheetDialog.OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                jump(IBitmapMultiChoiceActivity.class);
+                            }
+                        })
+                .addSheetItem("系统API图片压缩", Color.parseColor("#037BFF"),
+                        new ActionSheetDialog.OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                jump(IBitmapSystemSingleCompressActivity.class);
+                            }
+                        })
+                .show();
     }
 }

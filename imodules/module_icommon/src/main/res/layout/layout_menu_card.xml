@@ -13,9 +13,9 @@
         android:layout_weight="1"
         android:background="@drawable/bg_card_1"
         android:orientation="horizontal">
-        <!--酒店-->
+        <!--图片处理-->
         <RelativeLayout
-            android:id="@+id/re_hotel"
+            android:id="@+id/re_imagesoft"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.5">
@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="酒店"
+                android:text="图片处理"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -33,17 +33,17 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="@android:color/white" />
-        <!--民宿·客栈-->
+        <!--刷新样式-->
         <RelativeLayout
-            android:id="@+id/re_homeStay_inn"
+            android:id="@+id/re_refreshStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/re_hotel"
+            android:layout_toRightOf="@+id/re_imagesoft"
             android:layout_weight="1">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="春节促"
+                android:text="刷新样式"
                 android:layout_alignParentRight="true"
                 android:textSize="10sp"
                 android:gravity="center"
@@ -59,25 +59,25 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="民宿·客栈"
+                android:text="下拉刷新"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
         </RelativeLayout>
-        <!--机票/火车票+酒店-->
+        <!--标题栏常用-->
         <RelativeLayout
-            android:id="@+id/re_air_train_ticket"
+            android:id="@+id/reCommonTitlebar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/re_homeStay_inn"
+            android:layout_toRightOf="@+id/re_refreshStyle"
             android:layout_weight="2">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="游新春"
+                android:text="标题栏常用"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="3dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="15dp"
                 android:textSize="10sp"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="机票/火车票+酒店"
+                android:text="通用标题栏"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
@@ -110,16 +110,16 @@
         android:background="@drawable/bg_card_2"
         android:orientation="horizontal">
 
-        <!--机票-->
+        <!--通用TextView-->
         <RelativeLayout
-            android:id="@+id/re_air_ticket"
+            android:id="@+id/re_common_textview"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.4">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="春节特惠"
+                android:text="多样性"
                 android:layout_alignParentRight="true"
                 android:textSize="10sp"
                 android:gravity="center"
@@ -134,16 +134,16 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="机票"
+                android:text="通用TextView"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
         </RelativeLayout>
-        <!--火车票-->
+        <!--版本更新-->
         <RelativeLayout
-            android:id="@+id/re_train_ticket"
+            android:id="@+id/re_version_upgrade"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/re_air_ticket"
+            android:layout_toRightOf="@+id/re_common_textview"
             android:layout_weight="1">
 
             <TextView
@@ -151,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="火车票"
+                android:text="版本更新"
                 android:textColor="@android:color/white"
 
                 android:textStyle="bold" />
@@ -161,12 +161,12 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/white" />
         </RelativeLayout>
-        <!--汽车·船票-->
+        <!---->
         <RelativeLayout
             android:id="@+id/re_car_boat_ticket"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/re_train_ticket"
+            android:layout_toRightOf="@+id/re_version_upgrade"
             android:layout_weight="0.8">
 
             <TextView
@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="汽车·船票"
+                android:text="XXX"
                 android:textColor="@android:color/white"
 
                 android:textStyle="bold" />
@@ -184,7 +184,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/white" />
         </RelativeLayout>
-        <!--打车·租车-->
+        <!---->
         <RelativeLayout
             android:id="@+id/re_taxi"
             android:layout_width="0dp"
@@ -197,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="打车·租车"
+                android:text="XXX"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
@@ -216,7 +216,7 @@
         android:layout_weight="1"
         android:background="@drawable/bg_card_3"
         android:orientation="horizontal">
-        <!--旅游-->
+        <!---->
         <RelativeLayout
             android:id="@+id/re_tour"
             android:layout_width="0dp"
@@ -225,7 +225,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="春节趣拜年"
+                android:text="rx系列"
                 android:layout_alignParentRight="true"
                 android:textSize="10sp"
                 android:gravity="center"
@@ -239,12 +239,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="旅游"
+                android:text="Rxjava使用"
                 android:textColor="@android:color/white"
 
                 android:textStyle="bold" />
         </RelativeLayout>
-        <!--高铁游-->
+        <!---->
         <RelativeLayout
             android:id="@+id/re_train_tour"
             android:layout_width="0dp"
@@ -257,7 +257,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="高铁游"
+                android:text="XXX"
                 android:textColor="@android:color/white"
 
                 android:textStyle="bold" />
@@ -267,7 +267,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/white" />
         </RelativeLayout>
-        <!--邮轮游-->
+        <!---->
         <RelativeLayout
             android:id="@+id/re_boat_tour"
             android:layout_width="0dp"
@@ -280,17 +280,15 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="邮轮游"
+                android:text="XXX"
                 android:textColor="@android:color/white"
-
                 android:textStyle="bold" />
-
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:background="@android:color/white" />
         </RelativeLayout>
-        <!--定制游-->
+        <!---->
         <RelativeLayout
             android:id="@+id/re_custom_tour"
             android:layout_width="0dp"
@@ -300,7 +298,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="游新春"
+                android:text="XXX"
                 android:layout_alignParentRight="true"
                 android:textSize="10sp"
                 android:gravity="center"
@@ -314,7 +312,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="定制游"
+                android:text="XXX"
                 android:textColor="@android:color/white"
 
                 android:textStyle="bold" />

@@ -119,4 +119,7 @@ public class IScrollViewActivity extends BaseActivity {
     }
 
 
+    public void ivback(View view) {
+        finish();
+    }
 }

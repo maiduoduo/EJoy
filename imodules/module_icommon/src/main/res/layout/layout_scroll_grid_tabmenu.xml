@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/tour_icon"
             android:gravity="center_horizontal"
-            android:text="自由行"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/wifi_icon"
             android:gravity="center_horizontal"
-            android:text="WiFi电话卡"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/visa_icon"
             android:gravity="center_horizontal"
-            android:text="保险·签证"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/currency_icon"
             android:gravity="center_horizontal"
-            android:text="换外币·购"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/guide_icon"
             android:gravity="center_horizontal"
-            android:text="当地向导"
+            android:text="XXX"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -81,7 +81,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/air_icon"
             android:gravity="center_horizontal"
-            android:text="特价机票"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -91,7 +91,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/gift_icon"
             android:gravity="center_horizontal"
-            android:text="礼品卡"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -101,7 +101,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/bank_card_icon"
             android:gravity="center_horizontal"
-            android:text="申卡·借钱"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView
@@ -111,7 +111,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/cooperation_icon"
             android:gravity="center_horizontal"
-            android:text="加盟合作"
+            android:text="XXX"
             android:textSize="12sp" />
 
         <TextView

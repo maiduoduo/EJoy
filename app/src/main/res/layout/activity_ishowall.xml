@@ -5,26 +5,62 @@
     android:layout_height="match_parent"
     android:background="@color/LGray3"
     android:scrollbars="none">
+
     <com.module.iviews.view.IObserverScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <!--广告轮播图-->
-            <com.youth.banner.Banner
-                android:id="@+id/banner"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fl_bannerOutside"
                 android:layout_width="match_parent"
-                android:layout_height="152dp" />
+                android:layout_height="180dp"
+                android:background="#00000000">
+
+                <com.imaiduoduo.arclayout.lib.ArcLayout
+                    android:id="@+id/ArcLayoutOutside"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:elevation="1dip"
+                    app:arc_cropDirection="cropOutside"
+                    app:arc_height="15dp"
+                    app:arc_position="bottom">
+
+                    <!-- <com.youth.banner.Banner
+                        android:id="@+id/mBannerOutside"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:banner_default_image="@drawable/img_place_default"
+                        app:image_scale_type="fit_xy"
+                        app:indicator_height="5dp"
+                        app:indicator_margin="5dp"
+                        app:indicator_width="5dp" />-->
+
+                    <!--广告轮播图-->
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </com.imaiduoduo.arclayout.lib.ArcLayout>
+            </FrameLayout>
+
             <LinearLayout
                 android:id="@+id/topTabLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/banner"
+                android:layout_below="@+id/fl_bannerOutside"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="-30dp"
                 android:background="@drawable/bg_round_white"
@@ -33,6 +69,7 @@
                 android:padding="10dp">
 
                 <LinearLayout
+                    android:id="@+id/clickScrollView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -49,12 +86,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="攻略·景点"
+                        android:text="ScrollView"
                         android:textColor="#383535"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/clickDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -71,12 +109,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="门票·玩乐"
+                        android:text="详情页"
                         android:textColor="#383535"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/clickFloatDragButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -93,12 +132,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="美食"
+                        android:text="FloatDragButton"
                         android:textColor="#383535"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/clickArcLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,12 +155,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="周边游"
+                        android:text="ArcLayout"
                         android:textColor="#383535"
                         android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/clickDeviceInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -137,7 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="泡温泉"
+                        android:text="设备信息"
                         android:textColor="#383535"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -164,17 +205,18 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_layout"
                 android:orientation="vertical">
+
                 <include
                     android:id="@+id/re_scenery_hot"
                     layout="@layout/layout_scenery_hot" />
-                <include
-                    layout="@layout/layout_scenery_hot" />
-                <include
-                    layout="@layout/layout_scenery_hot" />
-                <include
-                    layout="@layout/layout_scenery_hot" />
-                <include
-                    layout="@layout/layout_scenery_hot" />
+
+                <include layout="@layout/layout_scenery_hot" />
+
+                <include layout="@layout/layout_scenery_hot" />
+
+                <include layout="@layout/layout_scenery_hot" />
+
+                <include layout="@layout/layout_scenery_hot" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -187,13 +229,19 @@
         android:layout_marginTop="23dp"
         android:paddingHorizontal="10dp"
         android:paddingVertical="10dp">
-
+        <ImageView
+            android:id="@+id/backto"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/pick_ico_back_white_90px"/>
         <TextView
             android:id="@+id/location_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/backto"
             android:drawablePadding="5dp"
             android:text="重庆"
             android:textColor="@android:color/white"
@@ -218,7 +266,7 @@
             android:layout_height="@dimen/dp_25"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/message_icon" />
+            android:src="@drawable/ico_message_white_32px" />
 
     </RelativeLayout>
 </RelativeLayout>

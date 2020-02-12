@@ -440,7 +440,7 @@ public final class Utils {
      * @param imagesList 图片资源list
      * @param radius 圆角值
      */
-    public static Banner initBanner(Context context, Banner banner, List<String> imagesList, final float radius){
+    public static Banner initBanner(Context context, Banner banner, List<?> imagesList, final float radius){
 
         //设置图片加载器
         banner.setImageLoader(new IGlideImageLoader(radius));
