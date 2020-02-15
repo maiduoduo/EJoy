@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/llMoreView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_10"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingRight="@dimen/dp_5"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击查看更多组件，直观看到运行效果「E·享」"
+                android:textColor="@color/black_66"
+                android:maxLines="2"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/txt_tiptitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="组件   更多   「@maiduoduo」"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/alpha_30_black"
+                android:ellipsize="end"
+                android:layout_alignParentBottom="true"
+                android:maxLines="1"
+                android:textSize="10dp" />
+        </RelativeLayout>
+        <android.support.v7.widget.AppCompatImageView
+            android:visibility="visible"
+            android:id="@+id/moreImage"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@mipmap/img_k"/>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

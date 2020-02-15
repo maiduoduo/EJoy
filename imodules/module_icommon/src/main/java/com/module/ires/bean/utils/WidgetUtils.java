@@ -31,6 +31,7 @@ import android.view.WindowManager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.module.ires.R;
+import com.module.ires.bean.view.EDashlineItemDivider;
 import com.module.ires.bean.view.EDividerItemDecoration;
 import com.module.ires.bean.view.EDividerItemDecoration2;
 import com.module.ires.bean.view.EGridDividerItemDecoration;
@@ -146,6 +147,40 @@ public final class WidgetUtils {
         adapter.addHeaderView(headerView);
     }
 
+    /**
+     * 初始化RecyclerView
+     *
+     * @param recyclerView
+     * @param adapter
+     * @param addItemDecoration 是否需要分隔线
+     * @param isDashLine 是否需要虚线分隔线
+     */
+    public static void initLineRecyclerView(Context context,@NonNull RecyclerView recyclerView, BaseQuickAdapter adapter,View headerView,boolean addItemDecoration,boolean isDashLine) {
+        recyclerView.setLayoutManager(new ELinearLayoutManager(context,LinearLayoutManager.VERTICAL,false));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemViewCacheSize(10);
+        if (addItemDecoration) {
+            if (isDashLine) {
+                recyclerView.addItemDecoration(new EDashlineItemDivider(context, R.color.gray4));
+            }else {
+                recyclerView.addItemDecoration(new EDividerItemDecoration(
+                        context, LinearLayoutManager.VERTICAL, 1, R.color.gray4));
+            }
+        }
+        recyclerView.setAdapter(adapter);
+        // 打开动画效果
+//        adapter.openLoadAnimation();
+        // 动画一直执行
+//        adapter.isFirstOnly(true);
+//        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+//        adapter.setNotDoAnimationCount(10);
+        adapter.setEnableLoadMore(false);
+        if (headerView != null) {
+            headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, EDensityUtils.dp2px(context, 100)));
+            adapter.addHeaderView(headerView);
+        }
+    }
+
 
     /**
      * 初始化RecyclerView
@@ -190,9 +225,9 @@ public final class WidgetUtils {
      * @param recyclerView
      * @param dividerColor  分割线的颜色
      */
-    public static void initDefaultRecyclerView(@NonNull RecyclerView recyclerView, int dividerColor) {
-        recyclerView.setLayoutManager(new ELinearLayoutManager(recyclerView.getContext()));
-        recyclerView.addItemDecoration(new EDividerItemDecoration2(recyclerView.getContext(),dividerColor));
+    public static void initDefaultRecyclerView(Context context,@NonNull RecyclerView recyclerView, int dividerColor) {
+        recyclerView.setLayoutManager(new ELinearLayoutManager(context));
+        recyclerView.addItemDecoration(new EDividerItemDecoration2(context,dividerColor));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 

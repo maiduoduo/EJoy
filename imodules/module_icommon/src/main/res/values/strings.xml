@@ -32,4 +32,17 @@
     <string name="help">帮助</string>
     <string name="bottomsheet">BottomSheet 示例</string>
 
+    <string name="introduce">Eshare工具库，加入主流工具，自定义、好的解决方案等。\n\n目前该库处于功能开发阶段，后期会将功能发布到Jfrog bintray,形成远程引用仓库\n\n
+E·享 目的在于整理与集纳好的优秀方案和功能实现，有自定义功能，也有来源于网络的好的视图功能，如有侵权，请联系删除 \n\n
+后期会加入组件化管理，便于更好演示。 \n\n
+有好的建议或者指正的地方，请您不吝赐教，提请issue,谢谢。\n\n
+烦请看到的各位，共同维护创作者的知识产权，不必大肆滥用别人的成果，共建一个良好生态的技术环境，在此感谢。\n\n</string>
+    <string name="author_name">关于作者</string>
+    <string name="author_info">\@maiduoduo\n软件工程师，从业数年，在开发上有一些自我心得，希望在自己多涉猎，多积累的过程中能够增长一些经验，也同时希望与其他技术人一起成长，互相帮助。\n\n思想\n方便于每一项设计，建设于每一个方案\n\n本项目Github地址：</string>
+    <string name="author_info2">本项目由\@maiduoduo进行开发，技术组件及思想融入了网络贡献开源和自己结合自我想法经验实践汇总</string>
+    <string name="author_info3">本项目完全开源，如果你觉得不错，可以帮忙分享给你更多的朋友，这是我最大的动力和支持，非常感谢！\n\n</string>
+    <string name="link_github">https://github.com/maiduoduo/EJoy</string>
+    <string name="link_enjoylife">https://github.com/maiduoduo/EJoy</string>
+    <string name="opensource_framework">开源框架</string>
+
 </resources>

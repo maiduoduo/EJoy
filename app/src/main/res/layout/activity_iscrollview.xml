@@ -8,12 +8,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:background="@color/blue_check"
         android:fitsSystemWindows="true"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+        <ImageView
+            android:onClick="ivback"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ico_back_white_90px"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blue_check"
             android:gravity="center"
             android:textColor="@color/white"
             android:textStyle="bold"

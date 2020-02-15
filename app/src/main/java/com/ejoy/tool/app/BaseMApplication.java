@@ -5,8 +5,12 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v7.app.AppCompatActivity;
+
 import com.ejoy.tool.R;
 import com.ejoy.tool.app.bugly.BuglyHelper;
+import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
+import com.kongzue.baseframework.BaseActivity;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -14,7 +18,7 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import java.util.LinkedList;
 import java.util.List;
-
+import java.util.Stack;
 
 
 //  ┏┓　　　┏┓
@@ -43,6 +47,7 @@ import java.util.List;
  */
 public class BaseMApplication extends Application {
 
+    private static Stack<AppCompatActivity> activityStack;
 
     /**
      * 上下文
@@ -120,12 +125,39 @@ public class BaseMApplication extends Application {
         activityList.add(activity);
     }
 
+    /**
+     * 添加Activity到堆栈
+     */
+    public void pushActivity(AppCompatActivity activity) {
+        if (activityStack == null) {
+            activityStack = new Stack<>();
+        }
+        activityStack.add(activity);
+    }
+
     //遍历所有Activity并finish
     public void exit() {
         for(Activity activity:activityList) {
             activity.finish();
         }
         activityList.clear();
+    }
+
+    public void deleteActivity(AppCompatActivity activity) {
+        if (activity != null) {
+            activityStack.remove(activity);
+        }
+    }
+
+    /**
+     * 结束指定的Activity
+     */
+    public void killActivity(IBaseActivity activity) {
+        if (activity != null) {
+            activity.finishActivity();
+            activityStack.remove(activity);
+            activity = null;
+        }
     }
 
 

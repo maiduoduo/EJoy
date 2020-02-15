@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="15dp"
+    android:background="@drawable/bg_round_white">
+
+    <TextView
+        android:id="@+id/scenery_hot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="图文速览" />
+
+    <TextView
+        android:id="@+id/scenery_hot_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:text="更多"
+        android:textSize="12sp" />
+    <!--热门风景轮播图-->
+    <com.youth.banner.Banner
+        android:id="@+id/banner_scenery_hot"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/scenery_hot_text"
+        android:layout_marginTop="15dp" />
+</RelativeLayout>
+

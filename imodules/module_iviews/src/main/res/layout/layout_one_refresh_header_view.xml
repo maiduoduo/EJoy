@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header_ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:background="@color/light_gray3">
+
+    <RelativeLayout
+        android:id="@+id/header_rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        tools:layout_height="@dimen/one_header_height">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/header_ll_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/header_rl_left"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/one_header_hint_normal"
+                tools:textColor="@color/gray2"
+                tools:textSize="@dimen/one_header_title_size" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/header_tv_tip_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/one_header_last_time"
+                    tools:textColor="@color/gray4"
+                    tools:textSize="@dimen/one_header_title_size" />
+
+                <TextView
+                    android:id="@+id/header_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text=""
+                    tools:textColor="@color/gray4"
+                    tools:textSize="@dimen/one_header_subtitle_size" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/header_rl_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            tools:layout_marginRight="@dimen/one_header_content_margin">
+
+            <ImageView
+                android:id="@+id/header_iv_arrow"
+                android:layout_width="@dimen/one_header_arrow_height"
+                android:layout_height="@dimen/one_header_arrow_height"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/img_one_arrow" />
+
+            <ProgressBar
+                android:id="@+id/header_pb_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                tools:indeterminateDrawable="@drawable/shape_one_progress"
+                tools:layout_height="@dimen/one_header_progress_size"
+                tools:layout_width="@dimen/one_header_progress_size" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

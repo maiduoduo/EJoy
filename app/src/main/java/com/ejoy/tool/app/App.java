@@ -28,6 +28,7 @@ import com.ejoy.tool.greendao.gen.DaoMaster;
 import com.ejoy.tool.greendao.gen.DaoSession;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.imaidd.citypicker.style.citylist.utils.CityListLoader;
+import com.kongzue.dialog.v2.DialogSettings;
 
 import org.greenrobot.greendao.database.Database;
 
@@ -38,6 +39,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import static com.ejoy.tool.ui.data.resource.GlobalDataProvider.DB_NAME_V2;
+import static com.kongzue.dialog.v2.DialogSettings.TYPE_IOS;
 
 
 /**
@@ -57,6 +59,7 @@ public class App extends BaseMApplication {
         init();
         //初始化Fresco
         Fresco.initialize(this);
+        DialogSettings.type = TYPE_IOS;
 
         /**
          * 预先加载一级列表所有城市的数据

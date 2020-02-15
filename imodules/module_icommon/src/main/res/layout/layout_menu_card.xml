@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <!--第一行菜单-->
+    <LinearLayout
+        android:id="@+id/re_card_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card_1"
+        android:orientation="horizontal">
+        <!--图片处理-->
+        <RelativeLayout
+            android:id="@+id/re_imagesoft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="图片处理"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+        <!--刷新样式-->
+        <RelativeLayout
+            android:id="@+id/re_refreshStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_imagesoft"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="刷新样式"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+
+            <TextView
+                android:id="@+id/MS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="下拉刷新"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <!--标题栏常用-->
+        <RelativeLayout
+            android:id="@+id/reCommonTitlebar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_refreshStyle"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标题栏常用"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="15dp"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:background="@drawable/bg_card_5"
+                android:textColor="#ffffff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="通用标题栏"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--第二行菜单-->
+    <LinearLayout
+        android:id="@+id/re_card_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card_2"
+        android:orientation="horizontal">
+
+        <!--通用TextView-->
+        <RelativeLayout
+            android:id="@+id/re_common_textview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多样性"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="通用TextView"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <!--版本更新-->
+        <RelativeLayout
+            android:id="@+id/re_version_upgrade"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_common_textview"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="版本更新"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!---->
+        <RelativeLayout
+            android:id="@+id/re_car_boat_ticket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_version_upgrade"
+            android:layout_weight="0.8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="XXX"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!---->
+        <RelativeLayout
+            android:id="@+id/re_taxi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_car_boat_ticket"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="XXX"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--第三行菜单-->
+    <LinearLayout
+        android:id="@+id/re_card_3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card_3"
+        android:orientation="horizontal">
+        <!---->
+        <RelativeLayout
+            android:id="@+id/re_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rx系列"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="Rxjava使用"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <!---->
+        <RelativeLayout
+            android:id="@+id/re_train_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_tour"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="XXX"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!---->
+        <RelativeLayout
+            android:id="@+id/re_boat_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_train_tour"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="XXX"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+        <!---->
+        <RelativeLayout
+            android:id="@+id/re_custom_tour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/re_boat_tour"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXX"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="6dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/bg_card_4"
+                android:textColor="#f94f46"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="XXX"
+                android:textColor="@android:color/white"
+
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

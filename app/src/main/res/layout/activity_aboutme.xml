@@ -1,57 +1,438 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView style="@style/ScrollViewStyle"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <LinearLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    tools:context=".ui.activity.textview.ITextViewActivity">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:paddingTop="50dp"
-        android:paddingBottom="25dp">
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:contentDescription="Logo"
-            android:src="@mipmap/ic_app_launcher" />
-
-        <TextView
-            android:id="@+id/version"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/Gray3"
-            android:text="@string/app_vname"
-            android:layout_marginBottom="@dimen/dp_30"
-            android:textSize="16sp" />
-
-        <include layout="@layout/layout_line_horizontal_1dp"/>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/about_list"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp_10"
-            android:background="@color/white" />
-        <include layout="@layout/layout_line_horizontal_1dp"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_30"/>
-
-        <TextView
-            android:id="@+id/copyright"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:textSize="@dimen/sp_12"
-            android:text="@string/allrights"
-            android:background="@color/LGray3"
             android:gravity="center_horizontal"
-            android:textColor="@color/Gray3" />
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:gravity="center"
+                android:background="@color/alpha_50_black"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/dp_80"
+                    android:src="@mipmap/ic_app_launcher" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#dc000000"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+            <android.support.v7.widget.RecyclerView
+                android:nestedScrollingEnabled="false"
+                android:id="@+id/about_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:padding="@dimen/dp_10" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/introduce"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/author_name"
+                android:textColor="#dc000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/author_info"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_github"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/link_github"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/author_info2"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_xhb_el"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/link_enjoylife"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/author_info3"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/opensource_framework"
+                android:textColor="#dc000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="PhotoView："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_kongzue_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/chrisbanes/PhotoView"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="BaseFramework框架："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_kongzue_baseframework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/kongzue/BaseFramework"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="SmartRefreshLayout："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_kongzue_baseOkHttp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/scwang90/SmartRefreshLayout"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="butterknife："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_kongzue_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/JakeWharton/butterknife"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Fresco："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_fresco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/facebook/fresco"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="RefreshLoadMoreLayout："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_RefreshLoadMoreLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/qbaowei/RefreshLoadMoreLayout"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="eventbus："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_PhotoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/greenrobot/EventBus"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="glide："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_glide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/bumptech/glide"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="greendao："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_GSYVideoPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/greenrobot/greenDAO"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="SwipeBack："
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/link_SwipeBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="5dp"
+                android:text="https://github.com/tyzlmjj/SwipeBack"
+                android:textColor="#4472c4"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="有些框架未列出，感谢开源！"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="#7b000000"
+                android:textSize="14dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30" />
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@color/transparent"
+                android:gravity="center_horizontal"
+                android:text="@string/allrights"
+                android:textColor="@color/Gray3"
+                android:textSize="@dimen/sp_12" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/box_table"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:clickable="true">
+
+        <com.kongzue.dialog.util.BlurView
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20" />
+            <LinearLayout
+                android:id="@+id/box_table_child"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvSpace"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/img_back_black_90px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:text="返回"
+                        android:textColor="@color/black_88"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/ivshare"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:src="@mipmap/img_share_black_90px" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/split_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="关于"
+                android:textColor="#dc000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
