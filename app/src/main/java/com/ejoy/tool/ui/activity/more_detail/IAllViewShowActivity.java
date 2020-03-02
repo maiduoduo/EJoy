@@ -19,11 +19,9 @@ package com.ejoy.tool.ui.activity.more_detail;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,24 +34,17 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.ActivityUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.Utils;
 import com.ejoy.tool.ui.activity.IArcLayoutActivity;
 import com.ejoy.tool.ui.activity.IScrollViewActivity;
-import com.ejoy.tool.ui.activity.ToastActivity;
 import com.ejoy.tool.ui.activity.bezer.BezierActivity;
-import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
-import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
-import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
-import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
-import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -74,7 +65,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
@@ -91,7 +81,6 @@ import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
 @DarkStatusBarTheme(true)
 //@DarkNavigationBarTheme(true)
 public class IAllViewShowActivity extends IBaseActivity implements TencentLocationListener {
-
 
     @BindView(R.id.topTabLine)
     LinearLayout topTabLine;
@@ -121,8 +110,6 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     LinearLayout clickFloatDragButton;
     @BindView(R.id.clickArcLayout)
     LinearLayout clickArcLayout;
-    @BindView(R.id.re_car_boat_ticket)
-    RelativeLayout reCarBoatTicket;
     @BindView(R.id.re_taxi)
     RelativeLayout reTaxi;
     @BindView(R.id.re_card_2)
@@ -195,6 +182,12 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
 
     private int mIndex = DEFAULT;
     private int mLevel = LEVELS[DEFAULT];
+
+
+    @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
 
     @Override
     public void initViews() {
@@ -330,10 +323,6 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     }
 
 
-    @OnClick({
-    })
-    public void onViewClicked(View view) {
-    }
 
 
     /**
@@ -505,6 +494,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             R.id.re_imagesoft,
             R.id.re_refreshStyle,
             R.id.backto,
+            R.id.re_topbar,
     })
     public void bindViewclick(View view) {
         switch (view.getId()) {
@@ -533,6 +523,9 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 break;
             case R.id.re_refreshStyle://下拉刷新
                 jump(IRefreshActivity.class);
+                break;
+            case R.id.re_topbar://顶部栏颜色渐变
+                jump(ITopBarColorChangeActivity.class);
                 break;
             case R.id.backto://返回
                 finishActivity();

@@ -37,6 +37,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -46,8 +47,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ejoy.tool.R;
 import com.ejoy.tool.app.App;
 import com.ejoy.tool.scaffold.utils.IToast;
+import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -74,6 +77,8 @@ import java.util.Set;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static android.os.Build.VERSION_CODES.M;
 
 /**
  * CN:      IBaseActivity
@@ -118,6 +123,11 @@ public abstract class IBaseActivity extends AppCompatActivity {
     @Deprecated
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            initStatusbar(0x00000000);
+        } else {
+            initStatusbarUnder5(R.color.black);
+        }
         initAttributes();
         if (layoutResId == android.R.layout.list_content) {
             Log.e("警告！", "请在您的Activity的Class上注解：@Layout(你的layout资源id)");
@@ -129,6 +139,7 @@ public abstract class IBaseActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
         setTranslucentStatus(true);
         App.getInstance().pushActivity(me);
+        setStatusbar();
         initViews();
         initDatas();
         setEvents();
@@ -172,6 +183,42 @@ public abstract class IBaseActivity extends AppCompatActivity {
     public abstract void initDatas();
 
     public abstract void setEvents();
+
+    /**
+     * 透明状态栏
+     * TODO:(子类界面重写此方法)
+     *
+     * @return
+     */
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return false;
+    }
+
+    /**
+     * 状态栏背景颜色
+     * 1.推荐使用：字符串类型颜色：eg:"#FFCF47",{@link android.support.annotation.ColorRes}
+     * 2.不推荐使用：color.xml下颜色：R.color.LGray3   todo:---------注意:会出现混合色------
+     * <p>
+     * TODO:(子类界面重写此方法)
+     *
+     * @return
+     */
+    protected Object registSatusbarBgcolor() {
+        return "";
+    }
+
+    /**
+     * 状态栏字体颜色
+     * 深色/浅色切换
+     *
+     * @return
+     * @dark true 深色
+     * @light false 浅色
+     * TODO:(子类界面重写此方法)
+     */
+    protected boolean isRegistSatusbarFontDark() {
+        return false;
+    }
 
     public void setDarkStatusBarTheme(boolean value) {
         darkStatusBarThemeValue = value;
@@ -252,6 +299,95 @@ public abstract class IBaseActivity extends AppCompatActivity {
             window.setNavigationBarColor(navigationBarBackgroundColorValue);
         }
     }
+
+
+    private void setStatusbar() {
+        if (Build.VERSION.SDK_INT >= M) {
+            if (isRegistSatusbarFullScreenTransluent()) {
+                StatusBarTool.setTranslucentStatus(this);//透明状态栏
+                //用来设置整体下移，状态栏沉浸
+                StatusBarTool.setRootViewFitsSystemWindows(this, false);
+            } else {
+                StatusBarTool.setRootViewFitsSystemWindows(this, true);
+            }
+            if (isRegistSatusbarFontDark()) {
+                //黑色字体
+                StatusBarTool.setStatusBarDarkTheme(this, true);
+            } else {
+                //浅色字体
+                StatusBarTool.setStatusBarDarkTheme(this, false);
+            }
+            if (registSatusbarBgcolor() instanceof String) {
+                if (!TextUtils.isEmpty((String) registSatusbarBgcolor())) {
+                    StatusBarTool.setStatusBarStringColor(me, (String) registSatusbarBgcolor());
+                }
+            } else if (registSatusbarBgcolor() instanceof Integer) {
+                if ((Integer) registSatusbarBgcolor() > 0) {
+                    StatusBarTool.setStatusBarColor(me, (Integer) registSatusbarBgcolor());
+                }
+            }
+        }
+    }
+
+
+    protected void initStatusbar(int colorid) {
+        //沉浸式代码配置
+        //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
+        StatusBarTool.setRootViewFitsSystemWindows(this, true);
+        //设置状态栏透明
+        StatusBarTool.setTranslucentStatus(this);
+        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
+        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
+        if (!StatusBarTool.setStatusBarDarkTheme(this, true)) {
+            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
+            //这样半透明+白=灰, 状态栏的文字能看得清
+            StatusBarTool.setStatusBarColor(this, colorid);
+//            StatusBarTool.setStatusBarColor(this, 0x55000000);
+//            StatusBarTool.setStatusBarColor(this, 0x00000000);
+        }
+
+
+        //用来设置整体下移，状态栏沉浸
+        StatusBarTool.setRootViewFitsSystemWindows(this, false);
+//        StatusBarUtil.setTranslucent(MainActivity.this, 0);
+        StatusBarTool.setTranslucentStatus(this);//透明状态栏
+        //黑色字体
+//        StatusBarTool.setStatusBarDarkTheme(this, false);
+        //黑色字体
+//        StatusBarTool.setStatusBarDarkTheme(MainActivity.this, true);
+        //设置白色字体，其他背景
+//        StatusBarTool.setStatusBarColor(this, Color.parseColor("#58C087"));//设置背景颜色
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //系统版本大于19
+//            setTranslucentStatus(true);
+//        }
+//        if (isSetStatusBarBg()) {
+//            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+//            tintManager.setStatusBarTintEnabled(true);
+//            tintManager.setStatusBarTintResource(R.drawable.shape_statusbar);
+//
+//            //去除灰色遮罩
+//            //Android5.0以上
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                Window window = getWindow();
+//                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+//                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//                window.setStatusBarColor(Color.TRANSPARENT);
+//            }else if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT){//Android4.4以上,5.0以下
+//                getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            }
+//        }
+    }
+
+
+    private void initStatusbarUnder5(int colorId) {
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(this.getResources().getColor(colorId));
+    }
+
 
     private void setStatusBarDarkModeInMIUI(boolean darkmode, Activity activity) {
         Class<? extends Window> clazz = activity.getWindow().getClass();

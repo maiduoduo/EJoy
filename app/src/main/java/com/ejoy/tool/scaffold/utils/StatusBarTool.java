@@ -135,6 +135,7 @@ public class StatusBarTool {
 
     /**
      * 设置状态栏深色浅色切换
+     * @param dark:true-深色  false-浅色
      */
     public static boolean setStatusBarDarkTheme(Activity activity, boolean dark) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

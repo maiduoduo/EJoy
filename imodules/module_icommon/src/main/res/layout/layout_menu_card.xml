@@ -163,7 +163,7 @@
         </RelativeLayout>
         <!---->
         <RelativeLayout
-            android:id="@+id/re_car_boat_ticket"
+            android:id="@+id/re_topbar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/re_version_upgrade"
@@ -173,10 +173,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:text="XXX"
+                android:layout_marginHorizontal="5dp"
+                android:text="标题栏于与状态栏颜色渐变"
+                android:textSize="10sp"
+                android:ellipsize="end"
+                android:lines="3"
                 android:textColor="@android:color/white"
-
                 android:textStyle="bold" />
 
             <View
@@ -189,7 +191,7 @@
             android:id="@+id/re_taxi"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/re_car_boat_ticket"
+            android:layout_toRightOf="@+id/re_topbar"
             android:layout_weight="1">
 
             <TextView

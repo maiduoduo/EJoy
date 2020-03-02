@@ -116,6 +116,8 @@
             android:configChanges="screenSize|screenLayout|navigation"/>
         <activity android:name=".ui.activity.more_detail.IAllViewShowActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.more_detail.ITopBarColorChangeActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
 
 
         <!--FileProvider共享文件-->
