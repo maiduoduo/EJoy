@@ -59,6 +59,7 @@ import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.maple.msdialog.ActionSheetDialog;
+import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.view.EEditTextSearch;
 import com.module.iviews.view.IObserverScrollView;
 import com.tencent.map.geolocation.TencentLocation;
@@ -175,9 +176,11 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     @BindView(R.id.message_icon)
     ImageView messageIcon;
     @BindView(R.id.re_search)
-    RelativeLayout re_search;
+    RelativeLayout mSearchBar;
     @BindView(R.id.backto)
     ImageView backto;
+    @BindView(R.id.tvScrollALPHAInfo)
+    TextView tvScrollALPHAInfo;
 
 
     private TencentLocationManager tencentLocationManager;
@@ -289,9 +292,10 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                     public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
                         // TODO Auto-generated method stub
                         Log.e(_TAG, "initListeners y: " + y);
+                        float percent = Float.valueOf(Math.abs(y)) / Float.valueOf(EDensityUtils.dp2px(me,180));
                         if (y <= 0) {
                             //设置文字背景颜色，白色
-                            re_search.setBackgroundColor(Color.argb((int) 0, 255, 255, 255));//AGB由相关工具获得，或者美工提供
+                            mSearchBar.setBackgroundColor(Color.argb((int) 0, 255, 255, 255));//AGB由相关工具获得，或者美工提供
                             //设置文字颜色，黑色
                             editTextSearch.setBackgroundResource(R.drawable.search_edit_round);
                             backto.setImageResource(R.mipmap.pick_ico_back_white_90px);
@@ -303,7 +307,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                             float scale = (float) y / imageHeight;
                             float alpha = (255 * scale);
                             // 只是layout背景透明(仿知乎滑动效果)白色透明
-                            re_search.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
+                            mSearchBar.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
                             //设置文字颜色，黑色，加透明度
                             backto.setImageResource(R.mipmap.img_back_black_48px);
                             messageIcon.setImageResource(R.drawable.ico_message_black_32px);
@@ -311,9 +315,11 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                             editTextSearch.setBackgroundResource(R.drawable.search_edit_round_dark);
                             StatusBarTool.setStatusBarColor(me, Color.parseColor("#FFFFFF"));
                             StatusBarTool.setStatusBarDarkTheme(me, true);
+
+                            tvScrollALPHAInfo.setText("Topbar-setBackgroundColor(Color.argb((int) "+(int) alpha+", 255, 255, 255))\n"+"mSearchBar.setAlpha("+percent+")");
                         } else {
                             //白色不透明
-                            re_search.setBackgroundColor(Color.argb((int) 255, 255, 255, 255));
+                            mSearchBar.setBackgroundColor(Color.argb((int) 255, 255, 255, 255));
                             //设置文字颜色:黑色
                             locationCity.setTextColor(Color.argb((int) 255, 0, 0, 0));
                         }

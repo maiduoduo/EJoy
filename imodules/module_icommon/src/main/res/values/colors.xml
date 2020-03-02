@@ -413,6 +413,7 @@
     <color name="material_grey_900">#212121</color>
     <color name="material_grey_1000">#000000</color>
     <color name="material_grey_1100">#ffffff</color>
+    <color name="material_grey_900_alpha5">#88212121</color>
 
     <!-- Blue Grey -->
     <color name="material_blueGrey_50">#eceff1</color>
