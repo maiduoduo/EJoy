@@ -17,6 +17,7 @@ import com.module.ires.bean.utils.EViewUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
@@ -43,7 +44,7 @@ import butterknife.ButterKnife;
  * Des:    TODO:顶部栏颜色渐变
  */
 @Layout(R.layout.activity_itopbarcolorchange)
-//@DarkStatusBarTheme(false)
+@DarkStatusBarTheme(false)
 public class ITopBarColorChangeActivity extends IBaseActivity {
 
     @BindView(R.id.flTopLayout)
@@ -65,6 +66,7 @@ public class ITopBarColorChangeActivity extends IBaseActivity {
         setDarkNavigationBarTheme(false);
         setTranslucentStatus(true);
 //        EViewUtils.setImmersionStateMode(this);
+        StatusBarTool.setStatusBarDarkTheme(me, false);
     }
 
     @Override
@@ -81,9 +83,7 @@ public class ITopBarColorChangeActivity extends IBaseActivity {
                 //第一种
                 int toolbarHeight = appBarLayout.getTotalScrollRange();
                 int dy = Math.abs(verticalOffset);
-                Log.e(_TAG, "onOffsetChanged [dy]: "+dy);
                 if (dy <= toolbarHeight) {
-                    Log.e(_TAG, "onOffsetChanged ----------[dy <= toolbarHeight] --------");
                     float scale = (float) dy / toolbarHeight;
                     float alpha = scale * 255;
                     mFlTopLayout.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
@@ -92,7 +92,6 @@ public class ITopBarColorChangeActivity extends IBaseActivity {
                     StatusBarTool.setStatusBarDarkTheme(me, false);
                 }
                 if (dy > 220){//这个补充值根据实际情况进行设定
-                    Log.e(_TAG, "onOffsetChanged ----------[dy > 220] --------");
                     StatusBarTool.setStatusBarDarkTheme(me, true);
                 }
 

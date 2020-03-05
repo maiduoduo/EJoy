@@ -195,6 +195,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
 //        blur.setRadius(me, 0, 0);
         setDarkNavigationBarTheme(false);
         editTextSearch.setFocusable(false);
+        StatusBarTool.setStatusBarDarkTheme(me,false);
         locationHandler.sendEmptyMessage(1);
         final int bannerHeight = Math.round(150 * DENSITY);//图片高度
         Log.e(_TAG, "initSceneryHotBanner height: " + bannerHeight);

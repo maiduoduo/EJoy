@@ -184,7 +184,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             R.id.popCustomEdit,
             R.id.rlPopupRoot,
             R.id.albumTitle,
-            R.id.wbalbumList
+            R.id.wbalbumList,
+            R.id.popTipMenu
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -235,6 +236,9 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
                 Intent intent = new Intent(_mActivity, IWBAlbumActivity.class);
                 intent.putParcelableArrayListExtra("selectedImglist", mSelectImgList);
                 startActivityForResult(intent, 0);
+                break;
+                case R.id.popTipMenu:
+                    showActivity(_mActivity, IPopupwindowTipMenuActivity.class);
                 break;
             case R.id.rlPopupRoot:
                 if (mExpandableLayout.isExpanded()) {
