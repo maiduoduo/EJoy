@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_marginTop="2dp"
+              android:background="#44000000"
+              android:paddingLeft="@dimen/activity_vertical_margin"
+              android:layout_width="match_parent"
+              android:layout_height="120dp">
+
+    <TextView
+        android:text="预报"
+        android:textSize="24sp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="未来1天天气情况，合理安排出行，今日温度适宜郊游，野外放风，不过天气适中，也要注意避免着凉"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

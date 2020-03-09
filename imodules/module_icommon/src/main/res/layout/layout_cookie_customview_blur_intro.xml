@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cookie"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_55_11"
+    android:gravity="center_vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/rootIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="1dp"
+            android:text="图片模糊说明"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="动态模糊图像视图,此库基于RenderScript"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toTopOf="@+id/showBlogLink"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="50dp"
+            android:src="@mipmap/icon_cancel_gray_128px"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.946"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="      一般来说，考虑到效率，渲染一张图片最好的方法是使用OpenGL，其次是使用C++／C，使用Java代码是最慢的。\n      但是Android推出RenderScript之后，我们就有了新的选择，测试表明，使用RenderScript的渲染效率和使用C/C++不相上下，但是使用RenderScript却比使用JNI简单地多！同时，Android团队提供了RenderScript的支持库，使得在低版本的Android平台上也能使用。
+\n     不过在使用RenderScript之前，对于模糊一张图片，需要注意的是，我们应该尽量不要使用原尺寸分辨率的图片，最好将图片缩小比例，这小渲染的效率要高一些。"
+            android:textColor="@color/Gray2"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/showBlogLink" />
+
+        <TextView
+            android:id="@+id/showBlogLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_marginBottom="10dp"
+            android:text="@string/str_blur_blog"
+            android:textColor="@color/blue_500"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

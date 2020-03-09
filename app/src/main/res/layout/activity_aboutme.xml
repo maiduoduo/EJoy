@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="true"
-    tools:context=".ui.activity.textview.ITextViewActivity">
+    android:clipToPadding="true">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -343,7 +342,7 @@
     <RelativeLayout
         android:id="@+id/box_table"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/dp_70"
         android:clickable="true">
 
         <com.kongzue.dialog.util.BlurView
@@ -354,20 +353,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tvSpace"
+            <Space
+                android:id="@+id/space"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_20" />
             <LinearLayout
                 android:id="@+id/box_table_child"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/tvSpace"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:layout_below="@+id/space"
                 android:paddingHorizontal="5dp">
 
                 <LinearLayout

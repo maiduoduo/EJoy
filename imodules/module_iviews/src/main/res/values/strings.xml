@@ -12,4 +12,5 @@
     <string name="one_footer_hint_ready">松开加载更多</string>
     <string name="one_footer_hint_loading">正在努力加载</string>
     <string name="one_footer_no_more_data">没有更多了</string>
+
 </resources>

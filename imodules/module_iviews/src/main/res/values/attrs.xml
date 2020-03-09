@@ -30,4 +30,16 @@
         <attr name="erl_footer_no_more_data" format="string" />
         <attr name="erl_footer_height" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="ShadowBlurContainer">
+        <attr name="sc_shadowColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="BlurredView">
+        <attr name="src" format="reference"/>
+        <attr name="move" format="boolean"/>
+        <attr name="disableBlurred" format="boolean"/>
+    </declare-styleable>
+
+
 </resources>

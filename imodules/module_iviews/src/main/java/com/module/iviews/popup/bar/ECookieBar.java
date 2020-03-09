@@ -213,13 +213,20 @@ public final class ECookieBar {
             params.animationOutBottom = bottomAnimation;
             return this;
         }
+
+        public Builder setCustomView(int layout_cookie_customview) {
+            params.layoutId = layout_cookie_customview;
+            return this;
+        }
     }
 
     final static class Params {
 
         /**
-         * 标题
+         * 布局
          */
+        public int layoutId;
+
         public String title;
 
         /**

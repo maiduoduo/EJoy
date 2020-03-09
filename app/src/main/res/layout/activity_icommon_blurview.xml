@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="75dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/baseBlur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basic Blur"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/Gray2"
+                android:textSize="15sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+            <TextView
+                android:id="@+id/baseImmerseBlur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="折叠渐变式Blur"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/Gray2"
+                android:textSize="15sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图片模糊效果展示"
+                android:background="@color/black_77"
+                android:layout_marginTop="@dimen/dp_20"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_blur_banner03"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_blur_banner02"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_blur_banner01"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="500dp" />
+        </LinearLayout>
+
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/box_table"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:clickable="true">
+
+        <com.kongzue.dialog.util.BlurView
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20" />
+            <LinearLayout
+                android:id="@+id/box_table_child"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvSpace"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/img_back_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:text="返回"
+                        android:textColor="#2d6cee"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/btn_intro"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:src="@mipmap/ico_explain" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/split_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="动态模糊图像视图"
+                android:textColor="#dc000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

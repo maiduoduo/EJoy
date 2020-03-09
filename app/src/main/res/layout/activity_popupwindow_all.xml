@@ -194,6 +194,16 @@
                             android:textSize="17sp" />
 
                         <TextView
+                            android:id="@+id/EBlurPop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/dp_10"
+                            android:text="背景Blur的弹窗"
+                            android:textColor="@color/whiteAlpha50"
+                            android:textSize="17sp" />
+
+
+                        <TextView
                             android:id="@+id/popCustomEdit"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

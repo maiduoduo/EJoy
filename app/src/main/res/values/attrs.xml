@@ -31,4 +31,20 @@
 
     <attr name="ch_s_list_item_bg_2" format="dimension" />
 
+
+    <!-- Button -->
+    <attr name="gButtonStyle" format="reference" />
+    <declare-styleable name="Button">
+        <attr name="gFont" />
+        <attr name="gTouchColor" />
+        <attr name="gTouchEffect" />
+        <attr name="gTouchCornerRadius" />
+        <attr name="gTouchCornerRadiusTL" />
+        <attr name="gTouchCornerRadiusTR" />
+        <attr name="gTouchCornerRadiusBL" />
+        <attr name="gTouchCornerRadiusBR" />
+        <attr name="gTouchDurationRate" />
+        <attr name="gInterceptEvent" />
+    </declare-styleable>
+
 </resources>

@@ -111,6 +111,11 @@ dependencies {
     implementation rootProject.ext.dependencies["statusbarutil"]
 
 
+    // ui module
+    implementation 'net.qiujuer.genius:ui:2.1.1'
+    implementation 'net.qiujuer.genius:res:2.1.1'
+
+
     //modules
     implementation project(':imodules:module_idatetime')
     implementation project(':imodules:module_icitypicker')

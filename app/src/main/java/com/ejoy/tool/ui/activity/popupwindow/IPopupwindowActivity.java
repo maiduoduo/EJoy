@@ -23,12 +23,14 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
@@ -48,6 +50,7 @@ import com.module.iviews.popup.ExpandableItem;
 import com.module.iviews.popup.baseuse.IListPopupwindow;
 import com.module.iviews.popup.baseuse.IPopupwindowUse;
 import com.module.iviews.popup.bean.GalleryBean;
+import com.module.iviews.popup.blurPop.BlurPopupWindow;
 import com.module.iviews.popup.menu.IScreenMenuPopWindow;
 import com.module.iviews.popup.menu.bean.FiltrateBean;
 import com.module.iviews.popup.qq.IQQPopupWindow;
@@ -85,9 +88,12 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     IExpandableLayout mExpandableLayout;
     @BindView(R.id.iv_indicator)
     ImageView mIvIndicator;
-    @BindView(R.id.pop_root) ConstraintLayout mPopRoot;
-    @BindView(R.id.tvWarn) TextView mTvWarn;
-    @BindView(R.id.tvWarn2) TextView mTvWarn2;
+    @BindView(R.id.pop_root)
+    ConstraintLayout mPopRoot;
+    @BindView(R.id.tvWarn)
+    TextView mTvWarn;
+    @BindView(R.id.tvWarn2)
+    TextView mTvWarn2;
     private IQQPopupWindow mQQPopupWindow;
     private List<String> mPopData;
     private WeiboPopupWindow mWeiboPopupWindow;
@@ -185,7 +191,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             R.id.rlPopupRoot,
             R.id.albumTitle,
             R.id.wbalbumList,
-            R.id.popTipMenu
+            R.id.popTipMenu,
+            R.id.EBlurPop
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -237,8 +244,24 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
                 intent.putParcelableArrayListExtra("selectedImglist", mSelectImgList);
                 startActivityForResult(intent, 0);
                 break;
-                case R.id.popTipMenu:
-                    showActivity(_mActivity, IPopupwindowTipMenuActivity.class);
+            case R.id.popTipMenu:
+                showActivity(_mActivity, IPopupwindowTipMenuActivity.class);
+                break;
+            case R.id.EBlurPop://背景Blur化的弹窗
+                new BlurPopupWindow.Builder(_mActivity).setContentView(R.layout.layout_dialog_like_blur)
+                        .bindClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(v.getContext(), "Click Button", Toast.LENGTH_SHORT).show();
+                            }
+                        }, R.id.dialog_like_bt)
+                        .setGravity(Gravity.CENTER)
+                        .setScaleRatio(0.2f)
+                        .setBlurRadius(10)
+                        .setTintColor(0x30000000)
+                        .setDismissOnClickBack(true)
+                        .build()
+                        .show();
                 break;
             case R.id.rlPopupRoot:
                 if (mExpandableLayout.isExpanded()) {
@@ -313,23 +336,23 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     private void initListPopup() {
         mListPopup = new EUISimplePopup(_mActivity, GlobalDataProvider.wbDialogItems);
         mListPopup.create(EDensityUtils.dp2px(_mActivity, 170), new EUISimplePopup.OnPopupItemClickListener() {
-                    @Override
-                    public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
-                        iToast.showIDefaultImgResToast(item.getTitle().toString());
-                        switch (position) {
-                            case 0:
-                                View view = adapter.getView(position, null, null);
-                                showWeibPopupWindow(view);
-                                break;
-                            case 1:
-                                showActivity(_mActivity, IPopupWindowPopmenuActivity.class, R.anim.push_bottom_in, R.anim.push_bottom_out);
-                                break;
-                            default:
-                                break;
-                        }
-                        mListPopup.dismiss();
-                    }
-                })
+            @Override
+            public void onItemClick(EUISimpleAdapter adapter, AdapterItem item, int position) {
+                iToast.showIDefaultImgResToast(item.getTitle().toString());
+                switch (position) {
+                    case 0:
+                        View view = adapter.getView(position, null, null);
+                        showWeibPopupWindow(view);
+                        break;
+                    case 1:
+                        showActivity(_mActivity, IPopupWindowPopmenuActivity.class, R.anim.push_bottom_in, R.anim.push_bottom_out);
+                        break;
+                    default:
+                        break;
+                }
+                mListPopup.dismiss();
+            }
+        })
                 .setHasDivider(true);
     }
 
@@ -470,6 +493,7 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     }
 
     AlertDesignViewDialog viewDialog;
+
     private void initImgList() {
         viewDialog = new AlertDesignViewDialog(_mActivity)
                 .build(mSelectImgList)

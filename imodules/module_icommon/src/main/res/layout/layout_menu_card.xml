@@ -188,7 +188,7 @@
         </RelativeLayout>
         <!---->
         <RelativeLayout
-            android:id="@+id/re_taxi"
+            android:id="@+id/re_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/re_topbar"
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="XXX"
+                android:text="Button"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
@@ -248,7 +248,7 @@
         </RelativeLayout>
         <!---->
         <RelativeLayout
-            android:id="@+id/re_train_tour"
+            android:id="@+id/re_blurview"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/re_tour"
@@ -259,9 +259,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="XXX"
+                android:textSize="13sp"
+                android:text="动态模糊图像视图"
                 android:textColor="@android:color/white"
-
                 android:textStyle="bold" />
 
             <View
@@ -274,7 +274,7 @@
             android:id="@+id/re_boat_tour"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/re_train_tour"
+            android:layout_toRightOf="@+id/re_blurview"
             android:layout_weight="1">
 
             <TextView

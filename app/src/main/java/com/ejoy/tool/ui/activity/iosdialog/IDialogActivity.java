@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.maple.msdialog.ActionSheetDialog;
 import com.maple.msdialog.AlertDialog;
 import com.maple.msdialog.AlertEditDialog;
 import com.maple.msdialog.AlertNumberPickerDialog;
+import com.module.iviews.popup.blurPop.BlurPopupWindow;
 import com.module.iviews.view.widget.IPublishDialog;
 
 import butterknife.OnClick;

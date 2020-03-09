@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Toolbar"
+        style="@style/ToolBarStyle"
+        app:navigationIcon="@mipmap/img_back_white_32px"
+        android:paddingTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp" >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Button集合"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cyan_300"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="5dp"
+        android:textColor="@color/white"
+        android:text="Button的不同点击效果，点击试试看..."/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/len_4"
+                android:layout_marginRight="@dimen/len_4"
+                android:text="Base"
+                android:textColor="@color/gray2"
+                android:textSize="@dimen/len_14"
+                android:paddingVertical="@dimen/dp_10"/>
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    style="@style/Genius.Widget.Button"
+                    android:layout_width="0dp"
+                    android:id="@+id/btn1"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:text="Ease"
+                    android:gravity="center"
+                    android:textColor="@color/white_alpha_224"
+                    app:gTouchEffect="ease" />
+
+                <net.qiujuer.genius.ui.widget.Button
+                    style="@style/Genius.Widget.Button"
+                    android:layout_width="0dp"
+                    android:id="@+id/btn2"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:text="Ripple"
+                    android:gravity="center"
+                    android:textColor="@color/white_alpha_224"
+                    app:gTouchEffect="ripple" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    style="@style/Genius.Widget.Button"
+                    android:layout_width="0dp"
+                    android:id="@+id/btn3"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:text="Press"
+                    android:gravity="center"
+                    android:textColor="@color/white_alpha_224"
+                    app:gTouchEffect="press" />
+
+                <net.qiujuer.genius.ui.widget.Button
+                    style="@style/Genius.Widget.Button"
+                    android:layout_width="0dp"
+                    android:id="@+id/btn4"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:text="Auto"
+                    android:gravity="center"
+                    android:textColor="@color/white_alpha_224"
+                    app:gTouchColor="@color/black_alpha_48"
+                    app:gTouchEffect="auto" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/len_4"
+                android:layout_marginRight="@dimen/len_4"
+                android:text="Radius"
+                android:textColor="@color/gray2"
+                android:textSize="@dimen/len_14"
+                android:paddingVertical="@dimen/dp_10"/>
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="0dp"
+                    android:id="@+id/btn5"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@drawable/m_button_background"
+                    android:text="All 12DP"
+                    android:gravity="center"
+                    android:textColor="@color/white_alpha_224"
+                    app:gTouchCornerRadius="@dimen/len_12"
+                    app:gTouchEffect="ease" />
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="0dp"
+                    android:id="@+id/btn6"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@drawable/m_button_background"
+                    android:text="TL BR 32DP"
+                    android:gravity="center"
+                    android:textColor="@color/white_alpha_224"
+                    app:gTouchCornerRadiusBL="@dimen/len_12"
+                    app:gTouchCornerRadiusBR="@dimen/len_32"
+                    app:gTouchCornerRadiusTL="@dimen/len_32"
+                    app:gTouchCornerRadiusTR="@dimen/len_12"
+                    app:gTouchEffect="ease" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/len_4"
+                android:layout_marginRight="@dimen/len_4"
+                android:text="Trans"
+                android:textColor="@color/gray2"
+                android:textSize="@dimen/len_14"
+                android:paddingVertical="@dimen/dp_10"/>
+            <include layout="@layout/layout_line_horizontal_1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="0dp"
+                    android:id="@+id/btn7"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@color/trans"
+                    android:text="Cancel"
+                    android:gravity="center"
+                    app:gTouchCornerRadius="@dimen/len_12"
+                    app:gTouchDurationRate="0.7"
+                    app:gTouchEffect="ripple" />
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:id="@+id/btn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="Submit"
+                    android:textColor="@color/cyan_700"
+                    app:gTouchColor="#7000bcd4"
+                    app:gTouchCornerRadius="@dimen/len_12"
+                    app:gTouchDurationRate="3"
+                    app:gTouchEffect="ripple"
+                    app:gInterceptEvent="all"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -10,7 +10,7 @@ import com.ejoy.tool.R;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.module.iviews.popup.bar.ECookieBar;
-import com.module.iviews.popup.bar.ECookieBar1111;
+import com.module.iviews.popup.bar.ECookieBarCustom;
 
 import butterknife.OnClick;
 
@@ -186,15 +186,15 @@ public class ICookieBarActivity extends BaseActivity {
      * 自定义
      */
     private void showCookiebarCustomview() {
-       /* ECookieBar.builder(_mActivity)
+        ECookieBarCustom.builder(_mActivity)
                 .setCustomView(R.layout.layout_cookie_customview)
-                .setCookiePosition(Gravity.BOTTOM)
+                .setCookiePosition(Gravity.TOP)
                 .setTitle(R.string.cookie_title)
                 .setMessage(R.string.cookie_message)
                 .setEnableAutoDismiss(false)
-//                .setAnimationIn(R.anim.cookiebar_slide_in_from_bottom,R.anim.cookiebar_slide_in_from_bottom)
-//                .setAnimationOut(R.anim.cookiebar_slide_in_from_top,R.anim.cookiebar_slide_in_from_top)
-                .setCustomViewInitializer(new ECookieBar1111.CustomViewInitializer() {
+                .setAnimationIn(R.anim.cookiebar_slide_in_from_top,R.anim.cookiebar_slide_in_from_top)
+                .setAnimationOut(R.anim.cookiebar_slide_in_from_top,R.anim.cookiebar_slide_in_from_top)
+                .setCustomViewInitializer(new ECookieBarCustom.CustomViewInitializer() {
                     @Override
                     public void initView(View view) {
                         Button btnNew = view.findViewById(R.id.custom_cookie_btn_new);
@@ -216,10 +216,11 @@ public class ICookieBarActivity extends BaseActivity {
                 .setAction("轻点关闭", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ECookieBar1111.dismiss();
+                        ECookieBarCustom.dismiss();
                     }
                 })
-                .show();*/
+                .setEnableAutoDismiss(true)
+                .show();
     }
 
 }
