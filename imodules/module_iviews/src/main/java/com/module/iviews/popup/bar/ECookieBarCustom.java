@@ -35,10 +35,10 @@ import com.module.iviews.R;
 
 import java.lang.ref.WeakReference;
 
-import static com.module.iviews.popup.bar.ECookie11.DEFAULT_COOKIE_DURATION;
+import static com.module.iviews.popup.bar.ECookieCustom.DEFAULT_COOKIE_DURATION;
 
 /**
- * CN:      ECookieBar1111
+ * CN:      ECookieBarCustom
  * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
  * Date:   2020/1/8
  * Des:    TODO:顶部和底部信息显示条
@@ -54,16 +54,16 @@ import static com.module.iviews.popup.bar.ECookie11.DEFAULT_COOKIE_DURATION;
  *  </pre>
  * <p>
  */
-public class ECookieBar1111 {
-    private static ECookie11 mCookieView;
+public class ECookieBarCustom {
+    private static ECookieCustom mCookieView;
     private WeakReference<Activity> mActivityWeakRef;
 //    public static final int TOP = Gravity.TOP;
 //    public static final int BOTTOM = Gravity.BOTTOM;
 
-    private ECookieBar1111() {
+    private ECookieBarCustom() {
     }
 
-    private ECookieBar1111(Activity activity, Params params) {
+    private ECookieBarCustom(Activity activity, Params params) {
         mActivityWeakRef = new WeakReference<>(activity);
         if (params == null) {
             // since params is null, this CookieBar object can only be used to dismiss
@@ -71,7 +71,7 @@ public class ECookieBar1111 {
             dismiss();
             return;
         }
-        mCookieView = new ECookie11(activity,params);
+        mCookieView = new ECookieCustom(activity,params);
         mCookieView.setParams(params);
     }
 
@@ -211,44 +211,44 @@ public class ECookieBar1111 {
             return this;
         }
 
-        public ECookieBar1111 create() {
-            return new ECookieBar1111(context, params);
+        public ECookieBarCustom create() {
+            return new ECookieBarCustom(context, params);
         }
 
-        public ECookieBar1111 show() {
-            final ECookieBar1111 cookie = create();
+        public ECookieBarCustom show() {
+            final ECookieBarCustom cookie = create();
             cookie.show();
             return cookie;
         }
 
-        public ECookieBar1111.Builder setAnimationIn(@AnimRes int topAnimation, @AnimRes int bottomAnimation) {
+        public ECookieBarCustom.Builder setAnimationIn(@AnimRes int topAnimation, @AnimRes int bottomAnimation) {
             params.animationInTop = topAnimation;
             params.animationInBottom = bottomAnimation;
             return this;
         }
 
-        public ECookieBar1111.Builder setAnimationOut(@AnimRes int topAnimation, @AnimRes int bottomAnimation) {
+        public ECookieBarCustom.Builder setAnimationOut(@AnimRes int topAnimation, @AnimRes int bottomAnimation) {
             params.animationOutTop = topAnimation;
             params.animationOutBottom = bottomAnimation;
             return this;
         }
 
-        public ECookieBar1111.Builder setIconAnimation(@AnimatorRes int iconAnimation) {
+        public ECookieBarCustom.Builder setIconAnimation(@AnimatorRes int iconAnimation) {
             params.iconAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(context, iconAnimation);
             return this;
         }
 
-        public ECookieBar1111.Builder setCustomView(@LayoutRes int customView) {
+        public ECookieBarCustom.Builder setCustomView(@LayoutRes int customView) {
             params.customViewResource = customView;
             return this;
         }
 
-        public ECookieBar1111.Builder setCustomViewInitializer(CustomViewInitializer viewInitializer) {
+        public ECookieBarCustom.Builder setCustomViewInitializer(CustomViewInitializer viewInitializer) {
             params.viewInitializer = viewInitializer;
             return this;
         }
 
-        public ECookieBar1111.Builder setEnableAutoDismiss(boolean enableAutoDismiss) {
+        public ECookieBarCustom.Builder setEnableAutoDismiss(boolean enableAutoDismiss) {
             params.enableAutoDismiss = enableAutoDismiss;
             return this;
         }

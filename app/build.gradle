@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 //greendao
 apply plugin: 'org.greenrobot.greendao'
 
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -77,6 +80,7 @@ dependencies {
     testImplementation rootProject.ext.dependencies["junit"]
     androidTestImplementation rootProject.ext.dependencies["runner"]
     androidTestImplementation rootProject.ext.dependencies["espresso-core"]
+
     implementation rootProject.ext.dependencies["butterknife_8_11"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler_8_11"]
     implementation rootProject.ext.dependencies["systembartint"]
@@ -106,8 +110,13 @@ dependencies {
     //状态栏
     implementation rootProject.ext.dependencies["statusbarutil"]
 
-    //mudules
-//    implementation project(':imodules:module_iiosdialog')
+
+    // ui module
+    implementation 'net.qiujuer.genius:ui:2.1.1'
+    implementation 'net.qiujuer.genius:res:2.1.1'
+
+
+    //modules
     implementation project(':imodules:module_idatetime')
     implementation project(':imodules:module_icitypicker')
     implementation project(':imodules:module_iviews')

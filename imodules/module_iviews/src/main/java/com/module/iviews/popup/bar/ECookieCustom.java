@@ -45,7 +45,7 @@ import com.module.iviews.R;
  * Date:   2020/1/8
  * Des:    TODO:顶部和底部信息消息显示条
  */
-public class ECookie11 extends LinearLayout implements View.OnTouchListener {
+public class ECookieCustom extends LinearLayout implements View.OnTouchListener {
 
     /**
      * 默认持续时间（ms）
@@ -72,16 +72,16 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
     private boolean isAutoDismissEnabled;
 
 
-    public ECookie11(@NonNull final Context context, @Nullable final AttributeSet attrs) {
+    public ECookieCustom(@NonNull final Context context, @Nullable final AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ECookie11(@NonNull final Context context, @Nullable final AttributeSet attrs,
-                     final int defStyleAttr) {
+    public ECookieCustom(@NonNull final Context context, @Nullable final AttributeSet attrs,
+                         final int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public ECookie11(@NonNull final Context context, ECookieBar1111.Params params) {
+    public ECookieCustom(@NonNull final Context context, ECookieBarCustom.Params params) {
         super(context);
         initViews(params.customViewResource, params.viewInitializer);
 
@@ -91,7 +91,7 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
         return mGravity;
     }
 
-    private void initViews(@LayoutRes int rootView, ECookieBar1111.CustomViewInitializer viewInitializer) {
+    private void initViews(@LayoutRes int rootView, ECookieBarCustom.CustomViewInitializer viewInitializer) {
 //        inflate(getContext(), R.layout.layout_eui_cookie, this);
         if (rootView != 0) {
             inflate(getContext(), rootView, this);
@@ -150,13 +150,13 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
         int backgroundColor = EThemeUtils.resolveColor(context, R.attr.cookieBackgroundColor,
                 ContextCompat.getColor(context, R.color.notificationError));
 
-        mTvTitle.setTextColor(titleColor);
-        mTvMessage.setTextColor(messageColor);
-        mBtnAction.setTextColor(actionColor);
-        mLayoutCookie.setBackgroundColor(backgroundColor);
+        if (mTvTitle != null) mTvTitle.setTextColor(titleColor);
+        if (mTvMessage != null) mTvMessage.setTextColor(messageColor);
+        if (mBtnAction != null) mBtnAction.setTextColor(actionColor);
+        if (mLayoutCookie != null) mLayoutCookie.setBackgroundColor(backgroundColor);
     }
 
-    public void setParams(final ECookieBar1111.Params params) {
+    public void setParams(final ECookieBarCustom.Params params) {
         if (params != null) {
             animationInTop = params.animationInTop;
             animationInBottom = params.animationInBottom;
@@ -170,8 +170,10 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
 
             //Icon
             if (params.iconResId != 0) {
-                mIvIcon.setVisibility(VISIBLE);
-                mIvIcon.setBackgroundResource(params.iconResId);
+                if (mIvIcon != null) {
+                    mIvIcon.setVisibility(VISIBLE);
+                    mIvIcon.setBackgroundResource(params.iconResId);
+                }
             }
 
             //Icon Animate
@@ -185,7 +187,7 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
             }
 
             //Title
-            if (!TextUtils.isEmpty(params.title)) {
+            if (!TextUtils.isEmpty(params.title) && mTvTitle != null) {
                 mTvTitle.setVisibility(VISIBLE);
                 mTvTitle.setText(params.title);
                 if (params.titleColor != 0) {
@@ -194,7 +196,7 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
             }
 
             //Message
-            if (!TextUtils.isEmpty(params.message)) {
+            if (!TextUtils.isEmpty(params.message) && mTvMessage != null) {
                 mTvMessage.setVisibility(VISIBLE);
                 mTvMessage.setText(params.message);
                 if (params.messageColor != 0) {
@@ -210,7 +212,7 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
 
             //Action
             if ((!TextUtils.isEmpty(params.action) || params.actionIcon != 0)
-                    && params.onActionClickListener != null) {
+                    && params.onActionClickListener != null && mBtnAction != null) {
                 mBtnAction.setVisibility(VISIBLE);
                 mBtnAction.setText(params.action);
                 mBtnAction.setOnClickListener(new View.OnClickListener() {
@@ -227,7 +229,7 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
                 }
             }
 
-            if (params.actionIcon != 0 && params.onActionClickListener != null) {
+            if (params.actionIcon != 0 && params.onActionClickListener != null && mBtnAction != null && mBtnActionWithIcon != null) {
                 mBtnAction.setVisibility(GONE);
                 mBtnActionWithIcon.setVisibility(VISIBLE);
                 mBtnActionWithIcon.setBackgroundResource(params.actionIcon);
@@ -241,13 +243,13 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
             }
 
             //Background
-            if (params.backgroundColor != 0) {
+            if (params.backgroundColor != 0 && mLayoutCookie != null) {
                 mLayoutCookie
                         .setBackgroundColor(ContextCompat.getColor(getContext(), params.backgroundColor));
             }
 
             int padding = EThemeUtils.resolveDimension(getContext(), R.attr.eui_config_content_spacing_horizontal);
-            if (mGravity == Gravity.BOTTOM) {
+            if (mGravity == Gravity.BOTTOM && mLayoutCookie != null) {
                 mLayoutCookie.setPadding(padding, padding, padding, padding);
             }
 
@@ -258,7 +260,7 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        if (mGravity == Gravity.TOP) {
+        if (mGravity == Gravity.TOP && mLayoutCookie != null) {
             super.onLayout(changed, l, 0, r, mLayoutCookie.getMeasuredHeight());
         } else {
             super.onLayout(changed, l, t, r, b);
@@ -359,8 +361,8 @@ public class ECookie11 extends LinearLayout implements View.OnTouchListener {
             public void run() {
                 ViewParent parent = getParent();
                 if (parent != null) {
-                    ECookie11.this.clearAnimation();
-                    ((ViewGroup) parent).removeView(ECookie11.this);
+                    ECookieCustom.this.clearAnimation();
+                    ((ViewGroup) parent).removeView(ECookieCustom.this);
                 }
             }
         }, 200);

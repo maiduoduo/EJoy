@@ -116,6 +116,23 @@
             android:configChanges="screenSize|screenLayout|navigation"/>
         <activity android:name=".ui.activity.more_detail.IAllViewShowActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.more_detail.ITopBarColorChangeActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.popupwindow.IPopupwindowTipMenuActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.more_detail.ICommonTitleBarActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.more_detail.ICommonButtonActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.more_detail.ICommonBlurViewActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <!--Blur-->
+        <activity android:name=".ui.activity.more_detail.ICommonBaseBlurViewActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.more_detail.IImerseBlurViewActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.seekbar.ISeekBarAndCheckBoxActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
 
 
         <!--FileProvider共享文件-->

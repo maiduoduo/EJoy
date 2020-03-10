@@ -20,8 +20,10 @@ package com.ejoy.tool.ui.activity.textview;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.BaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
@@ -29,6 +31,7 @@ import com.kongzue.dialog.util.BlurView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * CN:      ITextViewActivity
@@ -38,15 +41,24 @@ import butterknife.ButterKnife;
  */
 @Layout(R.layout.activity_itextview)
 @DarkStatusBarTheme(true)
-public class ITextViewActivity extends BaseActivity {
+public class ITextViewActivity extends IBaseActivity {
 
 
     @BindView(R.id.blur)
     BlurView blur;
 
     @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
+
+    @Override
+    protected boolean isRegistSatusbarFontDark() {
+        return true;
+    }
+
+    @Override
     public void initViews() {
-        ButterKnife.bind(this);
 //        setDarkStatusBarTheme(false);
 //        setNavigationBarBackgroundColor(EResUtils.getColor(me,R.color.red));
 //        StatusBarTool.setStatusBarColor(me,EResUtils.getColor(me,R.color.green));
@@ -69,10 +81,15 @@ public class ITextViewActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    @OnClick({
+            R.id.btn_back
+    })
+    public void bindClick(View view){
+        switch (view.getId()){
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
+
 }

@@ -20,9 +20,9 @@ package com.ejoy.tool.common.bean;
 
 /**
  * CN:      BaseBean
- * Author： JSYL-DINGCL (dingcl@jsyl.com.cn)
+ * Author： JSYL-DINGCL (maiduoduo0@163.com)
  * Date:   2019/10/17
- * Des:    TODO:
+ * Des:    TODO:基类bean
  */
 public class BaseBean<T> {
 

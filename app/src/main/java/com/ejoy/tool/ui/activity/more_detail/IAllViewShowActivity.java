@@ -19,11 +19,9 @@ package com.ejoy.tool.ui.activity.more_detail;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,29 +34,25 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.ActivityUtils;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.Utils;
 import com.ejoy.tool.ui.activity.IArcLayoutActivity;
 import com.ejoy.tool.ui.activity.IScrollViewActivity;
-import com.ejoy.tool.ui.activity.ToastActivity;
 import com.ejoy.tool.ui.activity.bezer.BezierActivity;
-import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
-import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
-import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
-import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
-import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
+import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
+import com.ejoy.tool.ui.activity.textview.ITextViewActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.maple.msdialog.ActionSheetDialog;
+import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.view.EEditTextSearch;
 import com.module.iviews.view.IObserverScrollView;
 import com.tencent.map.geolocation.TencentLocation;
@@ -73,7 +67,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
@@ -90,7 +83,6 @@ import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
 @DarkStatusBarTheme(true)
 //@DarkNavigationBarTheme(true)
 public class IAllViewShowActivity extends IBaseActivity implements TencentLocationListener {
-
 
     @BindView(R.id.topTabLine)
     LinearLayout topTabLine;
@@ -120,18 +112,10 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     LinearLayout clickFloatDragButton;
     @BindView(R.id.clickArcLayout)
     LinearLayout clickArcLayout;
-    @BindView(R.id.re_car_boat_ticket)
-    RelativeLayout reCarBoatTicket;
-    @BindView(R.id.re_taxi)
-    RelativeLayout reTaxi;
     @BindView(R.id.re_card_2)
     LinearLayout reCard2;
     @BindView(R.id.re_tour)
     RelativeLayout reTour;
-    @BindView(R.id.re_train_tour)
-    RelativeLayout reTrainTour;
-    @BindView(R.id.re_boat_tour)
-    RelativeLayout reBoatTour;
     @BindView(R.id.re_custom_tour)
     RelativeLayout reCustomTour;
     @BindView(R.id.re_card_3)
@@ -175,9 +159,11 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     @BindView(R.id.message_icon)
     ImageView messageIcon;
     @BindView(R.id.re_search)
-    RelativeLayout re_search;
+    RelativeLayout mSearchBar;
     @BindView(R.id.backto)
     ImageView backto;
+    @BindView(R.id.tvScrollALPHAInfo)
+    TextView tvScrollALPHAInfo;
 
 
     private TencentLocationManager tencentLocationManager;
@@ -193,12 +179,19 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     private int mIndex = DEFAULT;
     private int mLevel = LEVELS[DEFAULT];
 
+
+    @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
+
     @Override
     public void initViews() {
 //        blur.setOverlayColor(Color.argb(200, 235, 235, 235));
 //        blur.setRadius(me, 0, 0);
         setDarkNavigationBarTheme(false);
         editTextSearch.setFocusable(false);
+        StatusBarTool.setStatusBarDarkTheme(me, false);
         locationHandler.sendEmptyMessage(1);
         final int bannerHeight = Math.round(150 * DENSITY);//图片高度
         Log.e(_TAG, "initSceneryHotBanner height: " + bannerHeight);
@@ -289,9 +282,10 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                     public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
                         // TODO Auto-generated method stub
                         Log.e(_TAG, "initListeners y: " + y);
+                        float percent = Float.valueOf(Math.abs(y)) / Float.valueOf(EDensityUtils.dp2px(me, 180));
                         if (y <= 0) {
                             //设置文字背景颜色，白色
-                            re_search.setBackgroundColor(Color.argb((int) 0, 255, 255, 255));//AGB由相关工具获得，或者美工提供
+                            mSearchBar.setBackgroundColor(Color.argb((int) 0, 255, 255, 255));//AGB由相关工具获得，或者美工提供
                             //设置文字颜色，黑色
                             editTextSearch.setBackgroundResource(R.drawable.search_edit_round);
                             backto.setImageResource(R.mipmap.pick_ico_back_white_90px);
@@ -303,7 +297,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                             float scale = (float) y / imageHeight;
                             float alpha = (255 * scale);
                             // 只是layout背景透明(仿知乎滑动效果)白色透明
-                            re_search.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
+                            mSearchBar.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
                             //设置文字颜色，黑色，加透明度
                             backto.setImageResource(R.mipmap.img_back_black_48px);
                             messageIcon.setImageResource(R.drawable.ico_message_black_32px);
@@ -311,9 +305,11 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                             editTextSearch.setBackgroundResource(R.drawable.search_edit_round_dark);
                             StatusBarTool.setStatusBarColor(me, Color.parseColor("#FFFFFF"));
                             StatusBarTool.setStatusBarDarkTheme(me, true);
+
+                            tvScrollALPHAInfo.setText("Topbar-setBackgroundColor(Color.argb((int) " + (int) alpha + ", 255, 255, 255))\n" + "mSearchBar.setAlpha(" + percent + ")");
                         } else {
                             //白色不透明
-                            re_search.setBackgroundColor(Color.argb((int) 255, 255, 255, 255));
+                            mSearchBar.setBackgroundColor(Color.argb((int) 255, 255, 255, 255));
                             //设置文字颜色:黑色
                             locationCity.setTextColor(Color.argb((int) 255, 0, 0, 0));
                         }
@@ -321,12 +317,6 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 });
             }
         });
-    }
-
-
-    @OnClick({
-    })
-    public void onViewClicked(View view) {
     }
 
 
@@ -499,6 +489,12 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             R.id.re_imagesoft,
             R.id.re_refreshStyle,
             R.id.backto,
+            R.id.re_topbar,
+            R.id.re_common_textview,
+            R.id.reCommonTitlebar,
+            R.id.re_button,
+            R.id.re_blurview,
+            R.id.reSeekBar,
     })
     public void bindViewclick(View view) {
         switch (view.getId()) {
@@ -511,8 +507,11 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 jump(BezierActivity.class);
                 break;
             case R.id.reCommonTitlebar:
+                jump(ICommonTitleBarActivity.class);
                 break;
             case R.id.re_common_textview:
+                jump(ITextViewActivity.class);
+                jumpAnim(R.anim.push_bottom_in, R.anim.push_bottom_out);
                 break;
             case R.id.re_version_upgrade:
                 break;
@@ -528,8 +527,20 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             case R.id.re_refreshStyle://下拉刷新
                 jump(IRefreshActivity.class);
                 break;
+            case R.id.re_topbar://顶部栏颜色渐变
+                jump(ITopBarColorChangeActivity.class);
+                break;
+            case R.id.re_button://Button
+                jump(ICommonButtonActivity.class);
+                break;
+            case R.id.re_blurview://Button
+                jump(ICommonBlurViewActivity.class);
+                break;
             case R.id.backto://返回
                 finishActivity();
+                break;
+            case R.id.reSeekBar://SeekBar
+                jump(ISeekBarAndCheckBoxActivity.class);
                 break;
             default:
                 break;

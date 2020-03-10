@@ -184,13 +184,25 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/tvScrollALPHAInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topTabLine"
+                android:layout_marginVertical="@dimen/dp_5"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bg_round_dark"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text=""/>
             <!--中部菜单-->
             <include
                 android:id="@+id/re_card"
                 layout="@layout/layout_menu_card"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_below="@id/topTabLine"
+                android:layout_below="@id/tvScrollALPHAInfo"
                 android:layout_margin="15dp" />
             <!--功能选项卡-->
             <include

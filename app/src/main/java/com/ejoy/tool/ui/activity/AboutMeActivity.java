@@ -74,6 +74,11 @@ public class AboutMeActivity extends IBaseActivity {
     public List<String> strList;
 
     @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
+
+    @Override
     public void initViews() {
         initList();
         blur.setOverlayColor(Color.argb(200, 235, 235, 235));

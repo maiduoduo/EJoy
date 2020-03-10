@@ -17,4 +17,5 @@
     <dimen name="one_footer_content_margin">8dp</dimen>
     <dimen name="one_footer_progress_size">18dp</dimen>
     <dimen name="one_footer_title_size">12sp</dimen>
+
 </resources>

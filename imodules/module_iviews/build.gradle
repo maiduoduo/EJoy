@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -9,7 +10,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        renderscriptTargetApi 28
+        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -32,6 +34,10 @@ dependencies {
     api files('libs/nineoldandroids-2.4.0.jar')
     api files('libs/universal-image-loader-1.9.4.jar')
     api files('libs/universal-image-loader-1.9.4-sources.jar')
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 //    implementation ('com.google.android.material:material:1.1.0-alpha09'){
 //    }
+}
+repositories {
+    mavenCentral()
 }
