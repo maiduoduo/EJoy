@@ -14,15 +14,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:paddingHorizontal="15dp"
+            android:paddingTop="@dimen/dp_70"
             android:paddingBottom="20dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="但是九分零四 十分了解是否结束了房间更多给多个豆腐干地方高度发达给梵蒂冈地方"
-                android:textSize="80sp"/>
+                android:background="@color/LGray3"
+                android:paddingVertical="@dimen/dp_10"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:text="带删除按钮的输入框"/>
+            <com.module.iviews.textview.IAutoDeleteEditText
+                android:id="@+id/edt_address"
+                android:layout_marginHorizontal="10dp"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingVertical="@dimen/dp_7"
+                android:layout_marginVertical="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:background="@drawable/shape_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                app:adet_hint_color="#9B9B9B"
+                app:adet_text_color="@color/gray2"
+                app:adet_text_size="16sp"
+                app:adet_hint="输入地址"
+                app:adet_padding_top="0dp"
+                app:adet_isTop="true" />
 
         </LinearLayout>
 

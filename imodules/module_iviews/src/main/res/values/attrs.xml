@@ -42,4 +42,31 @@
     </declare-styleable>
 
 
+    <!--自定义带有删除按钮的Edittext-->
+    <declare-styleable name="IAutoDeleteEditText">
+        <!--字体大小-->
+        <attr name="adet_text_size" format="dimension" />
+        <!--字体颜色-->
+        <attr name="adet_text_color" format="color|reference" />
+        <!--未输入文字是字体颜色-->
+        <attr name="adet_hint_color" format="color|reference" />
+        <!--是否内容居上-->
+        <attr name="adet_isTop" format="boolean|reference" />
+        <!--内容内边距离顶部的距离-->
+        <attr name="adet_padding_top" format="dimension|reference" />
+        <!--hint的资源-->
+        <attr name="adet_hint" format="string|reference" />
+        <!--是否单行-->
+        <attr name="adet_isSingle" format="boolean|reference" />
+        <!--输入类型-->
+        <attr name="android:inputType" />
+        <!--输入长度-->
+        <attr name="adet_max_length" format="integer|reference" />
+        <!--删除的图片的颜色-->
+        <attr name="adet_tint_color" format="color" />
+        <!--删除图片的资源-->
+        <attr name="adet_delete_src" format="reference|color" />
+    </declare-styleable>
+
+
 </resources>

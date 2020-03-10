@@ -46,6 +46,7 @@ import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
+import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.activity.textview.ITextViewActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -115,8 +116,6 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     LinearLayout reCard2;
     @BindView(R.id.re_tour)
     RelativeLayout reTour;
-    @BindView(R.id.re_boat_tour)
-    RelativeLayout reBoatTour;
     @BindView(R.id.re_custom_tour)
     RelativeLayout reCustomTour;
     @BindView(R.id.re_card_3)
@@ -495,6 +494,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             R.id.reCommonTitlebar,
             R.id.re_button,
             R.id.re_blurview,
+            R.id.reSeekBar,
     })
     public void bindViewclick(View view) {
         switch (view.getId()) {
@@ -538,6 +538,9 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 break;
             case R.id.backto://返回
                 finishActivity();
+                break;
+            case R.id.reSeekBar://SeekBar
+                jump(ISeekBarAndCheckBoxActivity.class);
                 break;
             default:
                 break;

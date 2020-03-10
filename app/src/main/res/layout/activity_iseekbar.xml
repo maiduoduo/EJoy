@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/dp_70"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
+            <net.qiujuer.genius.ui.widget.TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/len_4"
+                android:layout_marginTop="@dimen/len_16"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="@dimen/dp_8"
+                android:background="@color/LGray3"
+                android:layout_gravity="left"
+                android:text="SeekBar"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/black_77"
+                android:textSize="@dimen/len_16" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/len_4"
+                android:layout_marginTop="@dimen/len_4"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.SeekBar
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:focusable="true"
+                    app:gValue="30" />
+
+                <net.qiujuer.genius.ui.widget.SeekBar
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_52"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    app:gValue="30" />
+            </LinearLayout>
+
+            <net.qiujuer.genius.ui.widget.SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/len_4"
+                android:layout_marginLeft="@dimen/len_4"
+                android:layout_marginRight="@dimen/len_4"
+                android:layout_marginTop="@dimen/len_4"
+                app:gIndicator="none"
+                app:gMax="10"
+                app:gMin="0"
+                app:gTickSize="3dp"
+                app:gValue="2" />
+
+            <net.qiujuer.genius.ui.widget.SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/len_4"
+                android:layout_marginLeft="@dimen/len_4"
+                android:layout_marginRight="@dimen/len_4"
+                android:layout_marginTop="@dimen/len_4"
+                app:gAllowTrackClickToDrag="true"
+                app:gIndicator="auto"
+                app:gIndicatorBackgroundColor="@color/color_seekbar_indicator"
+                app:gIndicatorFormatter="(∩_∩)%d"
+                app:gIndicatorSeparation="14dp"
+                app:gIndicatorTextAppearance="@style/Genius.Widget.BalloonMarker.TextAppearance"
+                app:gMax="10"
+                app:gMin="0"
+                app:gRippleColor="@color/color_seekbar_ripple"
+                app:gScrubberColor="@color/color_seekbar_scrubber"
+                app:gScrubberStroke="4dp"
+                app:gThumbColor="@color/color_seekbar_thumb"
+                app:gThumbSize="6dp"
+                app:gTickSize="3dp"
+                app:gTouchSize="12dp"
+                app:gTrackColor="@color/grey_500"
+                app:gTrackStroke="2dp"
+                app:gValue="2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray3"
+                android:paddingVertical="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:text="具体效果"/>
+
+            <include layout="@layout/activity_iseekbar_detailuse"/>
+
+
+            <net.qiujuer.genius.ui.widget.TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/len_4"
+                android:layout_marginTop="@dimen/dp_30"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="@dimen/dp_8"
+                android:background="@color/LGray3"
+                android:layout_gravity="left"
+                android:text="CheckBox"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/black_77"
+                android:textSize="@dimen/len_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/len_4"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.CheckBox
+                    android:id="@+id/checkbox_none_a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="UnChecked"
+                    android:textColor="@color/grey_500" />
+
+                <net.qiujuer.genius.ui.widget.CheckBox
+                    android:id="@+id/checkbox_none_b"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:text="Disabled"
+                    android:textColor="@color/grey_500" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/len_4"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <net.qiujuer.genius.ui.widget.CheckBox
+                    android:id="@+id/checkbox_custom_a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:checked="true"
+                    android:text="Custom Size"
+                    android:textColor="@color/grey_500"
+                    app:gBorderSize="1dp"
+                    app:gIntervalSize="2dp"
+                    app:gMarkSize="22dp" />
+
+                <net.qiujuer.genius.ui.widget.CheckBox
+                    android:id="@+id/checkbox_custom_b"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_4"
+                    android:layout_marginRight="@dimen/len_4"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:checked="false"
+                    android:text="Custom Color"
+                    android:textColor="@color/grey_500"
+                    app:gMarkColor="@color/color_checkbox" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/box_table"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:clickable="true">
+
+        <com.kongzue.dialog.util.BlurView
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20" />
+            <LinearLayout
+                android:id="@+id/box_table_child"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvSpace"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/img_back_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:text="返回"
+                        android:textColor="#2d6cee"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/split_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Seekbar/CheckBox相关"
+                android:textColor="#dc000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

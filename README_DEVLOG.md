@@ -17,6 +17,12 @@
 
 ##### 💥 更新日志
 
+###### 2020.03.10
+
+* 动态模糊图像（RenderScript-Blur/高斯模糊），目前支持.png文件，见ICommonBlurViewActivity.java文件 <br/>
+* Seekbar自定义样式 <br/>
+* 自定义带删除按钮的输入框 <br/>
+
 
 ###### 2020.03.05
 

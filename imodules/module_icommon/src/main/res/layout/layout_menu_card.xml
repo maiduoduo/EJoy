@@ -271,7 +271,7 @@
         </RelativeLayout>
         <!---->
         <RelativeLayout
-            android:id="@+id/re_boat_tour"
+            android:id="@+id/reSeekBar"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/re_blurview"
@@ -282,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="XXX"
+                android:text="SeekBar"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
             <View
