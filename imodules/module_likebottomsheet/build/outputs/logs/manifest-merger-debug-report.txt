@@ -1,39 +1,39 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:3:3-39
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:3:3-39
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:1-5:12
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:11-69
+		ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:4:5-19
+ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml:4:5-19
 uses-sdk
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		ADDED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
-		INJECTED from F:\Dec_Tools\AndroidStudio\work_res\EJoy-master\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		ADDED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
+		INJECTED from E:\Developer_tools\Android_devRes\EJoy_2.0\imodules\module_likebottomsheet\src\main\AndroidManifest.xml
