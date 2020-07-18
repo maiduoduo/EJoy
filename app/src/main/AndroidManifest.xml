@@ -133,6 +133,8 @@
             android:configChanges="screenSize|screenLayout|navigation"/>
         <activity android:name=".ui.activity.seekbar.ISeekBarAndCheckBoxActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.popupwindow.IMultiTypeFilterMenuActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
 
 
         <!--FileProvider共享文件-->

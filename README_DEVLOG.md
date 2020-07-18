@@ -17,6 +17,11 @@
 
 ##### 💥 更新日志
 
+###### 2020.07.18
+
+* 多类型筛选菜单（基于PopupWindow）
+*
+
 ###### 2020.03.10
 
 * 动态模糊图像（RenderScript-Blur/高斯模糊），目前支持.png文件，见ICommonBlurViewActivity.java文件 <br/>
