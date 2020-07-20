@@ -1,14 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/LGray3"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
     <FrameLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
         android:paddingHorizontal="@dimen/dp_10"
-        android:background="@color/Y3">
+        android:background="@color/Blue1">
         <ImageView
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
@@ -24,7 +26,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:text="选择器"/>
+            android:text="时间线"/>
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -40,8 +42,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="日期选择"
-                android:onClick="dateSelect"
+                android:text="日历+时间线"
+                android:onClick="calendarTimeLine"
                 android:paddingVertical="@dimen/dp_10"
                 android:textColor="@color/Gray2"
                 android:textSize="17sp" />
@@ -50,8 +52,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="时间选择"
-                android:onClick="timeSelect"
+                android:text="自定义时间线（RecyclerView）"
+                android:onClick="timeLIneRecyclerView"
                 android:paddingVertical="@dimen/dp_10"
                 android:textColor="@color/Gray2"
                 android:textSize="17sp" />
@@ -60,43 +62,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="日期时间选择"
-                android:onClick="dateTimeSelect"
+                android:text="仿「美柚」官网大事记时间线"
+                android:onClick="myouTimeLIneRecyclerView"
                 android:paddingVertical="@dimen/dp_10"
                 android:textColor="@color/Gray2"
                 android:textSize="17sp" />
             <include layout="@layout/layout_line_horizontal_1dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="日期选择（无弹窗）"
-                android:onClick="dateDialogLessSelect"
-                android:paddingVertical="@dimen/dp_10"
-                android:textColor="@color/Gray2"
-                android:textSize="17sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/dp_10"
-                android:gravity="left"
-                android:text="时间轴"
-                android:textColor="@color/Gray2"
-                android:onClick="timelineMode"
-                android:textSize="17sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/dp_10"
-                android:gravity="left"
-                android:text="城市选择"
-                android:onClick="cityPicker"
-                android:textColor="@color/Gray2"
-                android:textSize="17sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
-
 
             <Space
                 android:layout_width="match_parent"

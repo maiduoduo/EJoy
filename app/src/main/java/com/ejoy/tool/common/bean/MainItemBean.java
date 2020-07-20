@@ -36,7 +36,7 @@ public class MainItemBean implements MultiItemEntity {
     /**
      * itemType : 0
      * itemTypeTitle : 弹窗
-     * Content : [{"clazz":"com.ejoy.tool.ui.activity.ToastActivity","clickCode":0,"flag":"","itemDes":"吐司，支持图标，文本时长等","itemTitle":"Toast"},{"clazz":"com.ejoy.tool.ui.activity.iosdialog.IDialogActivity","clickCode":1,"flag":"","itemDes":"系统对话框解决方案，仿IOS样式","itemTitle":"Dialog"},{"clazz":"com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity","clickCode":2,"flag":"","itemDes":"Popupwindow、ECookieBar、SnackBar等","itemTitle":"Popupwindow"},{"clazz":"com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity","clickCode":3,"flag":"","itemDes":"自定义BottomSheetDialog及官方示例","itemTitle":"BottomSheetDialog"},{"clazz":"com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity","clickCode":4,"flag":"","itemDes":"日期选择器，省市区级联选择","itemTitle":"日期等选择器"}]
+     * Content : [{"clazz":"com.ejoy.tool.ui.activity.ToastActivity","clickCode":0,"flag":"","itemDes":"吐司，支持图标，文本时长等","itemTitle":"Toast"},{"clazz":"com.ejoy.tool.ui.activity.iosdialog.IDialogActivity","clickCode":1,"flag":"","itemDes":"系统对话框解决方案，仿IOS样式","itemTitle":"Dialog"},{"clazz":"com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity","clickCode":2,"flag":"","itemDes":"Popupwindow、ECookieBar、SnackBar等","itemTitle":"Popupwindow"},{"clazz":"com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity","clickCode":3,"flag":"","itemDes":"自定义BottomSheetDialog及官方示例","itemTitle":"BottomSheetDialog"},{"clazz":"com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity","clickCode":4,"flag":"","itemDes":"日期选择器，省市区级联选择","itemTitle":"日期等选择器"}]
      */
 
     private int type;

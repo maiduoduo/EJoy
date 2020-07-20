@@ -1,4 +1,4 @@
-package com.ejoy.tool.ui.activity.picker;
+package com.ejoy.tool.ui.activity.datetime.picker;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
+import com.ejoy.tool.ui.activity.datetime.timeline.ITimeLineActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.imaiduoduo.datetime.DatePickDialog;
@@ -139,5 +140,14 @@ public class ITimeDateOrActivity extends BaseActivity {
      */
     public void dateDialogLessSelect(View view) {
         showActivity(_mActivity,IDateTimeSelectDialogLessActivity.class);
+    }
+
+
+    /**
+     * 时间轴
+     * @param view
+     */
+    public void timelineMode(View view) {
+        showActivity(_mActivity,ITimeLineActivity.class);
     }
 }

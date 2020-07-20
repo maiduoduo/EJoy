@@ -74,15 +74,15 @@
         <activity android:name=".ui.activity.iosdialog.IDialogActivity"/>
         <activity android:name=".ui.activity.iosdialog.IIosDialogActivity"/>
         <activity android:name=".ui.activity.loading.ILoadingActivity"/>
-        <activity android:name=".ui.activity.picker.ITimeDateOrActivity"/>
-        <activity android:name=".ui.activity.picker.ICitySelectActivity"/>
-        <activity android:name=".ui.activity.picker.ICitypickerListActivity"/>
-        <activity android:name=".ui.activity.picker.ICitypickerWheelActivity"/>
-        <activity android:name=".ui.activity.picker.ICitypickerThreeListActivity"/>
-        <activity android:name=".ui.activity.picker.IThreeProvinceActivity"/>
-        <activity android:name=".ui.activity.picker.IThreeCityActivity"/>
-        <activity android:name=".ui.activity.picker.IThreeAreaActivity"/>
-        <activity android:name=".ui.activity.picker.ICitypickerJDActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.ITimeDateOrActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.ICitySelectActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.ICitypickerListActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.ICitypickerWheelActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.ICitypickerThreeListActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.IThreeProvinceActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.IThreeCityActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.IThreeAreaActivity"/>
+        <activity android:name=".ui.activity.datetime.picker.ICitypickerJDActivity"/>
         <activity android:name=".ui.activity.device.DeviceToolActviity"/>
         <activity android:name=".ui.activity.refresh.IRefreshActivity"/>
         <activity android:name=".ui.activity.refresh.IRefreshSmartActivity"/>
@@ -135,7 +135,9 @@
             android:configChanges="screenSize|screenLayout|navigation"/>
         <activity android:name=".ui.activity.popupwindow.IMultiTypeFilterMenuActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
-        <activity android:name=".ui.activity.picker.IDateTimeSelectDialogLessActivity"
+        <activity android:name=".ui.activity.datetime.picker.IDateTimeSelectDialogLessActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.datetime.timeline.ITimeLineActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
 
 

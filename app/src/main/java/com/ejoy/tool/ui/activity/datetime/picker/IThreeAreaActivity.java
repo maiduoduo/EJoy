@@ -1,4 +1,4 @@
-package com.ejoy.tool.ui.activity.picker;
+package com.ejoy.tool.ui.activity.datetime.picker;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -21,7 +21,7 @@ import com.imaidd.citypicker.widget.RecycleViewDividerForList;
 import java.util.List;
 import butterknife.BindView;
 
-import static com.ejoy.tool.ui.activity.picker.IThreeProvinceActivity.RESULT_DATA;
+import static com.ejoy.tool.ui.activity.datetime.picker.IThreeProvinceActivity.RESULT_DATA;
 import static com.imaidd.citypicker.style.citylist.utils.CityListLoader.BUNDATA;
 
 
