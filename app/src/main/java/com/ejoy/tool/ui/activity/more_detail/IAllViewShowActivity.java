@@ -116,8 +116,8 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     LinearLayout reCard2;
     @BindView(R.id.re_tour)
     RelativeLayout reTour;
-    @BindView(R.id.re_custom_tour)
-    RelativeLayout reCustomTour;
+    @BindView(R.id.reCameraFace)
+    RelativeLayout reCameraFace;
     @BindView(R.id.re_card_3)
     LinearLayout reCard3;
     @BindView(R.id.tour)

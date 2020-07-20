@@ -91,7 +91,6 @@
     <color name="light_gray">#808080</color>
     <color name="light_gray2">#10808080</color>
     <color name="light_gray1">#F3F3F3</color>
-    <color name="light_white">#33ffffff</color>
     <color name="chat_tip_color">#FFcccccc</color>
     <color name="blue">#5CA3E5</color>
     <color name="main_blue">#3598db</color>
@@ -685,6 +684,27 @@
         <item>#e91e63</item>
     </array>
 
+    <!--通用背景色-->
+    <color name="common_bg">@color/white</color>
+    <!--通用触摸背景色-->
+    <color name="common_touch_bg">#E3E3E3</color>
+    <!--通用背景色-->
+    <color name="common_gray_bg">#EEEEEE</color>
+    <color name="layout_bg">#DCDCDC</color><!--淡灰色 -->
+    <!--通用一级标题的颜色-->
+    <color name="common_h1">#212121</color>
+    <color name="common_h4">#66212121</color>
+    <!--通用二级标题的颜色-->
+    <color name="common_h2">#727272</color>
+    <!--通用三级标题的颜色-->
+    <color name="common_h3">#B2B2B2</color>
+    <!--通用分割线细-->
+    <color name="common_divider_narrow">#E3E3E3</color>
+    <color name="light_white">#EEEEEE</color>
+    <!--通用分割线粗-->
+    <color name="common_divider_wide">@color/light_white</color>
+    <color name="base_bg">#ece9e9</color>
+    <color name="blue_4e">#4eb0f1</color>
 
 
 

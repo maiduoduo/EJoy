@@ -192,7 +192,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             R.id.albumTitle,
             R.id.wbalbumList,
             R.id.popTipMenu,
-            R.id.EBlurPop
+            R.id.EBlurPop,
+            R.id.EpopMultiTypeFilterMenu
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -232,6 +233,9 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
                 break;
             case R.id.albumListPop://相机胶卷弹窗
                 showAlbumListPopup();
+                break;
+            case R.id.EpopMultiTypeFilterMenu://多类型筛选弹窗
+                showmMultiTypeFilterMenuActivity();
                 break;
             case R.id.ECookieBar://CookieBar2
                 showActivity(_mActivity, ICookieBarActivity.class);
@@ -273,6 +277,10 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
             default:
                 break;
         }
+    }
+
+    private void showmMultiTypeFilterMenuActivity() {
+        showActivity(_mActivity,IMultiTypeFilterMenuActivity.class);
     }
 
     /**

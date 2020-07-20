@@ -1,3 +1,15 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ExtraTranslation">
     <string name="app_name">DatePicker</string>
+
+    <string name="fule_year">年</string>
+    <string name="fule_month">月</string>
+    <string name="fule_day">日</string>
+    <string name="fule_hour">时</string>
+    <string name="fule_min">分</string>
+    <string name="fule_title">选择时间</string>
+    <string name="fule_sure">确定</string>
+    <string name="fule_cancel">取消</string>
+    <string name="fule_title_default">设置</string>
+
 </resources>

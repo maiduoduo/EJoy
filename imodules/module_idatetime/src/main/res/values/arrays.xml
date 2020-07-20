@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="pnw_date_time_range" tools:ignore="ExtraTranslation">
+        <item>今天</item>
+        <item>明天</item>
+        <item>后天</item>
+    </string-array>
+</resources>
+
+

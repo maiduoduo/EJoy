@@ -292,7 +292,7 @@
         </RelativeLayout>
         <!---->
         <RelativeLayout
-            android:id="@+id/re_custom_tour"
+            android:id="@+id/reCameraFace"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@+id/re_boat_tour"
@@ -300,7 +300,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXX"
+                android:text="Camera"
                 android:layout_alignParentRight="true"
                 android:textSize="10sp"
                 android:gravity="center"
@@ -314,9 +314,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:text="XXX"
+                android:text="相机(API1/API2)"
                 android:textColor="@android:color/white"
-
                 android:textStyle="bold" />
 
             <View

@@ -44,4 +44,14 @@ E·享 目的在于整理与集纳好的优秀方案和功能实现，有自定�
     <string name="link_enjoylife">https://github.com/maiduoduo/EJoy</string>
     <string name="opensource_framework">开源框架</string>
 
+    <string name="edate_year">年</string>
+    <string name="edate_month">月</string>
+    <string name="edate_day">日</string>
+    <string name="edate_hour">时</string>
+    <string name="edate_min">分</string>
+    <string name="edate_title">选择时间</string>
+    <string name="edate_sure">确定</string>
+    <string name="edate_cancel">取消</string>
+    <string name="edate_title_default">设置</string>
+
 </resources>

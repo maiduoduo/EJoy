@@ -66,7 +66,15 @@
                 android:textColor="@color/Gray2"
                 android:textSize="17sp" />
             <include layout="@layout/layout_line_horizontal_1dp"/>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日期选择（无弹窗）"
+                android:onClick="dateDialogLessSelect"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/Gray2"
+                android:textSize="17sp" />
+            <include layout="@layout/layout_line_horizontal_1dp"/>
 
             <TextView
                 android:layout_width="match_parent"
