@@ -132,4 +132,12 @@ public class ITimeDateOrActivity extends BaseActivity {
     public void cityPicker(View view) {
         showActivity(ITimeDateOrActivity.this,ICitySelectActivity.class);
     }
+
+    /**
+     * 日期选择（界面滚轮选择-无弹窗形式）
+     * @param view
+     */
+    public void dateDialogLessSelect(View view) {
+        showActivity(_mActivity,IDateTimeSelectDialogLessActivity.class);
+    }
 }
