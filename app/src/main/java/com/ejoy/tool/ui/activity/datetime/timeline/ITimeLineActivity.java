@@ -68,6 +68,7 @@ public class ITimeLineActivity extends IBaseActivity {
      * @param view
      */
     public void calendarTimeLine(View view) {
+        jump(ITimeLineCalendarActivity.class);
     }
 
     /**
@@ -75,6 +76,7 @@ public class ITimeLineActivity extends IBaseActivity {
      * @param view
      */
     public void timeLIneRecyclerView(View view) {
+        jump(ITimeLineRecyclerviewActivity.class);
     }
 
     /**

@@ -245,6 +245,31 @@ public final class WidgetUtils {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
+    /**
+     * 初始化RecyclerView
+     * @param recyclerView
+     * @param adapter 数据适配器
+     * @param orientation 方向
+     * @param dividerHeight 分割线的高度
+     * @param dividerColor  分割线的颜色
+     * @param headerView  头部
+     */
+    public static void initRecyclerView(@NonNull RecyclerView recyclerView,BaseQuickAdapter adapter,int orientation, int dividerHeight
+            , int dividerColor,View headerView) {
+        ELinearLayoutManager eLinearLayoutManager = new ELinearLayoutManager(recyclerView.getContext());
+        eLinearLayoutManager.setOrientation(orientation);
+        recyclerView.addItemDecoration(new EDividerItemDecoration(recyclerView.getContext(), VERTICAL, dividerHeight, dividerColor));
+        recyclerView.setLayoutManager(eLinearLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemViewCacheSize(10);
+        recyclerView.setAdapter(adapter);
+        if (headerView != null) {
+//            headerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, EDensityUtils.dp2px(recyclerView.getContext(), 50)));
+            adapter.addHeaderView(headerView);
+        }
+    }
+
     //===============Loading=============//
 
 

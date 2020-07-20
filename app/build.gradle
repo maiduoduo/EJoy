@@ -109,6 +109,7 @@ dependencies {
 //    implementation rootProject.ext.dependencies["SmartRefreshLayout_104"]
     //状态栏
     implementation rootProject.ext.dependencies["statusbarutil"]
+    implementation 'com.haibin:calendarview:3.4.1'
 
 
     // ui module

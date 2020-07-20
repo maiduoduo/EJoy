@@ -139,6 +139,10 @@
             android:configChanges="screenSize|screenLayout|navigation"/>
         <activity android:name=".ui.activity.datetime.timeline.ITimeLineActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.datetime.timeline.ITimeLineRecyclerviewActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
+        <activity android:name=".ui.activity.datetime.timeline.ITimeLineCalendarActivity"
+            android:configChanges="screenSize|screenLayout|navigation"/>
 
 
         <!--FileProvider共享文件-->

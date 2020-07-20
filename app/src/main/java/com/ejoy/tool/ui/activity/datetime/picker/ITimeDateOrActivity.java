@@ -150,4 +150,12 @@ public class ITimeDateOrActivity extends BaseActivity {
     public void timelineMode(View view) {
         showActivity(_mActivity,ITimeLineActivity.class);
     }
+
+    /**
+     * 仿美柚经期日历
+     * @param view
+     */
+    public void calendarMYouSelect(View view) {
+
+    }
 }

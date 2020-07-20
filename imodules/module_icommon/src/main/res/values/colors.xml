@@ -30,6 +30,7 @@
     <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
     <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
     <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
+    <color name="app_color_theme_10">#626F7E</color> <!-- Pink Rose -->
 
     <color name="app_color_theme_alpha_1">#44EF5362</color> <!-- Grapefruit -->
     <color name="app_color_theme_alpha_2">#44FE6D4B</color> <!-- Bittersweet -->
