@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?><!--时间日期选择区-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/colorAccent"
+        android:paddingHorizontal="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:onClick="ivBack"
+            android:src="@drawable/ico_back_white_90px" />
+
+        <TextView
+            android:id="@+id/Ptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="日期选择器（无弹窗）"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_city_jd_left_normal"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:paddingVertical="@dimen/dp_10"
+        android:textColor="@color/orange_600"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:lineSpacingExtra="@dimen/dp_2"
+        android:text="★ 1.点击开始/结束日期，指示器状态选中。\n★ 2.滑动滚轮选择日期。\n★ 3.点击‘确定’设置开始/结束日期
+\n代码设置：\n1.LoopView.java中可以调整字体大小等参数设置\n2.设置起始时间范围
+
+        "/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_50"
+        android:orientation="vertical">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_10" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="选择时间段查询明细"
+            android:textColor="#01CBD6"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <include layout="@layout/layout_line_horizontal_1dp"/>
+        <!--开始日期/结束日期-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <!--开始日期-->
+            <LinearLayout
+                android:id="@+id/llStartDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvStartLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginRight="70dp"
+                    android:background="#01CBD6"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="至"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <!--结束日期-->
+            <LinearLayout
+                android:id="@+id/llEndDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEndLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginHorizontal="@dimen/dp_35"
+                    android:background="#01CBD6"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/layout_line_horizontal_1dp"/>
+
+        <!--时间框-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#9cf9f2">
+                <!--  android:background="#F8F8F8">-->
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="22dp"
+                    android:text="@string/edate_cancel"
+                    android:textColor="#5677ee"
+                    android:textSize="14dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvSelectsure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/shape_button_10"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="6dp"
+                    android:text="@string/edate_sure"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_10">
+                <!--日期-->
+                <FrameLayout
+                    android:id="@+id/flDateStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.imaiduoduo.datetime.fulepicker.LoopView
+                                android:id="@+id/mStartLoopYear"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dip"
+                                android:layout_marginTop="1dp"
+                                android:text="@string/edate_year"
+                                android:textColor="#0C1621"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.imaiduoduo.datetime.fulepicker.LoopView
+                                android:id="@+id/mStartLoopMonth"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="1dp"
+                                android:text="@string/edate_month"
+                                android:textColor="#0C1621"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.imaiduoduo.datetime.fulepicker.LoopView
+                                android:id="@+id/mStartLoopDay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="1dp"
+                                android:text="@string/edate_day"
+                                android:textColor="#0C1621"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+                <!--  <com.module.iviews.button.IDragFloatActionButton
+                      android:id="@+id/ibtnDateChooseSure"
+                      android:clickable="true"
+                      android:layout_alignParentRight="true"
+                      android:layout_width="88dp"
+                      android:layout_height="88dp"
+                      android:background="@drawable/bicon_click_sure"/>-->
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E8E8E8" />
+
+
+        <Button
+            android:id="@+id/btnDateQuery"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:background="@drawable/eicon_date_query"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+
