@@ -17,18 +17,27 @@ package com.ejoy.tool.ui.activity.popupwindow;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.animation.Animator;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
 import android.view.animation.OvershootInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +49,7 @@ import com.google.gson.Gson;
 import com.module.ires.bean.utils.EBlurHelper;
 import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.utils.ETextviewUtils;
+import com.module.ires.bean.utils.IAnimUtil;
 import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.EUISimpleAdapter;
@@ -105,6 +115,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     private IListPopupwindow iListPopupwindow;
     private List<GalleryBean> mGalleryList;
     private ArrayList<ImageInfoBean> mSelectImgList = new ArrayList<ImageInfoBean>();
+    private IAnimUtil ianimUtil;
+    private PopupWindow mWxPopupWindow;
 
     @Override
     protected void initRestore(@Nullable Bundle savedInstanceState) {
@@ -128,6 +140,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
         initListPopup();
         initMenuPopup();
         initExpandableListPopup();
+        mWxPopupWindow = new PopupWindow(_mActivity);
+        ianimUtil = new IAnimUtil();
     }
 
     private void blurGlobal() {
@@ -177,6 +191,7 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     @OnClick({
             R.id.qqPopupshow,
             R.id.qqPopupshowText,
+            R.id.wxPopupshowText,
             R.id.tvCustomPWFilter,
             R.id.popBaseUse,
             R.id.tvWb,
@@ -197,11 +212,14 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
-            case R.id.qqPopupshow://仿QQ的右上角选项弹窗
+            case R.id.qqPopupshow://
                 showPop(view, true);
                 break;
             case R.id.qqPopupshowText://仿QQ的右上角选项弹窗
                 showPop(mIbnqqPopupshow, false);
+                break;
+            case R.id.wxPopupshowText://仿微信的右上角选项弹窗
+                showActivity(_mActivity, IWxPopupwindowActivity.class);
                 break;
             case R.id.tvCustomPWFilter://Popupwindow筛选菜单
                 showActivity(this, IPopupwindowFilterActivity.class);
@@ -280,7 +298,7 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
     }
 
     private void showmMultiTypeFilterMenuActivity() {
-        showActivity(_mActivity,IMultiTypeFilterMenuActivity.class);
+        showActivity(_mActivity, IMultiTypeFilterMenuActivity.class);
     }
 
     /**
@@ -524,4 +542,8 @@ public class IPopupwindowActivity extends BaseActivity implements IListPopupwind
                 })
                 .show();
     }
+
+
+
+
 }

@@ -93,6 +93,7 @@
             android:theme="@style/ICustomBSAppTheme"/>
         <activity android:name=".ui.activity.bottomsheet.IGFBottomSheetActivity"/>
         <activity android:name=".ui.activity.popupwindow.IPopupwindowActivity"/>
+        <activity android:name=".ui.activity.popupwindow.IWxPopupwindowActivity"/>
         <activity android:name=".ui.activity.popupwindow.IPopupWindowPopmenuActivity"/>
         <activity android:name=".ui.activity.popupwindow.IPopupwindowUseActivity"/>
         <activity android:name=".ui.activity.popupwindow.ICookieBarActivity"/>

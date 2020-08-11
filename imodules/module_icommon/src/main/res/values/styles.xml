@@ -148,6 +148,12 @@
     </style>
 
 
+    <style name="menu_wxpop_add">
+        <item name="android:windowEnterAnimation">@anim/wxpop_add_show</item>
+        <item name="android:windowExitAnimation">@anim/wxpop_add_hide</item>
+    </style>
+
+
 
 
 
