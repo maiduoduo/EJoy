@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/total_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_20"
+    android:background="@color/white">
+    <FrameLayout
+        android:id="@+id/fl_check_circle"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="@dimen/dp_8">
+        <ImageView
+            android:id="@+id/ivWaitDo"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/bicon_uncheck_circle"/>
+        <ImageView
+            android:id="@+id/ivDoing"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/bicon_checking_circle"/>
+        <ImageView
+            android:id="@+id/ivFinish"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/bicon_check_circle" />
+    </FrameLayout>
+    <View
+        android:visibility="gone"
+        android:id="@+id/lineGray"
+        android:layout_width="2dp"
+        android:layout_height="@dimen/dp_10"
+        android:layout_alignBottom="@+id/tvSpace"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/fl_check_circle"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="27dp"
+        android:background="#D8D8D8" />
+    <View
+        android:visibility="gone"
+        android:id="@+id/lineGreen"
+        android:layout_width="2dp"
+        android:layout_height="@dimen/dp_10"
+        android:layout_alignBottom="@+id/tvSpace"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/fl_check_circle"
+        android:background="#0EE3DC" />
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text=""
+        android:textColor="#626F7E"
+        android:textSize="14dp" />
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text=""
+        android:textColor="#626F7E"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tvSpace"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/tvTitle"
+        android:background="@color/transparent"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="1dp" />
+
+</RelativeLayout>
+
+
