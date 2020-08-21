@@ -15,6 +15,10 @@
         <item name="android:textColor">@drawable/tab_textcolor_selector</item>
         <item name="android:textSize">13sp</item>
     </style>
+    <style name="TabLayoutTextSizeStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="horizontal_gray_divider">
         <item name="android:layout_height">2px</item>
         <item name="android:layout_width">fill_parent</item>
