@@ -559,7 +559,7 @@ public class GlobalDataProvider {
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "设备"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("设备信息", "设备工具，设备信息等", 9, DeviceToolActviity.class, "")
+                        new MainItemBean_temp.ContentBean("系统相关", "系统相关，设备信息等", 9, DeviceToolActviity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "图片处理"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(

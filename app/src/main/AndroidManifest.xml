@@ -159,7 +159,7 @@
                 android:resource="@xml/provider_path" />
         </provider>
 
-
+        <service android:name=".common.service.RestartAppService" />
 
         <activity
             android:name="com.tencent.bugly.beta.ui.BetaActivity"

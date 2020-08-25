@@ -38,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.app.App;
 import com.ejoy.tool.scaffold.utils.EventBusUtil;
 import com.ejoy.tool.scaffold.utils.IToast;
 import com.ejoy.tool.scaffold.utils.IToastImageType;
@@ -172,6 +173,7 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
         else strList = new ArrayList<>();
         setContentView(mRootView);
         unbinder = ButterKnife.bind(this);
+        App.getInstance().pushActivity(_mActivity);
         //初始化自定义Toast
         iToast = new IToast().builder();
         if (getPresenter() != null) {

@@ -178,7 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="设备信息"
+                        android:text="系统相关"
                         android:textColor="#383535"
                         android:textSize="12sp" />
                 </LinearLayout>

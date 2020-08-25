@@ -16,6 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -47,7 +48,7 @@ import java.util.Stack;
  */
 public class BaseMApplication extends Application {
 
-    private static Stack<AppCompatActivity> activityStack;
+    private static Stack<Activity> activityStack;
 
     /**
      * 上下文
@@ -122,13 +123,16 @@ public class BaseMApplication extends Application {
 
     //添加Activity到容器中
     public void addActivity(Activity activity)  {
+        if (activityList == null) {
+            activityList = new ArrayList<>();
+        }
         activityList.add(activity);
     }
 
     /**
      * 添加Activity到堆栈
      */
-    public void pushActivity(AppCompatActivity activity) {
+    public void pushActivity(Activity activity) {
         if (activityStack == null) {
             activityStack = new Stack<>();
         }
@@ -137,11 +141,21 @@ public class BaseMApplication extends Application {
 
     //遍历所有Activity并finish
     public void exit() {
-        for(Activity activity:activityList) {
-            activity.finish();
+        if (activityStack != null) {
+            for (int i = 0; i < activityStack.size(); i++) {
+                Activity activity = activityStack.get(i);
+                if (!activity.isFinishing()) {
+                    activity.finish();
+                }
+
+                activityStack.remove(activity);
+            }
         }
-        activityList.clear();
+        System.exit(0);
+        //杀死整个进程
+//        android.os.Process.killProcess(android.os.Process.myPid());
     }
+
 
     public void deleteActivity(AppCompatActivity activity) {
         if (activity != null) {

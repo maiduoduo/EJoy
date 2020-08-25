@@ -149,7 +149,7 @@ public class AboutMeActivity extends IBaseActivity {
                 startActivity(share_intent);
                 break;
             case R.id.btn_back:
-                App.getInstance().killActivity(me);
+                App.getInstance().exit();
                 break;
         }
     }
