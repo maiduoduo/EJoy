@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
@@ -18,11 +19,13 @@ import android.util.Log;
 
 import com.ejoy.tool.app.App;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.text.DecimalFormat;
 import java.util.List;
@@ -378,6 +381,50 @@ public class FileUtils {
 		}
 		int digitGroups = (int) (Math.log10(size) / Math.log10(1024));
 		return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, digitGroups)) + " ";
+	}
+
+	/**
+	 * 从asset路径下读取对应文件转String输出
+	 *
+	 * @param mContext
+	 * @return
+	 */
+	public static String getJson(Context mContext, String fileName) {
+		// TODO Auto-generated method stub
+		StringBuilder sb = new StringBuilder();
+		AssetManager am = mContext.getAssets();
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					am.open(fileName)));
+			String next = "";
+			while (null != (next = br.readLine())) {
+				sb.append(next);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			sb.delete(0, sb.length());
+		}
+		return sb.toString().trim();
+	}
+
+	/**
+	 * 按行读取文本文件
+	 *
+	 * @param is
+	 * @return
+	 * @throws Exception
+	 */
+	public static String readTextFromFile(InputStream is) throws Exception {
+		InputStreamReader reader = new InputStreamReader(is);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		StringBuffer buffer = new StringBuffer("");
+		String str;
+		while ((str = bufferedReader.readLine()) != null) {
+			buffer.append(str);
+			buffer.append("\n");
+		}
+		return buffer.toString().trim();
 	}
 
 

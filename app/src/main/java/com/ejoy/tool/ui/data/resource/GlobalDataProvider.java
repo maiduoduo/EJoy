@@ -1,6 +1,7 @@
 package com.ejoy.tool.ui.data.resource;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
@@ -11,6 +12,8 @@ import com.ejoy.tool.app.AppConstant;
 import com.ejoy.tool.common.api.HostType;
 import com.ejoy.tool.common.bean.MainItemBean_temp;
 import com.ejoy.tool.common.bean.PICData;
+import com.ejoy.tool.common.bean.RecyclerviewTimeLineEntity;
+import com.ejoy.tool.scaffold.utils.FileUtils;
 import com.ejoy.tool.ui.activity.IArcLayoutActivity;
 import com.ejoy.tool.ui.activity.IScrollViewActivity;
 import com.ejoy.tool.ui.activity.ToastActivity;
@@ -19,9 +22,11 @@ import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
-import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
+import com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.module.ires.bean.CustomBottomSheetItemBean;
 import com.module.ires.bean.bean.IBaseBean;
 import com.module.iviews.popup.AdapterItem;
@@ -29,6 +34,7 @@ import com.module.iviews.popup.ExpandableItem;
 import com.module.iviews.popup.bean.GalleryBean;
 import com.module.iviews.popup.menu.bean.FiltrateBean;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,6 +48,10 @@ public class GlobalDataProvider {
 
     private static final int TYPE_TITLE = 0;
     private static final int TYPE_CONTENT = 1;
+
+    //时间线-rv
+    public static String ASSET_TIMELINE_RECYCLERVIEW = "ast_timeline_rv.json";
+    private static final int PARSE_TYPE_TIMELINE_RECYCLERVIEW = 1;
 
     public static String[] titles = new String[]{
             "伪装者:胡歌演绎'痞子特工'",
@@ -258,6 +268,33 @@ public class GlobalDataProvider {
                 new IBaseBean("开保时捷登阿尔卑斯山，壕就是任性","","中证网  1小时8分钟前",""),
                 new IBaseBean("任天堂主题乐园宣传曲 MV ，2020 打卡圣地","","今晚打老虎  99赞","http://img.kaiyanapp.com/bf1b56d1a45d0f73283ff85a8df6e3cb.jpeg?imageMogr2/quality/60/format/jpg")
         );
+    }
+
+    /**
+     * 时间线数据-RecyclerView
+     *
+     * @param context context
+     * @return
+     */
+    public static List getTimeLineRvData(Context context) {
+        List myjson = getNurseMultiIndexJsonData(context, ASSET_TIMELINE_RECYCLERVIEW,PARSE_TYPE_TIMELINE_RECYCLERVIEW);
+        if (myjson != null) {
+            return myjson;
+        } else {
+            String[] titles = new String[]{"", ""};
+            return Arrays.asList(titles);
+        }
+    }
+
+    /**
+     * 解析json
+     */
+    private static Type parsetype;
+    public static List getNurseMultiIndexJsonData(Context context, final String fileName,int type) {
+        String json = FileUtils.getJson(context, fileName);
+        Gson gson = new Gson();
+        if (PARSE_TYPE_TIMELINE_RECYCLERVIEW == type) parsetype = new TypeToken<List<RecyclerviewTimeLineEntity>>() {}.getType();
+        return gson.fromJson(json, parsetype);
     }
 
 
@@ -522,7 +559,7 @@ public class GlobalDataProvider {
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "设备"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(
-                        new MainItemBean_temp.ContentBean("设备信息", "设备工具，设备信息等", 9, DeviceToolActviity.class, "")
+                        new MainItemBean_temp.ContentBean("系统相关", "系统相关，设备信息等", 9, DeviceToolActviity.class, "")
                 )),
                 new MainItemBean_temp(TYPE_TITLE, "图片处理"),
                 new MainItemBean_temp(TYPE_CONTENT, Arrays.asList(

@@ -220,6 +220,14 @@
                             android:text="仿QQ右上角弹窗"
                             android:textColor="@color/whiteAlpha50"
                             android:textSize="17sp" />
+                        <TextView
+                            android:id="@+id/wxPopupshowText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/dp_10"
+                            android:text="仿微信右上角弹窗"
+                            android:textColor="@color/whiteAlpha50"
+                            android:textSize="17sp" />
 
                         <TextView
                             android:id="@+id/multiMenuShow"

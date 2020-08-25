@@ -39,7 +39,7 @@
         "itemTitle":"日期等选择器",
         "itemDes":"日期选择器，省市区级联选择",
         "clickCode":4,
-        "clazz":"com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity",
+        "clazz":"com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity",
         "flag":""
       }
     ]

@@ -17,6 +17,7 @@ package com.ejoy.tool.ui.activity.device;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -25,9 +26,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.app.App;
+import com.ejoy.tool.common.service.RestartAppService;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.utils.VibratorUtil;
 import com.ejoy.tool.scaffold.view.widget.ExpandLayout;
@@ -51,6 +55,10 @@ public class DeviceToolActviity extends BaseActivity {
     ExpandLayout mExpandLayout;
     @BindView(R.id.ivDeviceArraw)
     ImageView mIvDeviceArraw;
+    @BindView(R.id.tvUniqueCode)
+    TextView mTvUniqueCode;
+    @BindView(R.id.rlRestartApp)
+    RelativeLayout mRlRestartApp;
 
     private VibratorUtil instance;
     private Animation rotate;
@@ -75,6 +83,16 @@ public class DeviceToolActviity extends BaseActivity {
         rotate = AnimationUtils.loadAnimation(_mActivity, R.anim.arrow_rotate);
         //设置为线性旋转
         rotate.setInterpolator(new LinearInterpolator());
+        getUniqueCode();
+    }
+
+    /**
+     * 获取唯一码
+     */
+    private void getUniqueCode() {
+        String uniqueId = EDeviceUtils.getUniqueId(_mActivity);
+        mTvUniqueCode.setText(uniqueId == null ? " " : uniqueId);
+
     }
 
     @Override
@@ -98,6 +116,7 @@ public class DeviceToolActviity extends BaseActivity {
     @OnClick({
             R.id.rlVibrator
             , R.id.rlDeviceinfo
+            , R.id.rlRestartApp
     })
     public void bindViewClick(View view) {
         switch (view.getId()) {
@@ -113,7 +132,22 @@ public class DeviceToolActviity extends BaseActivity {
                 rotate.setFillAfter(!rotate.getFillAfter());//每次都取相反值，使得可以不恢复原位的旋转
                 mIvDeviceArraw.startAnimation(rotate);
                 break;
+            case R.id.rlRestartApp://重启App
+                restartApp();
+                break;
         }
+    }
+
+    /**
+     * 重启App
+     */
+    private void restartApp() {
+        //开启一个新的服务，用来重启本APP
+        Intent intent = new Intent(_mActivity, RestartAppService.class);
+        intent.putExtra("packageName", _mActivity.getPackageName());
+        _mActivity.startService(intent);
+        //关闭整个app
+        App.getInstance().exit();
     }
 
     public void ivBack(View view) {

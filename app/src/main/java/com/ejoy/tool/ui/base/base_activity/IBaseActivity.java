@@ -96,6 +96,7 @@ public abstract class IBaseActivity extends AppCompatActivity {
     private OnPermissionResponseListener onPermissionResponseListener;      //权限申请回调
 
     public IBaseActivity me = this;
+    public String baseThemeColor = "#FE6D4B";
 
     private boolean darkStatusBarThemeValue = false;
     private boolean darkNavigationBarThemeValue = false;
@@ -888,4 +889,6 @@ public abstract class IBaseActivity extends AppCompatActivity {
             overridePendingTransition(enterAnim, exitAnim);
         }
     }
+
+
 }

@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -44,7 +45,7 @@ import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
-import com.ejoy.tool.ui.activity.picker.ITimeDateOrActivity;
+import com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
@@ -97,6 +98,8 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
     CollapsingToolbarLayout mCollapsingToolbarLayout;
     @BindView(R.id.head_iv)
     ImageView mHeaderIv;
+    @BindView(R.id.tvAppName)
+    TextView mTvAppName;
     public static final int SPAN_COUNT = 4;
     private String localImgUrl = "";
     private HomeMultipleRecycleAdapter mMainAdpter;
@@ -129,6 +132,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         initTopHeader();
         initRecyclerView();
         addData();
+        mTvAppName.setText("E·享111");
     }
 
     @Override
@@ -381,7 +385,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     @Override
     protected void onDestroy() {
-        if (mExitDialog != null && !mExitDialog.isShowing()) mExitDialog.cancel();
+        if (mExitDialog != null) mExitDialog.dismiss();
         super.onDestroy();
     }
 }

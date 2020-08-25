@@ -13,14 +13,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tour"
+            android:id="@+id/tabAnchorPoint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/tour_icon"
             android:gravity="center_horizontal"
-            android:text="XXX"
-            android:textSize="12sp" />
+            android:drawablePadding="@dimen/dp_5"
+            android:text="Tab锚点定位"
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/wifi"
@@ -29,6 +30,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/wifi_icon"
             android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
             android:text="XXX"
             android:textSize="12sp" />
 
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/visa_icon"
+            android:drawablePadding="@dimen/dp_5"
             android:gravity="center_horizontal"
             android:text="XXX"
             android:textSize="12sp" />
@@ -48,6 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_5"
             android:drawableTop="@mipmap/currency_icon"
             android:gravity="center_horizontal"
             android:text="XXX"
@@ -58,6 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_5"
             android:drawableTop="@mipmap/guide_icon"
             android:gravity="center_horizontal"
             android:text="XXX"
@@ -71,7 +76,7 @@
         android:layout_below="@+id/li_1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -81,6 +86,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/air_icon"
             android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
             android:text="XXX"
             android:textSize="12sp" />
 
@@ -91,6 +97,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/gift_icon"
             android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
             android:text="XXX"
             android:textSize="12sp" />
 
@@ -101,6 +108,7 @@
             android:layout_weight="1"
             android:drawableTop="@mipmap/bank_card_icon"
             android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
             android:text="XXX"
             android:textSize="12sp" />
 
@@ -109,6 +117,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_5"
             android:drawableTop="@mipmap/cooperation_icon"
             android:gravity="center_horizontal"
             android:text="XXX"
@@ -120,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/more_icon"
+            android:drawablePadding="@dimen/dp_5"
             android:gravity="center_horizontal"
             android:text="更多"
             android:textSize="12sp" />

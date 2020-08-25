@@ -20,6 +20,7 @@ public class IAnimUtil {
     private float end;
     private Interpolator interpolator = new LinearInterpolator();
 
+
     public IAnimUtil() {
         // 默认动画时常1s
         duration = 1000;
