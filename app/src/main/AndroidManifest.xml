@@ -147,6 +147,15 @@
         <activity android:name=".ui.activity.tab.ITabScrollActivity"
             android:configChanges="screenSize|screenLayout|navigation"/>
 
+        <!--navigatonbar-->
+        <activity android:name=".ui.activity.tab.INavigationBarActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarNormalActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarWeiboActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarAddAsFragmentActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarAddViewActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarOnlyNavigationActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarSetUpViewPagerActivity" />
+        <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarAllActivity" />
 
         <!--FileProvider共享文件-->
         <provider

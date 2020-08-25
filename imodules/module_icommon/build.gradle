@@ -43,6 +43,7 @@ dependencies {
     api rootProject.ext.dependencies["kongzue_baseframework"]
     api 'com.youth.banner:banner:1.4.10'
     //腾讯云地图
-    api'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.2.4'
+    api 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.2.4'
+    api 'com.github.Vincent7Wong:EasyNavigation:1.5.0'
 
 }

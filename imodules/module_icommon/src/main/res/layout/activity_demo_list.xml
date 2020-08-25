@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="NoAddNavigationBar"
+        android:text="基础版(Normal)"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="AddAsFragment"
+        android:text="加号切换Fragment版本(AddAsFragment)"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="AddView"
+        android:text="中间添加自定义的View(AddView)"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="OnlyNavigation"
+        android:text="没有自带的ViewPager、只是单纯的导航栏(OnlyNavigation)"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="SetUpViewPagerActivity"
+        android:text="自定义ViewPager(SetUpViewPagerActivity)"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="AllActivity"
+        android:text="所有属性测试(AllActivity)"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:onClick="OnWeibo"
+        android:text="示例(Weibo)"
+        android:textSize="17sp" />
+</LinearLayout>

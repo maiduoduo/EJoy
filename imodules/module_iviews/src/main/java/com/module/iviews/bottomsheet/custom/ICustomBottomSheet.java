@@ -36,7 +36,7 @@ public class ICustomBottomSheet extends NestedScrollView {
         LayoutInflater.from(context).inflate(R.layout.layout_expand_custom_bottomsheet, this);
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ICustomBottomSheet);
-            //find our header container and inflate header if required
+            //eicon_navigation_find our header container and inflate header if required
             ViewGroup headerContainer = findViewById(R.id.headerContainer);
             int headerLayoutReferenceID = a.getResourceId(R.styleable.ICustomBottomSheet_cbs_header_layout, 0);
             if (headerLayoutReferenceID != 0) {

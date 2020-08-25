@@ -47,6 +47,7 @@ import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
+import com.ejoy.tool.ui.activity.tab.INavigationBarActivity;
 import com.ejoy.tool.ui.activity.tab.ITabScrollActivity;
 import com.ejoy.tool.ui.activity.textview.ITextViewActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
@@ -121,8 +122,6 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     RelativeLayout reCameraFace;
     @BindView(R.id.re_card_3)
     LinearLayout reCard3;
-    @BindView(R.id.wifi)
-    TextView wifi;
     @BindView(R.id.visa)
     TextView visa;
     @BindView(R.id.currency)
@@ -495,6 +494,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             R.id.re_blurview,
             R.id.reSeekBar,
             R.id.tabAnchorPoint,
+            R.id.navigationBar,
     })
     public void bindViewclick(View view) {
         switch (view.getId()) {
@@ -544,6 +544,9 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 break;
             case R.id.tabAnchorPoint://tab锚点定位
                 jump(ITabScrollActivity.class);
+                break;
+            case R.id.navigationBar://底部导航栏
+                jump(INavigationBarActivity.class);
                 break;
             default:
                 break;
