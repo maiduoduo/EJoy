@@ -153,6 +153,12 @@
         <item name="android:windowExitAnimation">@anim/wxpop_add_hide</item>
     </style>
 
+    <style name="edit_main_bg">
+        <!-- <item name="android:background">@drawable/shape_spinner_frame_bg</item>-->
+        <item name="android:textColor">#01CBD6</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
 
 
 
