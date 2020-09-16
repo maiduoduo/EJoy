@@ -2,4 +2,6 @@
 <resources>
     <dimen name="ban_size">180dp</dimen>
     <dimen name="buffer_distance">1dp</dimen>
+    <dimen name="dp_margin">20dp</dimen>
+    <dimen name="dp_text_size_main">14dp</dimen>
 </resources>

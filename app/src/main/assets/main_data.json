@@ -41,6 +41,13 @@
         "clickCode":4,
         "clazz":"com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity",
         "flag":""
+      },
+      {
+        "itemTitle":"其他控件",
+        "itemDes":"更多控件，伸缩布局，定位等展示",
+        "clickCode":5,
+        "clazz":"com.ejoy.tool.ui.activity.more_detail.IAllViewShowActivity",
+        "flag":""
       }
     ]
   },

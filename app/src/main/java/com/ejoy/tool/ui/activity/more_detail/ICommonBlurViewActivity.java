@@ -1,29 +1,20 @@
 package com.ejoy.tool.ui.activity.more_detail;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.widget.Toolbar;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ejoy.tool.R;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
-import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.dialog.util.BlurView;
-import com.module.iviews.common.toolbar.RipAnimDrawable;
-import com.module.iviews.popup.bar.ECookieBar;
 import com.module.iviews.popup.bar.ECookieBarCustom;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 //  ┏┓　　　┏┓
