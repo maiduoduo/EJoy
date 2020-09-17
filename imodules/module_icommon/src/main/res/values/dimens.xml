@@ -148,5 +148,25 @@
     <dimen name="len_256">256dp</dimen>
     <dimen name="len_12">12dp</dimen>
 
+    <!--MI music behavior-->
+    <dimen name="mi_app_bar_height">180dp</dimen>
+    <dimen name="mi_fab_margin">16dp</dimen>
+    <dimen name="mi_text_margin">16dp</dimen>
+
+    <dimen name="mi_face_trans_y">-12dp</dimen>
+    <dimen name="mi_content_trans_y">280dp</dimen>
+    <dimen name="mi_content_trans_down_end_y">360dp</dimen>
+    <dimen name="mi_top_bar_height">56dp</dimen>
+
+
+    <!--IwaveSideBar-->
+    <!--WaveSideBarView-->
+    <dimen name="textSize_sidebar">10sp</dimen>
+    <dimen name="wave_textSize_sidebar">32sp</dimen>
+    <dimen name="textSize_sidebar_choose">12sp</dimen>
+    <dimen name="textSize_sidebar_padding">20sp</dimen>
+    <dimen name="radius_sidebar">20dp</dimen>
+    <dimen name="ball_radius_sidebar">24dp</dimen>
+
 
 </resources>

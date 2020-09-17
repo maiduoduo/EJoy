@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
+import android.support.v4.widget.NestedScrollView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -277,7 +278,7 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
                 Log.e(_TAG, "initListeners height: " + imageHeight);
                 scrollView.setScrollViewListener(new IObserverScrollView.ScrollViewListener() {
                     @Override
-                    public void onScrollChanged(ScrollView scrollView, int x, int y, int oldx, int oldy) {
+                    public void onScrollChanged(NestedScrollView scrollView, int x, int y, int oldx, int oldy) {
                         // TODO Auto-generated method stub
                         Log.e(_TAG, "initListeners y: " + y);
                         float percent = Float.valueOf(Math.abs(y)) / Float.valueOf(EDensityUtils.dp2px(me, 180));

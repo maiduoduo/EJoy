@@ -1,57 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:focusableInTouchMode="true"
-    android:descendantFocusability="blocksDescendants"
-    android:fillViewport="true"
-    >
+    android:background="@color/LGray1">
 
-    <com.module.iviews.view.IObserverScrollView
-        android:id="@+id/scrollView"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:scrollbars="none">
-
-        <LinearLayout
+        android:orientation="vertical">
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_70" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/banner_4_c"
-                android:scaleType="fitXY"
-               />
-            <com.ejoy.tool.scaffold.view.PowerfulRecyclerView
-                android:id="@+id/rv_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_10"
-                android:paddingBottom="@dimen/dp_10"
-                android:nestedScrollingEnabled="false"/>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+            android:layout_height="@dimen/dp_70" />
+        <com.ejoy.tool.scaffold.view.PowerfulRecyclerView
+            android:overScrollMode="never"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.ejoy.tool.scaffold.view.PowerfulRecyclerView>
+    </LinearLayout>
 
 
-
-        </LinearLayout>
-
-    </com.module.iviews.view.IObserverScrollView>
+    <com.module.iviews.slidebar.IWaveSideBarView
+        android:id="@+id/iwaveSideBarView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/dp_80"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:paddingVertical="@dimen/dp_20"/>
     <RelativeLayout
         android:id="@+id/box_table"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:background="@color/white"
         android:clickable="true">
 
         <com.kongzue.dialog.util.BlurView
@@ -122,7 +106,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="常用控件/自定义组件等展示"
+                android:text="Sidebar(侧边栏字母导航)"
                 android:textColor="#dc000000"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -130,4 +114,5 @@
         </RelativeLayout>
 
     </RelativeLayout>
-</RelativeLayout>
+
+</FrameLayout>

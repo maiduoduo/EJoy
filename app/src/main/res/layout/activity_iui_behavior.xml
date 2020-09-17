@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:focusableInTouchMode="true"
-    android:descendantFocusability="blocksDescendants"
-    android:fillViewport="true"
-    >
+    android:scrollbars="none">
 
     <com.module.iviews.view.IObserverScrollView
         android:id="@+id/scrollView"
@@ -25,26 +22,14 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_70" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/banner_4_c"
-                android:scaleType="fitXY"
-               />
             <com.ejoy.tool.scaffold.view.PowerfulRecyclerView
                 android:id="@+id/rv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="true"
                 android:paddingHorizontal="@dimen/dp_10"
-                android:paddingBottom="@dimen/dp_10"
-                android:nestedScrollingEnabled="false"/>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="200dp"/>
-
-
-
+                android:paddingBottom="@dimen/dp_10"/>
         </LinearLayout>
 
     </com.module.iviews.view.IObserverScrollView>
@@ -122,7 +107,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="常用控件/自定义组件等展示"
+                android:text="UI Behavior"
                 android:textColor="#dc000000"
                 android:textSize="16dp"
                 android:textStyle="bold" />

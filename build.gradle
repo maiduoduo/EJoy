@@ -44,6 +44,22 @@ allprojects {
     }
 }
 
+
+configurations.all {
+    resolutionStrategy {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'android.arch.lifecycle:runtime') {
+                details.useVersion "1.1.1"
+            }
+
+            if (details.requested.group == 'android.arch.lifecycle:viewmodel') {
+                details.useVersion "1.1.1"
+            }
+
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

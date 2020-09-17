@@ -78,4 +78,11 @@
         <attr name="Background" format="reference"/>
         <attr name="maxLine" format="integer"/>
     </declare-styleable>
+
+    <attr format="color|reference" name="themeColor"/>
+    <attr format="color|reference" name="themeAccentColor"/>
+
+    <attr format="color|reference" name="widgetBackground"/>
+    <attr format="color|reference" name="widgetBackgroundDark"/>
+    <attr format="color|reference" name="widgetBackgroundTitle"/>
 </resources>
