@@ -153,6 +153,23 @@
         <item name="android:windowExitAnimation">@anim/wxpop_add_hide</item>
     </style>
 
+    <style name="edit_main_bg">
+        <!-- <item name="android:background">@drawable/shape_spinner_frame_bg</item>-->
+        <item name="android:textColor">#01CBD6</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+
+    <declare-styleable name="IWaveSideBarView">
+        <attr name="sidebarTextColor" format="color|reference"/>
+        <attr name="sidebarBackgroundColor" format="color|reference"/>
+        <attr name="sidebarChooseTextColor" format="color|reference"/>
+        <attr name="sidebarTextSize" format="dimension"/>
+        <attr name="sidebarWaveTextSize" format="dimension"/>
+        <attr name="sidebarRadius" format="dimension"/>
+        <attr name="sidebarBallRadius" format="dimension"/>
+    </declare-styleable>
+
 
 
 

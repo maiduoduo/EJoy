@@ -29,7 +29,7 @@ public class CHMainAdpter extends BaseQuickAdapter<MainItemBean.ContentBean,Base
         int position = helper.getAdapterPosition();
         helper.setText(R.id.item_name, item.getItemTitle() == null ? "" : item.getItemTitle());
         helper.setText(R.id.item_des, item.getItemDes() == null ? "" : item.getItemDes());
-//        helper.setImageResource(R.id.item_icon,item.getItemSrc());
+//        helper.setImageResource(R.id.item_navigationbar_icon,item.getItemSrc());
     }
 }
 

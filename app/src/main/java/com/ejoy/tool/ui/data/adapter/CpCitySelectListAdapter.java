@@ -56,6 +56,11 @@ public class CpCitySelectListAdapter  extends RecyclerView.Adapter<CpCitySelectL
         this.locateState = state;
     }
 
+    public CpCitySelectListAdapter(Context context, List<CitysBean> data) {
+        this.mData = data;
+        this.mContext = context;
+    }
+
     public void autoLocate(boolean auto){
         autoLocate = auto;
     }

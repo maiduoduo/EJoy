@@ -18,6 +18,7 @@ package com.module.iviews.view;
 //      ┗┻┛　┗┻┛
 
 import android.content.Context;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
@@ -27,14 +28,14 @@ import android.widget.ScrollView;
  * Date:   2020/1/22
  * Des:    TODO:自定义带滚动监听的scrollview
  */
-public class IObserverScrollView extends ScrollView {
+public class IObserverScrollView extends NestedScrollView {
 
         /**
          * 接口回调
          */
         private ScrollViewListener scrollViewListener = null;
         public interface ScrollViewListener {
-            void onScrollChanged(ScrollView scrollView, int x, int y,
+            void onScrollChanged(NestedScrollView scrollView, int x, int y,
                                  int oldx, int oldy);
 
         }

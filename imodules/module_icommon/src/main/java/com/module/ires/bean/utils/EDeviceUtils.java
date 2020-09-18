@@ -311,6 +311,27 @@ public class EDeviceUtils {
         }
     }
 
+    /**
+     * 设备信息
+     *       2020.08
+     * @param context
+     * @return
+     */
+    public static void getDeviceInfo(Context context){
+        // 密度（0.75 / 1.0 / 1.5）
+        float density = context.getResources().getDisplayMetrics().density;
+        // 密度DPI（120 / 160 / 240）
+        int densityDpi = context.getResources().getDisplayMetrics().densityDpi;
+
+        float xdpi = context.getResources().getDisplayMetrics().xdpi;
+        float ydpi = context.getResources().getDisplayMetrics().ydpi;
+        // 宽度（PX）
+        int heightPixels = context.getResources().getDisplayMetrics().heightPixels;
+        // 高度（PX）
+        int widthPixels = context.getResources().getDisplayMetrics().widthPixels;
+        float scaledDensity = context.getResources().getDisplayMetrics().scaledDensity;
+    }
+
 
     private static String toMD5(String text) throws NoSuchAlgorithmException {
         //获取摘要器 MessageDigest

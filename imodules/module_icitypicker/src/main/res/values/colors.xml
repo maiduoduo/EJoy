@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff40c2fc</color>
+    <!--<color name="colorPrimary">#ff40c2fc</color>-->
+    <color name="colorPrimary">#FDCB10</color>
     <color name="colorPrimaryDark">#ff08a7ee</color>
     <color name="colorAccent">#ff75d1fa</color>
     <color name="activity_bg">#ffe7e7e7</color>

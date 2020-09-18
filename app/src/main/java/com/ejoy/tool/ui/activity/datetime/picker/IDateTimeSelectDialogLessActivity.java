@@ -17,7 +17,6 @@ package com.ejoy.tool.ui.activity.datetime.picker;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -25,6 +24,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.scaffold.utils.IToastImageType;
+import com.ejoy.tool.scaffold.utils.TimeTools;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.imaiduoduo.datetime.fulepicker.DateUtil;
 import com.imaiduoduo.datetime.fulepicker.LoopListener;
@@ -52,20 +53,28 @@ import butterknife.OnClick;
 public class IDateTimeSelectDialogLessActivity extends IBaseActivity {
 
     //日期选择器
-    @BindView(R.id.mStartLoopYear) LoopView mStartloopYear;
-    @BindView(R.id.mStartLoopMonth) LoopView mStartloopMonth;
-    @BindView(R.id.mStartLoopDay) LoopView mStartloopDay;
-    @BindView(R.id.tvStartDate) TextView tvStartDate;
-    @BindView(R.id.tvEndDate) TextView tvEndDate;
-    @BindView(R.id.tvStartLine) TextView tvStartLine;
-    @BindView(R.id.tvEndLine) TextView tvEndLine;
-    @BindView(R.id.llStartDateText) LinearLayout llStartDateText;
-    @BindView(R.id.llEndDateText) LinearLayout llEndDateText;
-    @BindView(R.id.flDateStart) FrameLayout flDateStart;
+    @BindView(R.id.mStartLoopYear)
+    LoopView mStartloopYear;
+    @BindView(R.id.mStartLoopMonth)
+    LoopView mStartloopMonth;
+    @BindView(R.id.mStartLoopDay)
+    LoopView mStartloopDay;
+    @BindView(R.id.tvStartDate)
+    TextView tvStartDate;
+    @BindView(R.id.tvEndDate)
+    TextView tvEndDate;
+    @BindView(R.id.tvStartLine)
+    TextView tvStartLine;
+    @BindView(R.id.tvEndLine)
+    TextView tvEndLine;
+    @BindView(R.id.llStartDateText)
+    LinearLayout llStartDateText;
+    @BindView(R.id.llEndDateText)
+    LinearLayout llEndDateText;
+    @BindView(R.id.flDateStart)
+    FrameLayout flDateStart;
 
-    private Integer startSelectYear, startSelectMonth, startSelectDay
-            ,startMaxYear, startMaxMonth, startMaxDay
-            ,startMinYear, startMinMonth, startMinDay;
+    private Integer startSelectYear, startSelectMonth, startSelectDay, startMaxYear, startMaxMonth, startMaxDay, startMinYear, startMinMonth, startMinDay;
     private static int MIN_YEAR = 2000;
     private static int MAX_YEAR = 2020;
     private String currentDate = "";
@@ -86,7 +95,7 @@ public class IDateTimeSelectDialogLessActivity extends IBaseActivity {
     private void initDatePicker() {
         //切割当前日期
         String s = currentDate.split("\\-")[0];
-        MAX_YEAR = Integer.parseInt(s)+1;
+        MAX_YEAR = Integer.parseInt(s) + 1;
         //日期选择器初始化
         showStartDate(DateUtil.getDateForString(currentDate));
         initDateView();
@@ -142,20 +151,28 @@ public class IDateTimeSelectDialogLessActivity extends IBaseActivity {
     }
 
 
-
-
-
     @OnClick({
-            R.id.tvSelectsure
+            R.id.btnDateQuery
     })
-    public void bindViewClick(View view){
-        switch (view.getId()){
+    public void bindViewClick(View view) {
+        switch (view.getId()) {
             case R.id.tvSelectsure:
-                int[] currDateValues = getCurrDateValues(mStartloopYear,mStartloopMonth,mStartloopDay);
-                if (isClickStart){
+                int[] currDateValues = getCurrDateValues(mStartloopYear, mStartloopMonth, mStartloopDay);
+                if (isClickStart) {
                     tvStartDate.setText(String.format("%d-%s-%s", currDateValues[0], currDateValues[1] > 9 ? currDateValues[1] : ("0" + currDateValues[1]), currDateValues[2] > 9 ? currDateValues[2] : ("0" + currDateValues[2])));
-                }else {
+                } else {
                     tvEndDate.setText(String.format("%d-%s-%s", currDateValues[0], currDateValues[1] > 9 ? currDateValues[1] : ("0" + currDateValues[1]), currDateValues[2] > 9 ? currDateValues[2] : ("0" + currDateValues[2])));
+                }
+                break;
+
+            case R.id.btnDateQuery:
+//                //先判断校验日期：开始日期必须小于等于结束日期
+                String tvStartDateStr = tvStartDate.getText().toString().trim();
+                String tvEndDateStr = tvEndDate.getText().toString().trim();
+                int i = TimeTools.compareDate(tvStartDateStr, tvEndDateStr, TimeTools.dateFormat);
+                if (i == -1) {
+                    iToast.showISimpleToast("开始时间不能大于结束时间！", 0, IToastImageType.WARN);
+                    return;
                 }
                 break;
         }
@@ -255,7 +272,7 @@ public class IDateTimeSelectDialogLessActivity extends IBaseActivity {
      *
      * @return int[]数组形式返回。例[1990,6,15]
      */
-    private final int[] getCurrDateValues(LoopView loopYear,LoopView loopMonth,LoopView loopDay) {
+    private final int[] getCurrDateValues(LoopView loopYear, LoopView loopMonth, LoopView loopDay) {
         int currYear = Integer.parseInt(loopYear.getCurrentItemValue());
         int currMonth = Integer.parseInt(loopMonth.getCurrentItemValue());
         int currDay = Integer.parseInt(loopDay.getCurrentItemValue());
@@ -313,6 +330,8 @@ public class IDateTimeSelectDialogLessActivity extends IBaseActivity {
                     mStartloopDay.setCurrentItem(fixedCurr);
                 }
 
+                setCurrentTimeSelectDate();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -342,16 +361,22 @@ public class IDateTimeSelectDialogLessActivity extends IBaseActivity {
                         ) {
                     mStartloopDay.setCurrentItem(startMaxDay - 1);
                 }
-            }catch (Exception e){
+                setCurrentTimeSelectDate();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
     };
 
-
-
-
+    public void setCurrentTimeSelectDate() {
+        int[] currDateValues = getCurrDateValues(mStartloopYear, mStartloopMonth, mStartloopDay);
+        if (isClickStart) {
+            tvStartDate.setText(String.format("%d-%s-%s", currDateValues[0], currDateValues[1] > 9 ? currDateValues[1] : ("0" + currDateValues[1]), currDateValues[2] > 9 ? currDateValues[2] : ("0" + currDateValues[2])));
+        } else {
+            tvEndDate.setText(String.format("%d-%s-%s", currDateValues[0], currDateValues[1] > 9 ? currDateValues[1] : ("0" + currDateValues[1]), currDateValues[2] > 9 ? currDateValues[2] : ("0" + currDateValues[2])));
+        }
+    }
 
     public void ivBack(View view) {
         finishActivity();

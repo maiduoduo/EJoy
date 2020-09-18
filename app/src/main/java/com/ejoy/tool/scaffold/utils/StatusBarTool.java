@@ -245,4 +245,69 @@ public class StatusBarTool {
         }
         return result;
     }
+
+
+
+    /**
+     * 是否隐藏状态栏
+     *
+     * @param window Window对象
+     * @return 是否隐藏
+     */
+    public static boolean isStatusBar(Window window) {
+        if (window == null) {
+            return false;
+        }
+        return (window.getDecorView().getSystemUiVisibility() & View.INVISIBLE)
+                == View.INVISIBLE;
+    }
+
+
+    /**
+     * 隐藏状态栏
+     *
+     * @param window Window 对象
+     * @param isHide 是否隐藏
+     */
+    public static void hideStatusBar(Window window, boolean isHide) {
+        if (window == null) {
+            return;
+        }
+        //防止系统栏隐藏时内容区域大小发生变化
+        int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE | window.getDecorView().getSystemUiVisibility();
+        if (isHide) {
+            if (!isStatusBar(window)) {
+                uiFlags |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.INVISIBLE;
+            }
+        } else {
+            if (isStatusBar(window)) {
+                uiFlags ^= View.INVISIBLE;
+            }
+        }
+        uiFlags |= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        window.getDecorView().setSystemUiVisibility(uiFlags);
+    }
+
+
+    /**
+     * 设置全屏效果
+     *
+     * @param window window 对象
+     * @param isFull true 全屏 false 退出全屏
+     */
+    public static void setFullScreen(Window window, boolean isFull) {
+        hideStatusBar(window, isFull);
+//        NavigationBarUtil.hideNavigationBar(window, isFull);
+    }
+
+    /**
+     * 设置全屏效果
+     *
+     * @param activity Activity 对象
+     * @param isFull   true 全屏 false 退出全屏
+     */
+    public static void setFullScreen(Activity activity, boolean isFull) {
+        setFullScreen(activity.getWindow(), isFull);
+    }
 }

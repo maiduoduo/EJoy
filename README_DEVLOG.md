@@ -5,7 +5,7 @@
 
 <br/>
 
-###### 💥 万望细读
+###### 💥 导读
 
 > android工具库，加入主流工具，自定义、好的解决方案等  <br/>
 > 目前该库处于功能完备阶段，后期会将功能发布到Jfrog bintray,形成远程引用仓库 <br/>
@@ -16,6 +16,19 @@
 
 
 ##### 💥 更新日志
+
+
+###### 2020.09.15-2020.09.18
+* 新增「控件集合板块」 见于IViewsActivity.class
+* 新增「字母侧边栏导航」 见于ISidebarActivity.class
+* 新增「Behavior」 --小米音乐歌手详情页 见于IUIBehaviorActivity.class
+* 新增「ConsecutiveScrollerLayout」 见于IScrollerLayoutActivity.class   
+
+###### 2020.08.26
+* 新增「支持输入得Spinner」 见于IEditSpinnerActivity.class
+
+###### 2020.08.23
+* 新增「底部NavigatonBar」
 
 ###### 2020.08.22
 * 新增「重启App」

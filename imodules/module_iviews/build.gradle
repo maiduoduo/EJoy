@@ -21,6 +21,12 @@ android {
         }
     }
 
+    //支持Java8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -35,6 +41,8 @@ dependencies {
     api files('libs/universal-image-loader-1.9.4.jar')
     api files('libs/universal-image-loader-1.9.4-sources.jar')
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'com.android.support:palette-v7:27.1.1'
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 //    implementation ('com.google.android.material:material:1.1.0-alpha09'){
 //    }
 }

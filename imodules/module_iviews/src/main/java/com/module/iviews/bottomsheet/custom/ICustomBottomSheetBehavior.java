@@ -125,7 +125,7 @@ public class ICustomBottomSheetBehavior<V extends View> extends CoordinatorLayou
         if (ViewCompat.getFitsSystemWindows(parent) && !ViewCompat.getFitsSystemWindows(child)) {
             child.setFitsSystemWindows(true);
         }
-        //find our header container and inflate header if required
+        //eicon_navigation_find our header container and inflate header if required
         ViewGroup headerContainer = child.findViewById(R.id.headerContainer);
         topShadow = child.findViewById(R.id.card_header_shadow_top);
         bottomShadow = child.findViewById(R.id.card_header_shadow);

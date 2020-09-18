@@ -5,6 +5,17 @@
     <color name="activityBackground">#D6E9B9</color>
     <color name="color_pink">#eaa5b0</color>
 
+    <color name="colorBackground">#f8f8f8</color>
+    <color name="colorTitle">#FFFFFF</color>
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorTextBlackLight">#636363</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhitePressed">#e8e8e8</color>
+
+    <color name="colorQQBackgroundStart">#4e8cfc</color>
+    <color name="colorQQBackgroundEnd">#33bafc</color>
+    <color name="colorQQBackgroundCenter">#34b0fc</color>
+
     <color name="colorPrimary">@color/transparent</color>
     <color name="colorPrimaryDark">@color/app_color_theme_3</color>
     <color name="colorAccent">@color/app_color_theme_1</color>
@@ -511,7 +522,7 @@
     <color name="colorLine">#EEEEEE</color>
 
     <color name="colorTextSubTitle">#BDBDBD</color>
-    <color name="colorTextBlack">#4B4B4B</color>
+  <!--  <color name="colorTextBlack">#4B4B4B</color>-->
     <color name="colorTextPress">#737373</color>
     <color name="colorTextUnEnable">#C1C1C1</color>
     <color name="colorTextEnable">#323232</color>

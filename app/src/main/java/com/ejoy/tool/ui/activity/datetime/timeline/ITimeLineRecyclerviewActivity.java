@@ -86,7 +86,7 @@ public class ITimeLineRecyclerviewActivity extends IBaseActivity {
         if (mTimeLineData == null) mTimeLineData = new ArrayList<>();
         else mTimeLineData.clear();
         WidgetUtils.initRecyclerView(mLineRecyclerView, mTimeLineAdapter =
-                        new NursePatientinfoTodoTodayAdapter(R.layout.item_timeline_custom_rv, mTimeLineData, me),
+                        new TodoTodayAdapter(R.layout.item_timeline_custom_rv, mTimeLineData, me),
                 LinearLayoutManager.VERTICAL, 0, R.color.light_gray1, null);
     }
 
@@ -117,11 +117,11 @@ public class ITimeLineRecyclerviewActivity extends IBaseActivity {
     }
 
 
-    private class NursePatientinfoTodoTodayAdapter extends BaseQuickAdapter<RecyclerviewTimeLineEntity,BaseViewHolder> {
+    private class TodoTodayAdapter extends BaseQuickAdapter<RecyclerviewTimeLineEntity,BaseViewHolder> {
         private static final String TAG = "adapter";
         private Context mContext;
         private List<RecyclerviewTimeLineEntity> data;
-        public NursePatientinfoTodoTodayAdapter(int layoutResId, List<RecyclerviewTimeLineEntity> data, Context context) {
+        public TodoTodayAdapter(int layoutResId, List<RecyclerviewTimeLineEntity> data, Context context) {
             super(layoutResId, data);
             mContext = context;
             this.data = data;

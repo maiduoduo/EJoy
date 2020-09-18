@@ -24,14 +24,14 @@
             android:textSize="10sp" />
 
         <TextView
-            android:id="@+id/wifi"
+            android:id="@+id/navigationBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@mipmap/wifi_icon"
             android:gravity="center_horizontal"
             android:drawablePadding="@dimen/dp_5"
-            android:text="XXX"
+            android:text="底部导航栏"
             android:textSize="12sp" />
 
         <TextView

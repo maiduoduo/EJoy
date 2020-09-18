@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff212121">
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="NoAddNavigationBar"
+        android:text="基础演示(Normal)"
+        android:textSize="16sp" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="AddAsFragment"
+        android:text="自定义图标切换Fragment版本(AddAsFragment)"
+        android:textSize="16sp" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="AddView"
+        android:text="中间自定义View(AddView)"
+        android:textSize="16sp" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="OnlyNavigation"
+        android:text="简单导航栏-无ViewPager(OnlyNavigation)"
+        android:textSize="16sp" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="SetUpViewPagerActivity"
+        android:text="自定义ViewPager(SetUpViewPagerActivity)"
+        android:textSize="16sp" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="AllActivity"
+        android:text="所有功能展示(AllShow)"
+        android:textSize="16sp" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="#9f9e9e"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|left"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:onClick="OnWeibo"
+        android:text="完整示例(Weibo)"
+        android:textSize="16sp" />
+</LinearLayout>

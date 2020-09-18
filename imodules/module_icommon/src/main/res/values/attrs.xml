@@ -71,4 +71,18 @@
         <!--对齐方式，默认是VERTICAL，垂直-->
         <attr name="android:orientation"/>
     </declare-styleable>
+
+    <declare-styleable name="IEditSpinner">
+        <attr name="hint" format="string"/>
+        <attr name="rightImage" format="reference"/>
+        <attr name="Background" format="reference"/>
+        <attr name="maxLine" format="integer"/>
+    </declare-styleable>
+
+    <attr format="color|reference" name="themeColor"/>
+    <attr format="color|reference" name="themeAccentColor"/>
+
+    <attr format="color|reference" name="widgetBackground"/>
+    <attr format="color|reference" name="widgetBackgroundDark"/>
+    <attr format="color|reference" name="widgetBackgroundTitle"/>
 </resources>

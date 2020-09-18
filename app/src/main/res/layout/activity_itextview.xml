@@ -42,6 +42,96 @@
                 app:adet_padding_top="0dp"
                 app:adet_isTop="true" />
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray3"
+                android:layout_marginTop="@dimen/dp_20"
+                android:paddingVertical="@dimen/dp_10"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:text="支持输入查询得Spinner"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LGray4"
+                android:layout_marginTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/dp_30"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_20"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/llBingqu"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/tvInputValueTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#626F7E"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"
+                        android:text="课程"/>
+
+                    <com.module.iviews.textview.spinner.IEditSpinner
+                        android:id="@+id/kcSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:Background="@drawable/shape_spinner_frame_bg"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        app:hint="请选择课程"
+                        app:rightImage="@mipmap/bicon_arrow_fold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llKs"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+                    <TextView
+                        android:id="@+id/tvInputValueTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#626F7E"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16dp"
+                        android:text="课时"/>
+                    <com.module.iviews.textview.spinner.IEditSpinner
+                        android:id="@+id/ksSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:Background="@drawable/shape_spinner_frame_bg"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        app:hint="请选择课时"
+                        app:rightImage="@mipmap/bicon_arrow_fold" />
+                    <!--<EditText
+                        android:id="@+id/etDeptCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:background="@drawable/shape_edit4"
+                        android:cursorVisible="true"
+                        android:inputType="numberDecimal"
+                        android:maxLength="15"
+                        android:imeOptions="normal"
+                        android:textColorHint="@color/LGray6"
+                        android:textSize="26dp"
+                        android:textColor="#01CBD6"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        android:hint="请填写科室代码" />-->
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
         </LinearLayout>
 
     </ScrollView>
@@ -125,7 +215,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="TextView/通用TextView"
+                android:text="TextView/Edittext"
                 android:textColor="#dc000000"
                 android:textSize="16dp"
                 android:textStyle="bold" />

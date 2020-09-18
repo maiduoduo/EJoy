@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff212121"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:id="@+id/bt01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="展示消息红点提示"
+        android:onClick="click01" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:id="@+id/bt02"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="clear"
+        android:text="清除所有数字消息、红点提示" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:id="@+id/bt03"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="清除第一个数字消息" />
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:id="@+id/bt04"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="清除第四个红点提示" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:id="@+id/bt05"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="onJump"
+        android:text="跳转第二个页面，并傻笑"/>
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:id="@+id/bt06"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="变换样式" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:id="@+id/bt07"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="更换第二个未选中的图标和文字" />
+    <include layout="@layout/layout_line_horizontal_1dp"/>
+
+
+</LinearLayout>

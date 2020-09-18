@@ -68,7 +68,7 @@ import java.util.List;
  *  城市选择DialogFragment
  */
 public class CityPickerDialogFragment extends DialogFragment implements TextWatcher, View.OnClickListener, SideIndexBar.OnIndexTouchedChangedListener, InnerListener {
-    private static final String TAG = CityPickerDialogFragment_temp.class.getSimpleName();
+    private static final String TAG = CityPickerDialogFragment.class.getSimpleName();
     private View mContentView;
     private RecyclerView mRecyclerView;
     private RecyclerView mExpandRecyclerView;
