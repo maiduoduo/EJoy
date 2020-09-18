@@ -7,6 +7,7 @@
     android:focusableInTouchMode="true"
     android:descendantFocusability="blocksDescendants"
     android:fillViewport="true">
+    <!---->
     <com.module.iviews.consecutivescroller.IConsecutiveScrollerLayout
         android:id="@+id/scrollerLayout"
         android:layout_width="match_parent"
