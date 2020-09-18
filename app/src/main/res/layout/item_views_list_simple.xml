@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/dp_10"
+    android:paddingHorizontal="10dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/tv_titleWidget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="@color/colorTextBlack"
+        android:layout_toRightOf="@+id/ivIcon"
+        android:layout_marginLeft="15dp"
+        android:textSize="16dp"/>
+
+
+    <TextView
+        android:id="@+id/rtv_status_widget"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="测试状态"
+        android:textSize="14dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>
