@@ -141,7 +141,9 @@ public class IViewsActivity extends IBaseActivity {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 WidgetEntity item = (WidgetEntity) adapter.getItem(position);
-                jump(item.activity);
+                if (item.activity != null) {
+                    jump(item.activity);
+                }
             }
         });
 
@@ -164,14 +166,16 @@ public class IViewsActivity extends IBaseActivity {
     private List<WidgetEntity> getContentList() {
         List<WidgetEntity> widgetEntities = new ArrayList<>();
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue,"字母侧边栏导航", "侧边字母导航，快速定位区域", ISideBarActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red,"TabLayout", "快速创建Tab控件包括CommonTabLayout、SlidingTabLayout及SegmentTabLayout三种类型Tab", ISeekBarAndCheckBoxActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue,"StatusViewHelper", "支持顶部自定义标题栏沉浸效果帮助类。", ISeekBarAndCheckBoxActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle,"KeyboardHelper", "解决软键盘遮住底部输入框问题帮助类。", ISeekBarAndCheckBoxActivity.class));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle,"ScrollerLayout", "支持多个滑动布局(RecyclerView、WebView、ScrollView等)和lView等)和普通控件(TextView、ImageView、LinearLayou、自定义View等)持续连贯滑动的容器,它使所有的子View像一个整体一样连续顺畅滑动。并且支持布局吸顶功能。",
+                IScrollerLayoutActivity.class));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red,"TabLayout", "快速创建Tab控件包括CommonTabLayout、SlidingTabLayout及SegmentTabLayout三种类型Tab", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue,"StatusViewHelper", "支持顶部自定义标题栏沉浸效果帮助类。", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle,"KeyboardHelper", "解决软键盘遮住底部输入框问题帮助类。", null));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red,"TitleBarView", "一款支持沉浸状态栏效果设置的ToolBar控件:支持xml设置是否沉浸、主标题及副标题、左边文字及icon、右边文字及icon、下划线;支持添加左边、中间及右边view方便扩展。", ISeekBarAndCheckBoxActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle,"UIAlertDialog", "一款自定义Alert效果控件:属性命名及调用方式同Android原生AlertDialog,增加样式背景及文本相关属性自定义自定义。", ISeekBarAndCheckBoxActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue,"UIActionSheetDialog", "一款底部弹框控件:支持List模式(iOS、微信及QQ样式)和Grid模式", ISeekBarAndCheckBoxActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red,"UIProgressDialog", "一款仿微博、微信、MD loading控件:扩展背景及loading 样式设置。", ISeekBarAndCheckBoxActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red,"Behavior", "自定义Behavior实现音乐详情页。", IUIBehaviorActivity.class));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle,"UIAlertDialog", "一款自定义Alert效果控件:属性命名及调用方式同Android原生AlertDialog,增加样式背景及文本相关属性自定义自定义。", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue,"UIActionSheetDialog", "一款底部弹框控件:支持List模式(iOS、微信及QQ样式)和Grid模式", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red,"UIProgressDialog", "一款仿微博、微信、MD loading控件:扩展背景及loading 样式设置。", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue,"Behavior", "自定义Behavior实现音乐详情页。", IUIBehaviorActivity.class));
         return widgetEntities;
     }
 

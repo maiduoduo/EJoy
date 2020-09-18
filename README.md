@@ -65,6 +65,7 @@
 
 [更新日志详细-点击查看](https://github.com/maiduoduo/EJoy/blob/dev/README_DEVLOG.md)
 
+###### 2020.09.15 
 ###### 2020.08.26 新增「支持输入得Spinner」
 ###### 2020.08.22 新增「重启App」
 ###### 2020.08.20 新增「Tab锚点定位」，见ITabScrollActivity.java

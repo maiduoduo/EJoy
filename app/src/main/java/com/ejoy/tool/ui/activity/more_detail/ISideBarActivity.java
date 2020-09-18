@@ -71,7 +71,6 @@ public class ISideBarActivity extends IBaseActivity {
     IWaveSideBarView iwaveSideBarView;
     private LinearLayoutManager mLayoutManager;
     private ISideBarListAdapter mAdapter;
-
     private List<CitysBean> mAllCities;
 
     @Override
