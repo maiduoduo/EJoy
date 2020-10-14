@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -221,6 +222,25 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
             @Override
             public void OnBannerClick(int position) {
                 iToast.showISimpleToast("position" + position);
+            }
+        });
+        mBanner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+//                Log.e("Banner", "onPageScrolled i: "+i);
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                Log.e("Banner", "onPageSelected i: "+i);
+//                iToast.showISimpleToast("position...:" + i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+//                Log.e("Banner", "onPageScrollStateChanged i: "+i);
+
             }
         });
     }

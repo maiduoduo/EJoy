@@ -243,30 +243,30 @@ public class GlobalDataProvider {
 
     public static List<IBaseBean> headerfooterListData() {
         return Arrays.asList(
-                new IBaseBean("8K视觉盛宴：探索另一个世界的流光溢彩","拍摄颜料和液体在帆布上的动态，一直是摄影师 Roman 有别于其他创作者的地方。他用 8K RED DSMC2 和 微距镜头捕捉下常人看不到的颜色之美。\n" +
-                        "From Roman De Giuli","第一财经   7分钟前","http://img.kaiyanapp.com/f4a9aba1c6857ee0cefcdc5aee0a1fc9.png?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("广告说出社畜心声，假期中被迫回岗工作","丹叔 Daniel Craig 是世界知名的演员，但在 007 粉丝眼里，他就是詹姆斯·邦德的化身和代名词。尽管即将上映的「007：无暇赴死」将是他最后一次出演","中国基金报   27分钟前","http://img.kaiyanapp.com/453bad3420bbe677e0c2875d060c0cb3.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("山地车大神横穿以色列，比旅拍大片还好看","以色列官方旅游局邀请山地车大神 Fabio Wibmer 到以色列旅行，当然不仅仅是玩玩而已。Fabio 骑着他的山地车，在以色列街头，景点甚至是海上肆意撒欢。","中国证券报·中证网   28分钟前",""),
-                new IBaseBean("脑洞开了！史上第一次 ASMR 模式抢银行","抢银行都听过，可 ASMR 模式下的抢银行可没看过。这不，上次用异形吓死人的 ASMR 模式又来开脑洞了。真佩服她的执行力和创意~\n" +
-                        "From Rhino Stew","中国基金报   36分钟前","http://img.kaiyanapp.com/fe8ad3a66ee3f46405b1c2eda03be8eb.png?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("广告会玩丨追剧少女的终极梦想就是这样吧","这支 3 分钟的广告名为「Beto & Elena」，Beto是该片要宣传的电视「De Vuelta al Barrio」中的重要角色","第一财经  28分钟前","http://img.kaiyanapp.com/b4236d1d03aafcc0604c85dc144238cd.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("酷炫转场！地球最性感的小岛：波拉波拉","冬季旅行就想去暖和的地方，位于南太平洋玻利尼西亚社会群岛，被人称为“太平洋上的明珠”的波拉波拉岛就很适合。这","中国基金报   28赞","http://img.kaiyanapp.com/045c0d948e572cdd0ba865484fa4611f.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("环保 MV「我曾有个梦」，动物消失前的绝唱","","第一基金   15分钟前","http://img.kaiyanapp.com/0e0be4626614f90624d3ecebe9f4402d.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("酷炫转场！地球最性感的小岛：波拉波拉","","中国基金报   26分钟前","http://img.kaiyanapp.com/045c0d948e572cdd0ba865484fa4611f.jpeg?imageMogr2/quality/60/format/jpg")
+                new IBaseBean("8K视觉盛宴：探索另一个世界的流光溢彩", "拍摄颜料和液体在帆布上的动态，一直是摄影师 Roman 有别于其他创作者的地方。他用 8K RED DSMC2 和 微距镜头捕捉下常人看不到的颜色之美。\n" +
+                        "From Roman De Giuli", "第一财经   7分钟前", "http://img.kaiyanapp.com/f4a9aba1c6857ee0cefcdc5aee0a1fc9.png?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("广告说出社畜心声，假期中被迫回岗工作", "丹叔 Daniel Craig 是世界知名的演员，但在 007 粉丝眼里，他就是詹姆斯·邦德的化身和代名词。尽管即将上映的「007：无暇赴死」将是他最后一次出演", "中国基金报   27分钟前", "http://img.kaiyanapp.com/453bad3420bbe677e0c2875d060c0cb3.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("山地车大神横穿以色列，比旅拍大片还好看", "以色列官方旅游局邀请山地车大神 Fabio Wibmer 到以色列旅行，当然不仅仅是玩玩而已。Fabio 骑着他的山地车，在以色列街头，景点甚至是海上肆意撒欢。", "中国证券报·中证网   28分钟前", ""),
+                new IBaseBean("脑洞开了！史上第一次 ASMR 模式抢银行", "抢银行都听过，可 ASMR 模式下的抢银行可没看过。这不，上次用异形吓死人的 ASMR 模式又来开脑洞了。真佩服她的执行力和创意~\n" +
+                        "From Rhino Stew", "中国基金报   36分钟前", "http://img.kaiyanapp.com/fe8ad3a66ee3f46405b1c2eda03be8eb.png?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("广告会玩丨追剧少女的终极梦想就是这样吧", "这支 3 分钟的广告名为「Beto & Elena」，Beto是该片要宣传的电视「De Vuelta al Barrio」中的重要角色", "第一财经  28分钟前", "http://img.kaiyanapp.com/b4236d1d03aafcc0604c85dc144238cd.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("酷炫转场！地球最性感的小岛：波拉波拉", "冬季旅行就想去暖和的地方，位于南太平洋玻利尼西亚社会群岛，被人称为“太平洋上的明珠”的波拉波拉岛就很适合。这", "中国基金报   28赞", "http://img.kaiyanapp.com/045c0d948e572cdd0ba865484fa4611f.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("环保 MV「我曾有个梦」，动物消失前的绝唱", "", "第一基金   15分钟前", "http://img.kaiyanapp.com/0e0be4626614f90624d3ecebe9f4402d.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("酷炫转场！地球最性感的小岛：波拉波拉", "", "中国基金报   26分钟前", "http://img.kaiyanapp.com/045c0d948e572cdd0ba865484fa4611f.jpeg?imageMogr2/quality/60/format/jpg")
         );
     }
 
     public static List<IBaseBean> headerfooterListMoreData() {
         return Arrays.asList(
-                new IBaseBean("年度影视混剪：一场名为 2019 的旅程","2019 是不平凡的历程，2020 亦是新的征程","第一财经  1002赞","http://img.kaiyanapp.com/b7380cec3f8800157ef5187319d17a4e.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("绿日乐队新单「Oh Yeah!」MV，嘲讽网络时代","绿日乐队回归新单「Oh网络时代。每个人都，不在意身边发生的事。\n" +
-                        "From Green Day","证券网  1小时25分钟前",""),
-                new IBaseBean("猫掉进鱼堆，就像肉食的你遇见潮汕牛肉火锅","潮汕牛肉锅能拒绝这样最，等待春天吧。我人狠话不多！","中证网  32分钟前","http://img.kaiyanapp.com/dc749078b441d0460420e4460d01f9c1.png?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("泰式新年沙雕：让你偷懒成功的春节必备 APP","过年前，总会需要给家里置办年货。这不，泰国一家 APP 就洞察到了这个消费者的痛点。用自家产品为所有人解决了一切烦恼，还让男主练就了一身太极功夫。From Grab Official","今晚打老虎  99赞","http://img.kaiyanapp.com/00f3ca1f47f03a975bfdd5b5c9ec26d0.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("史诗级超强混剪：欢迎来到地狱俱乐部","","中证网  20分钟前",""),
-                new IBaseBean("泰式新年沙雕：让你偷懒成功的春节必备 APP","","今晚打老虎  0赞","http://img.kaiyanapp.com/00f3ca1f47f03a975bfdd5b5c9ec26d0.jpeg?imageMogr2/quality/60/format/jpg"),
-                new IBaseBean("开保时捷登阿尔卑斯山，壕就是任性","","中证网  1小时8分钟前",""),
-                new IBaseBean("任天堂主题乐园宣传曲 MV ，2020 打卡圣地","","今晚打老虎  99赞","http://img.kaiyanapp.com/bf1b56d1a45d0f73283ff85a8df6e3cb.jpeg?imageMogr2/quality/60/format/jpg")
+                new IBaseBean("年度影视混剪：一场名为 2019 的旅程", "2019 是不平凡的历程，2020 亦是新的征程", "第一财经  1002赞", "http://img.kaiyanapp.com/b7380cec3f8800157ef5187319d17a4e.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("绿日乐队新单「Oh Yeah!」MV，嘲讽网络时代", "绿日乐队回归新单「Oh网络时代。每个人都，不在意身边发生的事。\n" +
+                        "From Green Day", "证券网  1小时25分钟前", ""),
+                new IBaseBean("猫掉进鱼堆，就像肉食的你遇见潮汕牛肉火锅", "潮汕牛肉锅能拒绝这样最，等待春天吧。我人狠话不多！", "中证网  32分钟前", "http://img.kaiyanapp.com/dc749078b441d0460420e4460d01f9c1.png?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("泰式新年沙雕：让你偷懒成功的春节必备 APP", "过年前，总会需要给家里置办年货。这不，泰国一家 APP 就洞察到了这个消费者的痛点。用自家产品为所有人解决了一切烦恼，还让男主练就了一身太极功夫。From Grab Official", "今晚打老虎  99赞", "http://img.kaiyanapp.com/00f3ca1f47f03a975bfdd5b5c9ec26d0.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("史诗级超强混剪：欢迎来到地狱俱乐部", "", "中证网  20分钟前", ""),
+                new IBaseBean("泰式新年沙雕：让你偷懒成功的春节必备 APP", "", "今晚打老虎  0赞", "http://img.kaiyanapp.com/00f3ca1f47f03a975bfdd5b5c9ec26d0.jpeg?imageMogr2/quality/60/format/jpg"),
+                new IBaseBean("开保时捷登阿尔卑斯山，壕就是任性", "", "中证网  1小时8分钟前", ""),
+                new IBaseBean("任天堂主题乐园宣传曲 MV ，2020 打卡圣地", "", "今晚打老虎  99赞", "http://img.kaiyanapp.com/bf1b56d1a45d0f73283ff85a8df6e3cb.jpeg?imageMogr2/quality/60/format/jpg")
         );
     }
 
@@ -277,7 +277,7 @@ public class GlobalDataProvider {
      * @return
      */
     public static List getTimeLineRvData(Context context) {
-        List myjson = getNurseMultiIndexJsonData(context, ASSET_TIMELINE_RECYCLERVIEW,PARSE_TYPE_TIMELINE_RECYCLERVIEW);
+        List myjson = getNurseMultiIndexJsonData(context, ASSET_TIMELINE_RECYCLERVIEW, PARSE_TYPE_TIMELINE_RECYCLERVIEW);
         if (myjson != null) {
             return myjson;
         } else {
@@ -290,10 +290,13 @@ public class GlobalDataProvider {
      * 解析json
      */
     private static Type parsetype;
-    public static List getNurseMultiIndexJsonData(Context context, final String fileName,int type) {
+
+    public static List getNurseMultiIndexJsonData(Context context, final String fileName, int type) {
         String json = FileUtils.getJson(context, fileName);
         Gson gson = new Gson();
-        if (PARSE_TYPE_TIMELINE_RECYCLERVIEW == type) parsetype = new TypeToken<List<RecyclerviewTimeLineEntity>>() {}.getType();
+        if (PARSE_TYPE_TIMELINE_RECYCLERVIEW == type)
+            parsetype = new TypeToken<List<RecyclerviewTimeLineEntity>>() {
+            }.getType();
         return gson.fromJson(json, parsetype);
     }
 
@@ -401,7 +404,7 @@ public class GlobalDataProvider {
         data1.createTime = "昨天 11:21";
         data1.content = "开司还是那么帅";
         data1.pictureList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168009921&di=fe2e9e5bc508130558a9954c2a8bd28f&imgtype=0&src=http%3A%2F%2Fxuexi.leawo.cn%2Fuploads%2Fallimg%2F160926%2F134225K60-img_b.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168009921&di=fe2e9e5bc508130558a9954c2a8bd28f&imgtype=0&src=http%3A%2F%2Fxuexi.leawo.cn%2Fuploads%2Fallimg%2F160926%2F134225K60-img_b.gif"),
                 Uri.parse("https://b-ssl.duitang.com/uploads/item/201206/29/20120629140234_QWAsX.thumb.700_0.gif"),
                 Uri.parse("http://pic2.52pk.com/files/allimg/150324/104923F49-12.jpg"),
                 Uri.parse("https://f12.baidu.com/it/u=3294379970,949120920&fm=72"),
@@ -413,11 +416,11 @@ public class GlobalDataProvider {
 //                Uri.parse("https://f12.baidu.com/it/u=3294379970,949120920&fm=72")
         );
         data1.pictureThumbList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168009921&di=fe2e9e5bc508130558a9954c2a8bd28f&imgtype=0&src=http%3A%2F%2Fxuexi.leawo.cn%2Fuploads%2Fallimg%2F160926%2F134225K60-img_b.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168009921&di=fe2e9e5bc508130558a9954c2a8bd28f&imgtype=0&src=http%3A%2F%2Fxuexi.leawo.cn%2Fuploads%2Fallimg%2F160926%2F134225K60-img_b.gif"),
                 Uri.parse("https://b-ssl.duitang.com/uploads/item/201206/29/20120629140234_QWAsX.thumb.700_0.gif"),
                 Uri.parse("http://pic2.52pk.com/files/allimg/150324/104923F49-12.jpg"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif")
 //                Uri.parse("http://upfile.asqql.com/2009pasdfasdfic2009s305985-ts/2014-9/201491520352362114.gif"),
 //                Uri.parse("http://imgsrc.baidu.com/forum/w=580/sign=852e30338435e5dd902ca5d746c7a7f5/bd3eb13533fa828b6cf24d82fc1f4134960a5afa.jpg"),
 //                Uri.parse("http://pic.3h3.com/up/2014-3/20143314140858312456.gif"),
@@ -436,10 +439,10 @@ public class GlobalDataProvider {
         data2.createTime = "昨天 09:59";
         data2.content = "唐僧还是厉害啊。为什么？有宝马";
         data2.pictureList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168240132&di=226605ee54960b3135cbeebf12d1e219&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150928%2Fmp33561543_1443397655340_1.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168240132&di=226605ee54960b3135cbeebf12d1e219&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150928%2Fmp33561543_1443397655340_1.gif")
         );
         data2.pictureThumbList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168240132&di=226605ee54960b3135cbeebf12d1e219&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150928%2Fmp33561543_1443397655340_1.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168240132&di=226605ee54960b3135cbeebf12d1e219&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150928%2Fmp33561543_1443397655340_1.gif")
         );
 
         PICData data3 = new PICData();
@@ -448,16 +451,16 @@ public class GlobalDataProvider {
         data3.createTime = "昨天 08:12";
         data3.content = "各种眼神";
         data3.pictureList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168792516&di=b3ae4a05909fd4c6b903851553649fb0&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20171013%2F33%2F16097621616938606825.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168265734&di=6dbf0daade2a0126fa6118ec3a185205&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160917%2Fb8b605c1f286482b8e748f37528ccfd5.jpg"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168288781&di=ae03ef1c5b30330f0fb8b8f0e955a737&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161101%2F8f0f344ee011413297830dfd3dbb18f1.jpg")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168792516&di=b3ae4a05909fd4c6b903851553649fb0&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20171013%2F33%2F16097621616938606825.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168265734&di=6dbf0daade2a0126fa6118ec3a185205&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160917%2Fb8b605c1f286482b8e748f37528ccfd5.jpg"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168288781&di=ae03ef1c5b30330f0fb8b8f0e955a737&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161101%2F8f0f344ee011413297830dfd3dbb18f1.jpg")
         );
         data3.pictureThumbList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168792516&di=b3ae4a05909fd4c6b903851553649fb0&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20171013%2F33%2F16097621616938606825.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168265734&di=6dbf0daade2a0126fa6118ec3a185205&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160917%2Fb8b605c1f286482b8e748f37528ccfd5.jpg"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168288781&di=ae03ef1c5b30330f0fb8b8f0e955a737&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161101%2F8f0f344ee011413297830dfd3dbb18f1.jpg")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168792516&di=b3ae4a05909fd4c6b903851553649fb0&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20171013%2F33%2F16097621616938606825.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168265734&di=6dbf0daade2a0126fa6118ec3a185205&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160917%2Fb8b605c1f286482b8e748f37528ccfd5.jpg"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168279697&di=dcd2b62878ad6c2c92e5bd7facfe6c3c&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151126%2Fmp44425938_1448498418499_2.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168288781&di=ae03ef1c5b30330f0fb8b8f0e955a737&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161101%2F8f0f344ee011413297830dfd3dbb18f1.jpg")
         );
 
         PICData data4 = new PICData();
@@ -466,14 +469,14 @@ public class GlobalDataProvider {
         data4.createTime = "昨天 06:00";
         data4.content = "人与人间的信任，就像是纸片，一旦破损，就不会再回到原来的样子。";
         data4.pictureList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168299317&di=620d6bcb76de1d70e00ca4ed9aca58db&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20164_12_16%2Fa8e9ix85375805036596.jpg"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168316681&di=840b4d0440543ae3f72c6c81270556b6&imgtype=0&src=http%3A%2F%2Fupfile.asqql.com%2F2009pasdfasdfic2009s305985-ts%2F2015-9%2F20159202352355149.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168810214&di=24078bdf9e747555965ead78f40f38af&imgtype=0&src=http%3A%2F%2Fs1.trueart.com%2F20180110%2F223107721_640.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168299317&di=620d6bcb76de1d70e00ca4ed9aca58db&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20164_12_16%2Fa8e9ix85375805036596.jpg"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168316681&di=840b4d0440543ae3f72c6c81270556b6&imgtype=0&src=http%3A%2F%2Fupfile.asqql.com%2F2009pasdfasdfic2009s305985-ts%2F2015-9%2F20159202352355149.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168810214&di=24078bdf9e747555965ead78f40f38af&imgtype=0&src=http%3A%2F%2Fs1.trueart.com%2F20180110%2F223107721_640.gif")
         );
         data4.pictureThumbList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168299317&di=620d6bcb76de1d70e00ca4ed9aca58db&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20164_12_16%2Fa8e9ix85375805036596.jpg"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168316681&di=840b4d0440543ae3f72c6c81270556b6&imgtype=0&src=http%3A%2F%2Fupfile.asqql.com%2F2009pasdfasdfic2009s305985-ts%2F2015-9%2F20159202352355149.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168810214&di=24078bdf9e747555965ead78f40f38af&imgtype=0&src=http%3A%2F%2Fs1.trueart.com%2F20180110%2F223107721_640.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168299317&di=620d6bcb76de1d70e00ca4ed9aca58db&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20164_12_16%2Fa8e9ix85375805036596.jpg"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168316681&di=840b4d0440543ae3f72c6c81270556b6&imgtype=0&src=http%3A%2F%2Fupfile.asqql.com%2F2009pasdfasdfic2009s305985-ts%2F2015-9%2F20159202352355149.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168810214&di=24078bdf9e747555965ead78f40f38af&imgtype=0&src=http%3A%2F%2Fs1.trueart.com%2F20180110%2F223107721_640.gif")
         );
 
         PICData data5 = new PICData();
@@ -482,12 +485,12 @@ public class GlobalDataProvider {
         data5.createTime = "前天 14:61";
         data5.content = "雪.触之即化..愿永久飘零";
         data5.pictureList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168338032&di=498a6e41472a6f49e3f95aa16a3c2402&imgtype=0&src=http%3A%2F%2Fwww.dahepiao.com%2Fuploads%2Fallimg%2F170630%2F26008-1F6301543125B.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168353920&di=ac499e09eec05c86871d6df539748445&imgtype=0&src=http%3A%2F%2Fimg1.ph.126.net%2FWmNQ-hcRrqIDTYBtms1W3A%3D%3D%2F6619465719002444731.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168338032&di=498a6e41472a6f49e3f95aa16a3c2402&imgtype=0&src=http%3A%2F%2Fwww.dahepiao.com%2Fuploads%2Fallimg%2F170630%2F26008-1F6301543125B.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168353920&di=ac499e09eec05c86871d6df539748445&imgtype=0&src=http%3A%2F%2Fimg1.ph.126.net%2FWmNQ-hcRrqIDTYBtms1W3A%3D%3D%2F6619465719002444731.gif")
         );
         data5.pictureThumbList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168338032&di=498a6e41472a6f49e3f95aa16a3c2402&imgtype=0&src=http%3A%2F%2Fwww.dahepiao.com%2Fuploads%2Fallimg%2F170630%2F26008-1F6301543125B.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168353920&di=ac499e09eec05c86871d6df539748445&imgtype=0&src=http%3A%2F%2Fimg1.ph.126.net%2FWmNQ-hcRrqIDTYBtms1W3A%3D%3D%2F6619465719002444731.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168338032&di=498a6e41472a6f49e3f95aa16a3c2402&imgtype=0&src=http%3A%2F%2Fwww.dahepiao.com%2Fuploads%2Fallimg%2F170630%2F26008-1F6301543125B.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168353920&di=ac499e09eec05c86871d6df539748445&imgtype=0&src=http%3A%2F%2Fimg1.ph.126.net%2FWmNQ-hcRrqIDTYBtms1W3A%3D%3D%2F6619465719002444731.gif")
         );
 
         PICData data6 = new PICData();
@@ -496,18 +499,18 @@ public class GlobalDataProvider {
         data6.createTime = "圣诞节";
         data6.content = "颜宇扬的期末总结\nimg_a、有本事冲我来，别再家长会上吓唬我爸\nimg_b、期末考试成绩出来了，我觉得我妈生二胎是非常明智的选择\n3、这场考试对于我的意义就是知道了班上到底有多少人\nimg_d、期末考试不给老师们露一手，他们还真以为自己教的好";
         data6.pictureList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168389150&di=2fd5c826af5394b62777fd132dff7d8f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F17%2F20170117112406_zixk5.thumb.700_0.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168397716&di=909dcfb1bf7a7fe37041ec5914c34c4a&imgtype=0&src=http%3A%2F%2Fs7.rr.itc.cn%2Fg%2FwapChange%2F20159_11_19%2Fa4m9779610717481352.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168437965&di=f91b9c858eecf75799af00df525eab9a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa6cjhv9612585370352.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168451881&di=805580bb76614eba5dcc4668253b9749&imgtype=0&src=http%3A%2F%2Fs8.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa979a69612629324352.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168465415&di=8c7e9f70a33c4e442427f5e4bd21db1e&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20162_24_14%2Fa69tdw8577863829596.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168389150&di=2fd5c826af5394b62777fd132dff7d8f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F17%2F20170117112406_zixk5.thumb.700_0.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168397716&di=909dcfb1bf7a7fe37041ec5914c34c4a&imgtype=0&src=http%3A%2F%2Fs7.rr.itc.cn%2Fg%2FwapChange%2F20159_11_19%2Fa4m9779610717481352.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168437965&di=f91b9c858eecf75799af00df525eab9a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa6cjhv9612585370352.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168451881&di=805580bb76614eba5dcc4668253b9749&imgtype=0&src=http%3A%2F%2Fs8.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa979a69612629324352.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168465415&di=8c7e9f70a33c4e442427f5e4bd21db1e&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20162_24_14%2Fa69tdw8577863829596.gif")
         );
         data6.pictureThumbList = Arrays.asList(
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168389150&di=2fd5c826af5394b62777fd132dff7d8f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F17%2F20170117112406_zixk5.thumb.700_0.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168397716&di=909dcfb1bf7a7fe37041ec5914c34c4a&imgtype=0&src=http%3A%2F%2Fs7.rr.itc.cn%2Fg%2FwapChange%2F20159_11_19%2Fa4m9779610717481352.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168437965&di=f91b9c858eecf75799af00df525eab9a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa6cjhv9612585370352.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168451881&di=805580bb76614eba5dcc4668253b9749&imgtype=0&src=http%3A%2F%2Fs8.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa979a69612629324352.gif"),
-                Uri.parse("https://timgsa.baidu.com/timg?smart_image&quality=80&size=b9999_10000&sec=1542168465415&di=8c7e9f70a33c4e442427f5e4bd21db1e&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20162_24_14%2Fa69tdw8577863829596.gif")
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168389150&di=2fd5c826af5394b62777fd132dff7d8f&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201701%2F17%2F20170117112406_zixk5.thumb.700_0.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168397716&di=909dcfb1bf7a7fe37041ec5914c34c4a&imgtype=0&src=http%3A%2F%2Fs7.rr.itc.cn%2Fg%2FwapChange%2F20159_11_19%2Fa4m9779610717481352.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168437965&di=f91b9c858eecf75799af00df525eab9a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa6cjhv9612585370352.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168451881&di=805580bb76614eba5dcc4668253b9749&imgtype=0&src=http%3A%2F%2Fs8.rr.itc.cn%2Fr%2FwapChange%2F201510_31_11%2Fa979a69612629324352.gif"),
+                Uri.parse("https://timgsa.baidu.com/bimg_banner_palette_a?smart_image&quality=80&size=b9999_10000&sec=1542168465415&di=8c7e9f70a33c4e442427f5e4bd21db1e&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20162_24_14%2Fa69tdw8577863829596.gif")
         );
 
         if (System.currentTimeMillis() % 3 == 0) {
@@ -804,6 +807,84 @@ public class GlobalDataProvider {
         userViewInfos.add(new ImageViewInfo("http://img.soogif.com/KkB9WARG3PFrz9EEX4DJdiy6Vyg95fGl.gif"));
         return userViewInfos;
     }*/
+
+
+    /**
+     * 获取本地轮播图资源
+     *
+     * @return
+     */
+    public static List<Integer> getBannerListLocal() {
+        return Arrays.asList(
+                R.drawable.bimg_banner_image1,
+                R.drawable.bimg_banner_image2,
+                R.drawable.bimg_banner_image3,
+                R.drawable.bimg_banner_palette_a,
+                R.drawable.bimg_banner_palette_b,
+                R.drawable.bimg_banner_palette_c,
+                R.drawable.bimg_banner_palette_d,
+                R.drawable.bimg_banner_palette_e,
+                R.drawable.bimg_banner_palette_f,
+                R.drawable.bimg_banner_palette_g,
+                R.drawable.bimg_banner_palette_h,
+                R.drawable.bimg_banner_image4,
+                R.drawable.bimg_banner_image5,
+                R.drawable.bimg_banner_image6,
+                R.drawable.bimg_banner_image7,
+                R.drawable.bimg_banner_image8,
+                R.drawable.bimg_banner_image9,
+                R.drawable.bimg_banner_image10,
+                R.drawable.bimg_banner_image11
+
+        );
+    }
+
+
+    public Integer imageRes;
+    public String imageUrl;
+    public String titleStr;
+    public int viewType;
+    public GlobalDataProvider(String imageUrl, String title, int viewType) {
+        this.imageUrl = imageUrl;
+        this.titleStr = title;
+        this.viewType = viewType;
+    }
+
+    public GlobalDataProvider(Integer imageRes, String title, int viewType) {
+        this.imageRes = imageRes;
+        this.titleStr = title;
+        this.viewType = viewType;
+    }
+
+    public static List<GlobalDataProvider> getTestData2() {
+        List<GlobalDataProvider> list = new ArrayList<>();
+        list.add(new GlobalDataProvider(R.drawable.bimg_banner_palette_c, "听风.赏雨", 3));
+        list.add(new GlobalDataProvider(R.drawable.bimg_banner_palette_d, "迪丽热巴.迪力木拉提", 1));
+        list.add(new GlobalDataProvider(R.drawable.bimg_banner_palette_e, "爱美.人间有之", 3));
+        list.add(new GlobalDataProvider(R.drawable.bimg_banner_palette_f, "洋洋洋.气质篇", 1));
+        list.add(new GlobalDataProvider(R.drawable.bimg_banner_palette_g, "生活的态度", 3));
+        return list;
+    }
+
+    /**
+     * 获取网络轮播图资源
+     *
+     * @return
+     */
+    public static List<String> getBannerRemoteList() {
+        return Arrays.asList(
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673310186&di=1a9b3ba7f8f543756ceab17932062243&imgtype=0&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D3829524084%2C1912616429%26fm%3D214%26gp%3D0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591008936948&di=b0f06aea0614b7e40bd677208023cecf&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fd000baa1cd11728bcdde8185ccfcc3cec2fd2ca1.jpg",
+                "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2222747798,2595429905&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673262656&di=2f404b9a4baaa3b9ab3e2e7d95f766d9&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F00%2F14%2F56%2F8656613df5bfe3e.jpg",
+                "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3174815445,1357500974&fm=26&gp=0.jpg",
+                "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=38993578,726419589&fm=26&gp=0.jpg",
+                "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=378848856,1051881010&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673237881&di=e6bd2ef8538862abb15def3e1a3f7395&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F00%2F11%2F77%2F745639b19b2e192.jpg",
+                "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1657543407,1464896857&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673406360&di=c3103c3e51288db59a758164ddbb4a98&imgtype=0&src=http%3A%2F%2Fphoto.16pic.com%2F00%2F54%2F85%2F16pic_5485639_b.jpg"
+                );
+    }
 
     /**
      * 拆分集合
