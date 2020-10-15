@@ -112,9 +112,12 @@ dependencies {
     implementation 'com.haibin:calendarview:3.4.1'
 
 
+
     // ui module
     implementation 'net.qiujuer.genius:ui:2.1.1'
     implementation 'net.qiujuer.genius:res:2.1.1'
+//    implementation rootProject.ext.dependencies["banner"]
+
 
 
 
@@ -129,7 +132,11 @@ dependencies {
     //compile 'com.tencent.bugly:crashreport:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.3.2
 //    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
     implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
 //    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
 
+}
+repositories {
+    mavenCentral()
 }

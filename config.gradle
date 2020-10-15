@@ -71,6 +71,7 @@ ext {
             "fresco_webpsupport"                : "com.facebook.fresco:webpsupport:0.14.1",
             "glide_compiler"                    : "com.github.bumptech.glide:compiler:4.5.0",
             "banner"                            : "com.youth.banner:banner:1.4.10",
+//            "banner"                            : "com.youth.banner:banner:2.1.0",
             "MagicIndicator"                    : "com.github.hackware1993:MagicIndicator:1.4.0",
             "SwipeToLoadLayout"                 : "com.github.Aspsine:SwipeToLoadLayout:1.0.4",
             "jiaozivideoplayer"                 : "cn.jzvd:jiaozivideoplayer:6.4.1",

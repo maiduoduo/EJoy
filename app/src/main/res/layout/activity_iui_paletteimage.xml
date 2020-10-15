@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flBannerRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/LGray1">
+    android:layout_height="match_parent">
 
-    <!---->
     <LinearLayout
+        android:id="@+id/llBannerRoot"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/theme_color">
         <Space
+            android:id="@+id/space"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_70" />
-        <com.ejoy.tool.scaffold.view.PowerfulRecyclerView
-            android:overScrollMode="never"
-            android:id="@+id/recyclerView"
+            android:layout_height="70dp"/>
+
+
+        <com.module.iviews.custombanner.IBannerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </com.ejoy.tool.scaffold.view.PowerfulRecyclerView>
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorAccent"
+            android:layout_margin="20dp"
+            android:id="@+id/ibannerView"
+            android:layout_height="160dp">
+        </com.module.iviews.custombanner.IBannerView>
     </LinearLayout>
 
 
-    <com.module.iviews.slidebar.IWaveSideBarView
-        android:id="@+id/iwaveSideBarView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:layout_marginTop="@dimen/dp_80"
-        android:layout_marginBottom="@dimen/dp_20"
-        android:paddingVertical="@dimen/dp_20"/>
     <RelativeLayout
         android:id="@+id/box_table"
         android:layout_width="match_parent"
@@ -101,14 +100,16 @@
                 android:background="@color/split_light" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="Sidebar(侧边栏字母导航)"
+                android:text="轮播广告条，滚动定位到图片取色并设置标题栏背景"
                 android:textColor="#dc000000"
-                android:textSize="16dp"
+                android:lines="2"
+                android:ellipsize="end"
+                android:textSize="14dp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

@@ -18,6 +18,11 @@
 ##### 💥 更新日志
 
 
+###### 2020.10.10-2020.10.15
+
+* 自定义轮播图
+* 新增「轮播广告条，滚动定位到图片取色并设置标题栏背景」见于IPaletteImageActivity.class
+
 ###### 2020.09.15-2020.09.18
 * 新增「控件集合板块」 见于IViewsActivity.class
 * 新增「字母侧边栏导航」 见于ISidebarActivity.class

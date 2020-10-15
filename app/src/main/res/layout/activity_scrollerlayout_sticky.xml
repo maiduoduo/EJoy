@@ -8,7 +8,7 @@
     android:fillViewport="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical">
-
+    <!---->
     <!--标题-->
     <RelativeLayout
         android:id="@+id/box_table"
