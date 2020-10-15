@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fake_navigation_layout" type="id"/>
+    <item name="fake_navigation_view" type="id"/>
+    <item name="fake_status_layout" type="id"/>
+    <item name="fake_status_view" type="id"/>
+
+    <item name="btn_negativeAlertDialog" type="id"/>
+    <item name="btn_neutralAlertDialog" type="id"/>
+    <item name="btn_positiveAlertDialog" type="id"/>
+
+    <item name="lLayout_rootAlertDialog" type="id"/>
+    <item name="lLayout_ViewAlertDialog" type="id"/>
+    <item name="lLayout_containerAlertDialog" type="id"/>
+    <item name="tv_titleAlertDialog" type="id"/>
+    <item name="tv_messageAlertDialog" type="id"/>
+</resources>

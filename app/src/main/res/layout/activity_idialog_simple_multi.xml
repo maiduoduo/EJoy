@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flBannerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--banner-->
+            <LinearLayout
+                android:id="@+id/llBannerRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="@dimen/dp_10"
+                    android:src="@drawable/bimg_banner_topbg"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp_20"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Button数量"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/dp_text_size_main"/>
+
+                    <android.support.v7.widget.AppCompatSeekBar
+                        android:id="@+id/sBar_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:thumb="@drawable/seekbar_thumb"
+                        android:progressDrawable="@drawable/seekbar_style"
+                        android:max="2"
+                        android:progress="2"/>
+
+                    <TextView
+                        android:id="@+id/tv_statusNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/dp_text_size_main"/>
+                </LinearLayout>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sBtn_titleAlert"
+                    style="@style/DialogSwitchStyle"
+                    android:text="显示title"
+                    app:theme="@style/DialogSwitchTheme"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sBtn_titleColorAlert"
+                    style="@style/DialogSwitchStyle"
+                    android:text="自定义title文本颜色"
+                    app:theme="@style/DialogSwitchTheme"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sBtn_msgColorAlert"
+                    style="@style/DialogSwitchStyle"
+                    android:text="自定义Message文本颜色"
+                    app:theme="@style/DialogSwitchTheme"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sBtn_buttonColorAlert"
+                    style="@style/DialogSwitchStyle"
+                    android:text="自定义Button文本颜色"
+                    app:theme="@style/DialogSwitchTheme"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sBtn_backAlert"
+                    style="@style/DialogSwitchStyle"
+                    android:text="背景半透明"
+                    app:theme="@style/DialogSwitchTheme"/>
+
+                <com.module.iviews.radius.RadiusTextView
+                    android:id="@+id/rtv_showAlert"
+                    style="@style/RadiusStyleButton"
+                    android:text="Show(iOS样式)"/>
+
+                <com.module.iviews.radius.RadiusTextView
+                    android:id="@+id/rtv_showQqAlert"
+                    style="@style/RadiusStyleButton"
+                    android:text="Show(QQ样式)"/>
+
+                <com.module.iviews.radius.RadiusTextView
+                    android:id="@+id/rtv_showAllAlert"
+                    style="@style/RadiusStyleButton"
+                    android:text="Show(所有属性展示)"/>
+
+                <com.module.iviews.radius.RadiusTextView
+                    android:id="@+id/rtv_editAlert"
+                    style="@style/RadiusStyleButton"
+                    android:text="ShowEditText"/>
+                <com.module.iviews.radius.RadiusTextView
+                    android:id="@+id/rtv_fragmentAlert"
+                    style="@style/RadiusStyleButton"
+                    android:layout_marginBottom="@dimen/dp_margin"
+                    android:text="ShowDialogFragment"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/box_table"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:clickable="true">
+
+        <com.kongzue.dialog.util.BlurView
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20" />
+
+            <LinearLayout
+                android:id="@+id/box_table_child"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tvSpace"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/img_back_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:text="返回"
+                        android:textColor="#2d6cee"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/split_light" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="2"
+                android:text="多样式简单易用dialog"
+                android:textColor="#dc000000"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

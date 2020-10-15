@@ -94,11 +94,11 @@ public class IBannerAdapter extends BaseAdapter {
 
 
         if (imageRemoteUrl != null && imageRemoteUrl.size() > 0) {
-            Glide.with(getContext()).load(imageRemoteUrl.get(position)).into(viewHolder.mPaletteImageView);
+            Glide.with(view.getContext()).load(imageRemoteUrl.get(position)).into(viewHolder.mPaletteImageView);
         }else if (imageLocalSrc != null && imageLocalSrc.size() > 0) {
-            Glide.with(getContext()).load(imageLocalSrc.get(position)).into(viewHolder.mPaletteImageView);
+            Glide.with(view.getContext()).load(imageLocalSrc.get(position)).into(viewHolder.mPaletteImageView);
         }else {
-            Glide.with(getContext()).load(R.drawable.bimg_banner_palette_b).into(viewHolder.mPaletteImageView);
+            Glide.with(view.getContext()).load(R.drawable.bimg_banner_palette_b).into(viewHolder.mPaletteImageView);
         }
 
 

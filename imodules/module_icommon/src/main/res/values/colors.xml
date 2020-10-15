@@ -67,6 +67,27 @@
     <color name="colorHelper_square_from_ratio_background">@color/app_color_blue</color>
     <color name="colorHelper_square_to_ratio_background">@color/app_color_theme_3</color>
 
+    <color name="colorLineGray">#DCDCDC</color>
+    <color name="colorActionSheetWeiXinText">#393939</color>
+    <color name="colorActionSheetNormalItemText">#393939</color>
+    <color name="colorActionSheetTitleText">#969696</color>
+    <color name="colorActionSheetCancelText">#1382FF</color>
+    <color name="colorActionSheetItemText">#1382FF</color>
+    <color name="colorActionSheetEdgePressed">#F0F0F0</color>
+    <color name="colorActionSheetEdge">#FFFFFF</color>
+    <color name="colorActionSheetEdgeLineGray">@color/colorLineGray</color>
+    <color name="colorActionSheetNormalBackground">#e5e3e4</color>
+
+    <color name="colorRadiusDefaultRipple">#c8cccccc</color>
+
+    <!--简单多样式Dialog-->
+    <color name="colorAlertBg">#FFFFFF</color>
+    <color name="colorAlertBgPressed">#e6e6e6</color>
+    <color name="colorAlertLineGray">#DCDCDC</color>
+    <color name="colorAlertTitle">#393939</color>
+    <color name="colorAlertMessage">#393939</color>
+    <color name="colorAlertButton">#393939</color>
+
 
     <!--白天主题-->
     <color name="day_backgroup_color">#FFFFFFFF</color>

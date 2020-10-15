@@ -26,6 +26,8 @@
 * 新增「取色器：ViewPager嵌套Fragment设置背景」见于IPaletteViewpagerColorActivity.class
 * 新增「取色器：列表主题色吸取设置背景」见于IPaletteListColorActivity.class
 
+* 新增「多样式简单易用dialog」见于ISimpleMultiDialogActivity.class
+
 ###### 2020.09.15-2020.09.18
 * 新增「控件集合板块」 见于IViewsActivity.class
 * 新增「字母侧边栏导航」 见于ISidebarActivity.class

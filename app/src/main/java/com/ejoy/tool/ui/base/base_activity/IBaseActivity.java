@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BlurMaskFilter;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.net.Uri;
@@ -61,6 +62,7 @@ import com.kongzue.baseframework.util.OnPermissionResponseListener;
 import com.kongzue.baseframework.util.OnResponseListener;
 import com.kongzue.baseframework.util.Parameter;
 import com.kongzue.baseframework.util.ParameterCache;
+import com.kongzue.dialog.util.BlurView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -221,6 +223,16 @@ public abstract class IBaseActivity extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * 是否设置毛玻璃效果
+     *   TODO:1.要在界面的布局中设置布局BlurView
+     *   TODO:2.在界面中绑定到此控件，并传入控件到此方法中
+     * @return
+     */
+    protected View isRegistBlurTitle() {
+        return null;
+    }
+
     public void setDarkStatusBarTheme(boolean value) {
         darkStatusBarThemeValue = value;
         setTranslucentStatus(true);
@@ -327,6 +339,13 @@ public abstract class IBaseActivity extends AppCompatActivity {
                     StatusBarTool.setStatusBarColor(me, (Integer) registSatusbarBgcolor());
                 }
             }
+        }
+
+        if (isRegistBlurTitle() != null){
+            BlurView registBlurTitle = (BlurView) isRegistBlurTitle();
+            registBlurTitle.setOverlayColor(Color.argb(100, 235, 235, 235));
+            registBlurTitle.setRadius(me, 0, 0);
+            setDarkNavigationBarTheme(false);
         }
     }
 
