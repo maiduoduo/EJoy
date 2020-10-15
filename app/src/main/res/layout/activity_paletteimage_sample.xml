@@ -2,11 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/flBannerRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,136 +14,94 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <!--banner-->
-            <LinearLayout
-                android:id="@+id/llBannerRoot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/transparent"
-                android:orientation="vertical">
-
-                <Space
-                    android:id="@+id/space"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp" />
-
-
-                <com.module.iviews.custombanner.IBannerView
-                    android:id="@+id/ibannerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginVertical="@dimen/dp_10"
-                    android:background="@color/colorAccent"
-                    app:layout_constraintTop_toTopOf="parent"></com.module.iviews.custombanner.IBannerView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llColorActivi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="@dimen/dp_10">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="13dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/bicon_soso_red" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@+id/ivIcon"
-                    android:text="动态参数设置示例"
-                    android:textColor="@color/colorTextBlack"
-                    android:textSize="16dp" />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="@dimen/dp_5"
-                android:background="@color/white" />
-
-            <LinearLayout
-                android:id="@+id/llColorViewpager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="@dimen/dp_10">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="13dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/bicon_today_todo_circle" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@+id/ivIcon"
-                    android:text="ViewPager嵌套Fragment设置背景"
-                    android:textColor="@color/colorTextBlack"
-                    android:textSize="16dp" />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="@dimen/dp_5"
-                android:background="@color/white" />
-
-            <LinearLayout
-                android:id="@+id/llColorList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="@dimen/dp_10">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="13dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/bicon_soso_blue" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@+id/ivIcon"
-                    android:text="列表主题色吸取设置背景"
-                    android:textColor="@color/colorTextBlack"
-                    android:textSize="16dp" />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/white" />
-
             <Space
+                android:id="@+id/space"
                 android:layout_width="match_parent"
-                android:layout_height="600dp" />
+                android:layout_height="70dp" />
 
+            <com.module.iviews.paletteimageview.IPaletteImageView
+                android:id="@+id/palette"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center_horizontal"
+                app:paletteOffsetX="13dp"
+                app:paletteOffsetY="13dp"
+                app:palettePadding="40dp"
+                app:paletteSrc="@drawable/bimg_banner_image4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片半径" />
+
+                <SeekBar
+                    android:id="@+id/seek1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="500" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="阴影半径" />
+
+                <SeekBar
+                    android:id="@+id/seek2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x偏移量  " />
+
+                <SeekBar
+                    android:id="@+id/seek3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="y偏移量  " />
+
+                <SeekBar
+                    android:id="@+id/seek4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-
+    </ScrollView>
 
     <RelativeLayout
         android:id="@+id/box_table"
@@ -222,7 +180,7 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:lines="2"
-                android:text="轮播广告条，滚动定位到图片取色并设置背景色"
+                android:text="提取背景色动态参数设置示例"
                 android:textColor="#dc000000"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -230,5 +188,4 @@
         </RelativeLayout>
 
     </RelativeLayout>
-
 </FrameLayout>

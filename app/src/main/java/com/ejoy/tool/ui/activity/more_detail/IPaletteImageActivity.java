@@ -40,10 +40,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-
-
 /**
- * @ClassName:  IPaletteImageActivity
+ * @ClassName: IPaletteImageActivity
  * @Author: maiduoduo
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2020/10/13
@@ -52,7 +50,7 @@ import butterknife.OnClick;
 @Layout(R.layout.activity_iui_paletteimage)
 @DarkStatusBarTheme(true)
 //@DarkNavigationBarTheme(true)
-public class IPaletteImageActivity extends IBaseActivity  {
+public class IPaletteImageActivity extends IBaseActivity {
 
     @BindView(R.id.blur)
     BlurView blur;
@@ -81,23 +79,21 @@ public class IPaletteImageActivity extends IBaseActivity  {
 
     @Override
     public void initViews() {
-        blur.setOverlayColor(Color.argb(200, 235, 235, 235));
+        blur.setOverlayColor(Color.argb(100, 235, 235, 235));
         blur.setRadius(me, 0, 0);
         setDarkNavigationBarTheme(false);
 
         bannerAdapter = new IBannerAdapter(me);
         //--------------------本地图片示例--------START.---------------------------------------------
-//        bannerAdapter.setPicLocals(GlobalDataProvider.getBannerListLocal());
-//        mBannerView.setAdapter(bannerAdapter,GlobalDataProvider.getBannerListLocal(),false,llBannerRoot);
+        bannerAdapter.setPicLocals(GlobalDataProvider.getBannerListLocal());
+        mBannerView.setAdapter(bannerAdapter, GlobalDataProvider.getBannerListLocal(), false, flBannerRoot);
         //--------------------本地图片示例--------END.---------------------------------------------
 
 
-
         //--------------------网络图片示例--------START.---------------------------------------------
-        bannerAdapter.setPicNetUrls(GlobalDataProvider.getBannerRemoteList());
-        mBannerView.setAdapter(bannerAdapter,GlobalDataProvider.getBannerRemoteList(),true,llBannerRoot);
+//        bannerAdapter.setPicNetUrls(GlobalDataProvider.getBannerRemoteList());
+//        mBannerView.setAdapter(bannerAdapter,GlobalDataProvider.getBannerRemoteList(),true,flBannerRoot);
         //--------------------网络图片示例--------END.---------------------------------------------
-
 
 
     }
@@ -113,23 +109,28 @@ public class IPaletteImageActivity extends IBaseActivity  {
 
     @Override
     public void setEvents() {
-        mBannerView.setOnPickColorListener(new IBannerView.OnPickColorListener() {
-            @Override
-            public void onColorArray(int[] colors) {
-                flBannerRoot.setBackgroundColor(colors[2]);
-                Log.e("Banner", "-------------updateView setOnPickColorListener----------------");
-            }
-        });
     }
 
 
     @OnClick({
             R.id.btn_back
+            , R.id.llColorActivi
+            , R.id.llColorViewpager
+            , R.id.llColorList
     })
     public void eventClick(View view) {
         switch (view.getId()) {
             case R.id.btn_back:
                 finish();
+                break;
+            case R.id.llColorActivi:
+                jump(IpaletteImageSampleActivity.class);
+                break;
+            case R.id.llColorViewpager:
+                jump(IPaletteViewpagerColorActivity.class);
+                break;
+            case R.id.llColorList:
+                jump(IPaletteListColorActivity.class);
                 break;
 
         }

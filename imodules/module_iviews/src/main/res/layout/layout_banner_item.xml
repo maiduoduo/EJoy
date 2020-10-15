@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/paletteImageView"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="140dp"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/bimg_banner_palette_d" />
 </LinearLayout>

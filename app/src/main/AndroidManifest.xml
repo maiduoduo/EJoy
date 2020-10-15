@@ -213,6 +213,15 @@
         <activity
             android:name=".ui.activity.more_detail.IPaletteImageActivity"
             android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IpaletteImageSampleActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IPaletteViewpagerColorActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IPaletteListColorActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
 
 
         <!--navigatonbar-->
