@@ -24,7 +24,6 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
-import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.common.bean.MainItemBean;
 import com.ejoy.tool.common.db.CitysBean;
 import com.ejoy.tool.common.db.engine.CitiesDaoHelper;
@@ -51,7 +50,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.maple.msdialog.ActionSheetDialog;
 import com.module.ires.bean.utils.EJsonUtils;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,7 +118,7 @@ public class MainActivity_0122 extends BaseActivity implements BaseQuickAdapter.
         if (mData == null) mData = new ArrayList<>();
         else mData.clear();
         //检测更新
-        BuglyHelper.getInstance().doCheckUpgrade(this);
+//        BuglyHelper.getInstance().doCheckUpgrade(this);
         initTopHeader();
         initRecyclerView();
         addData();

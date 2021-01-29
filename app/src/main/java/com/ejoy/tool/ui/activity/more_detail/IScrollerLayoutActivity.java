@@ -41,7 +41,7 @@ import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.dialog.util.BlurView;
 import com.module.ires.bean.utils.EResUtils;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;

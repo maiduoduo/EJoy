@@ -21,6 +21,12 @@ android {
         abortOnError false
     }
 
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
 
 
 }

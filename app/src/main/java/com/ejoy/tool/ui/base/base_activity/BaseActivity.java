@@ -47,8 +47,6 @@ import com.ejoy.tool.scaffold.view.loading.IProgressDialog;
 import com.ejoy.tool.ui.activity.ICameraActivity;
 import com.ejoy.tool.ui.base.base_view.BaseView;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
-import com.tencent.bugly.beta.Beta;
-import com.tencent.bugly.beta.upgrade.UpgradeStateListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -306,35 +304,6 @@ public abstract class BaseActivity extends ICameraActivity implements BaseView {
 
     @Override
     protected void onResume() {
-        /**
-         * 参数1：isManual 用户手动点击检查，非用户点击操作请传false
-         * 参数2：isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
-         */
-        Beta.checkUpgrade(false, false);
-        /* 设置更新状态回调接口 */
-        Beta.upgradeStateListener = new UpgradeStateListener() {
-            @Override
-            public void onUpgradeSuccess(boolean isManual) {
-            }
-
-            @Override
-            public void onUpgradeFailed(boolean isManual) {
-            }
-
-            @Override
-            public void onUpgrading(boolean isManual) {
-
-            }
-
-            @Override
-            public void onDownloadCompleted(boolean b) {
-
-            }
-
-            @Override
-            public void onUpgradeNoVersion(boolean isManual) {
-            }
-        };
         super.onResume();
     }
 

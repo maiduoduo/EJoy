@@ -3,7 +3,6 @@ package com.ejoy.tool.ui.activity.bottomsheet;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CoordinatorLayout;
@@ -23,18 +22,14 @@ import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.module.ires.bean.CustomBottomSheetItemBean;
 import com.module.ires.bean.utils.EDensityUtils;
-import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.EUISimpleAdapter;
-import com.module.iviews.popup.EUISimpleExpandableListAdapter;
-import com.module.iviews.popup.EUISimpleExpandablePopup;
 import com.module.iviews.popup.EUISimplePopup;
-import com.module.iviews.popup.ExpandableItem;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

@@ -1,4 +1,4 @@
-package com.module.ires.bean.utils;
+package com.module.iviews.utils;
 //  ┏┓　　　┏┓
 //┏┛┻━━━┛┻┓
 //┃　　　　　　　┃
@@ -31,6 +31,7 @@ import android.view.WindowManager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.module.ires.R;
+import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.view.EDashlineItemDivider;
 import com.module.ires.bean.view.EDividerItemDecoration;
 import com.module.ires.bean.view.EDividerItemDecoration2;

@@ -41,7 +41,7 @@ import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.dialog.util.BlurView;
 import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.utils.EResUtils;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,6 +152,7 @@ public class IViewsActivity extends IBaseActivity {
     @OnClick({
             R.id.btn_back
             , R.id.clickShadowColor
+            , R.id.clickDouyin
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -160,6 +161,9 @@ public class IViewsActivity extends IBaseActivity {
                 break;
             case R.id.clickShadowColor:
                 jump(IPaletteImageActivity.class);
+                break;
+            case R.id.clickDouyin:
+//                jump(IPaletteImageActivity.class);
                 break;
 
         }
