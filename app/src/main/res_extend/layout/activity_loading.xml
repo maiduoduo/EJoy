@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_45"
         android:paddingHorizontal="@dimen/dp_10"
-        android:background="@color/app_color_theme_9">
+        android:background="@color/blue_a200">
         <ImageView
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
@@ -49,64 +49,7 @@
                 android:textSize="15sp"
                 android:background="@drawable/shape_button_4"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/dp_10"
-                android:gravity="left"
-                android:text="* Action Sheet Dialog"
-                android:textColor="@color/Gray3A"
-                android:textSize="12sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/dp_10"
-                android:gravity="left"
-                android:text="* Alert Dialog"
-                android:textColor="@color/Gray3A"
-                android:textSize="12sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/dp_10"
-                android:gravity="left"
-                android:textColor="@color/Gray3A"
-                android:text="* Alert Edit Dialog"
-                android:textSize="12sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:textColor="@color/Gray3A"
-                android:text="* Scroll Picker Dialog"
-                android:textSize="12sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:textColor="@color/Gray3A"
-                android:text="* Content long/short"
-                android:textSize="12sp" />
-            <include layout="@layout/layout_line_horizontal_1dp"/>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />

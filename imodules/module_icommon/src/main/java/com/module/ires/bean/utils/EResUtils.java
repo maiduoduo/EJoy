@@ -5,17 +5,23 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.AnimRes;
 import android.support.annotation.ArrayRes;
+import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.annotation.StyleableRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.content.res.AppCompatResources;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -25,6 +31,11 @@ import android.widget.TextView;
  * 获取res中的资源
  */
 public final class EResUtils {
+//    private static Context mContext;
+
+//    public EResUtils(Context context) {
+//        this.mContext = context;
+//    }
 
     private EResUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
@@ -61,6 +72,14 @@ public final class EResUtils {
             return context.getDrawable(resId);
         }
         return AppCompatResources.getDrawable(context, resId);
+
+//        Drawable drawable = null;
+//        try {
+//            drawable = mContext.getResources().getDrawable(res);
+//        } catch (Exception e) {
+//
+//        }
+//        return drawable;
     }
 
     /**
@@ -144,7 +163,12 @@ public final class EResUtils {
      * @return
      */
     public static int getDimensionPixelSize(Context context,@DimenRes int resId) {
-        return getResources(context).getDimensionPixelSize(resId);
+        int result = 0;
+        try {
+            result = getResources(context).getDimensionPixelSize(resId);
+        } catch (Exception e) {
+        }
+        return result;
     }
 
     /**
@@ -154,7 +178,12 @@ public final class EResUtils {
      * @return
      */
     public static String[] getStringArray(Context context,@ArrayRes int resId) {
-        return getResources(context).getStringArray(resId);
+        String[] result = new String[0];
+        try {
+            result = getResources(context).getStringArray(resId);
+        } catch (Exception e) {
+        }
+        return result;
     }
 
     /**
@@ -249,5 +278,180 @@ public final class EResUtils {
             v.setCompoundDrawables(null, null, null, drawable);
         }
     }
+
+
+    //---------------------------Resource-----------------------------------------------------------------
+    public static CharSequence getText(Context mContext, int res) {
+        CharSequence txt = null;
+        try {
+            txt = mContext.getText(res);
+        } catch (Exception e) {
+
+        }
+        return txt;
+    }
+
+    public CharSequence[] getTextArray(Context mContext,int res) {
+        CharSequence[] result = new CharSequence[0];
+        try {
+            result = mContext.getResources().getTextArray(res);
+        } catch (Exception e) {
+        }
+        return result;
+    }
+
+    public Drawable getResDrawable(Context mContext,int res) {
+        Drawable drawable = null;
+        try {
+            drawable = mContext.getResources().getDrawable(res);
+        } catch (Exception e) {
+
+        }
+        return drawable;
+    }
+
+
+    public static ColorStateList getColorStateList(Context mContext, int res) {
+        ColorStateList color = null;
+        try {
+            color = mContext.getResources().getColorStateList(res);
+        } catch (Exception e) {
+
+        }
+        return color;
+    }
+
+    public static float getDimension(Context mContext, int res) {
+        float result = 0;
+        try {
+            result = mContext.getResources().getDimension(res);
+        } catch (Exception e) {
+        }
+        return result;
+    }
+
+
+
+    public static int getAttrColor(Context mContext, int attrRes) {
+        int result = 0;
+        try {
+            TypedValue typedValue = new TypedValue();
+            mContext.getTheme().resolveAttribute(attrRes, typedValue, true);
+            result = typedValue.data;
+        } catch (Exception e) {
+
+        }
+        return result;
+    }
+
+    public float getAttrFloat(Context mContext,int attrRes) {
+        return getAttrFloat(mContext,attrRes, 1.0f);
+    }
+
+    public float getAttrFloat(Context mContext,int attrRes, float def) {
+        float result = def;
+        try {
+            TypedValue typedValue = new TypedValue();
+            mContext.getTheme().resolveAttribute(attrRes, typedValue, true);
+            result = typedValue.getFloat();
+        } catch (Exception e) {
+
+        }
+        return result == 0 ? def : result;
+    }
+
+
+    //==================================Drawable设置相关工具类=======================================================
+    //Description:
+    //1、2018-11-16 16:36:09 修改newDrawable返回
+    //2、2019-4-22 17:00:49 新增{@link #setTintDrawable(Drawable, int)}{@link #setTintDrawable(Drawable, ColorStateList)}用于动态设置Drawable 颜色
+
+
+
+    /**
+     * 设置drawable宽高
+     *
+     * @param drawable
+     * @param width
+     * @param height
+     */
+    public static void setDrawableWidthHeight(Drawable drawable, int width, int height) {
+        try {
+            if (drawable != null) {
+                drawable.setBounds(0, 0,
+                        width >= 0 ? width : drawable.getIntrinsicWidth(),
+                        height >= 0 ? height : drawable.getIntrinsicHeight());
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    /**
+     * 复制当前drawable
+     *
+     * @param drawable
+     * @return
+     */
+    public static Drawable getNewDrawable(Drawable drawable) {
+        if (drawable == null) {
+            return null;
+        }
+        return drawable.getConstantState().newDrawable();
+    }
+
+
+    /**
+     * 给一个Drawable变换线框颜色
+     *
+     * @param drawable 需要变换颜色的drawable
+     * @param color    需要变换的颜色
+     * @return
+     */
+    public static Drawable setTintDrawable(Drawable drawable, @ColorInt int color) {
+        if (drawable != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                try {
+                    DrawableCompat.setTint(drawable, color);
+                } catch (Exception e) {
+                    drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+                }
+
+            } else {
+                drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+            }
+        }
+        return drawable;
+    }
+
+    public static Drawable setTintDrawable(Drawable drawable, @Nullable ColorStateList tint) {
+        if (drawable != null && tint != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                try {
+                    DrawableCompat.setTintList(drawable, tint);
+                } catch (Exception e) {
+                    drawable.setColorFilter(tint.getDefaultColor(), PorterDuff.Mode.SRC_ATOP);
+                }
+            } else {
+                drawable.setColorFilter(tint.getDefaultColor(), PorterDuff.Mode.SRC_ATOP);
+            }
+        }
+        return drawable;
+    }
+
+    public static Drawable setTintMode(Drawable drawable, @NonNull PorterDuff.Mode tintMode, int color) {
+        if (drawable != null && tintMode != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                try {
+                    DrawableCompat.setTintMode(drawable, tintMode);
+                } catch (Exception e) {
+                    drawable.setColorFilter(color, tintMode);
+                }
+            } else {
+                drawable.setColorFilter(color, tintMode);
+            }
+        }
+        return drawable;
+    }
+
 
 }

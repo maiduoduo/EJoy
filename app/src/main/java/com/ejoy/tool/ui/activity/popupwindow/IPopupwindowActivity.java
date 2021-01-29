@@ -17,23 +17,13 @@ package com.ejoy.tool.ui.activity.popupwindow;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
-import android.animation.Animator;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.RecyclerView;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
 import android.view.animation.OvershootInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -45,12 +35,9 @@ import com.ejoy.tool.R;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
-import com.google.gson.Gson;
 import com.module.ires.bean.utils.EBlurHelper;
 import com.module.ires.bean.utils.EDensityUtils;
-import com.module.ires.bean.utils.ETextviewUtils;
 import com.module.ires.bean.utils.IAnimUtil;
-import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.EUISimpleAdapter;
 import com.module.iviews.popup.EUISimpleExpandableListAdapter;
@@ -67,7 +54,6 @@ import com.module.iviews.popup.qq.IQQPopupWindow;
 import com.module.iviews.popup.weibo.AlertDesignViewDialog;
 import com.module.iviews.popup.weibo.ImageInfoBean;
 import com.module.iviews.popup.weibo.WeiboPopupWindow;
-import com.module.iviews.popup.weibo.adpter.ImgListAdapter;
 import com.module.iviews.view.widget.IExpandableLayout;
 
 import java.util.ArrayList;

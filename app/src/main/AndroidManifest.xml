@@ -77,6 +77,7 @@
         <activity android:name=".ui.activity.compress.IBitmapSystemSingleCompressActivity" />
         <activity android:name=".ui.activity.iosdialog.IDialogActivity" />
         <activity android:name=".ui.activity.iosdialog.IIosDialogActivity" />
+        <activity android:name=".ui.activity.iosdialog.ISimpleMultiDialogActivity" />
         <activity android:name=".ui.activity.loading.ILoadingActivity" />
         <activity android:name=".ui.activity.datetime.picker.ITimeDateOrActivity" />
         <activity android:name=".ui.activity.datetime.picker.ICitySelectActivity" />
@@ -213,6 +214,15 @@
         <activity
             android:name=".ui.activity.more_detail.IPaletteImageActivity"
             android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IpaletteImageSampleActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IPaletteViewpagerColorActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IPaletteListColorActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
 
 
         <!--navigatonbar-->
@@ -238,13 +248,13 @@
 
         <service android:name=".common.service.RestartAppService" />
 
-        <activity
+       <!-- <activity
             android:name="com.tencent.bugly.beta.ui.BetaActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
-            android:theme="@android:style/Theme.Translucent" />
+            android:theme="@android:style/Theme.Translucent" />-->
 
         <!--腾讯升级界面-->
-        <provider
+       <!-- <provider
             android:name=".app.bugly.BuglyFileProvider"
             android:authorities="${applicationId}.fileProvider"
             android:exported="false"
@@ -254,7 +264,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"
                 tools:replace="name,resource" />
-        </provider>
+        </provider>-->
 
         <meta-data
             android:name="TencentMapSDK"

@@ -873,6 +873,17 @@ public class GlobalDataProvider {
      */
     public static List<String> getBannerRemoteList() {
         return Arrays.asList(
+                "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3886167696,307506739&fm=26&gp=0.jpg",
+                "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3765821666,4235344830&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602677139046&di=e47bb99931e07603c54b89fc457fcd6b&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F26%2F97%2F35%2F4a0fdff63547eb68c65b64bf0bb651bb.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602677128584&di=529cb2457a044c2c050fc73b790ec554&imgtype=0&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3591608696%2C3603280368%26fm%3D214%26gp%3D0.jpg",
+                "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1369634064,652964048&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602676947206&di=7544c5ab94ff6a6cce4b80db7571dc44&imgtype=0&src=http%3A%2F%2Fhbimg.huabanimg.com%2F2266808ba2ef96b5daa2b2ce5995e82104583feea7cb-e6puV4_fw658",
+                "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3252013817,2485429504&fm=26&gp=0.jpg",
+                "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3213036781,3932139900&fm=26&gp=0.jpg",
+                "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3731741439,4057676812&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602677065147&di=91bc0d372607a418e07189c78c5518e2&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1292020288%2C3194758620%26fm%3D214%26gp%3D0.jpg",
+                "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2306357103,1496727535&fm=26&gp=0.jpg",
                 "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673310186&di=1a9b3ba7f8f543756ceab17932062243&imgtype=0&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D3829524084%2C1912616429%26fm%3D214%26gp%3D0.jpg",
                 "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591008936948&di=b0f06aea0614b7e40bd677208023cecf&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fd000baa1cd11728bcdde8185ccfcc3cec2fd2ca1.jpg",
                 "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2222747798,2595429905&fm=26&gp=0.jpg",
@@ -885,6 +896,112 @@ public class GlobalDataProvider {
                 "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602673406360&di=c3103c3e51288db59a758164ddbb4a98&imgtype=0&src=http%3A%2F%2Fphoto.16pic.com%2F00%2F54%2F85%2F16pic_5485639_b.jpg"
                 );
     }
+
+    public static int[] mImgs = new int[]{
+            R.drawable.bimg_list_topimage_a,
+            R.drawable.bimg_list_topimage_b,
+            R.drawable.bimg_list_topimage_c,
+            R.drawable.bimg_list_topimage_d,
+            R.drawable.bimg_list_topimage_e,
+            R.drawable.bimg_list_topimage_f,
+            R.drawable.bimg_list_topimage_g,
+            R.drawable.bimg_list_topimage_h,
+            R.drawable.bimg_list_topimage_i,
+            R.drawable.bimg_list_topimage_j,
+            R.drawable.bimg_list_topimage_k,
+            R.drawable.bimg_list_topimage_l,
+            R.drawable.bimg_list_topimage_m,
+            R.drawable.bimg_list_topimage_n,
+            R.drawable.bimg_list_topimage_o,
+            R.drawable.bimg_list_topimage_p,
+            R.drawable.bimg_list_topimage_q,
+            R.drawable.bimg_list_topimage_r,
+            R.drawable.bimg_list_topimage_s,
+            R.drawable.bimg_list_topimage_m,
+            R.drawable.bimg_list_topimage_i,
+            R.drawable.bimg_list_topimage_e,
+            R.drawable.bimg_list_topimage_c,
+            R.drawable.bimg_list_topimage_r,
+            R.drawable.bimg_list_topimage_f,
+            R.drawable.bimg_list_topimage_n,
+            R.drawable.bimg_list_topimage_q,
+            R.drawable.bimg_list_topimage_h,
+            R.drawable.bimg_list_topimage_i,
+            R.drawable.bimg_list_topimage_b,
+    };
+
+    public static int[] mHeros = new int[]{
+
+            R.drawable.bimg_hero_a,
+            R.drawable.bimg_hero_b,
+            R.drawable.bimg_hero_c,
+            R.drawable.bimg_hero_d,
+            R.drawable.bimg_hero_e,
+            R.drawable.bimg_hero_f,
+            R.drawable.bimg_hero_g,
+            R.drawable.bimg_hero_hh,
+            R.drawable.bimg_hero_i,
+            R.drawable.bimg_hero_j,
+            R.drawable.bimg_hero_k,
+            R.drawable.bimg_hero_l,
+            R.drawable.bimg_hero_m,
+            R.drawable.bimg_hero_n,
+            R.drawable.bimg_hero_o,
+            R.drawable.bimg_hero_p,
+            R.drawable.bimg_hero_q,
+            R.drawable.bimg_hero_r,
+            R.drawable.bimg_hero_s,
+            R.drawable.bimg_hero_t,
+
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 拆分集合

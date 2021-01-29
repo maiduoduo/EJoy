@@ -21,6 +21,12 @@ android {
         }
     }
 
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
 }
 
 dependencies {
@@ -31,19 +37,27 @@ dependencies {
     api rootProject.ext.dependencies["appcompat-v7"]
     api rootProject.ext.dependencies["design"]
     api rootProject.ext.dependencies["cardview"]
+
+
     api rootProject.ext.dependencies["constraint_layout"]
     api rootProject.ext.dependencies["Jolyglot-gson"]
     //BaseRecyclerViewAdapterHelper
-    api rootProject.ext.dependencies["BaseAdapterHelper_30"]
+//    api rootProject.ext.dependencies["BaseAdapterHelper"]
+//    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+//    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
+//    api(name:'BaseRecyclerViewAdapterHelper_2930', ext:'aar')
     api 'jp.wasabeef:glide-transformations:2.0.1'
     api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
     api rootProject.ext.dependencies["SmartRefreshLayout_104"]
     api rootProject.ext.dependencies["PhotoView"]
+//    api rootProject.ext.dependencies["kongzue_dialog"]
     api rootProject.ext.dependencies["kongzue_dialog"]
     api rootProject.ext.dependencies["kongzue_baseframework"]
     api 'com.youth.banner:banner:1.4.10'
     //腾讯云地图
     api 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.2.4'
-    api 'com.github.Vincent7Wong:EasyNavigation:1.5.0'
+//    api 'com.github.Vincent7Wong:EasyNavigation:1.5.0'
+
+//    implementation 'com.github.Vincent7Wong:EasyNavigation:1.5.0'
 
 }

@@ -43,7 +43,7 @@
                 <ImageView
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
-                    android:src="@mipmap/ico_ptitle_f"/>
+                    android:src="@drawable/bicon_lvyou"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                 <ImageView
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
-                    android:src="@mipmap/ico_ptitle_g"/>
+                    android:src="@drawable/bicon_qinzi"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                 <ImageView
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
-                    android:src="@mipmap/ico_ptitle_h"/>
+                    android:src="@drawable/bicon_meishi"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                 <ImageView
                     android:layout_width="@dimen/dp_20"
                     android:layout_height="@dimen/dp_20"
-                    android:src="@mipmap/ico_ptitle_e"/>
+                    android:src="@drawable/bicon_jiudian"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -120,6 +120,29 @@
                     android:textSize="@dimen/sp_15"
                     android:textColor="@color/black_33"
                     android:text="类BottomSheet底部弹窗"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llSimpleMultiDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_10"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@drawable/bicon_shangjia"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/black_33"
+                    android:text="多样式简单易用dialog"/>
 
             </LinearLayout>
             <Space

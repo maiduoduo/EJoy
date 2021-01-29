@@ -274,22 +274,24 @@ public class IBannerView extends FrameLayout implements IOnAnimationViewListener
         paint.setStrokeWidth(1.0f);
         paint.setColor(Color.parseColor("#EF5362"));
         paint.setStyle(Paint.Style.STROKE);
-        int count = adapter.getCount();
+        if (adapter != null) {
+            int count = adapter.getCount();
 
-        int x_space = (getWidth() - (count - 1) * indicator_space) / 2;
+            int x_space = (getWidth() - (count - 1) * indicator_space) / 2;
 
-        for (int i = 0; i < count; i++) {
-            if (current_position == i) {
-                paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            } else {
-                paint.setStyle(Paint.Style.STROKE);
-            }
+            for (int i = 0; i < count; i++) {
+                if (current_position == i) {
+                    paint.setStyle(Paint.Style.FILL_AND_STROKE);
+                } else {
+                    paint.setStyle(Paint.Style.STROKE);
+                }
 
 //            canvas.drawCircle(x_space + i * indicator_space, getHeight() - indicator_space, indicator_size, paint);
 
-            //使用画笔在画布上画矩形
+                //使用画笔在画布上画矩形
 //            canvas.drawRect(10,10,20,20,paint);
-            canvas.drawRect(x_space + i * indicator_space,getHeight() - indicator_space,x_space + i * indicator_space+20,getHeight() - indicator_space+10,paint);
+                canvas.drawRect(x_space + i * indicator_space, getHeight() - indicator_space, x_space + i * indicator_space + 20, getHeight() - indicator_space + 10, paint);
+            }
         }
 
     }

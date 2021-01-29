@@ -22,6 +22,11 @@
 
 * 自定义轮播图
 * 新增「轮播广告条，滚动定位到图片取色并设置标题栏背景」见于IPaletteImageActivity.class
+* 新增「取色器：动态参数设置背景示例」见于IpaletteImageSampleActivity.class
+* 新增「取色器：ViewPager嵌套Fragment设置背景」见于IPaletteViewpagerColorActivity.class
+* 新增「取色器：列表主题色吸取设置背景」见于IPaletteListColorActivity.class
+
+* 新增「多样式简单易用dialog」见于ISimpleMultiDialogActivity.class
 
 ###### 2020.09.15-2020.09.18
 * 新增「控件集合板块」 见于IViewsActivity.class

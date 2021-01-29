@@ -10,17 +10,14 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -28,7 +25,6 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
-import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.common.bean.MainItemBean;
 import com.ejoy.tool.common.db.CitysBean;
 import com.ejoy.tool.common.db.engine.CitiesDaoHelper;
@@ -42,10 +38,10 @@ import com.ejoy.tool.ui.activity.bottomsheet.IBottomSheetActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapMultiChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSingChoiceActivity;
 import com.ejoy.tool.ui.activity.compress.IBitmapSystemSingleCompressActivity;
+import com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.device.DeviceToolActviity;
 import com.ejoy.tool.ui.activity.iosdialog.IDialogActivity;
 import com.ejoy.tool.ui.activity.loading.ILoadingActivity;
-import com.ejoy.tool.ui.activity.datetime.picker.ITimeDateOrActivity;
 import com.ejoy.tool.ui.activity.popupwindow.IPopupwindowActivity;
 import com.ejoy.tool.ui.activity.refresh.IRefreshActivity;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
@@ -54,9 +50,8 @@ import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.maple.msdialog.ActionSheetDialog;
-import com.module.ires.bean.utils.EDensityUtils;
 import com.module.ires.bean.utils.EJsonUtils;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +70,35 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 `------' `-----'  `---'.-'  /
                        `---'
 */
+
+
+/*
+*
+*
+
+ ┏　┓┏　　┓┏━━┓╭┏┣━━┓┏━┳━━┓╭━━╮╭╮╭╮╭━━╮
+┏╯━┣┣┓┏┓┃　　┃┃┏╯━━┓　　┃　　　┃╭╮┃┃┃┃┃┃╭━╯
+┃┃┏┣┣╯　┃┣━━┃┃┃┃　　┃　　┃　　　┃╰╯╯┃┃┃┃┃┃╭╮
+┃┃┗┣┣┓╭┣┃　　┃╯┃┃　　┃┗━┣┳━┛┃╭╮╮┃┃┃┃┃┃┃┃
+　┃　┃┃┃　┣┣━━┃┃┃┃　　┃　　┃┃　┓┃╰╯┃┃╰╯┃┃╰╯┃
+╰┛━╯┛╯╰┛┻━━┻┗┗┗━━╯┗━╯┗━╯╰━━╯╰━━╯╰━━╯
+
+
+╃─┬─┬─┬─┬─┬─┬─┬─┬─┬─╄
+║　│　│　│　│　│　│　│　│　│佛║
+║　│　│　│　│　│　│　│　│　│祖║
+║　│　│　│　│　│　│　│　│　│佑║
+║　│　│　│　│　│　│　│　│　│，║
+║　│　│　│　│　│　│　│　│　│无║
+║　│　│　│　│　│　│　│　│　│Ｂ║
+║　│　│　│　│　│　│　│　│　│Ｕ║
+║　│　│　│　│　│　│　│　│　│Ｇ║
+╁─┴─┴─┴─┴─┴─┴─┴─┴─┴─╆
+
+
+*
+*
+* */
 
 /**
  * CN:      MainActivity
@@ -128,11 +152,12 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         if (mData == null) mData = new ArrayList<>();
         else mData.clear();
         //检测更新
-        BuglyHelper.getInstance().doCheckUpgrade(this);
+//        BuglyHelper.getInstance().doCheckUpgrade(this);
         initTopHeader();
         initRecyclerView();
         addData();
-        mTvAppName.setText("E·享111");
+        mTvAppName.setText("E·享");
+//        throw new NullPointerException("Nofound class  serialport.");
     }
 
     @Override

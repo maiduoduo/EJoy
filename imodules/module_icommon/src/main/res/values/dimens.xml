@@ -169,4 +169,22 @@
     <dimen name="ball_radius_sidebar">24dp</dimen>
 
 
+    <!--简单多样式dialog-->
+    <dimen name="alert_max_width">340dp</dimen>
+    <dimen name="alert_min_width">260dp</dimen>
+    <dimen name="alert_min_height">160dp</dimen>
+    <dimen name="alert_padding">12dp</dimen>
+    <dimen name="alert_radius">12dp</dimen>
+    <dimen name="alert_message_size">16dp</dimen>
+    <dimen name="alert_title_size">16dp</dimen>
+
+    <dimen name="dp_line_size">0.5dp</dimen>
+    <dimen name="dp_line_break">8dp</dimen>
+    <dimen name="dp_radius_loading">4dp</dimen>
+    <dimen name="dp_size_loading">36dp</dimen>
+    <dimen name="dp_min_width_loading">65dp</dimen>
+    <dimen name="dp_min_height_loading">65dp</dimen>
+    <dimen name="dp_action_sheet_list_line_height">@dimen/dp_line_size</dimen>
+
+
 </resources>

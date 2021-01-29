@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Space
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="70dp" />
+
+            <com.module.iviews.paletteimageview.IPaletteImageView
+                android:id="@+id/palette"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center_horizontal"
+                app:paletteOffsetX="13dp"
+                app:paletteOffsetY="13dp"
+                app:palettePadding="40dp"
+                app:paletteSrc="@drawable/bimg_banner_image4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片半径" />
+
+                <SeekBar
+                    android:id="@+id/seek1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="500" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="阴影半径" />
+
+                <SeekBar
+                    android:id="@+id/seek2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x偏移量  " />
+
+                <SeekBar
+                    android:id="@+id/seek3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="y偏移量  " />
+
+                <SeekBar
+                    android:id="@+id/seek4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/box_table"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:clickable="true">
+
+        <com.kongzue.dialog.util.BlurView
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20" />
+
+            <LinearLayout
+                android:id="@+id/box_table_child"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tvSpace"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/img_back_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:text="返回"
+                        android:textColor="#2d6cee"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/split_light" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="2"
+                android:text="提取背景色动态参数设置示例"
+                android:textColor="#dc000000"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>

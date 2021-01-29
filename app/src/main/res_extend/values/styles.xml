@@ -180,6 +180,59 @@
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
 
+    <style name="DialogSwitchStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:checked">false</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+        <item name="android:textSize">@dimen/dp_text_size_main</item>
+
+        <!-- Active thumb color & Active track color(30% transparency) switch 打开时的拇指按钮的颜色 轨迹颜色默认为30%这个颜色 -->
+        <item name="colorControlActivated">@color/blue_900</item>
+        <!-- Inactive thumb color switch关闭时的拇指按钮的颜色 -->
+        <item name="colorSwitchThumbNormal">@color/red_400</item>
+        <!-- Inactive track color(30% transparency) switch关闭时的轨迹的颜色  30%这个颜色 -->
+        <item name="android:colorForeground">@color/orange_400</item>
+
+    </style>
+
+    <style name="DialogSwitchTheme">
+
+        <!-- Active thumb color & Active track color(30% transparency) switch 打开时的拇指按钮的颜色 轨迹颜色默认为30%这个颜色 -->
+        <item name="colorControlActivated">@color/black</item>
+        <!-- Inactive thumb color switch关闭时的拇指按钮的颜色 -->
+        <item name="colorSwitchThumbNormal">@color/red_400</item>
+        <!-- Inactive track color(30% transparency) switch关闭时的轨迹的颜色  30%这个颜色 -->
+        <item name="android:colorForeground">@color/orange_400</item>
+
+    </style>
+
+    <style name="RadiusStyleButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:minWidth">200dp</item>
+        <item name="android:minHeight">45dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textSize">@dimen/dp_text_size_main</item>
+        <item name="rv_backgroundColor">@color/colorWhite</item>
+        <item name="rv_backgroundPressedColor">@color/colorWhitePressed
+        </item>
+        <item name="rv_radiusHalfHeightEnable">true</item>
+        <item name="rv_strokeColor">@color/colorTextBlack</item>
+        <item name="rv_strokePressedColor">@color/colorTextBlackLight
+        </item>
+        <item name="rv_strokeWidth">@dimen/dp_line_size</item>
+        <item name="rv_textColor">@color/colorTextBlack</item>
+        <item name="rv_textPressedColor">@color/colorTextBlackLight</item>
+    </style>
+
 
 
 </resources>

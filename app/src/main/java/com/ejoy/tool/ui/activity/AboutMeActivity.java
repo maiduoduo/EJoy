@@ -29,14 +29,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.ejoy.tool.R;
 import com.ejoy.tool.app.App;
-import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.scaffold.utils.ApkUtil;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.dialog.util.BlurView;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import org.jsoup.helper.StringUtil;
 
@@ -109,7 +108,7 @@ public class AboutMeActivity extends IBaseActivity {
                     case 1:
                         break;
                     case 2://版本更新
-                        BuglyHelper.getInstance().doCheckUpgrade(me);
+//                        BuglyHelper.getInstance().doCheckUpgrade(me);
                         break;
                     case 3:
                         break;

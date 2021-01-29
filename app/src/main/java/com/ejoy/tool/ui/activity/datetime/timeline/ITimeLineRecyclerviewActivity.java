@@ -19,9 +19,7 @@ package com.ejoy.tool.ui.activity.datetime.timeline;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -36,17 +34,15 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
-import com.google.gson.Gson;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.module.ires.bean.utils.EResUtils;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 /**
