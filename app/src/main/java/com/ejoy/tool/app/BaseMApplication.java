@@ -8,9 +8,8 @@ import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 
 import com.ejoy.tool.R;
-import com.ejoy.tool.app.bugly.BuglyHelper;
+//import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
-import com.kongzue.baseframework.BaseActivity;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -101,7 +100,7 @@ public class BaseMApplication extends Application {
     public void onCreate() {
         super.onCreate();
         appContext = this;
-        BuglyHelper.getInstance().initBuglyApp(this);
+//        BuglyHelper.getInstance().initBuglyApp(this);
         initLogger();
         mainTid = android.os.Process.myTid();
         handler=new Handler();

@@ -27,12 +27,11 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.ejoy.tool.R;
-import com.ejoy.tool.app.bugly.BuglyHelper;
 import com.ejoy.tool.ui.base.base_activity.BaseActivity;
 import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.module.ires.bean.utils.EBlurHelper;
-import com.module.ires.bean.utils.WidgetUtils;
+import com.module.iviews.utils.WidgetUtils;
 
 import org.jsoup.helper.StringUtil;
 
@@ -113,7 +112,7 @@ public class AboutMeActivity_temp extends BaseActivity {
                     case 1:
                         break;
                     case 2://版本更新
-                        BuglyHelper.getInstance().doCheckUpgrade(_mActivity);
+//                        BuglyHelper.getInstance().doCheckUpgrade(_mActivity);
                         break;
                     case 3:
                         break;

@@ -9,12 +9,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.maple.msdialog.BaseDialog;
-import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.R;
 import com.module.iviews.popup.weibo.adpter.ImgListAdapter;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 

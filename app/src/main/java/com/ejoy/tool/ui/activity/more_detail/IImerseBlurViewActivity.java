@@ -1,7 +1,5 @@
 package com.ejoy.tool.ui.activity.more_detail;
 
-import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -10,18 +8,15 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ejoy.tool.R;
 import com.ejoy.tool.common.bean.IImmerseBean;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
-import com.ejoy.tool.ui.data.adapter.HomeMultipleRecycleAdapter;
 import com.ejoy.tool.ui.data.adapter.IImmerseBlurAdpter;
 import com.kongzue.baseframework.interfaces.Layout;
-import com.kongzue.dialog.util.BlurView;
-import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.common.blur.BlurredView;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 //  ┏┓　　　┏┓

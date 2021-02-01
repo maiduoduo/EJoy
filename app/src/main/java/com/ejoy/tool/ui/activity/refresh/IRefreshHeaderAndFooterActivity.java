@@ -37,8 +37,8 @@ import com.ejoy.tool.ui.data.resource.GlobalDataProvider;
 import com.ejoy.tool.ui.mvp.base.BasePresenter;
 import com.imaiduoduo.bottomsheet.BottomSheet;
 import com.module.ires.bean.bean.IBaseBean;
-import com.module.ires.bean.utils.WidgetUtils;
 import com.module.iviews.refresh.RefreshLoadMoreLayout;
+import com.module.iviews.utils.WidgetUtils;
 
 import java.util.ArrayList;
 import java.util.List;

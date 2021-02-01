@@ -247,7 +247,12 @@ public class IPaletteImageView extends AppCompatImageView {
                 dx = (rawWidth - rawHeight) / 2;
             }
             if (small <= 0) return;
-            mRealBitmap = Bitmap.createBitmap(bitmap, dx, dy, small, small, matrix, true);
+            try {
+
+                mRealBitmap = Bitmap.createBitmap(bitmap, dx, dy, small, small, matrix, true);
+            }catch (IllegalArgumentException e){
+                e.printStackTrace();
+            }
         }
         initShadow(mRealBitmap);
 
