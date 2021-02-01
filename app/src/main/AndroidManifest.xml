@@ -235,6 +235,8 @@
         <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarSetUpViewPagerActivity" />
         <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarAllActivity" />
 
+
+
         <!--FileProvider共享文件-->
         <provider
             android:name=".common.provider.ImageProvider"
