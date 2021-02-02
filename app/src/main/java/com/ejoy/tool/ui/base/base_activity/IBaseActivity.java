@@ -109,6 +109,7 @@ public abstract class IBaseActivity extends AppCompatActivity {
     @Deprecated
     protected void onCreate(Bundle savedInstanceState, int layoutResId) {
         super.onCreate(savedInstanceState);
+        initFront();
         setContentView(layoutResId);
         initAttributes();
         //初始化自定义Toast
@@ -126,6 +127,7 @@ public abstract class IBaseActivity extends AppCompatActivity {
     @Deprecated
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initFront();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             initStatusbar(0x00000000);
         } else {
@@ -182,10 +184,15 @@ public abstract class IBaseActivity extends AppCompatActivity {
 
     //可被重写的接口
     public abstract void initViews();
-
     public abstract void initDatas();
 
     public abstract void setEvents();
+
+    public void initFront(){
+        if (isRegistFullScreen()){
+            setFullScreen();
+        }
+    }
 
     /**
      * 透明状态栏
@@ -194,6 +201,16 @@ public abstract class IBaseActivity extends AppCompatActivity {
      * @return
      */
     protected boolean isRegistSatusbarFullScreenTransluent() {
+        return false;
+    }
+
+    /**
+     * 透明状态栏
+     * TODO:(子类界面重写此方法)
+     *
+     * @return
+     */
+    protected boolean isRegistFullScreen() {
         return false;
     }
 
@@ -907,6 +924,17 @@ public abstract class IBaseActivity extends AppCompatActivity {
         if (version > 5) {
             overridePendingTransition(enterAnim, exitAnim);
         }
+    }
+
+
+    /**
+     * 全屏
+     */
+    protected void setFullScreen() {
+        //取消标题
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //取消状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
 

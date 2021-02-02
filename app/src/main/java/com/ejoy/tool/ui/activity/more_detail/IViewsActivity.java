@@ -36,6 +36,7 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
+import com.ejoy.tool.ui.douyin.activity.DouyinSplashActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.dialog.util.BlurView;
@@ -163,7 +164,7 @@ public class IViewsActivity extends IBaseActivity {
                 jump(IPaletteImageActivity.class);
                 break;
             case R.id.clickDouyin:
-//                jump(IPaletteImageActivity.class);
+                jump(DouyinSplashActivity.class);
                 break;
 
         }
