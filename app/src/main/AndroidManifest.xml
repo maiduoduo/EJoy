@@ -236,6 +236,13 @@
         <activity android:name="com.module.iviews.easynavigationbar.ui.NavigationBarAllActivity" />
 
 
+        <!--抖音-->
+        <!--开屏界面-->
+        <activity
+            android:name=".ui.douyin.activity.DouyinSplashActivity"
+            android:screenOrientation="portrait"/>
+
+
 
         <!--FileProvider共享文件-->
         <provider
