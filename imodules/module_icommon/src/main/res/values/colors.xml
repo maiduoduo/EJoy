@@ -740,6 +740,20 @@
     <color name="blue_4e">#4eb0f1</color>
 
 
+    <color name="color_douyin_bg_theme">#161924</color>
+    <color name="color_douyin_FF0041">#ff2c54</color>
+    <color name="color_douyin_tag">#9B9B9B</color>
+    <color name="color_douyin_link">#FFDDA4</color>
+    <color name="color_douyin_00BC1B">#00BC1B</color>
+    <color name="light_douyin_gray">#fff5f5f5</color>
+
+    <color name="color_douyin_weibo_iconbg">#EF1200</color>
+    <color name="color_douyin_wechat_iconbg">#00BC1B</color>
+    <color name="color_douyin_qq_iconbg">#12B7F5</color>
+    <color name="color_douyin_qqzone_iconbg">#FF9F00</color>
+    <color name="color_douyin_more_iconbg">#256EB2</color>
+
+
 
 
 

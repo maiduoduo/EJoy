@@ -117,7 +117,7 @@ public abstract class IBaseActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
         setTranslucentStatus(true);
         App.getInstance().pushActivity(me);
-
+        setStatusbar();
         initViews();
         initDatas();
         setEvents();

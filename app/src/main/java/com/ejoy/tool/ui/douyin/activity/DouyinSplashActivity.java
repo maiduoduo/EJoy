@@ -20,8 +20,13 @@ import com.kongzue.baseframework.interfaces.Layout;
  */
 @Layout(R.layout.activity_douyin_splash)
 @DarkStatusBarTheme(true)
-@DarkNavigationBarTheme(true)
+@DarkNavigationBarTheme(false)
 public class DouyinSplashActivity extends IBaseActivity {
+
+    @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
 
     @Override
     protected boolean isRegistFullScreen() {
@@ -42,7 +47,7 @@ public class DouyinSplashActivity extends IBaseActivity {
 
             @Override
             public void onFinish() {
-                startActivity(new Intent(me, IpaletteImageSampleActivity.class));
+                startActivity(new Intent(me, DouyinMainActivity.class));
                 finish();
             }
         }.start();
