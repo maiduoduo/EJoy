@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">module_ires</string>
     <string name="default_app_font_path"/>
     <string name="top_cookie">Top Cookie</string>
@@ -53,5 +53,29 @@ E·享 目的在于整理与集纳好的优秀方案和功能实现，有自定�
     <string name="edate_sure">确定</string>
     <string name="edate_cancel">取消</string>
     <string name="edate_title_default">设置</string>
+
+    <!-- 点赞选中 -->
+    <string name="icon_like_fill">&#xe60d;</string>
+    <!--评论-->
+    <string name="icon_comment">&#xe621;</string>
+    <!-- 微博 -->
+    <string name="icon_weibo">&#xe620;</string>
+    <!-- 微信 -->
+    <string name="icon_wechat">&#xe61d;</string>
+    <!-- 微信朋友圈 -->
+    <string name="icon_friends">&#xe61c;</string>
+    <!-- QQ -->
+    <string name="icon_qq">&#xe61e;</string>
+    <!-- QQ空间 -->
+    <string name="icon_qq_space">&#xe61f;</string>
+    <!-- 更多 -->
+    <string name="icon_more">&#xe61b;</string>
+    <!-- 地理位置 -->
+    <string name="icon_location_fill">&#xe624;</string>
+
+    <string name="trans">trans</string>
+
+    <string name="view_pager_bottom_sheet_behavior" translatable="false" tools:ignore="ExtraTranslation">
+        com.goobird.common.application.widget.bottomsheetdialog.viewpagerofbottomsheet.ViewPagerBottomSheetBehavior</string>
 
 </resources>

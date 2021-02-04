@@ -242,6 +242,13 @@
             android:name=".ui.douyin.activity.DouyinSplashActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.douyin.activity.DouyinMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.douyin.activity.DouyinPlayListActivity"
+            android:screenOrientation="portrait" />
+
 
 
         <!--FileProvider共享文件-->

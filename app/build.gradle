@@ -64,6 +64,11 @@ android {
         abortOnError false
     }
 
+    dataBinding {
+        enabled = true
+    }
+
+    //支持lambda语法
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
