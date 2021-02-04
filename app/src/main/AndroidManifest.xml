@@ -248,6 +248,12 @@
         <activity
             android:name=".ui.douyin.activity.DouyinPlayListActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.douyin.activity.DouyinFocusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.douyin.activity.DouyinShowImageActivity"
+            android:screenOrientation="portrait" />
 
 
 

@@ -25,13 +25,14 @@ public class DouyinDataCreate {
         videoBeanZero.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
         videoBeanZero.setContent("#美好一天 #日子 每天早上，从发现美开始，今天要过的开心a");
 //        videoBeanOne.setVideoRes(R.raw.video1);
-        videoBeanZero.setVideoUrl("http://f.video.weibocdn.com/003UAcxugx07H8ydU9f201041200bBiX0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612426082&ssig=C9%2BKuvVQiY&KID=unistore,video");
+        videoBeanZero.setVideoUrl("http://f.video.weibocdn.com/PMJxspCWlx07K6CrBrMs01041200vcvd0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612447777&ssig=iWjOR6Rfnf&KID=unistore,video");
         videoBeanZero.setDistance(7.9f);
         videoBeanZero.setFocused(false);
         videoBeanZero.setLiked(true);
         videoBeanZero.setLikeCount(226823);
         videoBeanZero.setCommentCount(3480);
         videoBeanZero.setShareCount(4252);
+        videoBeanZero.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanZero = new DouyinVideoBean.UserBean();
         userBeanZero.setUid(0);
@@ -55,13 +56,14 @@ public class DouyinDataCreate {
         videoBeanOne.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
         videoBeanOne.setContent("#手工耿 #搞笑原创 自制手工充电器");
 //        videoBeanOne.setVideoRes(R.raw.video1);
-        videoBeanOne.setVideoUrl("http://f.video.weibocdn.com/jq5ZidJTlx07K43ctHVC01041201P0xV0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612425758&ssig=IB9urXkOd7&KID=unistore,video");
+        videoBeanOne.setVideoUrl("http://ali.cdn.kaiyanapp.com/1611855059621_e6990175.mp4?auth_key=1612445142-0-0-08623153547c7de0f9814f22be48aaa3");
         videoBeanOne.setDistance(7.9f);
         videoBeanOne.setFocused(false);
         videoBeanOne.setLiked(true);
         videoBeanOne.setLikeCount(226823);
         videoBeanOne.setCommentCount(3480);
         videoBeanOne.setShareCount(4252);
+        videoBeanOne.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanOne = new DouyinVideoBean.UserBean();
         userBeanOne.setUid(1);
@@ -83,7 +85,7 @@ public class DouyinDataCreate {
         videoBeanTwo.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
         videoBeanTwo.setContent("#朱一旦的枯燥生活  💎发奖金了吗？");
 //        videoBeanTwo.setVideoUrl("http://uvideo.spriteapp.cn/video/2020/0831/f3115fca-eb5d-11ea-9763-1866daea6abd_wpd.mp4");
-        videoBeanTwo.setVideoUrl("http://f.video.weibocdn.com/002C0mawlx07yViskC9O01041200wtXN0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612425845&ssig=AQJMcwkCt9&KID=unistore,video");
+        videoBeanTwo.setVideoUrl("http://f.video.weibocdn.com/003SCVWFgx07K3BuwjXN01041200MTnO0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612447777&ssig=0Gw5J3Y83d&KID=unistore,video");
 
         videoBeanTwo.setDistance(19.7f);
         videoBeanTwo.setFocused(true);
@@ -91,6 +93,7 @@ public class DouyinDataCreate {
         videoBeanTwo.setLikeCount(1938230);
         videoBeanTwo.setCommentCount(8923);
         videoBeanTwo.setShareCount(5892);
+        videoBeanTwo.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanTwo = new DouyinVideoBean.UserBean();
         userBeanTwo.setUid(2);
@@ -110,13 +113,14 @@ public class DouyinDataCreate {
         DouyinVideoBean videoBeanThree = new DouyinVideoBean();
         videoBeanThree.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
         videoBeanThree.setContent("#宠物猫  这jio是通电了吗？一碰就摇起来！哈哈");
-        videoBeanThree.setVideoUrl("http://f.video.weibocdn.com/D4xQXc0wlx07JTID5CFO010412005nrK0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612422861&ssig=vEhnobqSUa&KID=unistore,video");
+        videoBeanThree.setVideoUrl("http://ali.cdn.kaiyanapp.com/1612336880853_f3941eb5.mp4?auth_key=1612446207-0-0-f401adf644de5ca554ffe1a7da19f933");
         videoBeanThree.setDistance(15.9f);
         videoBeanThree.setFocused(false);
         videoBeanThree.setLiked(false);
         videoBeanThree.setLikeCount(592032);
         videoBeanThree.setCommentCount(9221);
         videoBeanThree.setShareCount(982);
+        videoBeanThree.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanThree = new DouyinVideoBean.UserBean();
         userBeanThree.setUid(3);
@@ -143,6 +147,8 @@ public class DouyinDataCreate {
         videoBeanFour.setLikeCount(887232);
         videoBeanFour.setCommentCount(2731);
         videoBeanFour.setShareCount(8924);
+        videoBeanFour.setVideoOritation(1);
+
 
         DouyinVideoBean.UserBean userBeanFour = new DouyinVideoBean.UserBean();
         userBeanFour.setUid(4);
@@ -170,6 +176,8 @@ public class DouyinDataCreate {
         videoBeanFive.setLikeCount(8293241);
         videoBeanFive.setCommentCount(982);
         videoBeanFive.setShareCount(8923);
+        videoBeanFive.setVideoOritation(1);
+
 
         DouyinVideoBean.UserBean userBeanFive = new DouyinVideoBean.UserBean();
         userBeanFive.setUid(5);
@@ -196,7 +204,8 @@ public class DouyinDataCreate {
         videoBeanSix.setLiked(true);
         videoBeanSix.setLikeCount(2109823);
         videoBeanSix.setCommentCount(9723);
-        videoBeanFive.setShareCount(424);
+        videoBeanSix.setShareCount(424);
+        videoBeanSix.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanSix = new DouyinVideoBean.UserBean();
         userBeanSix.setUid(6);
@@ -224,6 +233,7 @@ public class DouyinDataCreate {
         videoBeanSeven.setLikeCount(185782);
         videoBeanSeven.setCommentCount(2452);
         videoBeanSeven.setShareCount(3812);
+        videoBeanSeven.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanSeven = new DouyinVideoBean.UserBean();
         userBeanSeven.setUid(7);
@@ -250,6 +260,7 @@ public class DouyinDataCreate {
         videoBeanEight.setLikeCount(1708324);
         videoBeanEight.setCommentCount(8372);
         videoBeanEight.setShareCount(982);
+        videoBeanEight.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanEight = new DouyinVideoBean.UserBean();
         userBeanEight.setUid(8);
@@ -280,6 +291,7 @@ public class DouyinDataCreate {
         videoBeanTen.setLikeCount(1708324);
         videoBeanTen.setCommentCount(8372);
         videoBeanTen.setShareCount(982);
+        videoBeanTen.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanTen = new DouyinVideoBean.UserBean();
         userBeanTen.setUid(8);

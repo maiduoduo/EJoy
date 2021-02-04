@@ -5,9 +5,13 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.ejoy.tool.R;
+import com.ejoy.tool.scaffold.view.dialog.DouyinCommentDialog;
+import com.ejoy.tool.scaffold.view.dialog.DouyinShareDialog;
 import com.ejoy.tool.ui.base.base_fragment.BaseFragment;
 import com.ejoy.tool.ui.douyin.activity.DouyinMainActivity;
 import com.ejoy.tool.ui.douyin.activity.DouyinPlayListActivity;
@@ -21,6 +25,7 @@ import com.ejoy.tool.ui.douyin.data.constant.OnViewPagerListener;
 import com.ejoy.tool.ui.douyin.utils.RxBus;
 import com.ejoy.tool.ui.douyin.view.DouyinFullScreenVideoView;
 import com.ejoy.tool.ui.douyin.view.ViewPagerLayoutManager;
+import com.module.ires.bean.bean.DouyinVideoBean;
 import com.module.iviews.view.DouyinLikeView;
 
 import butterknife.BindView;
@@ -185,6 +190,7 @@ public class DouyinRecommendFragment extends BaseFragment {
                 videoView.start();
                 ivPlay.setVisibility(View.GONE);
             }
+
         });
 
         //评论点赞事件
@@ -219,27 +225,60 @@ public class DouyinRecommendFragment extends BaseFragment {
      */
     private void autoPlayVideo(int position, ImageView ivCover) {
 //        String bgVideoPath = "android.resource://" + getActivity().getPackageName() + "/" + DouyinDataCreate.datas.get(position).getVideoRes();
+        DouyinVideoBean douyinVideoBean = DouyinDataCreate.datas.get(position);
         String bgVideoPath = DouyinDataCreate.datas.get(position).getVideoUrl();
-        videoView.setVideoPath(bgVideoPath);
-        videoView.start();
-        videoView.setOnPreparedListener(mp -> {
-            mp.setLooping(true);
+        if (douyinVideoBean.getVideoOritation() == 1) {//宽屏视频
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(0,350,0,0);
+            videoView.setLayoutParams(lp);
+            videoView.setMeasure(700, 500);
 
-            //延迟取消封面，避免加载视频黑屏
-            new CountDownTimer(200, 200) {
-                @Override
-                public void onTick(long millisUntilFinished) {
+        }else {
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(0,0,0,0);
+            videoView.setLayoutParams(lp);
+            videoView.setMeasure(1000, 1000);
+        }
+            videoView.setVideoPath(bgVideoPath);
+            videoView.start();
+            videoView.setOnPreparedListener(mp -> {
+                mp.setLooping(true);
 
-                }
+                //延迟取消封面，避免加载视频黑屏
+                new CountDownTimer(200, 200) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
 
-                @Override
-                public void onFinish() {
-                    ivCover.setVisibility(View.GONE);
-                    ivCurCover = ivCover;
-                }
-            }.start();
-        });
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        ivCover.setVisibility(View.GONE);
+                        ivCurCover = ivCover;
+                    }
+                }.start();
+
+
+//
+//                mp.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
+//                    @Override
+//                    public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+//                        //FixMe 获取视频资源的宽度
+//                        int mVideoWidth = mp.getVideoWidth();
+//                        //FixMe 获取视频资源的高度
+//                        int mVideoHeight = mp.getVideoHeight();
+//
+//                        float scale = (float) mVideoWidth / (float) mVideoHeight;
+//                        refreshPortraitScreen(showVideoHeight == 0 ? EDensityUtils.dp2px(mActivity, 300) : showVideoHeight);
+//                    }
+//                });
+
+            });
+
+
+
     }
+
 
     /**
      * 用户操作事件
@@ -258,13 +297,13 @@ public class DouyinRecommendFragment extends BaseFragment {
 
             @Override
             public void onCommentClick() {
-//                CommentDialog commentDialog = new CommentDialog();
-//                commentDialog.show(getChildFragmentManager(), "");
+                DouyinCommentDialog commentDialog = new DouyinCommentDialog();
+                commentDialog.show(getChildFragmentManager(), "");
             }
 
             @Override
             public void onShareClick() {
-//                new ShareDialog().show(getChildFragmentManager(), "");
+                new DouyinShareDialog().show(getChildFragmentManager(), "");
             }
         });
     }

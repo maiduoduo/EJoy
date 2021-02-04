@@ -44,21 +44,16 @@ public class DouyinMainActivity extends IBaseActivity {
     /** 连续按返回键退出时间 */
     private final int EXIT_TIME = 2000;
 
+    @Override
+    protected boolean isRegistSatusbarFullScreenTransluent() {
+        return true;
+    }
+
+
 //    @Override
-//    protected boolean isRegistSatusbarFullScreenTransluent() {
-//        return true;
+//    protected Object registSatusbarBgcolor() {
+//        return "#000000";
 //    }
-
-
-    @Override
-    protected void setTranslucentStatus(boolean on) {
-        super.setTranslucentStatus(on);
-    }
-
-    @Override
-    protected Object registSatusbarBgcolor() {
-        return "#000000";
-    }
 
     @Override
     public void initViews() {

@@ -34,6 +34,20 @@ public class DouyinVideoBean {
     private int commentCount;
     /** 转发数 */
     private int shareCount;
+    /**
+     * 视频方向
+     * 0：竖屏视频
+     * 1：横屏视频
+     */
+    private int videoOritation;
+
+    public int getVideoOritation() {
+        return videoOritation;
+    }
+
+    public void setVideoOritation(int videoOritation) {
+        this.videoOritation = videoOritation;
+    }
 
     public int getVideoId() {
         return videoId;

@@ -1,7 +1,10 @@
 package com.ejoy.tool.ui.douyin.fragment;
 
+import android.content.Intent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +18,8 @@ import com.androidkun.xtablayout.XTabLayout;
 import com.ejoy.tool.R;
 import com.ejoy.tool.scaffold.utils.GlideUtils;
 import com.ejoy.tool.ui.base.base_fragment.BaseFragment;
+import com.ejoy.tool.ui.douyin.activity.DouyinFocusActivity;
+import com.ejoy.tool.ui.douyin.activity.DouyinShowImageActivity;
 import com.ejoy.tool.ui.douyin.bean.DouyinCurUserBean;
 import com.ejoy.tool.ui.douyin.bean.DouyinMainPageChangeEvent;
 import com.ejoy.tool.ui.douyin.data.adapter.DouyinCommPagerAdapter;
@@ -131,10 +136,10 @@ public class DouyinPersonalHomeFragment extends BaseFragment implements View.OnC
      * @param view
      */
     public void transitionAnim(View view, int res) {
-//        ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.trans));
-//        Intent intent = new Intent(getActivity(), ShowImageActivity.class);
-//        intent.putExtra("res", res);
-//        ActivityCompat.startActivity(getActivity(), intent, compat.toBundle());
+        ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view, getString(R.string.trans));
+        Intent intent = new Intent(getActivity(), DouyinShowImageActivity.class);
+        intent.putExtra("res", res);
+        ActivityCompat.startActivity(getActivity(), intent, compat.toBundle());
     }
 
     public void setUserInfo() {
@@ -238,10 +243,10 @@ public class DouyinPersonalHomeFragment extends BaseFragment implements View.OnC
 
                 break;
             case R.id.ll_focus:
-//                startActivity(new Intent(getActivity(), FocusActivity.class));
+                startActivity(new Intent(getActivity(), DouyinFocusActivity.class));
                 break;
             case R.id.ll_fans:
-//                startActivity(new Intent(getActivity(), FocusActivity.class));
+                startActivity(new Intent(getActivity(), DouyinFocusActivity.class));
                 break;
         }
     }
