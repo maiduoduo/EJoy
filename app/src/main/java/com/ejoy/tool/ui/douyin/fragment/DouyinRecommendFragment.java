@@ -69,12 +69,8 @@ public class DouyinRecommendFragment extends BaseFragment {
     protected void initView(View rootView) {
         adapter = new DouyinVideoAdapter(R.layout.item_douyin_video, DouyinDataCreate.datas,getActivity());
         recyclerView.setAdapter(adapter);
-
-
         videoView = new DouyinFullScreenVideoView(getActivity());
-
         setViewPagerLayoutManager();
-
         setRefreshEvent();
 
         //监听播放或暂停事件
@@ -103,7 +99,6 @@ public class DouyinRecommendFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-
         //返回时，推荐页面可见，则继续播放视频
         if (DouyinMainActivity.curMainPage == 0 && DouyinMainFragment.curPage == 1) {
             videoView.start();
@@ -201,10 +196,8 @@ public class DouyinRecommendFragment extends BaseFragment {
         RxBus.getDefault().post(new DouyinCurUserBean(DouyinDataCreate.datas.get(position).getUserBean()));
 
         curPlayPos = position;
-
         //切换播放器位置
         dettachParentView(rootView);
-
         autoPlayVideo(curPlayPos, ivCover);
     }
 
@@ -229,9 +222,9 @@ public class DouyinRecommendFragment extends BaseFragment {
         String bgVideoPath = DouyinDataCreate.datas.get(position).getVideoUrl();
         if (douyinVideoBean.getVideoOritation() == 1) {//宽屏视频
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            lp.setMargins(0,350,0,0);
+            lp.setMargins(0,400,0,0);
             videoView.setLayoutParams(lp);
-            videoView.setMeasure(700, 500);
+            videoView.setMeasure(700, 400);
 
         }else {
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
