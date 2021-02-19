@@ -22,23 +22,24 @@ public class DouyinDataCreate {
 
         DouyinVideoBean videoBeanZero = new DouyinVideoBean();
 //        videoBeanOne.setCoverRes(R.mipmap.cover1);
-        videoBeanZero.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanZero.setContent("#美好一天 #日子 每天早上，从发现美开始，今天要过的开心a");
+        videoBeanZero.setCoverUrl("https://mvimg10.meitudata.com/5ff82dd83a849283.jpg!sthumb480?28252650");
+        videoBeanZero.setContent("#美好一天 #爱情 #异地恋 #结婚 #2021我的人生态度 17岁遇见你相恋10年异国恋4年的校园爱情 我们一起走过了3047天， 从学生时代相恋，经历了多年异国，再到如今有了我们的家 我们很幸运，希望你们也是");
 //        videoBeanOne.setVideoRes(R.raw.video1);
-        videoBeanZero.setVideoUrl("http://f.video.weibocdn.com/PMJxspCWlx07K6CrBrMs01041200vcvd0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612447777&ssig=iWjOR6Rfnf&KID=unistore,video");
+        videoBeanZero.setVideoUrl("https://mvvideoshare1.meitudata.com/5ff833ea31991H264WEB412319_H264_4_53e9e4e9419bd8.mp4?k=722b35300bdf402ebf5915f33cf5c964&t=60336a7a");
+//        videoBeanZero.setVideoUrl("https://files.catbox.moe/2wt1dx.mp4");
         videoBeanZero.setDistance(7.9f);
         videoBeanZero.setFocused(false);
         videoBeanZero.setLiked(true);
         videoBeanZero.setLikeCount(226823);
         videoBeanZero.setCommentCount(3480);
         videoBeanZero.setShareCount(4252);
-        videoBeanZero.setVideoOritation(0);
+        videoBeanZero.setVideoOritation(1);
 
         DouyinVideoBean.UserBean userBeanZero = new DouyinVideoBean.UserBean();
         userBeanZero.setUid(0);
 //        userBeanOne.setHead(R.mipmap.head1);
-        userBeanZero.setHeadUrl("http://img.kaiyanapp.com/52f767cb73ac4ffb2fe07c4a7e90b406.png?imageMogr2/quality/60/format/jpg");
-        userBeanZero.setNickName("从晴笑");
+        userBeanZero.setHeadUrl("https://maavatar1.meitudata.com/5ff80947520fankjb36kem2356.jpg!thumb160");
+        userBeanZero.setNickName("洪千辰");
         userBeanZero.setSign("生来偏执 如何折中");
         userBeanZero.setSubCount(119323);
         userBeanZero.setFocusCount(482);
@@ -53,23 +54,23 @@ public class DouyinDataCreate {
 
         DouyinVideoBean videoBeanOne = new DouyinVideoBean();
 //        videoBeanOne.setCoverRes(R.mipmap.cover1);
-        videoBeanOne.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanOne.setContent("#手工耿 #搞笑原创 自制手工充电器");
+        videoBeanOne.setCoverUrl("https://mvimg10.meitudata.com/5b219ba2354e33471.jpg!webp");
+        videoBeanOne.setContent("#手工耿 #搞笑原创 来个红烧铁蚂蚱");
 //        videoBeanOne.setVideoRes(R.raw.video1);
-        videoBeanOne.setVideoUrl("http://ali.cdn.kaiyanapp.com/1611855059621_e6990175.mp4?auth_key=1612445142-0-0-08623153547c7de0f9814f22be48aaa3");
+        videoBeanOne.setVideoUrl("https://mvvideoshare1.meitudata.com/5b219ba2351896095_H264_3.mp4?k=1ac4af1ecd083c0f79433ef5e88683db&t=603369b7");
         videoBeanOne.setDistance(7.9f);
         videoBeanOne.setFocused(false);
         videoBeanOne.setLiked(true);
         videoBeanOne.setLikeCount(226823);
         videoBeanOne.setCommentCount(3480);
         videoBeanOne.setShareCount(4252);
-        videoBeanOne.setVideoOritation(1);
+        videoBeanOne.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanOne = new DouyinVideoBean.UserBean();
         userBeanOne.setUid(1);
 //        userBeanOne.setHead(R.mipmap.head1);
-        userBeanOne.setHeadUrl("http://img.kaiyanapp.com/bcaf2c7c5f1f30ab7ad0d9e29233de5b.jpeg?imageMogr2/quality/60/format/jpg");
-        userBeanOne.setNickName("天才少女爱我");
+        userBeanOne.setHeadUrl("https://maavatar1.meitudata.com/5b2199122a0f23872.jpg!thumb160");
+        userBeanOne.setNickName("手工耿");
         userBeanOne.setSign("生来偏执 如何折中");
         userBeanOne.setSubCount(119323);
         userBeanOne.setFocusCount(482);
@@ -82,10 +83,10 @@ public class DouyinDataCreate {
         videoBeanOne.setUserBean(userBeanOne);
 
         DouyinVideoBean videoBeanTwo = new DouyinVideoBean();
-        videoBeanTwo.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanTwo.setContent("#朱一旦的枯燥生活  💎发奖金了吗？");
+        videoBeanTwo.setCoverUrl("https://mvimg10.meitudata.com/5f16e060c2c6epzlkz7dyd2382.jpg!sthumb480?28252650");
+        videoBeanTwo.setContent("#朱一旦的枯燥生活 不就摸了几个小姑娘的屁股，至于开除吗？ #可怜天下父母心");
 //        videoBeanTwo.setVideoUrl("http://uvideo.spriteapp.cn/video/2020/0831/f3115fca-eb5d-11ea-9763-1866daea6abd_wpd.mp4");
-        videoBeanTwo.setVideoUrl("http://f.video.weibocdn.com/003SCVWFgx07K3BuwjXN01041200MTnO0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612447777&ssig=0Gw5J3Y83d&KID=unistore,video");
+        videoBeanTwo.setVideoUrl("https://mvvideoshare1.meitudata.com/5f16e060ac5b3lhfdxj5j57589_H264_1_1f7211d2913126.mp4?k=8aeea1f9c416c5add0765dc9348ace05&t=603368ba");
 
         videoBeanTwo.setDistance(19.7f);
         videoBeanTwo.setFocused(true);
@@ -97,8 +98,8 @@ public class DouyinDataCreate {
 
         DouyinVideoBean.UserBean userBeanTwo = new DouyinVideoBean.UserBean();
         userBeanTwo.setUid(2);
-        userBeanTwo.setHeadUrl("http://img.kaiyanapp.com/6da6ebd197c408a6d0193c58c00583f4.png?imageMogr2/quality/60/format/jpg");
-        userBeanTwo.setNickName("遇一狗白首");
+        userBeanTwo.setHeadUrl("https://maavatar1.meitudata.com/5e895cae8c8f56248.jpg!thumb160");
+        userBeanTwo.setNickName("朱一旦的枯燥生活");
         userBeanTwo.setSign("当年我要是有这么聪明，也不至于被打死");
         userBeanTwo.setSubCount(20323234);
         userBeanTwo.setFocusCount(244);
@@ -111,21 +112,21 @@ public class DouyinDataCreate {
         videoBeanTwo.setUserBean(userBeanTwo);
 
         DouyinVideoBean videoBeanThree = new DouyinVideoBean();
-        videoBeanThree.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanThree.setContent("#宠物猫  这jio是通电了吗？一碰就摇起来！哈哈");
-        videoBeanThree.setVideoUrl("http://ali.cdn.kaiyanapp.com/1612336880853_f3941eb5.mp4?auth_key=1612446207-0-0-f401adf644de5ca554ffe1a7da19f933");
+        videoBeanThree.setCoverUrl("https://mvimg10.meitudata.com/60001405e5e87p7i9n0ii48731.jpg!sthumb480?28252650");
+        videoBeanThree.setContent("#中国 #明星 有你在的省份的女明星吗？！#美女  #搞笑");
+        videoBeanThree.setVideoUrl("https://mvvideoshare1.meitudata.com/600014062e717jezsqbkcj246_H264_4_55c554e0116d8a.mp4?k=c36547911ddceee5811930e997accde8&t=60336849");
         videoBeanThree.setDistance(15.9f);
         videoBeanThree.setFocused(false);
         videoBeanThree.setLiked(false);
         videoBeanThree.setLikeCount(592032);
         videoBeanThree.setCommentCount(9221);
         videoBeanThree.setShareCount(982);
-        videoBeanThree.setVideoOritation(1);
+        videoBeanThree.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanThree = new DouyinVideoBean.UserBean();
         userBeanThree.setUid(3);
-        userBeanThree.setHeadUrl("http://img.kaiyanapp.com/afa27b9c52d2ed2f5f8b5f8c12992fcf.png?imageMogr2/quality/60/format/jpg");
-        userBeanThree.setNickName("林深时见鹿");
+        userBeanThree.setHeadUrl("https://maavatar1.meitudata.com/5ceb4ff9b14426348.jpg!thumb160");
+        userBeanThree.setNickName("桑德测评");
         userBeanThree.setSign("吾与曹贼何异？");
         userBeanThree.setSubCount(1039232);
         userBeanThree.setFocusCount(159);
@@ -138,22 +139,22 @@ public class DouyinDataCreate {
         videoBeanThree.setUserBean(userBeanThree);
 
         DouyinVideoBean videoBeanFour = new DouyinVideoBean();
-        videoBeanFour.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanFour.setContent("#篮球 #CBA  不顾教练席大喊外援！张宁三分打进 ");
-        videoBeanFour.setVideoUrl("http://f.video.weibocdn.com/hJeV48v7lx07JTI75Vy0010412007fjM0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612423304&ssig=5X%2B373u025&KID=unistore,video");
+        videoBeanFour.setCoverUrl("https://mvimg10.meitudata.com/6008f026e798do7gakb72f215.jpg!sthumb480?28252650");
+        videoBeanFour.setContent("我感觉这些毛孩子都是带着技术投胎的。 #搞笑配音 #搞笑视频 #搞笑，我要上热门");
+        videoBeanFour.setVideoUrl("https://mvvideoshare2.meitudata.com/6008f024b47b6polzv9okv9578_H264_4_30093953cbe87.mp4?k=373870e5e92cae68e6689044b4548d58&t=6033677c");
         videoBeanFour.setDistance(25.2f);
         videoBeanFour.setFocused(false);
         videoBeanFour.setLiked(false);
         videoBeanFour.setLikeCount(887232);
         videoBeanFour.setCommentCount(2731);
         videoBeanFour.setShareCount(8924);
-        videoBeanFour.setVideoOritation(1);
+        videoBeanFour.setVideoOritation(0);
 
 
         DouyinVideoBean.UserBean userBeanFour = new DouyinVideoBean.UserBean();
         userBeanFour.setUid(4);
-        userBeanFour.setHeadUrl("http://img.kaiyanapp.com/a17745312139694dc1f0c40984533328.png?imageMogr2/quality/60/format/jpg");
-        userBeanFour.setNickName("看了个球");
+        userBeanFour.setHeadUrl("https://maavatar1.meitudata.com/6003dc2b8f4741lqzdr42q6389.jpg!thumb160");
+        userBeanFour.setNickName("爆笑配音");
         userBeanFour.setSign("百思爆笑，接剪辑，活动拍摄，修图单\n 合作私信");
         userBeanFour.setSubCount(2689424);
         userBeanFour.setFocusCount(399);
@@ -166,9 +167,9 @@ public class DouyinDataCreate {
         videoBeanFour.setUserBean(userBeanFour);
 
         DouyinVideoBean videoBeanFive = new DouyinVideoBean();
-        videoBeanFive.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanFive.setContent("#萌娃  警察叔叔遇到史上最小年纪的“自首”  #神奇 ");
-        videoBeanFive.setVideoUrl("http://f.video.weibocdn.com/oeg72jyvlx07JLWJFBhu01041200j3VH0E010.mp4?label=mp4_720p&template=720x1270.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612423435&ssig=zEi40kZgdK&KID=unistore,video");
+        videoBeanFive.setCoverUrl("https://mvimg10.meitudata.com/602d23f382e12yidn57k066284.jpg!webp");
+        videoBeanFive.setContent("这车撞的，有点厉害了！#美图创作者计划 #过年那些事");
+        videoBeanFive.setVideoUrl("http://mvvideo10.meitudata.com/602d23f36ea9b7zg2qcei01104.mp4?k=215d652bbf8bcda101002659106d1f4c&t=603354d9");
 
         videoBeanFive.setDistance(9.2f);
         videoBeanFive.setFocused(false);
@@ -176,7 +177,7 @@ public class DouyinDataCreate {
         videoBeanFive.setLikeCount(8293241);
         videoBeanFive.setCommentCount(982);
         videoBeanFive.setShareCount(8923);
-        videoBeanFive.setVideoOritation(1);
+        videoBeanFive.setVideoOritation(0);
 
 
         DouyinVideoBean.UserBean userBeanFive = new DouyinVideoBean.UserBean();
@@ -196,21 +197,21 @@ public class DouyinDataCreate {
 
         DouyinVideoBean videoBeanSix = new DouyinVideoBean();
 
-        videoBeanSix.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanSix.setContent("#中国正能量   平凡英雄！孩子掉进水里，路人毫不犹豫的跳水里救孩子...   ");
-        videoBeanSix.setVideoUrl("http://f.video.weibocdn.com/40IX6KDUlx07JM1dcI0g010412007Yjj0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612423435&ssig=jbT%2BKDw5LM&KID=unistore,video");
+        videoBeanSix.setCoverUrl("https://mvimg10.meitudata.com/6006b78ae56b4a2u29udrc7612.jpg!sthumb480?28252650");
+        videoBeanSix.setContent("#何广智 ：自嘲不仅没扼住生活的喉咙，还被生活薅住了头发#脱口秀  #吐槽大会 ");
+        videoBeanSix.setVideoUrl("https://mvvideoshare1.meitudata.com/6006b78ad227dk4d5ew3vw5289_H264_4_5749cb2c12ed2a.mp4?k=241763b9905a97c17201ee348cba6a3f&t=60335904");
         videoBeanSix.setDistance(16.4f);
         videoBeanSix.setFocused(true);
         videoBeanSix.setLiked(true);
         videoBeanSix.setLikeCount(2109823);
         videoBeanSix.setCommentCount(9723);
         videoBeanSix.setShareCount(424);
-        videoBeanSix.setVideoOritation(1);
+        videoBeanSix.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanSix = new DouyinVideoBean.UserBean();
         userBeanSix.setUid(6);
-        userBeanSix.setHeadUrl("http://img.kaiyanapp.com/0117b9108c7cff43700db8af5e24f2bf.jpeg");
-        userBeanSix.setNickName("人民正能量");
+        userBeanSix.setHeadUrl("https://maavatar1.meitudata.com/602dc736250be9k3vkg15x2415.jpg!thumb160");
+        userBeanSix.setNickName("唐彧小宝❀唐彧小宝");
         userBeanSix.setSign("一个行走在Tr与剪辑之间的人\n 有什么不懂的可以来直播间问我");
         userBeanSix.setSubCount(29342320);
         userBeanSix.setFocusCount(67);
@@ -224,22 +225,22 @@ public class DouyinDataCreate {
 
         DouyinVideoBean videoBeanSeven = new DouyinVideoBean();
 
-        videoBeanSeven.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanSeven.setContent("#铭记历史  1945年嘉陵江拖船的纤夫为前线运送抗战物资帧规历史修复视频。大家加过纤夫吗？小学上下血路上，我都能看到纤夫，很辛苦。  ");
-        videoBeanSeven.setVideoUrl("http://f.video.weibocdn.com/jIQKetm5lx07JIKKhIda01041200mFKm0E010.mp4?label=mp4_720p&template=720x1270.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612423768&ssig=3stbTIcZzu&KID=unistore,video");
+        videoBeanSeven.setCoverUrl("https://mvimg10.meitudata.com/5f53578aa9726a2fcm25me5757.jpg!sthumb480?28252650");
+        videoBeanSeven.setContent("#生活相处  虽然是跨国婆媳，也是真心换真心！总想着把好吃的留给我  ");
+        videoBeanSeven.setVideoUrl("https://mvvideo10.meitudata.com/5f53578b407f8qoeas7z2n3594_H264_1_2b2e4034fbcad.mp4?k=404fa50739e54029fae9a2fa95b4f3e4&t=603355b7");
         videoBeanSeven.setDistance(16.4f);
         videoBeanSeven.setFocused(false);
         videoBeanSeven.setLiked(false);
         videoBeanSeven.setLikeCount(185782);
         videoBeanSeven.setCommentCount(2452);
         videoBeanSeven.setShareCount(3812);
-        videoBeanSeven.setVideoOritation(1);
+        videoBeanSeven.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanSeven = new DouyinVideoBean.UserBean();
         userBeanSeven.setUid(7);
         userBeanSeven.setHeadUrl("http://img.kaiyanapp.com/482c741c06644f5566c7218096dbaf26.jpeg");
-        userBeanSeven.setNickName("历史档案馆");
-        userBeanSeven.setSign("纤夫的历史岁月");
+        userBeanSeven.setNickName("韩国媳妇大璐璐");
+        userBeanSeven.setSign("韩国媳妇大璐璐");
         userBeanSeven.setSubCount(471932);
         userBeanSeven.setFocusCount(482);
         userBeanSeven.setFansCount(371423);
@@ -251,9 +252,11 @@ public class DouyinDataCreate {
         videoBeanSeven.setUserBean(userBeanSeven);
 
         DouyinVideoBean videoBeanEight = new DouyinVideoBean();
-        videoBeanEight.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanEight.setContent("#娱乐  跟着李子柒万物，李子柒加油  #李子柒");
-        videoBeanEight.setVideoUrl("http://f.video.weibocdn.com/CMXAtndxlx07K6aZSbRC010412004sqC0E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612425515&ssig=A4ZG1T81rL&KID=unistore,video");
+        videoBeanEight.setCoverUrl("https://mvimg10.meitudata.com/5ff99101e8c745726.jpg!webp");
+        videoBeanEight.setContent("#娱乐 一生系列最后一个视频——萝卜的一生（上） #李子柒 "+
+                "萝卜怎么落花成籽,埋种地下,怎么发芽,如何开花,怎样长大…\n" +
+                "这是《一生系列》的最后一个视频了,一物一生");
+        videoBeanEight.setVideoUrl("https://mvvideoshare1.meitudata.com/5ff997c4f04f7H264WEB106341_H264_4_cb42b946cb17d.mp4?k=2ad99dcfa80f77542de63243b7833f8a&t=60335a06");
         videoBeanEight.setDistance(8.4f);
         videoBeanEight.setFocused(false);
         videoBeanEight.setLiked(false);
@@ -264,27 +267,25 @@ public class DouyinDataCreate {
 
         DouyinVideoBean.UserBean userBeanEight = new DouyinVideoBean.UserBean();
         userBeanEight.setUid(8);
-        userBeanEight.setHeadUrl("http://img.kaiyanapp.com/afb9e7d7f061d10ade5ebcb524dc8679.jpeg?imageMogr2/quality/60/format/jpg");
-        userBeanEight.setNickName("看娱乐");
+        userBeanEight.setHeadUrl("https://maavatar1.meitudata.com/57958af0dfeda4811.jpg!thumb160");
+        userBeanEight.setNickName("李子柒");
         userBeanEight.setSign("#2021有你真好#");
         userBeanEight.setSubCount(1832342);
         userBeanEight.setFocusCount(397);
         userBeanEight.setFansCount(1394232);
         userBeanEight.setWorkCount(164);
         userBeanEight.setDynamicCount(167);
-        userBeanEight.setLikeCount(0);
+        userBeanEight.setLikeCount(1);
 
         userList.add(userBeanEight);
         videoBeanEight.setUserBean(userBeanEight);
 
 
 
-
-
         DouyinVideoBean videoBeanTen = new DouyinVideoBean();
-        videoBeanTen.setCoverUrl("https://img.zcool.cn/community/0129495e4f89f7a801216518f0030f.jpg");
-        videoBeanTen.setContent("看糯米如何把这个家管理的井井有条...");
-        videoBeanTen.setVideoUrl("http://f.video.weibocdn.com/0013p9yZgx07JrsTN85901041200ew480E010.mp4?label=mp4_720p&template=720x1280.24.0&trans_finger=c3f00996be5378650057cf237d7bfffd&ori=0&ps=1A1eh1m4ElLYfp&Expires=1612424083&ssig=FqxdFpYBkH&KID=unistore,video");
+        videoBeanTen.setCoverUrl("https://mvimg10.meitudata.com/5ff0004974d371314.jpg!webp");
+        videoBeanTen.setContent("#中式婚礼  小八的新娘妆化好后，小朋友见了都说超漂亮，中式婚礼也正式开始");
+        videoBeanTen.setVideoUrl("https://mvvideoshare2.meitudata.com/5ff0004d7faa5H264WEB511810_H264_4_5200c903e044b7.mp4?k=5bd0c5022fd2d23a3b9cb5f6fd59e179&t=60335ae4");
         videoBeanTen.setDistance(8.4f);
         videoBeanTen.setFocused(false);
         videoBeanTen.setLiked(false);
@@ -295,8 +296,8 @@ public class DouyinDataCreate {
 
         DouyinVideoBean.UserBean userBeanTen = new DouyinVideoBean.UserBean();
         userBeanTen.setUid(8);
-        userBeanTen.setHeadUrl("http://img.kaiyanapp.com/349cbd33cdf71fc74d5e9c7a00b444fd.jpeg?imageMogr2/quality/60/format/jpg");
-        userBeanTen.setNickName("您以顶会笑喷");
+        userBeanTen.setHeadUrl("https://maavatar1.meitudata.com/5e891cca4ecc79482.jpg!thumb160");
+        userBeanTen.setNickName("尘乡居");
         userBeanTen.setSign("");
         userBeanTen.setSubCount(1832342);
         userBeanTen.setFocusCount(397);
