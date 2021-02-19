@@ -196,10 +196,8 @@ public class DouyinRecommendFragment extends BaseFragment {
         RxBus.getDefault().post(new DouyinCurUserBean(DouyinDataCreate.datas.get(position).getUserBean()));
 
         curPlayPos = position;
-
         //切换播放器位置
         dettachParentView(rootView);
-
         autoPlayVideo(curPlayPos, ivCover);
     }
 

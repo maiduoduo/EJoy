@@ -26,6 +26,12 @@
 
 <br/>
 
+> ❀❀短视频板块❀❀
+
+![image](Screenshot/douy/img_douy_a.png)  ![image](Screenshot/douy/img_douy_b.png)
+![image](Screenshot/douy/img_douy_c.png)  ![image](Screenshot/douy/img_douy_d.png)
+![image](Screenshot/douy/img_douy_e.png)  ![image](Screenshot/douy/img_douy_f.png)
+
 > TOAST
 >
 

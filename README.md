@@ -50,6 +50,7 @@
 ###### 下拉刷新定制方案  <br/>
 ###### 通用标题栏  <br/>
 ###### 通用TextView  <br/>
+###### ❀❀短视频板块❀❀ <br/>
 ###### 待做...  <br/>
 
 <br/><br/><br/>
@@ -67,6 +68,7 @@
 ##### 💥 版本日志
 [更新日志详细-点击查看](https://github.com/maiduoduo/EJoy/blob/dev/README_PUBLISHLOG.md)
 
+###### 2021.02.19
 ###### 2020.01.15
 ###### 2019.12.20
 
@@ -75,6 +77,12 @@
 ##### 💥 运行效果
 
 [运行效果详情](https://github.com/maiduoduo/EJoy/blob/dev/README_RUNSHOW.md)
+
+###### ❀❀短视频板块❀❀
+
+![image](Screenshot/douy/img_douy_a.png)  ![image](Screenshot/douy/img_douy_b.png)
+![image](Screenshot/douy/img_douy_c.png)  ![image](Screenshot/douy/img_douy_d.png)
+
 
 
 <br/>
