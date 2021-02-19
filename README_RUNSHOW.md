@@ -24,6 +24,11 @@
 
 ![image](Screenshot/index_home.png)
 
+###### 自定义控件/组件界面
+
+![image](Screenshot/douy/img_custom_views.png)
+
+
 <br/>
 
 > ❀❀短视频板块❀❀
