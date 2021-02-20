@@ -17,6 +17,11 @@
 
 ##### 💥 更新日志
 
+###### 2021.02.20 <br/>
+
+* IConsecutiveScrollerLayout 包裹Fragment
+* IConsecutiveScrollerLayout 支持Viewpager
+
 
 ###### 2021.02.19  <br/>
 

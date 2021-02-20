@@ -167,9 +167,9 @@ public class DouyinDataCreate {
         videoBeanFour.setUserBean(userBeanFour);
 
         DouyinVideoBean videoBeanFive = new DouyinVideoBean();
-        videoBeanFive.setCoverUrl("https://mvimg10.meitudata.com/602d23f382e12yidn57k066284.jpg!webp");
-        videoBeanFive.setContent("这车撞的，有点厉害了！#美图创作者计划 #过年那些事");
-        videoBeanFive.setVideoUrl("http://mvvideo10.meitudata.com/602d23f36ea9b7zg2qcei01104.mp4?k=215d652bbf8bcda101002659106d1f4c&t=603354d9");
+        videoBeanFive.setCoverUrl("https://mvimg10.meitudata.com/600e566da49d3nze4cgjac1896.jpg!sthumb480?28252650");
+        videoBeanFive.setContent("在昆明市区还不知道哪里拍照最好看？一定要带闺蜜来这～ #昆明 ");
+        videoBeanFive.setVideoUrl("https://mvvideoshare1.meitudata.com/600e566d727f0lrddfzs5l3019_H264_4_5910113d535079.mp4?k=a1f1898d980607b856acc7f5e962dce6&t=6033778e");
 
         videoBeanFive.setDistance(9.2f);
         videoBeanFive.setFocused(false);
@@ -182,9 +182,9 @@ public class DouyinDataCreate {
 
         DouyinVideoBean.UserBean userBeanFive = new DouyinVideoBean.UserBean();
         userBeanFive.setUid(5);
-        userBeanFive.setHeadUrl("http://img.kaiyanapp.com/d7186edff72b6a6ddd03eff166ee4cd8.jpeg");
-        userBeanFive.setNickName("搞笑二货");
-        userBeanFive.setSign("变化就是理发前别人说你杀币，理发后自己觉得自己杀币");
+        userBeanFive.setHeadUrl("https://maavatar1.meitudata.com/6012860b35b140jgvpv1l53574.jpg!thumb160");
+        userBeanFive.setNickName("昆明攻略");
+        userBeanFive.setSign("");
         userBeanFive.setSubCount(1002342);
         userBeanFive.setFocusCount(87);
         userBeanFive.setFansCount(520232);

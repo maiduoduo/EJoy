@@ -32,10 +32,12 @@ import com.ejoy.tool.R;
 import com.ejoy.tool.common.bean.WidgetEntity;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLConsecutiveActivity;
+import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLFragmentActivity;
 import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLPermanentStickyActivity;
 import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLSampleActivity;
 import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLSinkStickyActivity;
 import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLStickyActivity;
+import com.ejoy.tool.ui.activity.more_detail.scrollerlayout.ISLViewpagerActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
@@ -175,8 +177,8 @@ public class IScrollerLayoutActivity extends IBaseActivity {
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_c,"布局吸顶常驻", "", ISLPermanentStickyActivity.class));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_d,"吸顶下沉模式", "", ISLSinkStickyActivity.class));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_e,"局部滑动", "", ISLConsecutiveActivity.class));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_f,"支持ViewPager", "", null));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_g,"包裹Fragment", "", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_f,"支持ViewPager", "", ISLViewpagerActivity.class));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_front_g,"包裹Fragment", "", ISLFragmentActivity.class));
         return widgetEntities;
     }
 
