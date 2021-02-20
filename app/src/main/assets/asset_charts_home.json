@@ -1,0 +1,80 @@
+[
+  {
+    "itemTitle": "温度计/体温计",
+    "itemDes": "温度值图形化，支持华氏摄氏",
+    "clickCode": 0,
+    "clazz": "com.ejoy.tool.ui.activity.more_detail.charts.IChartsThermometerActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "折线图",
+    "itemDes": "实时折线图，静态折线图..",
+    "clickCode": 1,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "饼图",
+    "itemDes": "实时饼图，静态饼图..",
+    "clickCode": 2,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "表盘图",
+    "itemDes": "表盘数据图形",
+    "clickCode": 3,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "柱状图",
+    "itemDes": "柱形展示数据，实时柱状等..",
+    "clickCode": 4,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "心电图(ecg)",
+    "itemDes": "心电数据展示，波段图..",
+    "clickCode": 5,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "刻度图",
+    "itemDes": "测量..",
+    "clickCode": 6,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "选座图",
+    "itemDes": "机票选座，电影选座等..",
+    "clickCode": 7,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "优惠券背景",
+    "itemDes": "齿轮型等",
+    "clickCode": 8,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "蜡烛图",
+    "itemDes": "股票类图表等",
+    "clickCode": 9,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  },
+  {
+    "itemTitle": "南丁格尔图",
+    "itemDes": "玫瑰图",
+    "clickCode": 10,
+    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "flag": ""
+  }
+
+]

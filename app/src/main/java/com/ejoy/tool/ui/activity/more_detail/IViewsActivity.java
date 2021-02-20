@@ -34,6 +34,7 @@ import com.ejoy.tool.R;
 import com.ejoy.tool.common.bean.WidgetEntity;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
+import com.ejoy.tool.ui.activity.more_detail.charts.IChartsActivity;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.douyin.activity.DouyinSplashActivity;
@@ -168,6 +169,7 @@ public class IViewsActivity extends IBaseActivity {
                 jump(DouyinSplashActivity.class);
                 break;
             case R.id.clickCharts://图表
+                jump(IChartsActivity.class);
                 break;
 
         }
