@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:focusableInTouchMode="true"
     android:descendantFocusability="blocksDescendants"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:focusableInTouchMode="true">
 
     <com.module.iviews.view.IObserverScrollView
         android:id="@+id/scrollView"
@@ -21,14 +21,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_70" />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/banner_4_c"
-                    android:scaleType="fitXY"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/banner_4_c" />
+
             <LinearLayout
                 android:id="@+id/topTabLine"
                 android:layout_width="match_parent"
@@ -59,9 +62,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="吸色器"
-                        android:textStyle="bold"
                         android:textColor="#383535"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -83,9 +86,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="高仿抖音"
-                        android:textStyle="bold"
                         android:textColor="#383535"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -97,19 +100,19 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bicon_charts" />
+                        android:src="@drawable/bicon_charts1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="图表"
-                        android:textStyle="bold"
                         android:textColor="#383535"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -131,9 +134,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="xxx"
-                        android:textStyle="bold"
                         android:textColor="#383535"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -155,9 +158,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="xxx"
-                        android:textStyle="bold"
                         android:textColor="#383535"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -167,19 +170,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_20"
+                android:nestedScrollingEnabled="false"
                 android:paddingHorizontal="@dimen/dp_10"
-                android:paddingBottom="@dimen/dp_10"
-                android:nestedScrollingEnabled="false"/>
+                android:paddingBottom="@dimen/dp_10" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
-
+                android:layout_height="200dp" />
 
 
         </LinearLayout>
 
     </com.module.iviews.view.IObserverScrollView>
+
     <RelativeLayout
         android:id="@+id/box_table"
         android:layout_width="match_parent"
@@ -199,13 +202,14 @@
                 android:id="@+id/tvSpace"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_20" />
+
             <LinearLayout
                 android:id="@+id/box_table_child"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_below="@+id/tvSpace"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/tvSpace"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingHorizontal="5dp">

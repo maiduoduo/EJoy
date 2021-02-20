@@ -25,7 +25,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.BlurMaskFilter;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.net.Uri;
@@ -57,7 +56,6 @@ import com.kongzue.baseframework.interfaces.DarkNavigationBarTheme;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.baseframework.interfaces.NavigationBarBackgroundColor;
-import com.kongzue.baseframework.util.AppManager;
 import com.kongzue.baseframework.util.OnPermissionResponseListener;
 import com.kongzue.baseframework.util.OnResponseListener;
 import com.kongzue.baseframework.util.Parameter;
@@ -935,6 +933,13 @@ public abstract class IBaseActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         //取消状态栏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+
+
+    protected List<?> initPublicArrayList(List<?> plist){
+        if (plist != null)plist.clear();
+        else plist = new ArrayList<>();
+        return plist;
     }
 
 
