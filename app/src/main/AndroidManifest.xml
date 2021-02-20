@@ -212,6 +212,17 @@
             android:name=".ui.activity.more_detail.scrollerlayout.ISLConsecutiveActivity"
             android:configChanges="screenSize|screenLayout|navigation" />
         <activity
+            android:name=".ui.activity.more_detail.scrollerlayout.ISLViewpagerActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.scrollerlayout.ISLFragmentActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
+
+
+
+
+
+        <activity
             android:name=".ui.activity.more_detail.IPaletteImageActivity"
             android:configChanges="screenSize|screenLayout|navigation" />
         <activity

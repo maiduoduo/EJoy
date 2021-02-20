@@ -154,6 +154,7 @@ public class IViewsActivity extends IBaseActivity {
             R.id.btn_back
             , R.id.clickShadowColor
             , R.id.clickDouyin
+            , R.id.clickCharts
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -165,6 +166,8 @@ public class IViewsActivity extends IBaseActivity {
                 break;
             case R.id.clickDouyin:
                 jump(DouyinSplashActivity.class);
+                break;
+            case R.id.clickCharts://图表
                 break;
 
         }

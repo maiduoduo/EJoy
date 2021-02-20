@@ -89,7 +89,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/clickFloatDragButton"
+                    android:id="@+id/clickCharts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -97,16 +97,16 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bicon_qinzi" />
+                        android:src="@drawable/bicon_charts" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="xxx"
+                        android:layout_marginTop="5dp"
+                        android:text="图表"
                         android:textStyle="bold"
                         android:textColor="#383535"
                         android:textSize="13sp" />
