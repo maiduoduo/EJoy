@@ -46,6 +46,7 @@ dependencies {
     api files('libs/nineoldandroids-2.4.0.jar')
     api files('libs/universal-image-loader-1.9.4.jar')
     api files('libs/universal-image-loader-1.9.4-sources.jar')
+    implementation files('libs/json-smart-2.1.1.jar')
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api 'com.android.support:palette-v7:27.1.1'
     api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
