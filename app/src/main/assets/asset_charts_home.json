@@ -24,7 +24,7 @@
     "itemTitle": "表盘图",
     "itemDes": "表盘数据图形",
     "clickCode": 3,
-    "clazz": "com.ejoy.tool.ui.activity.ToastActivity",
+    "clazz": "com.ejoy.tool.ui.activity.more_detail.charts.IChartsDialActivity",
     "flag": ""
   },
   {
