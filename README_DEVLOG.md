@@ -17,6 +17,10 @@
 
 ##### 💥 更新日志
 
+###### 2021.02.22 <br/>
+
+* 股票、证券列表联动效果 见于IChartsSharesActivity.class
+
 ###### 2021.02.20 <br/>
 
 * IConsecutiveScrollerLayout 包裹Fragment
