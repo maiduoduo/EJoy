@@ -17,13 +17,13 @@ import java.util.List;
 
 
 /**
- * @ClassName:  ISharesContentAdapter
+ * @ClassName:  IStockContentAdapter
  * @Author: maiduoduo
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2021/2/22
  * @des: 股票双向锁头内容列表Adapter
  */
-public class ISharesContentAdapter extends RecyclerView.Adapter<ISharesContentAdapter.ViewHolder> {
+public class IStockContentAdapter extends RecyclerView.Adapter<IStockContentAdapter.ViewHolder> {
     /**
      * 保存列表ViewHolder集合
      */
@@ -39,7 +39,7 @@ public class ISharesContentAdapter extends RecyclerView.Adapter<ISharesContentAd
 
     private Context mContext;
 
-    public ISharesContentAdapter(Context mContext) {
+    public IStockContentAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
@@ -63,7 +63,7 @@ public class ISharesContentAdapter extends RecyclerView.Adapter<ISharesContentAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_shares_content_layout, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_stock_content_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -74,7 +74,7 @@ public class ISharesContentAdapter extends RecyclerView.Adapter<ISharesContentAd
         holder.mStockRecyclerView.setNestedScrollingEnabled(false);
 
         // TODO：文本RecyclerView中具体信息的RecyclerView（RecyclerView嵌套）
-        ISharesContentItemAdapter stockItemAdapter = new ISharesContentItemAdapter(mContext);
+        IStockContentItemAdapter stockItemAdapter = new IStockContentItemAdapter(mContext);
         holder.mStockRecyclerView.setAdapter(stockItemAdapter);
         stockItemAdapter.setDetailBeans(stockBeans.get(position).getDetail());
 

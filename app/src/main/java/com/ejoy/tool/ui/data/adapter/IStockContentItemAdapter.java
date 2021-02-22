@@ -16,19 +16,19 @@ import java.util.Random;
 
 
 /**
- * @ClassName:  ISharesContentItemAdapter
+ * @ClassName:  IStockContentItemAdapter
  * @Author: maiduoduo
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2021/2/22
  * @des: 股票双向锁头内容列表ITEM Adapter
  */
-public class ISharesContentItemAdapter extends RecyclerView.Adapter<ISharesContentItemAdapter.ItemViewHolder> {
+public class IStockContentItemAdapter extends RecyclerView.Adapter<IStockContentItemAdapter.ItemViewHolder> {
 
     private List<String> detailBeans;
 
     private Context mContext;
 
-    public ISharesContentItemAdapter(Context mContext) {
+    public IStockContentItemAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
@@ -42,7 +42,7 @@ public class ISharesContentItemAdapter extends RecyclerView.Adapter<ISharesConte
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_shares_content_detail, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_stock_content_detail, parent, false);
         return new ItemViewHolder(view);
     }
 

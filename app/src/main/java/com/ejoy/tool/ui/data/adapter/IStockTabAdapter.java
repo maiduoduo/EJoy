@@ -10,17 +10,17 @@ import com.ejoy.tool.R;
 import java.util.List;
 
 /**
- * @ClassName:  ISharesTabAdapter
+ * @ClassName:  IStockTabAdapter
  * @Author: maiduoduo
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2021/2/22
  * @des: 股票双向锁头列表TAB adapter
  */
-public class ISharesTabAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
+public class IStockTabAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
     private static final String TAG = "ISLTabRecyclerViewAdapter";
     private Context context;
     private List<String> tabData;
-    public ISharesTabAdapter(int layoutResId, List<String> data, Context context) {
+    public IStockTabAdapter(int layoutResId, List<String> data, Context context) {
         super(layoutResId, data);
         this.context = context;
         this.tabData = data;

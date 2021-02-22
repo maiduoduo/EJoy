@@ -9,8 +9,8 @@ import android.view.View;
 import com.ejoy.tool.R;
 import com.ejoy.tool.common.bean.ISharesContentBean;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
-import com.ejoy.tool.ui.data.adapter.ISharesContentAdapter;
-import com.ejoy.tool.ui.data.adapter.ISharesTabAdapter;
+import com.ejoy.tool.ui.data.adapter.IStockContentAdapter;
+import com.ejoy.tool.ui.data.adapter.IStockTabAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
@@ -31,15 +31,15 @@ import butterknife.OnClick;
 
 
 /**
- * @ClassName: IChartsSharesDoubleListActivity
+ * @ClassName: IChartsStockDoubleListActivity
  * @Author: maiduoduo
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2021/2/21
  * @des: 股票、证券列表联动效果
  */
-@Layout(R.layout.activity_charts_shares_double_list)
+@Layout(R.layout.activity_charts_stock_double_list)
 @DarkStatusBarTheme(true)
-public class IChartsSharesDoubleListActivity extends IBaseActivity implements ISharesContentAdapter.OnTabScrollViewListener{
+public class IChartsStockDoubleListActivity extends IBaseActivity implements IStockContentAdapter.OnTabScrollViewListener{
 
     @BindView(R.id.blur)
     BlurView blur;
@@ -72,11 +72,11 @@ public class IChartsSharesDoubleListActivity extends IBaseActivity implements IS
     /**
      * Tab栏Adapter
      */
-    private ISharesTabAdapter mTabAdapter;
+    private IStockTabAdapter mTabAdapter;
     /**
      * 列表Adapter
      */
-    private ISharesContentAdapter mSharesContentAdapter;
+    private IStockContentAdapter mSharesContentAdapter;
     /**
      * Tab栏标题
      */
@@ -113,14 +113,14 @@ public class IChartsSharesDoubleListActivity extends IBaseActivity implements IS
         // 设置RecyclerView水平显示
         mHeadRecyclerView.setLayoutManager(
                 new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
-        mTabAdapter = new ISharesTabAdapter(R.layout.item_shares_tab,Arrays.asList(values),me);
+        mTabAdapter = new IStockTabAdapter(R.layout.item_stock_tab,Arrays.asList(values),me);
         // 设置ListView禁止滑动，这样使得ScrollView滑动更流畅
         mHeadRecyclerView.setNestedScrollingEnabled(false);
         mHeadRecyclerView.setAdapter(mTabAdapter);
 
         // TODO:文中列表RecyclerView
         mContentRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mSharesContentAdapter = new ISharesContentAdapter(this);
+        mSharesContentAdapter = new IStockContentAdapter(this);
         mContentRecyclerView.setAdapter(mSharesContentAdapter);
         mSharesContentAdapter.setOnTabScrollViewListener(this);
         initStockData();
@@ -148,8 +148,8 @@ public class IChartsSharesDoubleListActivity extends IBaseActivity implements IS
         headHorizontalScrollView.setViewListener(new ICustomizeScrollView.OnScrollViewListener() {
             @Override
             public void onScroll(int l, int t, int oldl, int oldt) {
-                List<ISharesContentAdapter.ViewHolder> viewHolders = mSharesContentAdapter.getRecyclerViewHolder();
-                for (ISharesContentAdapter.ViewHolder viewHolder : viewHolders) {
+                List<IStockContentAdapter.ViewHolder> viewHolders = mSharesContentAdapter.getRecyclerViewHolder();
+                for (IStockContentAdapter.ViewHolder viewHolder : viewHolders) {
                     viewHolder.mStockScrollView.scrollTo(l, 0);
                 }
             }
@@ -162,8 +162,8 @@ public class IChartsSharesDoubleListActivity extends IBaseActivity implements IS
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                List<ISharesContentAdapter.ViewHolder> viewHolders = mSharesContentAdapter.getRecyclerViewHolder();
-                for (ISharesContentAdapter.ViewHolder viewHolder : viewHolders) {
+                List<IStockContentAdapter.ViewHolder> viewHolders = mSharesContentAdapter.getRecyclerViewHolder();
+                for (IStockContentAdapter.ViewHolder viewHolder : viewHolders) {
                     viewHolder.mStockScrollView.scrollTo(mSharesContentAdapter.getOffestX(), 0);
                 }
             }

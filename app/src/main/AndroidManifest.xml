@@ -271,10 +271,10 @@
             android:name=".ui.activity.more_detail.charts.IChartsThermometerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.more_detail.charts.IChartsSharesDoubleListActivity"
+            android:name=".ui.activity.more_detail.charts.IChartsStockDoubleListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.more_detail.charts.IChartsSharesActivity"
+            android:name=".ui.activity.more_detail.charts.IChartsStockActivity"
             android:screenOrientation="portrait" />
 
 
