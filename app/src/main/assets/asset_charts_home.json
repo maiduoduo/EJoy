@@ -63,8 +63,8 @@
     "flag": ""
   },
   {
-    "itemTitle": "蜡烛图",
-    "itemDes": "股票类图表等",
+    "itemTitle": "股票类图表",
+    "itemDes": "蜡烛图等",
     "clickCode": 9,
     "clazz": "com.ejoy.tool.ui.activity.more_detail.charts.IChartsSharesActivity",
     "flag": ""

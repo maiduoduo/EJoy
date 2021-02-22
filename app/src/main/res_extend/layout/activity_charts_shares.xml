@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,112 +17,36 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_70" />
 
-        <LinearLayout
-            android:id="@+id/headLayout"
+        <TextView
+            android:id="@+id/tvSharesDoubleList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginTop="5dp"
+            android:background="#77555555"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:paddingVertical="@dimen/dp_10"
+            android:text="股票、证券列表联动效果"
+            android:textColor="@color/light_gray1"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="2"
-                android:gravity="center_vertical">
-
-                <com.module.iviews.charts.ICustomizeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shape_layer_radius"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="5dp"
-                    android:paddingRight="6dp"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/green_500" />
-
-            </LinearLayout>
-
-
-            <com.module.iviews.charts.ICustomizeScrollView
-                android:id="@+id/headScrollView"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="7">
-                <!--
-                beforeDescendants：viewgroup会优先其子类控件而获取到焦点 
-                afterDescendants：viewgroup只有当其子类控件不需要获取焦点时才获取焦点 
-                blocksDescendants：viewgroup会覆盖子类控件而直接获得焦点.
-                -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:descendantFocusability="blocksDescendants">
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/headRecyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </RelativeLayout>
-
-            </com.module.iviews.charts.ICustomizeScrollView>
-        </LinearLayout>
-
-        <View
-            android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/line_shares_color" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/contentRecyclerView"
+        <TextView
+            android:id="@+id/tvCandleCharts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginTop="5dp"
+            android:background="#77555555"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:paddingVertical="@dimen/dp_10"
+            android:text="股票、证券蜡烛图"
+            android:textColor="@color/light_gray1"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"/>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/marqueeBackground"
-            android:gravity="center_vertical"
-            android:paddingLeft="12dp"
-            android:paddingTop="6dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="6dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/eimg_quick_news_icon" />
-
-            <View
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:background="#000" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <com.module.iviews.charts.ICustomizeMarqueeView
-                    android:id="@+id/marqueeView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/eicon_shares_go" />
-
-        </LinearLayout>
 
 
 
@@ -210,7 +133,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="股票、证券列表联动"
+                android:text="股票、证券图表"
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 android:textStyle="bold" />

@@ -248,7 +248,7 @@
         <!--开屏界面-->
         <activity
             android:name=".ui.douyin.activity.DouyinSplashActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.douyin.activity.DouyinMainActivity"
@@ -264,12 +264,19 @@
             android:screenOrientation="portrait" />
 
         <!--各类图表-->
-        <activity android:name=".ui.activity.more_detail.charts.IChartsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.more_detail.charts.IChartsThermometerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.more_detail.charts.IChartsSharesActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.more_detail.charts.IChartsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.charts.IChartsThermometerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.charts.IChartsSharesDoubleListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.charts.IChartsSharesActivity"
+            android:screenOrientation="portrait" />
+
 
 
 
@@ -286,23 +293,23 @@
 
         <service android:name=".common.service.RestartAppService" />
 
-       <!-- <activity
-            android:name="com.tencent.bugly.beta.ui.BetaActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale"
-            android:theme="@android:style/Theme.Translucent" />-->
+        <!-- <activity
+             android:name="com.tencent.bugly.beta.ui.BetaActivity"
+             android:configChanges="keyboardHidden|orientation|screenSize|locale"
+             android:theme="@android:style/Theme.Translucent" />-->
 
         <!--腾讯升级界面-->
-       <!-- <provider
-            android:name=".app.bugly.BuglyFileProvider"
-            android:authorities="${applicationId}.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tools:replace="name,authorities,exported,grantUriPermissions">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"
-                tools:replace="name,resource" />
-        </provider>-->
+        <!-- <provider
+             android:name=".app.bugly.BuglyFileProvider"
+             android:authorities="${applicationId}.fileProvider"
+             android:exported="false"
+             android:grantUriPermissions="true"
+             tools:replace="name,authorities,exported,grantUriPermissions">
+             <meta-data
+                 android:name="android.support.FILE_PROVIDER_PATHS"
+                 android:resource="@xml/provider_paths"
+                 tools:replace="name,resource" />
+         </provider>-->
 
         <meta-data
             android:name="TencentMapSDK"
