@@ -279,6 +279,12 @@
         <activity
             android:name=".ui.activity.more_detail.charts.IChartsStockCandleActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.charts.IChartsDialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.charts.IChartsDialTempControlActivity"
+            android:screenOrientation="portrait" />
 
 
         <!--FileProvider共享文件-->
