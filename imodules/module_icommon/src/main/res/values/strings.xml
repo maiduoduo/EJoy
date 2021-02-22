@@ -78,4 +78,14 @@ E·享 目的在于整理与集纳好的优秀方案和功能实现，有自定�
     <string name="view_pager_bottom_sheet_behavior" translatable="false" tools:ignore="ExtraTranslation">
         com.goobird.common.application.widget.bottomsheetdialog.viewpagerofbottomsheet.ViewPagerBottomSheetBehavior</string>
 
+
+    <!--股票-基金图表-->
+    <string name="stock_date">日期：</string>
+    <string name="stock_open">开：</string>
+    <string name="stock_hign">高：</string>
+    <string name="stock_low">低：</string>
+    <string name="stock_close">收：</string>
+    <string name="stock_diff">涨跌额：</string>
+    <string name="stock_chg">涨跌幅：</string>
+
 </resources>

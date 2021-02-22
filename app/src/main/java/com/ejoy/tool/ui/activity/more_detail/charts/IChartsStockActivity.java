@@ -61,6 +61,7 @@ public class IChartsStockActivity extends IBaseActivity {
     @OnClick({
             R.id.btn_back
             , R.id.tvSharesDoubleList
+            , R.id.tvCandleCharts
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -69,6 +70,9 @@ public class IChartsStockActivity extends IBaseActivity {
                 break;
             case R.id.tvSharesDoubleList:
                 jump(IChartsStockDoubleListActivity.class);
+                break;
+            case R.id.tvCandleCharts:
+                jump(IChartsStockCandleActivity.class);
                 break;
 
         }
