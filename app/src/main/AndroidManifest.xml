@@ -43,6 +43,7 @@
     <!-- 访问手机当前状态, 需要某些信息用于网络定位 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -321,6 +322,9 @@
         <meta-data
             android:name="TencentMapSDK"
             android:value="B7NBZ-75Z3U-YVJVY-27C32-6D5AE-JIFLI" />
+
+        <!--渠道信息，可选-->
+        <meta-data android:name="CRASHEYE_CHANNEL" android:value="test+"/>
 
     </application>
 
