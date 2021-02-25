@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/king_keyboard_view_bg"
+    tools:ignore="MissingDefaultResource">
+    <com.module.iviews.keyboard.KingKeyboardView
+        android:id="@+id/keyboardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:animateLayoutChanges="true"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:keyBackground="@drawable/king_keyboard_key_bg"
+        android:keyTextColor="#ff333333"
+        android:keyTextSize="20sp"
+        android:labelTextSize="16sp"/>
+</RelativeLayout>
