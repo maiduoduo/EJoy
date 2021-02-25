@@ -288,6 +288,15 @@
             android:screenOrientation="portrait" />
 
 
+        <!--常规自定义-->
+        <activity
+            android:name=".ui.activity.more_detail.nomal_view.INormalCustomViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.nomal_view.IDragFillBlankViewActivity"
+            android:screenOrientation="portrait" />
+
+
         <!--FileProvider共享文件-->
         <provider
             android:name=".common.provider.ImageProvider"

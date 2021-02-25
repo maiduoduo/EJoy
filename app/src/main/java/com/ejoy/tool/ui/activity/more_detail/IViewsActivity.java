@@ -35,6 +35,7 @@ import com.ejoy.tool.common.bean.WidgetEntity;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.ui.activity.more_detail.charts.IChartsActivity;
+import com.ejoy.tool.ui.activity.more_detail.nomal_view.INormalCustomViewActivity;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.douyin.activity.DouyinSplashActivity;
@@ -156,6 +157,7 @@ public class IViewsActivity extends IBaseActivity {
             , R.id.clickShadowColor
             , R.id.clickDouyin
             , R.id.clickCharts
+            , R.id.clickNormalCustom
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -170,6 +172,9 @@ public class IViewsActivity extends IBaseActivity {
                 break;
             case R.id.clickCharts://图表
                 jump(IChartsActivity.class);
+                break;
+            case R.id.clickNormalCustom://普通自定义
+                jump(INormalCustomViewActivity.class);
                 break;
 
         }
