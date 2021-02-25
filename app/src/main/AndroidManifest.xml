@@ -296,6 +296,13 @@
             android:name=".ui.activity.more_detail.nomal_view.IDragFillBlankViewActivity"
             android:screenOrientation="portrait" />
 
+        <!--键盘-->
+        <activity android:name=".ui.activity.more_detail.keyboard.IKeyboardHomeActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.more_detail.keyboard.IKeyboardMultiTypeActivity"
+            android:screenOrientation="portrait"/>
+
 
         <!--FileProvider共享文件-->
         <provider

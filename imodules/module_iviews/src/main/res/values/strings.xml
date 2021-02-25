@@ -13,4 +13,9 @@
     <string name="one_footer_hint_loading">正在努力加载</string>
     <string name="one_footer_no_more_data">没有更多了</string>
 
+
+    <string name="king_keyboard_key_done_text">Done</string>
+    <string name="king_keyboard_key_more_text">More</string>
+    <string name="king_keyboard_key_back_text">Back</string>
+
 </resources>

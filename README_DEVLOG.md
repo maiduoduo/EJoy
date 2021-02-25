@@ -17,6 +17,10 @@
 
 ##### 💥 更新日志
 
+###### 2020.12.23<br/>
+
+* 自定义混合键盘 IKeyboardMultiTypeActivity.class
+
 ###### 2021.02.24 <br/>
 
 * 选词（拖拽）填空题-自定义 IDragFillBlankViewActivity.class
@@ -83,7 +87,7 @@
 
 * 新增<日期选择（界面滚轮选择-无弹窗形式）>,见于「ITimeDateOrActivity.java」界面
 * 新增：「仿美柚经期日历」「时间轴-日历+时间线」「时间轴-自定义时间线（recyclerview）」
-
+ 
 ###### 2020.07.18
 
 * 多类型筛选菜单（基于PopupWindow）
