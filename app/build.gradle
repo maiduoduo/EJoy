@@ -133,6 +133,10 @@ dependencies {
     implementation(name:'easynavigation-1.5.1', ext:'aar')
     implementation(name:'BaseRecyclerViewAdapterHelper_2930', ext:'aar')
 
+    implementation files('libs/crasheye-2.2.5.jar')
+
+
+
     /*douyin*/
 //    implementation 'com.androidkun:XTabLayout:1.1.4'
 //    implementation rootProject.ext.dependencies["reactivex-rxjava"]

@@ -35,6 +35,8 @@ import com.ejoy.tool.common.bean.WidgetEntity;
 import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.ui.activity.more_detail.charts.IChartsActivity;
+import com.ejoy.tool.ui.activity.more_detail.keyboard.IKeyboardHomeActivity;
+import com.ejoy.tool.ui.activity.more_detail.nomal_view.INormalCustomViewActivity;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.douyin.activity.DouyinSplashActivity;
@@ -156,6 +158,7 @@ public class IViewsActivity extends IBaseActivity {
             , R.id.clickShadowColor
             , R.id.clickDouyin
             , R.id.clickCharts
+            , R.id.clickNormalCustom
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -171,6 +174,9 @@ public class IViewsActivity extends IBaseActivity {
             case R.id.clickCharts://图表
                 jump(IChartsActivity.class);
                 break;
+            case R.id.clickNormalCustom://普通自定义
+                jump(INormalCustomViewActivity.class);
+                break;
 
         }
     }
@@ -183,7 +189,7 @@ public class IViewsActivity extends IBaseActivity {
                 IScrollerLayoutActivity.class));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red, "TabLayout", "快速创建Tab控件包括CommonTabLayout、SlidingTabLayout及SegmentTabLayout三种类型Tab", null));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue, "StatusViewHelper", "支持顶部自定义标题栏沉浸效果帮助类。", null));
-        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle, "KeyboardHelper", "解决软键盘遮住底部输入框问题帮助类。", null));
+        widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle, "自定义键盘", "内置了满足各种场景的键盘需求：包括但不限于混合、字母、数字、电话、身份证、车牌号等可输入场景。还支持自定义。集成简单，键盘可定制化。", IKeyboardHomeActivity.class));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_red, "TitleBarView", "一款支持沉浸状态栏效果设置的ToolBar控件:支持xml设置是否沉浸、主标题及副标题、左边文字及icon、右边文字及icon、下划线;支持添加左边、中间及右边view方便扩展。", ISeekBarAndCheckBoxActivity.class));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_today_todo_circle, "ISimpleMultiAlertDialog", "一款自定义Alert效果控件:属性命名及调用方式同Android原生AlertDialog,增加样式背景及文本相关属性自定义自定义。", null));
         widgetEntities.add(new WidgetEntity(R.drawable.bicon_soso_blue, "UIActionSheetDialog", "一款底部弹框控件:支持List模式(iOS、微信及QQ样式)和Grid模式", null));

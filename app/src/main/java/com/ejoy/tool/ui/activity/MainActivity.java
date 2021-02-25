@@ -157,7 +157,8 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         initRecyclerView();
         addData();
         mTvAppName.setText("E·享");
-//        throw new NullPointerException("Nofound class  serialport.");
+//        throw new NullPointerException("Nofound class.");
+//        throw new NullPointerException("测试空指针异常上报...");
     }
 
     @Override
@@ -235,6 +236,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+
         switch (position) {
             case 0://Toast
                 startActivity(new Intent(this, ToastActivity.class));
@@ -276,6 +278,7 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
                 break;
             default:
                 break;
+
         }
     }
 

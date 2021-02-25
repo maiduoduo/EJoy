@@ -116,7 +116,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/clickArcLayout"
+                    android:id="@+id/clickNormalCustom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -127,13 +127,13 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bicon_lvyou" />
+                        android:src="@drawable/eicon_sea" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="xxx"
+                        android:text="普通自定义"
                         android:textColor="#383535"
                         android:textSize="13sp"
                         android:textStyle="bold" />

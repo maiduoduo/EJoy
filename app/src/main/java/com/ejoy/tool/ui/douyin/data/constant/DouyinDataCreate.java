@@ -22,10 +22,10 @@ public class DouyinDataCreate {
 
         DouyinVideoBean videoBeanZero = new DouyinVideoBean();
 //        videoBeanOne.setCoverRes(R.mipmap.cover1);
-        videoBeanZero.setCoverUrl("https://mvimg10.meitudata.com/5ff82dd83a849283.jpg!sthumb480?28252650");
+        videoBeanZero.setCoverUrl("https://mvimg10.meitudata.com/6002c2df19a6aasopsavgv8878.jpg!webp");
         videoBeanZero.setContent("#美好一天 #爱情 #异地恋 #结婚 #2021我的人生态度 17岁遇见你相恋10年异国恋4年的校园爱情 我们一起走过了3047天， 从学生时代相恋，经历了多年异国，再到如今有了我们的家 我们很幸运，希望你们也是");
 //        videoBeanOne.setVideoRes(R.raw.video1);
-        videoBeanZero.setVideoUrl("https://mvvideoshare1.meitudata.com/5ff833ea31991H264WEB412319_H264_4_53e9e4e9419bd8.mp4?k=722b35300bdf402ebf5915f33cf5c964&t=60336a7a");
+        videoBeanZero.setVideoUrl("https://mvvideoshare2.meitudata.com/6002c2deeb6edgwqaplsif6563_H264_4_568b650f42622e.mp4?k=0a6c0595bae106651dbeb985047e286d&t=6038ae9d");
 //        videoBeanZero.setVideoUrl("https://files.catbox.moe/2wt1dx.mp4");
         videoBeanZero.setDistance(7.9f);
         videoBeanZero.setFocused(false);
@@ -33,7 +33,7 @@ public class DouyinDataCreate {
         videoBeanZero.setLikeCount(226823);
         videoBeanZero.setCommentCount(3480);
         videoBeanZero.setShareCount(4252);
-        videoBeanZero.setVideoOritation(1);
+        videoBeanZero.setVideoOritation(0);
 
         DouyinVideoBean.UserBean userBeanZero = new DouyinVideoBean.UserBean();
         userBeanZero.setUid(0);

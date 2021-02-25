@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
     <dimen name="dp_65">65dp</dimen>
     <dimen name="sp_18">18sp</dimen>
     <dimen name="sp_16">16sp</dimen>
@@ -17,5 +18,19 @@
     <dimen name="one_footer_content_margin">8dp</dimen>
     <dimen name="one_footer_progress_size">18dp</dimen>
     <dimen name="one_footer_title_size">12sp</dimen>
+
+
+    <!--自定义键盘-->
+    <dimen name="king_keyboard_key_height" >48dp</dimen>
+    <dimen name="king_keyboard_key_height2">101dp</dimen>
+    <dimen name="king_keyboard_key_height3">154dp</dimen>
+    <dimen name="king_keyboard_vertical_gap">5dp</dimen>
+    <dimen name="king_keyboard_horizontal_gap">10dp</dimen>
+    <dimen name="king_keyboard_view_padding_top">6dp</dimen>
+    <dimen name="king_keyboard_view_padding_bottom">6dp</dimen>
+    <dimen name="king_keyboard_preview_height">56dp</dimen>
+    <dimen name="king_keyboard_text_size">20sp</dimen>
+    <dimen name="king_keyboard_done_text_size">20sp</dimen>
+    <dimen name="king_keyboard_label_text_size">16sp</dimen>
 
 </resources>
