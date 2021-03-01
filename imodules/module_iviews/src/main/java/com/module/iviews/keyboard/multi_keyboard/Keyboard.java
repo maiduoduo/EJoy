@@ -1,4 +1,4 @@
-package com.module.iviews.keyboard;
+package com.module.iviews.keyboard.multi_keyboard;
 
 
 import android.content.Context;

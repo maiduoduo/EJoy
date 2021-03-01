@@ -1,4 +1,4 @@
-package com.module.iviews.keyboard
+package com.module.iviews.keyboard.multi_keyboard
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,8 +9,6 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.AttributeSet
 import com.module.iviews.R
-import com.module.iviews.keyboard.Keyboard
-import com.module.iviews.keyboard.KeyboardView
 
 open class KingKeyboardView : KeyboardView {
 

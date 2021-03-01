@@ -17,6 +17,10 @@
 
 ##### 💥 更新日志
 
+###### 2020.12.26<br/>
+
+* 自定义安全键盘 见于ISafeKeyboardActivity.class
+
 ###### 2020.12.23<br/>
 
 * 自定义混合键盘 IKeyboardMultiTypeActivity.class

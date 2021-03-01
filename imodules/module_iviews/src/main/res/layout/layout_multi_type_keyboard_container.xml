@@ -6,7 +6,7 @@
     android:layout_gravity="bottom"
     android:background="@drawable/king_keyboard_view_bg"
     tools:ignore="MissingDefaultResource">
-    <com.module.iviews.keyboard.KingKeyboardView
+    <com.module.iviews.keyboard.multi_keyboard.KingKeyboardView
         android:id="@+id/keyboardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

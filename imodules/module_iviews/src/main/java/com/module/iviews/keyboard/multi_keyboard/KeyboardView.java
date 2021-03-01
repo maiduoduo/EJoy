@@ -1,4 +1,4 @@
-package com.module.iviews.keyboard;
+package com.module.iviews.keyboard.multi_keyboard;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -26,7 +26,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.module.iviews.R;
-import com.module.iviews.keyboard.Keyboard.Key;
+import com.module.iviews.keyboard.multi_keyboard.Keyboard.Key;
 
 import java.util.Arrays;
 import java.util.HashMap;

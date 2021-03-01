@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/flBannerRoot"
+    android:id="@+id/flSafeKBRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v4.widget.NestedScrollView
@@ -10,7 +10,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/rootview"
+            android:id="@+id/scroll_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -29,111 +29,123 @@
                 android:background="@color/colorAccent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-            <EditText
-                android:id="@+id/et_system_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="System input method" />
 
             <EditText
-                android:id="@+id/et1"
+                android:id="@+id/normalEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="混合键盘" />
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_system"
+                android:inputType="text" />
 
             <EditText
-                android:id="@+id/et2"
+                android:id="@+id/safeEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="英文键盘" />
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_new"
+                android:inputType="textVisiblePassword" />
 
             <EditText
-                android:id="@+id/et3"
+                android:id="@+id/safeEditText2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="英文-小写键盘" />
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_new2"
+                android:inputType="number" />
 
             <EditText
-                android:id="@+id/et4"
+                android:id="@+id/safeEditText3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="英文-大写键盘" />
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_new3" />
 
-            <EditText
-                android:id="@+id/et5"
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/safeAppCompactEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="英文-数字键盘" />
-
-            <EditText
-                android:id="@+id/et6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="数字键盘" />
-
-            <EditText
-                android:id="@+id/et7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="数字-小数键盘" />
-
-            <EditText
-                android:id="@+id/et8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="手机号码键盘" />
-
-            <EditText
-                android:id="@+id/et9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="身份证键盘" />
-
-            <EditText
-                android:id="@+id/et10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="车牌键盘" />
-
-            <EditText
-                android:id="@+id/et11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="车牌-省简称键盘" />
-
-            <EditText
-                android:id="@+id/et12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="自定义键盘" />
-
-            <EditText
-                android:id="@+id/et13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="System input method" />
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="AppCompatEditText" />
 
             <Button
-                android:id="@+id/btn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Enabled"
-                android:textAllCaps="false" />
+                android:layout_height="60dp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:onClick="onAlertDialogClick"
+                android:text="@string/safe_keyboard_alert_test" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:onClick="onPopupWindowTestClick"
+                android:text="@string/safe_keyboard_popup_test" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:onClick="onScrollEditTestClick"
+                android:text="@string/safe_keyboard_scrollview_edit_test" />
+
+            <EditText
+                android:id="@+id/safeEditText4"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_new"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/safeEditText5"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_new" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_system" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_system" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_system" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:hint="@string/safe_keyboard_system" />
+
+
+
+
+
 
 
             <Space
@@ -232,10 +244,10 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/keyboardParent"
-        android:orientation="vertical"
+        android:id="@+id/keyboardPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        android:orientation="vertical" />
 
 </FrameLayout>

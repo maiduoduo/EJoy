@@ -28,7 +28,7 @@ import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.kongzue.dialog.util.BlurView;
-import com.module.iviews.keyboard.KingKeyboard;
+import com.module.iviews.keyboard.multi_keyboard.KingKeyboard;
 
 import butterknife.BindView;
 import butterknife.OnClick;

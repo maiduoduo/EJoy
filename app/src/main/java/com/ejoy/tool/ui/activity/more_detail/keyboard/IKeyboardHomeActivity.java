@@ -63,6 +63,7 @@ public class IKeyboardHomeActivity extends IBaseActivity {
     @OnClick({
             R.id.btn_back
             , R.id.llKeyBoard1
+            , R.id.llSafeKeyboard
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -71,6 +72,9 @@ public class IKeyboardHomeActivity extends IBaseActivity {
                 break;
             case R.id.llKeyBoard1:
                 jump(IKeyboardMultiTypeActivity.class);
+                break;
+            case R.id.llSafeKeyboard:
+                jump(ISafeKeyboardActivity.class);
                 break;
 
         }

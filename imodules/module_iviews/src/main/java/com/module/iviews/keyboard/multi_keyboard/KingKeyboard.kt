@@ -1,4 +1,4 @@
-package com.module.iviews.keyboard
+package com.module.iviews.keyboard.multi_keyboard
 
 import android.app.Activity
 import android.content.Context
@@ -15,8 +15,6 @@ import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import android.widget.EditText
 import com.module.iviews.R
-import com.module.iviews.keyboard.Keyboard
-import com.module.iviews.keyboard.KeyboardView
 
 
 open class KingKeyboard {
@@ -262,7 +260,7 @@ open class KingKeyboard {
             it.keyboard = currentKeyboard
             it.isEnabled = true
             it.isPreviewEnabled = false
-            it.onKeyboardActionListener = object: KeyboardView.OnKeyboardActionListener{
+            it.onKeyboardActionListener = object: KeyboardView.OnKeyboardActionListener {
 //            onKeyboardActionListener = object : KeyboardView.OnKeyboardActionListener {
 
                 override fun swipeRight() {
@@ -437,7 +435,7 @@ open class KingKeyboard {
      * @param xmlLayoutResId 键盘布局的资源文件，其中包含键盘布局和键值码等相关信息
      */
     fun setKeyboardCustom(xmlLayoutResId: Int){
-        this.keyboardCustom = Keyboard(context,xmlLayoutResId)
+        this.keyboardCustom = Keyboard(context, xmlLayoutResId)
     }
 
     /**
@@ -451,7 +449,7 @@ open class KingKeyboard {
      * @param xmlLayoutResId 键盘布局的资源文件，其中包含键盘布局和键值码等相关信息
      */
     fun setKeyboardCustomModeChange(xmlLayoutResId: Int){
-        this.keyboardCustomModeChange = Keyboard(context,xmlLayoutResId)
+        this.keyboardCustomModeChange = Keyboard(context, xmlLayoutResId)
     }
 
     /**
@@ -465,7 +463,7 @@ open class KingKeyboard {
      * @param xmlLayoutResId 键盘布局的资源文件，其中包含键盘布局和键值码等相关信息
      */
     fun setKeyboardCustomMore(xmlLayoutResId: Int){
-        this.keyboardCustomMore = Keyboard(context,xmlLayoutResId)
+        this.keyboardCustomMore = Keyboard(context, xmlLayoutResId)
     }
 
     /**

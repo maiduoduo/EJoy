@@ -770,6 +770,13 @@
     <color name="color_e5e6f2">#e5e6f2</color>
 
 
+    <color name="safekeyboardNormal">#1c69ac</color>
+    <color name="safekeyboardDeep">#991c69ac</color>
+    <color name="safekeyboardPress">#1296db</color>
+    <color name="safekeyboardBackColor">#212121</color>
+    <color name="safekeyboardKeyBack">#474749</color>
+
+
 
 
 
