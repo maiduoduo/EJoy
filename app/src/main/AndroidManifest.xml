@@ -302,6 +302,8 @@
 
         <activity android:name=".ui.activity.more_detail.keyboard.IKeyboardMultiTypeActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardActivity"
+            android:screenOrientation="portrait"/>
 
 
         <!--FileProvider共享文件-->
