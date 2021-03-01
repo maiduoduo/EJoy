@@ -30,48 +30,16 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
 
-            <EditText
-                android:id="@+id/normalEditText"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
+            <CheckBox
+                android:id="@+id/use_safe_key"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="10sp"
                 android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_system"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/safeEditText"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_new"
-                android:inputType="textVisiblePassword" />
-
-            <EditText
-                android:id="@+id/safeEditText2"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_new2"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/safeEditText3"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_new3" />
-
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/safeAppCompactEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="AppCompatEditText" />
+                android:checked="true"
+                android:text="@string/safe_keyboard_use_safe_alert"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:layout_width="match_parent"
@@ -79,68 +47,9 @@
                 android:layout_marginStart="10sp"
                 android:layout_marginEnd="10sp"
                 android:onClick="onAlertDialogClick"
-                android:text="@string/safe_keyboard_alert_test" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:onClick="onPopupWindowTestClick"
-                android:text="@string/safe_keyboard_popup_test" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:onClick="onScrollEditTestClick"
-                android:text="@string/safe_keyboard_scrollview_edit_test" />
-
-            <EditText
-                android:id="@+id/safeEditText4"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_new"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/safeEditText5"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_new" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_system" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_system" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_system" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="10sp"
-                android:layout_marginEnd="10sp"
-                android:hint="@string/safe_keyboard_system" />
+                android:text="@string/safe_keyboard_alert_test"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/use_safe_key" />
 
 
 
@@ -234,7 +143,7 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:lines="2"
-                android:text="自定义安全键盘"
+                android:text="自定义安全键盘-Dialog"
                 android:textColor="#dc000000"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -243,11 +152,5 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/keyboardPlace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical" />
 
 </FrameLayout>

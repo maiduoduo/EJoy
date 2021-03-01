@@ -304,6 +304,12 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardDialogActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardPopupWindowActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardScrollViewEditActivity"
+            android:screenOrientation="portrait"/>
 
 
         <!--FileProvider共享文件-->

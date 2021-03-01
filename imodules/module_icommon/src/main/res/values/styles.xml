@@ -221,6 +221,13 @@
         <item name="android:windowExitAnimation">@anim/anim_dialog_exit</item>
     </style>
 
+    <!--安全键盘-dialog-->
+    <style name="IDialogFragment.FullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:padding">0dp</item>
+        <item name="android:windowBackground">@color/deepDarkTransparent</item>
+    </style>
+
+
 
 
 </resources>
