@@ -22,6 +22,7 @@ import com.ejoy.tool.app.App;
 import com.ejoy.tool.common.helper.glide.GlideImageLoader;
 import com.ejoy.tool.scaffold.glide.IGlideImageLoader;
 import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoaderInterface;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -444,6 +445,36 @@ public final class Utils {
 
         //设置图片加载器
         banner.setImageLoader(new IGlideImageLoader(radius));
+        //防止加载中图片的直角
+        if (Build.VERSION.SDK_INT>21){
+            banner.setOutlineProvider(new ViewOutlineProvider() {
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), radius);
+                }
+            });
+            banner.setClipToOutline(true);
+        }
+        //设置图片集合
+        banner.setImages(imagesList);
+        //banner设置方法全部调用完毕时最后调用
+        banner.start();
+
+        return banner;
+    }
+
+
+
+    /**
+     * 加载图片轮播图公共方法
+     * @param context 上下文
+     * @param imagesList 图片资源list
+     * @param radius 圆角值
+     */
+    public static Banner initBanner(Context context, Banner banner, List<?> imagesList, ImageLoaderInterface imageLoader, final float radius){
+
+        //设置图片加载器
+        banner.setImageLoader(imageLoader);
         //防止加载中图片的直角
         if (Build.VERSION.SDK_INT>21){
             banner.setOutlineProvider(new ViewOutlineProvider() {

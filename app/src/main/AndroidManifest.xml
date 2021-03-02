@@ -232,6 +232,9 @@
         <activity
             android:name=".ui.activity.more_detail.IPaletteListColorActivity"
             android:configChanges="screenSize|screenLayout|navigation" />
+        <activity
+            android:name=".ui.activity.more_detail.IPaletteColorShopBannerActivity"
+            android:configChanges="screenSize|screenLayout|navigation" />
 
 
         <!--navigatonbar-->
@@ -297,13 +300,25 @@
             android:screenOrientation="portrait" />
 
         <!--键盘-->
-        <activity android:name=".ui.activity.more_detail.keyboard.IKeyboardHomeActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.more_detail.keyboard.IKeyboardHomeActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.activity.more_detail.keyboard.IKeyboardMultiTypeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.more_detail.keyboard.IKeyboardMultiTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardPopupWindowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardScrollViewEditActivity"
+            android:screenOrientation="portrait" />
 
 
         <!--FileProvider共享文件-->
@@ -342,7 +357,9 @@
             android:value="B7NBZ-75Z3U-YVJVY-27C32-6D5AE-JIFLI" />
 
         <!--渠道信息，可选-->
-        <meta-data android:name="CRASHEYE_CHANNEL" android:value="test+"/>
+        <meta-data
+            android:name="CRASHEYE_CHANNEL"
+            android:value="test+" />
 
     </application>
 

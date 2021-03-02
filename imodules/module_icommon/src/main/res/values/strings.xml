@@ -98,7 +98,7 @@ E·享 目的在于整理与集纳好的优秀方案和功能实现，有自定�
     <string name="safe_keyboard_scrollview_edit_test">滚动输入安全键盘</string>
     <string name="safe_keyboard_alert_dialog_test">AlertDialog</string>
     <string name="safe_keyboard_use_safe_alert">AlertDialog使用SafeKeyboard</string>
-    <string name="safe_keyboard_alert_test">Dialog安全键盘</string>
+    <string name="safe_keyboard_alert_test" tools:ignore="ExtraTranslation">Dialog安全键盘</string>
     <string name="safe_keyboard_popup_test">PopupWindow安全键盘</string>
     <string name="safe_keyboard_use_safe_pop">PopupWindow使用SafeKeyboard</string>
     <string name="safe_keyboard_error_param_null_inflater">错误的参数, LayoutInflater 为 null</string>

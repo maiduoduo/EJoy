@@ -151,15 +151,15 @@ public class ISafeKeyboardActivity extends IBaseActivity {
     }
 
     public void onAlertDialogClick(View view) {
-//        jump(DialogSafeKeyboardActivity.class);
+        jump(ISafeKeyboardDialogActivity.class);
     }
 
     public void onPopupWindowTestClick(View view) {
-//        jump(DialogSafeKeyboardActivity.class);
+        jump(ISafeKeyboardPopupWindowActivity.class);
     }
 
     public void onScrollEditTestClick(View view) {
-//        jump(DialogSafeKeyboardActivity.class);
+        jump(ISafeKeyboardScrollViewEditActivity.class);
     }
 
 
