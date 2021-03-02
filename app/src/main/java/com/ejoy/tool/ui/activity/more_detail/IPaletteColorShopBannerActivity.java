@@ -43,8 +43,6 @@ import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
 //@DarkNavigationBarTheme(true)
 public class IPaletteColorShopBannerActivity extends IBaseActivity {
 
-    // @BindView(R.id.backto)
-    // ImageView backto;
     @BindView(R.id.iv_banner_head_bg)
     ImageView ivBannerHeadBg;
     @BindView(R.id.rlPaletteShopRoot)
@@ -82,56 +80,10 @@ public class IPaletteColorShopBannerActivity extends IBaseActivity {
 //        blur.setRadius(me, 0, 0);
         setDarkNavigationBarTheme(false);
         StatusBarTool.setStatusBarDarkTheme(me, false);
-        final int bannerHeight = Math.round(150 * DENSITY);//图片高度
-        Log.e(_TAG, "initSceneryHotBanner height: " + bannerHeight);
         initBanner();
     }
 
 
-    /**
-     * 加载广告banner轮播图
-     */
-    /*private void initBanner() {
-        List<Integer> images = new ArrayList<>();
-//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image8.jpg");
-//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image9.jpg");
-//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image11.jpg");
-//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image13.jpg");
-//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image16.jpg");
-//        images.add("https://lvchen.coding.net/p/tupianyun/git/raw/master/image19.jpg");
-
-        images.add(R.mipmap.banner_3_a);
-        images.add(R.mipmap.banner_3_b);
-        images.add(R.mipmap.banner_3_c);
-        images.add(R.mipmap.banner_3_d);
-        images.add(R.mipmap.banner_3_f);
-        Utils.initBanner(me, mTopBanner, images, 0);
-        mTopBanner.setOnBannerListener(new OnBannerListener() {
-            @Override
-            public void OnBannerClick(int position) {
-                iToast.showISimpleToast("position" + position);
-            }
-        });
-        mTopBanner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-//                Log.e("Banner", "onPageScrolled i: "+i);
-
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-                Log.e("Banner", "onPageSelected i: " + i);
-//                iToast.showISimpleToast("position...:" + i);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-//                Log.e("Banner", "onPageScrollStateChanged i: "+i);
-
-            }
-        });
-    }*/
 
     /**
      * 初始化banner
@@ -154,23 +106,6 @@ public class IPaletteColorShopBannerActivity extends IBaseActivity {
 
         imageLoader = new IBannerImageLoader(colorList);
         Utils.initBanner(me, mTopBanner, bannerList, imageLoader,10);
-
-//        mTopBanner.setImageLoader(imageLoader);
-//        //设置图片集合
-//        mTopBanner.setImages(bannerList);
-//        //设置banner动画效果
-//        // banner.setBannerAnimation(Transformer.DepthPage);
-//        //设置轮播时间
-//        mTopBanner.setDelayTime(3000);
-//        mTopBanner.setOnBannerListener(new OnBannerListener() {
-//            @Override
-//            public void OnBannerClick(int position) {
-//
-//            }
-//        });
-        //banner设置方法全部调用完毕时最后调用
-//        mTopBanner.start();
-
     }
 
 
