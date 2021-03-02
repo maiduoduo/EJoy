@@ -31,6 +31,15 @@
 
 <br/>
 
+> 「❀❀购物推荐banner 标题栏、状态栏、背景等颜色渐变❀❀」
+
+![image](Screenshot/palette/img_palette_shop_banner_a.png)  ![image](Screenshot/palette/img_palette_shop_banner_b.png)
+![image](Screenshot/palette/img_palette_shop_banner_c.png)  ![image](Screenshot/palette/img_palette_shop_banner_d.png)
+![image](Screenshot/palette/img_palette_shop_banner_e.png)  
+
+
+<br/>
+
 > ❀❀短视频板块❀❀
 
 ![image](Screenshot/douy/img_douy_a.png)  ![image](Screenshot/douy/img_douy_b.png)

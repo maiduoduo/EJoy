@@ -129,6 +129,39 @@
                     android:textSize="16dp" />
 
 
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/white" />
+            <LinearLayout
+                android:id="@+id/llColorShopBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/bicon_soso_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/ivIcon"
+                    android:text="购物推荐banner颜色渐变\n                      仿喜马拉雅banner拾色颜色渐变"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="16dp" />
+
+
+
             </LinearLayout>
 
             <TextView

@@ -116,6 +116,7 @@ public class IPaletteImageActivity extends IBaseActivity {
             , R.id.llColorActivi
             , R.id.llColorViewpager
             , R.id.llColorList
+            , R.id.llColorShopBanner
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -130,6 +131,9 @@ public class IPaletteImageActivity extends IBaseActivity {
                 break;
             case R.id.llColorList:
                 jump(IPaletteListColorActivity.class);
+                break;
+            case R.id.llColorShopBanner:
+                jump(IPaletteColorShopBannerActivity.class);
                 break;
 
         }

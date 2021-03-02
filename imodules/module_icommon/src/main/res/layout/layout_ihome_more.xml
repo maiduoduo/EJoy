@@ -38,6 +38,15 @@
                 android:layout_alignParentBottom="true"
                 android:maxLines="1"
                 android:textSize="10dp" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:src="@mipmap/bicon_new_flag"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/dp_10"
+                />
         </RelativeLayout>
         <android.support.v7.widget.AppCompatImageView
             android:visibility="visible"

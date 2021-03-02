@@ -19,6 +19,10 @@
 
 ###### 2020.12.26<br/>
 
+* 新增「❀❀仿喜马拉雅banner颜色渐变（购物推荐banner 标题栏、状态栏、背景等颜色渐变）❀❀」 见于IPaletteColorShopBannerActivity.class
+
+###### 2020.12.26<br/>
+
 * 自定义安全键盘 见于ISafeKeyboardActivity.class
 
 ###### 2020.12.23<br/>

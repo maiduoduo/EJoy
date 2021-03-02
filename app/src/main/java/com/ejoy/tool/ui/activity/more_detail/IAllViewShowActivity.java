@@ -372,11 +372,9 @@ public class IAllViewShowActivity extends IBaseActivity implements TencentLocati
     }
 
     public void onLocationChanged(TencentLocation tencentLocation, int error, String s) {
-        Log.e("xiejinbo", "error: " + error);
         if (error == TencentLocation.ERROR_OK) {
             // 定位成功
             String location = toString(tencentLocation, mLevel);
-            Log.e("xiejinbo", "location: " + location);
             stopLocation();
         }
     }

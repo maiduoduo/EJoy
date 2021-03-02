@@ -52,6 +52,49 @@ public class GlobalDataProvider {
     //时间线-rv
     public static String ASSET_TIMELINE_RECYCLERVIEW = "ast_timeline_rv.json";
     private static final int PARSE_TYPE_TIMELINE_RECYCLERVIEW = 1;
+    private static List<String> bannerList;
+
+
+    /**
+     * 吸色器-banner
+     * @return
+     */
+    public static List<String> paletteColorShopBannerData() {
+        if (bannerList == null) bannerList = new ArrayList<>();
+        else bannerList.clear();
+//        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556532613936&di=3769695217e3424f18c3d23966ecd4dc&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fback_pic%2Fqk%2Fback_origin_pic%2F00%2F04%2F19%2F70e2846ebc02ae10161f25bf7f5461a1.jpg");
+//        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556532665664&di=9ead9eb8a9fe2af9a01b0dd39f3e41f4&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F05%2F37%2F28%2F475a43591370453.jpg");
+//        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556532613934&di=0be1c6bbf0441bd19ef6d4e3ce799263&imgtype=0&src=http%3A%2F%2Fpic96.nipic.com%2Ffile%2F20160430%2F7036970_215739900000_2.jpg");
+//        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556532613936&di=4dd453940f49d9801826e6b820490957&imgtype=0&src=http%3A%2F%2Fpic161.nipic.com%2Ffile%2F20180410%2F26429156_154754410034_2.jpg");
+//        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556532613935&di=39c387012e3d8fa2eef90129eaf83c5c&imgtype=0&src=http%3A%2F%2Fpic25.nipic.com%2F20121211%2F7031681_170238437383_2.jpg");
+
+        bannerList.add("https://img.zcool.cn/community/01e8cc56fb630332f875a944f9471f.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/016a2256fb63006ac7257948f83349.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/013de756fb63036ac7257948747896.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01639a56fb62ff6ac725794891960d.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01233056fb62fe32f875a9447400e1.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01270156fb62fd6ac72579485aa893.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01db0755b0a1866ac725ca509ee09b.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/015040554478dd0000019ae9502ac5.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/0185e3603d9a6911013ef90fdf255f.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01a4bd603d9a6911013f37456f36bf.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/011059603d9a6911013ef90febac18.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/0167c9603d9a6911013f3745140b0a.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01322f603cc82f11013ef90f04f1f4.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/019339603d9a6911013f3745acf4e8.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/019d36603cc83011013f3745c15266.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01a178603d9a6911013ef90f48f8b4.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/017251603cc83011013f3745e421ff.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01f4e56039e23d11013ef90f4e4ad7.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01a9b3603cc83011013ef90fce1b45.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/014a816039afbc11013f374542ed32.png@2o.png");
+        bannerList.add("https://img.zcool.cn/community/01a459603a4e1311013ef90f24478c.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/0112826039afbc11013f374552c295.png@2o.png");
+        bannerList.add("https://img.zcool.cn/community/01e3036039afbc11013ef90f64c4fc.png@2o.png");
+        bannerList.add("https://img.zcool.cn/community/01206d603748d011013f374526e911.jpg@2o.jpg");
+        bannerList.add("https://img.zcool.cn/community/01ca6e6037844811013ef90f485fdf.jpg@2o.jpg");
+        return bannerList;
+    }
 
     public static String[] titles = new String[]{
             "伪装者:胡歌演绎'痞子特工'",
