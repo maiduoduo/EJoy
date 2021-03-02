@@ -32,7 +32,8 @@ import butterknife.OnClick;
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2021/3/1
  * @des: 仿喜马拉雅banner颜色渐变
- *       购物推荐banner 标题栏、状态栏、背景等颜色渐变
+ *     TODO: 购物推荐banner 标题栏、状态栏、背景等颜色渐变_____
+ *
  */
 @Layout(R.layout.activity_palette_color_shop_banner)
 @DarkStatusBarTheme(true)
