@@ -3,7 +3,6 @@ package com.ejoy.tool.ui.activity.more_detail;
 import android.os.Handler;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -19,15 +18,12 @@ import com.kongzue.baseframework.interfaces.DarkStatusBarTheme;
 import com.kongzue.baseframework.interfaces.Layout;
 import com.tencent.map.geolocation.TencentLocationRequest;
 import com.youth.banner.Banner;
-import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-
-import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
 
 
 /**
@@ -36,7 +32,8 @@ import static com.ejoy.tool.scaffold.utils.DisplayHelper.DENSITY;
  * @BLOG: https://blog.csdn.net/Maiduoudo
  * @Date: 2021/3/1
  * @des: 仿喜马拉雅banner颜色渐变
- *       购物推荐banner 标题栏、状态栏、背景等颜色渐变
+ *     TODO: 购物推荐banner 标题栏、状态栏、背景等颜色渐变________
+ *
  */
 @Layout(R.layout.activity_palette_color_shop_banner)
 @DarkStatusBarTheme(true)
