@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flBannerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--banner-->
+            <LinearLayout
+                android:id="@+id/llBannerRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp" />
+
+
+                <ImageView
+                    android:id="@+id/ibannerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginVertical="@dimen/dp_10"
+                    android:src="@mipmap/bimg_banner_file_top"
+                    android:scaleType="centerCrop"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintTop_toTopOf="parent">
+                </ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llFileSaveRootStorage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/bicon_soso_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/ivIcon"
+                    android:text="文件存储-保存到对应项目File文件夹下"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvFileSaveDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70dp"
+                android:text="文件存储-保存到对应项目File文件夹下"
+                android:textColor="@color/app_color_theme_5"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textStyle="bold"
+                android:textSize="13dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/llFileMaker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="@dimen/dp_10">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/bicon_today_todo_circle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/ivIcon"
+                    android:text="文件处理"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="600dp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/box_table"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:clickable="true">
+
+        <com.kongzue.dialog.util.BlurView
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20" />
+
+            <LinearLayout
+                android:id="@+id/box_table_child"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tvSpace"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="3dp"
+                        android:src="@mipmap/img_back_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center"
+                        android:text="返回"
+                        android:textColor="#2d6cee"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/split_light" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="2"
+                android:text="普通自定义控件"
+                android:textColor="#dc000000"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

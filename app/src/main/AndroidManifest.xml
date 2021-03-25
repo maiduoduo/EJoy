@@ -289,6 +289,10 @@
         <activity
             android:name=".ui.activity.more_detail.charts.IChartsDialTempControlActivity"
             android:screenOrientation="portrait" />
+        <!--文件-->
+        <activity
+            android:name=".ui.activity.more_detail.nomal_view.IFileToolActivity"
+            android:screenOrientation="portrait" />
 
 
         <!--常规自定义-->

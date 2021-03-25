@@ -17,7 +17,6 @@ package com.module.ires.bean.common;
 //      ┃┫┫　┃┫┫
 //      ┗┻┛　┗┻┛
 
-import com.module.ires.R;
 
 /**
  * CN:      CommonConstant
@@ -26,6 +25,7 @@ import com.module.ires.R;
  * Des:    TODO:公共库的公共全局文件
  */
 public class CommonConstant {
+
     /**
      * 屏幕类型
      */

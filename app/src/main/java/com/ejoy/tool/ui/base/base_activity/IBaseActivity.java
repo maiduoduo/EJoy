@@ -70,6 +70,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -941,6 +942,34 @@ public abstract class IBaseActivity extends AppCompatActivity {
         else plist = new ArrayList<>();
         return plist;
     }
+
+
+    private static Map<String, Long> records = new HashMap<>();
+
+    /**
+     * 防止重复
+     *
+     * @return
+     */
+    public static boolean isFastDoubleClick(long timeTap) {
+        if (records.size() > 1000) {
+            records.clear();
+        }
+
+        //本方法被调用的文件名和行号作为标记
+        StackTraceElement ste = new Throwable().getStackTrace()[1];
+        String key = ste.getFileName() + ste.getLineNumber();
+
+        Long lastClickTime = records.get(key);
+        long thisClickTime = System.currentTimeMillis();
+        records.put(key, thisClickTime);
+        if (lastClickTime == null) {
+            lastClickTime = 0L;
+        }
+        long timeDuration = thisClickTime - lastClickTime;
+        return 0 < timeDuration && timeDuration < timeTap;
+    }
+
 
 
 }

@@ -21,6 +21,8 @@ package com.ejoy.tool.app;
 //      ┗┻┛　┗┻┛
 
 
+import android.content.Context;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.ejoy.tool.greendao.gen.DaoMaster;
@@ -28,6 +30,7 @@ import com.ejoy.tool.greendao.gen.DaoSession;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.imaidd.citypicker.style.citylist.utils.CityListLoader;
 import com.kongzue.dialog.v2.DialogSettings;
+import com.module.ires.bean.utils.ILogCrashHandler;
 import com.xsj.crasheye.Crasheye;
 
 import org.greenrobot.greendao.database.Database;
@@ -57,6 +60,7 @@ public class App extends BaseMApplication {
     public void onCreate() {
         super.onCreate();
         Crasheye.init(this, "a7ecb010");
+        ILogCrashHandler.getInstance().init(this);
         init();
         //初始化Fresco
         Fresco.initialize(this);
@@ -138,6 +142,14 @@ public class App extends BaseMApplication {
 
     public static DaoSession getDaoSession(){
         return daoSession;
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        // 使用 Dex分包
+        MultiDex.install(this);
     }
 
 }
