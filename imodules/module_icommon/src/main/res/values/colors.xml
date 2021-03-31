@@ -777,6 +777,14 @@
     <color name="safekeyboardKeyBack">#474749</color>
     <color name="deepDarkTransparent">#99222222</color>
 
+    <!--Toast扩展Grid  item 背景-->
+    <color name="color_grid_item_bg1">#f8f8f8</color>
+    <color name="color_grid_item_bg">#efeded</color>
+    <color name="color_grid_item_name">#636363</color>
+    <color name="color_grid_item_en">#b4b2b2</color>
+    <color name="color_grid_item_label">#595959</color>
+    <color name="color_grid_item_label_bg">#dbdbdb</color>
+
 
 
 

@@ -29,6 +29,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.module.ires.bean.CustomBottomSheetItemBean;
 import com.module.ires.bean.bean.IBaseBean;
+import com.module.ires.bean.bean.IToastTipGridBean;
 import com.module.iviews.popup.AdapterItem;
 import com.module.iviews.popup.ExpandableItem;
 import com.module.iviews.popup.bean.GalleryBean;
@@ -1083,6 +1084,34 @@ public class GlobalDataProvider {
             }
         }
         return ret;
+    }
+
+
+
+    /**
+     * toast提示扩展的九宫格
+     *
+     * @return
+     */
+    private static List<IToastTipGridBean> toastGridList;
+
+    public static List<IToastTipGridBean> getToastGridListData() {
+        if (toastGridList != null){ toastGridList.clear();}
+        else {toastGridList = new ArrayList<>();}
+        toastGridList.add(new IToastTipGridBean("常规Toast","System Toast" ,true,"System"));
+        toastGridList.add(new IToastTipGridBean("设置背景资源","BackgroundResource" , true,"System"));
+        toastGridList.add(new IToastTipGridBean("设置背景颜色","Custom BackgroundColor" , true,"Extend"));
+        toastGridList.add(new IToastTipGridBean("优化View风格","Custom View" , true,"HOT"));
+        toastGridList.add(new IToastTipGridBean("新增View","Add View" , true,"HOT"));
+        toastGridList.add(new IToastTipGridBean("展示时长","Custom Duration" , true,"Extend"));
+        toastGridList.add(new IToastTipGridBean("展示动画","Custom Animation" , true,"Animation"));
+        toastGridList.add(new IToastTipGridBean("进场退场动画","Custom Enter Exit Animation" , true,"Animation"));
+        toastGridList.add(new IToastTipGridBean("进场位置", "Custom Display position" ,true,"HOT"));
+        toastGridList.add(new IToastTipGridBean("展示上一个实例中的内容","Display content in the previous instance" , true,"Extend"));
+        toastGridList.add(new IToastTipGridBean("无延迟显示","Show Immediate" , true,"HOT"));
+        toastGridList.add(new IToastTipGridBean("自定宽高","Custom Size" , true,"Extend"));
+        toastGridList.add(new IToastTipGridBean("最大高度","TestMaxWidth" , true,"Extend"));
+        return toastGridList;
     }
 
 

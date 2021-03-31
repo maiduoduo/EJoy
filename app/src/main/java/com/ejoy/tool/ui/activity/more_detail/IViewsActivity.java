@@ -38,6 +38,7 @@ import com.ejoy.tool.ui.activity.more_detail.charts.IChartsActivity;
 import com.ejoy.tool.ui.activity.more_detail.keyboard.IKeyboardHomeActivity;
 import com.ejoy.tool.ui.activity.more_detail.nomal_view.IFileToolActivity;
 import com.ejoy.tool.ui.activity.more_detail.nomal_view.INormalCustomViewActivity;
+import com.ejoy.tool.ui.activity.more_detail.tips_map.ITipsMapActivity;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.douyin.activity.DouyinSplashActivity;
@@ -161,6 +162,7 @@ public class IViewsActivity extends IBaseActivity {
             , R.id.clickCharts
             , R.id.clickNormalCustom
             , R.id.clickFileOperation
+            , R.id.clickTips
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -184,6 +186,10 @@ public class IViewsActivity extends IBaseActivity {
             case R.id.clickFileOperation:
                 //文件
                 jump(IFileToolActivity.class);
+                break;
+            case R.id.clickTips:
+                //文件
+                jump(ITipsMapActivity.class);
                 break;
             default:
                 break;

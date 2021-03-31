@@ -33,4 +33,7 @@
     <dimen name="king_keyboard_done_text_size">20sp</dimen>
     <dimen name="king_keyboard_label_text_size">16sp</dimen>
 
+    <dimen name="sweet_toast_y_offset">64dip</dimen>
+    <dimen name="sweet_toast_text_size">14sp</dimen>
+
 </resources>

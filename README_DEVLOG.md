@@ -17,6 +17,12 @@
 
 ##### 💥 更新日志
 
+###### 2021.03.31<br/>
+
+* 新增「提示类控件自定义扩展集合」见于ITipsMapActivity.class
+> Toast扩展
+> snackbar扩展
+
 ###### 2020.12.26<br/>
 
 * 新增「❀❀仿喜马拉雅banner颜色渐变（购物推荐banner 标题栏、状态栏、背景等颜色渐变）❀❀」 见于IPaletteColorShopBannerActivity.class

@@ -228,6 +228,14 @@
     </style>
 
 
+    <style name="TextAppearance_SweetToast">
+    </style>
+    <style name="Anim_SweetToast">
+        <item name="android:windowEnterAnimation">@anim/anim_sweet_toast_enter_miui</item>
+        <item name="android:windowExitAnimation">@anim/anim_sweet_toast_exit</item>
+    </style>
+
+
 
 
 </resources>
