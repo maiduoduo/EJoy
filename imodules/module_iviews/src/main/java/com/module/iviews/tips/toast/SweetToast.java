@@ -191,6 +191,7 @@ public final class SweetToast {
      */
     public static SweetToast makeText(View mRootView, int duration){
         SweetToast sweetToast = new SweetToast();
+
         sweetToast.mRootView = mRootView;
         try {
             sweetToast.mContentView = ((ViewGroup)mRootView).getChildAt(0);
