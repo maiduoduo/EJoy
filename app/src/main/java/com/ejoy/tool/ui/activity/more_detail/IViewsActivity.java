@@ -36,7 +36,9 @@ import com.ejoy.tool.scaffold.utils.StatusBarTool;
 import com.ejoy.tool.scaffold.view.PowerfulRecyclerView;
 import com.ejoy.tool.ui.activity.more_detail.charts.IChartsActivity;
 import com.ejoy.tool.ui.activity.more_detail.keyboard.IKeyboardHomeActivity;
+import com.ejoy.tool.ui.activity.more_detail.nomal_view.IFileToolActivity;
 import com.ejoy.tool.ui.activity.more_detail.nomal_view.INormalCustomViewActivity;
+import com.ejoy.tool.ui.activity.more_detail.tips_map.ITipsMapActivity;
 import com.ejoy.tool.ui.activity.seekbar.ISeekBarAndCheckBoxActivity;
 import com.ejoy.tool.ui.base.base_activity.IBaseActivity;
 import com.ejoy.tool.ui.douyin.activity.DouyinSplashActivity;
@@ -159,6 +161,8 @@ public class IViewsActivity extends IBaseActivity {
             , R.id.clickDouyin
             , R.id.clickCharts
             , R.id.clickNormalCustom
+            , R.id.clickFileOperation
+            , R.id.clickTips
     })
     public void eventClick(View view) {
         switch (view.getId()) {
@@ -171,11 +175,23 @@ public class IViewsActivity extends IBaseActivity {
             case R.id.clickDouyin:
                 jump(DouyinSplashActivity.class);
                 break;
-            case R.id.clickCharts://图表
+            case R.id.clickCharts:
+                //图表
                 jump(IChartsActivity.class);
                 break;
-            case R.id.clickNormalCustom://普通自定义
+            case R.id.clickNormalCustom:
+                //普通自定义
                 jump(INormalCustomViewActivity.class);
+                break;
+            case R.id.clickFileOperation:
+                //文件
+                jump(IFileToolActivity.class);
+                break;
+            case R.id.clickTips:
+                //文件
+                jump(ITipsMapActivity.class);
+                break;
+            default:
                 break;
 
         }

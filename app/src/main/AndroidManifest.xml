@@ -43,6 +43,9 @@
     <!-- 访问手机当前状态, 需要某些信息用于网络定位 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!--TOAST TIP 所需权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
 
     <application
         android:name=".app.App"
@@ -289,6 +292,10 @@
         <activity
             android:name=".ui.activity.more_detail.charts.IChartsDialTempControlActivity"
             android:screenOrientation="portrait" />
+        <!--文件-->
+        <activity
+            android:name=".ui.activity.more_detail.nomal_view.IFileToolActivity"
+            android:screenOrientation="portrait" />
 
 
         <!--常规自定义-->
@@ -319,6 +326,11 @@
         <activity
             android:name=".ui.activity.more_detail.keyboard.ISafeKeyboardScrollViewEditActivity"
             android:screenOrientation="portrait" />
+        <!--提示类扩展-->
+        <activity android:name=".ui.activity.more_detail.tips_map.ITipsMapActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.more_detail.tips_map.IToastTipsActivity"
+            android:screenOrientation="portrait"/>
 
 
         <!--FileProvider共享文件-->

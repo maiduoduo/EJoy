@@ -30,6 +30,12 @@ android {
             //解决编译时com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'这个错误
             exclude 'META-INF/rxjava.properties'
         }
+
+        // 无痛修改包名：https://www.jianshu.com/p/17327e191d2e
+        // 开启 Dex 分包
+        multiDexEnabled true
+
+
     }
     buildTypes {
         release {
@@ -134,6 +140,9 @@ dependencies {
     implementation(name:'BaseRecyclerViewAdapterHelper_2930', ext:'aar')
 
     implementation files('libs/crasheye-2.2.5.jar')
+
+    // Dex 分包，解决 64k 方法问题
+    implementation 'androidx.multidex:multidex:2.0.1'
 
 
 
