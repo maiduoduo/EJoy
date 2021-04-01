@@ -1115,4 +1115,24 @@ public class GlobalDataProvider {
     }
 
 
+
+
+    /**
+     * toast提示扩展的九宫格
+     *
+     * @return
+     */
+    private static List<IToastTipGridBean> snackbarGridList;
+
+    public static List<IToastTipGridBean> getSnackbarGridListData() {
+        if (snackbarGridList != null){ snackbarGridList.clear();}
+        else {snackbarGridList = new ArrayList<>();}
+        snackbarGridList.add(new IToastTipGridBean("自定义动画","SweetSnackbar Custom Anim" ,true,"Extend"));
+        snackbarGridList.add(new IToastTipGridBean("显示在顶部","SweetSnackbar Slide In Top" , true,"Extend"));
+        snackbarGridList.add(new IToastTipGridBean("点击回调","Action Callback" , true,"Extend"));
+        snackbarGridList.add(new IToastTipGridBean("工具类","SnackbarUtils" , true,"HOT"));
+        return snackbarGridList;
+    }
+
+
 }

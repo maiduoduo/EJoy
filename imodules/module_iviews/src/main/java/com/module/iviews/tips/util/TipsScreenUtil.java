@@ -14,10 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-/**
- * https://github.com/guoyoujin/MySnackBar
- */
 
+/**
+ * 屏幕工具
+ */
 public class TipsScreenUtil {
 
     private TipsScreenUtil() {
