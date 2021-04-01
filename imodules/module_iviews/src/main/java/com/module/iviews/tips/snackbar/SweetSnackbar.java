@@ -65,6 +65,7 @@ import java.lang.annotation.RetentionPolicy;
  * https://www.jianshu.com/p/26dfafc5410f
  */
 public final class SweetSnackbar {
+    private static final String TAG1 = "SweetTip";
 
     /**
      * Callback class for {@link SweetSnackbar} instances.

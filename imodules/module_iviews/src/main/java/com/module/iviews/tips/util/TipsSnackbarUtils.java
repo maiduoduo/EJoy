@@ -37,6 +37,7 @@ import java.lang.ref.WeakReference;
  */
 public class TipsSnackbarUtils {
     //设置SweetSnackbar背景颜色
+    private static final String TAG1 = "SweetTip";
     private static final int color_info = 0XFF2094F3;
     private static final int color_confirm = 0XFF4CB04E;
     private static final int color_warning = 0XFFFEC005;
@@ -337,7 +338,7 @@ public class TipsSnackbarUtils {
             message.setLayoutParams(paramsMessage);
             message.setCompoundDrawablePadding(message.getPaddingLeft());
             int textSize = (int) message.getTextSize();
-            Log.e("Jet","textSize:"+textSize);
+            Log.e(TAG1,"textSize:"+textSize);
             if(leftDrawable!=null){
                 leftDrawable.setBounds(0,0,textSize,textSize);
             }
@@ -462,15 +463,15 @@ public class TipsSnackbarUtils {
     public SnackbarUtils radius(){
         Drawable background = snackbarWeakReference.get().getView().getBackground();
         if(background instanceof GradientDrawable){
-            Log.e("Jet","radius():GradientDrawable");
+            Log.e(TAG1,"radius():GradientDrawable");
         }
         if(background instanceof ColorDrawable){
-            Log.e("Jet","radius():ColorDrawable");
+            Log.e(TAG1,"radius():ColorDrawable");
         }
         if(background instanceof StateListDrawable){
-            Log.e("Jet","radius():StateListDrawable");
+            Log.e(TAG1,"radius():StateListDrawable");
         }
-        Log.e("Jet","radius()background:"+background.getClass().getSimpleName());
+        Log.e(TAG1,"radius()background:"+background.getClass().getSimpleName());
         return new SnackbarUtils(mSnackbar);
     }
     */
@@ -555,7 +556,7 @@ public class TipsSnackbarUtils {
         */
         //文字高度+paddingTop+paddingBottom : 14sp + 14dp*2
         int SnackbarHeight = TipsScreenUtil.dp2px(getSnackbar().getView().getContext(),28) + TipsScreenUtil.sp2px(getSnackbar().getView().getContext(),14);
-        Log.e("Jet","直接获取MessageView高度:"+getSnackbar().getView().findViewById(R.id.snackbar_text).getHeight());
+        Log.e(TAG1,"直接获取MessageView高度:"+getSnackbar().getView().findViewById(R.id.snackbar_text).getHeight());
         return SnackbarHeight;
     }
 
@@ -574,9 +575,9 @@ public class TipsSnackbarUtils {
             marginRight = marginRight<=0?0:marginRight;
             int[] locations = new int[2];
             targetView.getLocationOnScreen(locations);
-            Log.e("Jet","距离屏幕左侧:"+locations[0]+"==距离屏幕顶部:"+locations[1]);
+            Log.e(TAG1,"距离屏幕左侧:"+locations[0]+"==距离屏幕顶部:"+locations[1]);
             int snackbarHeight = calculateSnackBarHeight();
-            Log.e("Jet","SweetSnackbar高度:"+snackbarHeight);
+            Log.e(TAG1,"SweetSnackbar高度:"+snackbarHeight);
             //必须保证指定View的顶部可见 且 单行Snackbar可以完整的展示
             if(locations[1] >= contentViewTop+snackbarHeight){
                 gravityFrameLayout(Gravity.BOTTOM);
@@ -602,9 +603,9 @@ public class TipsSnackbarUtils {
             marginRight = marginRight<=0?0:marginRight;
             int[] locations = new int[2];
             targetView.getLocationOnScreen(locations);
-            Log.e("Jet","距离屏幕左侧:"+locations[0]+"==距离屏幕顶部:"+locations[1]);
+            Log.e(TAG1,"距离屏幕左侧:"+locations[0]+"==距离屏幕顶部:"+locations[1]);
             int snackbarHeight = calculateSnackBarHeight();
-            Log.e("Jet","SweetSnackbar高度:"+snackbarHeight);
+            Log.e(TAG1,"SweetSnackbar高度:"+snackbarHeight);
             //必须保证指定View的顶部可见 且 单行Snackbar可以完整的展示
             if(locations[1] >= contentViewTop+snackbarHeight){
                 gravityCoordinatorLayout(Gravity.BOTTOM);
@@ -711,12 +712,12 @@ public class TipsSnackbarUtils {
      * 显示 SweetSnackbar实例
      */
     public void show(){
-        Log.e("Jet","show()");
+        Log.e(TAG1,"show()");
         if(getSnackbar()!=null){
-            Log.e("Jet","show");
+            Log.e(TAG1,"show");
             getSnackbar().show();
         }else {
-            Log.e("Jet","已经被回收");
+            Log.e(TAG1,"已经被回收");
         }
     }
 }

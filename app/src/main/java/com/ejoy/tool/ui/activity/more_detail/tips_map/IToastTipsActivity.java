@@ -172,7 +172,6 @@ public class IToastTipsActivity extends IBaseActivity {
         blur.setOverlayColor(Color.argb(100, 235, 235, 235));
         blur.setRadius(me, 0, 0);
         setDarkNavigationBarTheme(false);
-        SweetToast sweetToast = new SweetToast();
         initToastGrid();
     }
 

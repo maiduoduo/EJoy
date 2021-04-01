@@ -82,7 +82,7 @@ public class ITipsMapActivity extends IBaseActivity {
 
             case R.id.llSnackbarTipExtend:
                 //snackbar扩展
-                jump(IToastTipsActivity.class);
+                jump(ISnackBarTipsActivity.class);
                 break;
             default:
                 break;

@@ -34,7 +34,7 @@ public final class SweetToastManager {
                     }
                 }
             }catch (Exception e){
-                Log.e("幻海流心","e:"+e.getLocalizedMessage());
+                Log.e(TAG1,"e:"+e.getLocalizedMessage());
             }
         }
     };
@@ -48,7 +48,7 @@ public final class SweetToastManager {
                 queue.offer(sweetToast);
             }
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
     }
     private static SweetToast poll(){
@@ -57,7 +57,7 @@ public final class SweetToastManager {
                 return queue.poll();
             }
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
         return null;
     }
@@ -67,7 +67,7 @@ public final class SweetToastManager {
                 return queue.peek();
             }
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
         return null;
     }
@@ -87,7 +87,7 @@ public final class SweetToastManager {
                 singleToast = null;
             }
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
     }
     private static void clearQueue(){
@@ -101,7 +101,7 @@ public final class SweetToastManager {
                 }
             }
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
     }
     /**
@@ -120,7 +120,7 @@ public final class SweetToastManager {
                 offer(current);
             }
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
     }
 
@@ -159,7 +159,7 @@ public final class SweetToastManager {
             singleHideTimeMillis = delay + System.currentTimeMillis();
             singleHandler.postDelayed(r,delay);
         }catch (Exception e){
-            Log.e("幻海流心","e:"+e.getLocalizedMessage());
+            Log.e(TAG1,"e:"+e.getLocalizedMessage());
         }
     }
     protected static void showImmediate(@NonNull SweetToast current){
