@@ -159,6 +159,7 @@ public class ISnackBarTipsActivity extends IBaseActivity {
                                 .bellow(boxTableChild,total2,16,16)
                                 .anim(R.anim.anim_tip_push_down_in,R.anim.anim_tip_push_up_out)
                                 .show();
+
                         break;
 
 
